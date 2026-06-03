@@ -9,6 +9,7 @@
  *     @type string $location Location label value.
  *     @type string $category Category label value.
  *     @type string $url      View job link URL.
+ *     @type string $target   Link target attribute (e.g. _blank for PDF).
  * }
  */
 
@@ -21,12 +22,15 @@ $args = wp_parse_args(
         'location' => '',
         'category' => '',
         'url'      => '#',
+        'target'   => '',
     )
 );
 
 if (!$args['title']) {
     return;
 }
+
+$link_target = '_blank' === $args['target'] ? ' target="_blank" rel="noopener noreferrer"' : '';
 ?>
 <article class="psm-job-card">
     <h3 class="psm-job-card__title"><?php echo esc_html($args['title']); ?></h3>
@@ -45,7 +49,7 @@ if (!$args['title']) {
         </div>
     <?php endif; ?>
 
-    <a class="psm-btn-pill psm-btn-pill--primary psm-job-card__btn" href="<?php echo esc_url($args['url']); ?>">
+    <a class="psm-btn-pill psm-btn-pill--primary psm-job-card__btn" href="<?php echo esc_url($args['url']); ?>"<?php echo $link_target; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
         <span class="psm-btn-pill__text"><?php esc_html_e('View Job', 'cmd-theme'); ?></span>
         <span class="psm-btn-pill__icon" aria-hidden="true">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/btn-arrow.png'); ?>" alt="" role="presentation">

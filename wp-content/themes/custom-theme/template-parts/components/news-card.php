@@ -29,6 +29,7 @@ $args = wp_parse_args(
         'image'       => '',
         'image_alt'   => '',
         'image_badge' => '',
+        'time_uppercase' => true,
     )
 );
 
@@ -40,6 +41,7 @@ $url         = trim((string) $args['url']);
 $image       = trim((string) $args['image']);
 $image_badge = trim((string) $args['image_badge']);
 $alt         = trim((string) $args['image_alt']) ?: $title;
+$time_label  = $args['time_uppercase'] ? strtoupper($time) : $time;
 
 if ('' === $category && '' === $time && '' === $title && '' === $excerpt && '' === $url && '' === $image) {
     return;
@@ -80,7 +82,7 @@ $has_body        = '' !== $title || '' !== $excerpt || '' !== $url;
                     <?php if ('' !== $time) : ?>
                         <span class="psm-news-card__time">
                             <span class="psm-news-card__clock" aria-hidden="true"></span>
-                            <?php echo esc_html(strtoupper($time)); ?>
+                            <?php echo esc_html($time_label); ?>
                         </span>
                     <?php endif; ?>
                 </div>

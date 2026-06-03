@@ -139,13 +139,6 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-jobs.php"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
                 "value": "page-elections.php"
             }
         ],

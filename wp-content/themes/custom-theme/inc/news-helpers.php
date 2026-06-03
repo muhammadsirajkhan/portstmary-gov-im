@@ -10,10 +10,18 @@ defined('ABSPATH') || exit;
 /**
  * Build news-card template args from a psm_news post.
  *
- * @param int $post_id News post ID.
+ * @param int   $post_id Post ID.
+ * @param array $args    Optional context { context: carousel|archive }.
  * @return array
  */
-function psm_get_news_card_args($post_id) {
+function psm_get_news_card_args($post_id, $args = array()) {
+    $args = wp_parse_args(
+        $args,
+        array(
+            'context' => 'carousel',
+        )
+    );
+
     $post_id = (int) $post_id;
     if ($post_id <= 0) {
         return array();
@@ -36,11 +44,15 @@ function psm_get_news_card_args($post_id) {
     $excerpt  = trim((string) $excerpt);
 
     if ('' === $time) {
-        $time = sprintf(
-            /* translators: %s: human-readable time difference */
-            __('%s ago', 'cmd-theme'),
-            human_time_diff(get_post_time('U', true, $post_id), current_time('timestamp'))
-        );
+        if ('archive' === $args['context']) {
+            $time = get_the_date('j F Y', $post_id);
+        } else {
+            $time = sprintf(
+                /* translators: %s: human-readable time difference */
+                __('%s ago', 'cmd-theme'),
+                human_time_diff(get_post_time('U', true, $post_id), current_time('timestamp'))
+            );
+        }
     }
 
     $image = '';
@@ -60,13 +72,14 @@ function psm_get_news_card_args($post_id) {
     }
 
     return array(
-        'category'  => $category,
-        'time'      => $time,
-        'title'     => trim((string) $title),
-        'excerpt'   => $excerpt,
-        'url'       => trim((string) $url),
-        'image'     => trim((string) $image),
-        'image_alt' => trim((string) $title),
+        'category'        => $category,
+        'time'            => $time,
+        'time_uppercase'  => 'archive' !== $args['context'],
+        'title'           => trim((string) $title),
+        'excerpt'         => $excerpt,
+        'url'             => trim((string) $url),
+        'image'           => trim((string) $image),
+        'image_alt'       => trim((string) $title),
     );
 }
 

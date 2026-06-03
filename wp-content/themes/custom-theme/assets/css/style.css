@@ -2115,8 +2115,134 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 
 .psm-news-nav:focus-visible {
     outline: 2px solid #e31e24;
-    outline-offset: 3px;
+    outline-offset: 2px;
 }
+
+/* ----- News Page: archive grid ----- */
+.psm-news-archive {
+    background: #ffffff;
+    padding: 80px 0 100px;
+}
+
+.psm-section-header--news-archive {
+    margin-bottom: 48px;
+}
+
+.psm-section-header--news-archive .psm-section-header__title {
+    font-size: 52px;
+}
+
+.psm-news-archive__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+    margin-bottom: 56px;
+}
+
+/* ----- Reusable pagination ----- */
+.psm-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.psm-pagination__inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background: #f5f5f5;
+    border-radius: 999px;
+}
+
+.psm-pagination__pages {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.psm-pagination__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 24px;
+    border-radius: 999px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.psm-pagination__btn--prev {
+    background: #ececec;
+    color: #111111;
+}
+
+.psm-pagination__btn--prev:hover {
+    background: #e0e0e0;
+    color: #111111;
+}
+
+.psm-pagination__btn--next {
+    background: #111111;
+    color: #ffffff;
+}
+
+.psm-pagination__btn--next:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+.psm-pagination__btn.is-disabled {
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.psm-pagination__page {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    color: #111111;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.psm-pagination__page:hover {
+    background: #ececec;
+    color: #111111;
+}
+
+.psm-pagination__page.is-current {
+    background: #ececec;
+    color: #111111;
+}
+
+.psm-pagination__ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    padding: 0 4px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    color: #666666;
+}
+
+.psm-page-news .psm-inner-banner {
+    margin-bottom: 0;
+}
+
 .spacing {
     padding: 50px 0;
 }
@@ -5041,8 +5167,8 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 
 .psm-jobs-work .psm-housing-zigzag-media--single-badge .psm-housing-zigzag-media__single {
     width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    /* border-radius: 20px; */
+    /* box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); */
 }
 
 .psm-jobs-work .psm-housing-zigzag-media--single-badge .psm-welcome-badge {
@@ -5093,16 +5219,16 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 .psm-jobs-process {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
     gap: 0;
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .psm-jobs-process__item {
     flex: 1 1 0;
     min-width: 0;
-    max-width: 320px;
+    max-width: 380px;
 }
 
 .psm-jobs-process__connector {
@@ -5141,6 +5267,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     letter-spacing: -0.04em;
     color: #111111;
     user-select: none;
+    margin-bottom: 40px;
 }
 
 .psm-jobs-process__body {
@@ -5150,8 +5277,8 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 }
 
 .psm-jobs-process__title {
-    margin: 0 0 16px;
-    padding-bottom: 12px;
+    margin: 0 0 26px;
+    padding-bottom: 22px;
     font-size: 18px;
     font-weight: 700;
     line-height: 1.35;
