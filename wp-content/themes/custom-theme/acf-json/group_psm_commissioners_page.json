@@ -1,0 +1,321 @@
+{
+    "key": "group_psm_commissioners_page",
+    "title": "Your Commissioners Page",
+    "fields": [
+        {
+            "key": "field_psm_comm_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_comm",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "default_value": "Welcome to the Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_inner_banner_title_comm",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "default_value": "The Commissioners"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_comm",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "default_value": "Proudly Serving Our Community Since 1890"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_comm",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "default_value": "Meet the team behind Port St Mary Commissioners and discover how we serve residents through local services, facilities, and community support.",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_psm_inner_banner_image_comm",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "return_format": "url",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_comm_tab_serving",
+            "label": "Serving Port St Mary",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_serving_image",
+            "label": "Image",
+            "name": "serving_image",
+            "type": "image",
+            "instructions": "Left column image.",
+            "return_format": "url",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_serving_badge",
+            "label": "Badge",
+            "name": "serving_badge",
+            "type": "text",
+            "default_value": "Commissioners"
+        },
+        {
+            "key": "field_psm_serving_title",
+            "label": "Heading",
+            "name": "serving_title",
+            "type": "text",
+            "default_value": "Serving Port St Mary Since 1890"
+        },
+        {
+            "key": "field_psm_serving_intro",
+            "label": "Intro",
+            "name": "serving_intro",
+            "type": "textarea",
+            "instructions": "Intro with red accent bar.",
+            "default_value": "The Board of Port St Mary Commissioners has represented the Village District of Port St Mary since its formation 1890. The Board consists of seven members who are elected by public vote every four years, with the next election due in 2029.",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_psm_serving_responsible",
+            "label": "Responsibilities Lead",
+            "name": "serving_responsible",
+            "type": "text",
+            "default_value": "Port St Mary Commissioners are responsible for:-"
+        },
+        {
+            "key": "field_psm_serving_services",
+            "label": "Services",
+            "name": "serving_services",
+            "type": "textarea",
+            "instructions": "One service per line. Leave empty to use defaults.",
+            "default_value": "Refuse collection\r\nGrass cutting\r\nBeach cleaning\r\nStreet lighting\r\nLocal Authority Housing\r\nDog & Litter Byelaws\r\nAbandoned vehicles\r\nCommissioner owned car parks\r\nGarden of Remembrance",
+            "rows": 6,
+            "new_lines": ""
+        },
+        {
+            "key": "field_psm_comm_tab_officers",
+            "label": "Our Officers",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_officers_badge",
+            "label": "Badge",
+            "name": "officers_badge",
+            "type": "text",
+            "default_value": "Officers"
+        },
+        {
+            "key": "field_psm_officers_title",
+            "label": "Heading",
+            "name": "officers_title",
+            "type": "text",
+            "default_value": "Our Officers"
+        },
+        {
+            "key": "field_psm_officers_rows",
+            "label": "Officers",
+            "name": "officers_rows",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use default officers.",
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_officer_name",
+            "button_label": "Add Officer",
+            "sub_fields": [
+                {
+                    "key": "field_psm_officer_name",
+                    "label": "Name",
+                    "name": "officer_name",
+                    "type": "text",
+                    "placeholder": "Hayley Kinvig",
+                    "parent_repeater": "field_psm_officers_rows"
+                },
+                {
+                    "key": "field_psm_officer_role",
+                    "label": "Role",
+                    "name": "officer_role",
+                    "type": "text",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_officer_name",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "placeholder": "Clerk & Responsible Finance Officer",
+                    "parent_repeater": "field_psm_officers_rows"
+                },
+                {
+                    "key": "field_psm_officer_image",
+                    "label": "Photo",
+                    "name": "officer_image",
+                    "type": "image",
+                    "instructions": "Portrait cutout image.",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_officer_name",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "return_format": "url",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_psm_officers_rows"
+                },
+                {
+                    "key": "field_psm_officer_tone",
+                    "label": "Background Tone",
+                    "name": "officer_tone",
+                    "type": "select",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_officer_name",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "choices": {
+                        "grey": "Grey",
+                        "teal": "Teal",
+                        "rose": "Rose"
+                    },
+                    "default_value": "grey",
+                    "return_format": "value",
+                    "parent_repeater": "field_psm_officers_rows"
+                },
+                {
+                    "key": "field_psm_officer_linkedin",
+                    "label": "LinkedIn URL",
+                    "name": "officer_linkedin",
+                    "type": "url",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_officer_name",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_officers_rows"
+                }
+            ]
+        },
+        {
+            "key": "field_psm_comm_tab_hours",
+            "label": "Opening Hours",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_hours_badge",
+            "label": "Badge",
+            "name": "hours_badge",
+            "type": "text",
+            "default_value": "Working Hours"
+        },
+        {
+            "key": "field_psm_hours_title",
+            "label": "Heading",
+            "name": "hours_title",
+            "type": "text",
+            "default_value": "Opening Hours"
+        },
+        {
+            "key": "field_psm_hours_rows",
+            "label": "Hours",
+            "name": "hours_rows",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use default Monday–Friday hours.",
+            "layout": "table",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_hours_day",
+            "button_label": "Add Day",
+            "sub_fields": [
+                {
+                    "key": "field_psm_hours_day",
+                    "label": "Day",
+                    "name": "hours_day",
+                    "type": "text",
+                    "placeholder": "Monday",
+                    "parent_repeater": "field_psm_hours_rows"
+                },
+                {
+                    "key": "field_psm_hours_time",
+                    "label": "Hours",
+                    "name": "hours_time",
+                    "type": "text",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_hours_day",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "placeholder": "09:00 AM – 17:00 PM",
+                    "parent_repeater": "field_psm_hours_rows"
+                }
+            ]
+        },
+        {
+            "key": "field_psm_hours_note",
+            "label": "Lunch Note",
+            "name": "hours_note",
+            "type": "text",
+            "default_value": "Closed for lunch between 13.00 – 14.00 daily"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-your-commissioners.php"
+            }
+        ]
+    ],
+    "menu_order": 15,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Inner banner and page sections for the Your Commissioners page.",
+    "show_in_rest": 0,
+    "modified": 1749945700
+}

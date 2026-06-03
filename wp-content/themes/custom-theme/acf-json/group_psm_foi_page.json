@@ -1,0 +1,302 @@
+{
+    "key": "group_psm_foi_page",
+    "title": "FOI Page",
+    "fields": [
+        {
+            "key": "field_psm_foi_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_foi",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Welcome to Port St Mary Commissioners",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_title_foi",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Port St Mary FOI",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_foi",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Freedom of Information Requests",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_intro_foi",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Providing transparency and accountability through access to information for all our residents and community members.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_inner_banner_image_foi",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_foi_tab_section",
+            "label": "FOI Section",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_foi_badge",
+            "label": "Badge",
+            "name": "foi_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small label above the section heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Port St Mary Commissioners",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_foi_title",
+            "label": "Heading",
+            "name": "foi_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main section heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "What is Freedom of the Information",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_foi_intro",
+            "label": "Intro Text",
+            "name": "foi_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro paragraphs below the heading. Use a blank line between paragraphs.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "The Freedom of Information Act 2015 gives you the right to request recorded information held by public authorities. Port St Mary Commissioners are committed to openness and will respond to valid requests within the statutory timeframe.\r\n\r\nUse the documents below to view published responses. To make a new request, contact the Commissioners' office with a clear description of the information you need.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 5,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_foi_documents",
+            "label": "Documents",
+            "name": "foi_documents",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use the default document list. PDF file is optional — sample PDF is used when omitted.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_foi_document_label",
+            "button_label": "Add Document",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_psm_foi_document_label",
+                    "label": "Label",
+                    "name": "foi_document_label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Document title shown in the list.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "FOI IM16/483",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_foi_documents"
+                },
+                {
+                    "key": "field_psm_foi_document_file",
+                    "label": "PDF File",
+                    "name": "foi_document_file",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "Optional PDF download.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "pdf",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_psm_foi_documents"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-foi.php"
+            }
+        ]
+    ],
+    "menu_order": 11,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner and FOI section for the Freedom of Information page.",
+    "show_in_rest": 0,
+    "modified": 1749513600
+}

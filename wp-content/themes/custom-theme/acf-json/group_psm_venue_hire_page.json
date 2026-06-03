@@ -1,0 +1,288 @@
+{
+    "key": "group_psm_venue_hire_page",
+    "title": "Venue Hire Page",
+    "fields": [
+        {
+            "key": "field_psm_venue_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_venue",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Welcome to Port St Mary Commissioners",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_title_venue",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Our Venue Hire",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_venue",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Host Your Next Gathering",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_intro_venue",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Hire the Town Hall or Board Room for meetings, events, and community gatherings in the heart of Port St Mary.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_inner_banner_image_venue",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_venue_tab_section",
+            "label": "Venue Hire Section",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_venue_rows",
+            "label": "Venue Rows",
+            "name": "venue_rows",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use the default Town Hall and Board Room rows. Layout alternates automatically (image left, then right).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_venue_row_title",
+            "button_label": "Add Venue Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_psm_venue_row_title",
+                    "label": "Heading",
+                    "name": "venue_row_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Row heading.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Town Hall Hire",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_venue_rows"
+                },
+                {
+                    "key": "field_psm_venue_row_image",
+                    "label": "Image",
+                    "name": "venue_row_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Row image.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_psm_venue_rows"
+                },
+                {
+                    "key": "field_psm_venue_row_intro",
+                    "label": "Intro Text",
+                    "name": "venue_row_intro",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Body copy. Use a blank line between paragraphs.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 4,
+                    "new_lines": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_psm_venue_rows"
+                },
+                {
+                    "key": "field_psm_venue_row_features",
+                    "label": "Features",
+                    "name": "venue_row_features",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "One feature per line.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 5,
+                    "new_lines": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_psm_venue_rows"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-venue-hire.php"
+            }
+        ]
+    ],
+    "menu_order": 14,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner and venue hire rows for the venue hire page.",
+    "show_in_rest": 0,
+    "modified": 1749945600
+}

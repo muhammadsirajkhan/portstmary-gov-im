@@ -1,0 +1,319 @@
+{
+    "key": "group_psm_southern_sheltered_page",
+    "title": "Southern Sheltered Page",
+    "fields": [
+        {
+            "key": "field_psm_southern_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_southern",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Welcome to Port St Mary Commissioners",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_title_southern",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Southern Sheltered",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_southern",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Supporting Independent Living Across the South",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_intro_southern",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Information about sheltered housing, community housing tenders, and independent living support from Port St Mary Commissioners.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_inner_banner_image_southern",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_southern_tab_tenders",
+            "label": "Community Housing Tenders",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_tenders_image",
+            "label": "Image",
+            "name": "tenders_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Single left-column image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_tenders_badge",
+            "label": "Badge",
+            "name": "tenders_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small label above the section heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Southern Sheltered Housing",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_tenders_title",
+            "label": "Heading",
+            "name": "tenders_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Section heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Community Housing Tenders",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_tenders_lead",
+            "label": "Lead Text",
+            "name": "tenders_lead",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro paragraph below the heading.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_tenders_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Port St Mary Commissioners invite tenders for community housing projects that support sheltered and independent living across the south of the Isle of Man.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_tenders_body",
+            "label": "Body Content",
+            "name": "tenders_body",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Additional paragraphs below the lead text.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_tenders_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_psm_tenders_button",
+            "label": "Download Button",
+            "name": "tenders_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "PDF or document download link.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_tenders_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-southern-sheltered.php"
+            }
+        ]
+    ],
+    "menu_order": 17,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner and community housing tenders section for the Southern Sheltered page.",
+    "show_in_rest": 0,
+    "modified": 1780780800
+}

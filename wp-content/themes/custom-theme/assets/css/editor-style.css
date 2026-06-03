@@ -1,0 +1,17 @@
+/**
+ * Block editor styles — align with theme typography.
+ */
+
+.editor-styles-wrapper {
+    font-family: Montserrat, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #111111;
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3 {
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}

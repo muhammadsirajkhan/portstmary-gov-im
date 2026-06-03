@@ -1,0 +1,320 @@
+{
+    "key": "group_psm_minutes_page",
+    "title": "Minutes Page",
+    "fields": [
+        {
+            "key": "field_psm_minutes_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_minutes",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Welcome to Port St Mary Commissioners",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_title_minutes",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Meeting Minutes",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_minutes",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Latest Board Meeting Minutes and Public Information",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_intro_minutes",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Optional description paragraph in the banner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_inner_banner_image_minutes",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_minutes_tab_section",
+            "label": "Minutes Section",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_minutes_badge",
+            "label": "Badge",
+            "name": "minutes_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small label above the section heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Minutes",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_minutes_title",
+            "label": "Heading",
+            "name": "minutes_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main section heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Board Meeting Minutes",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_minutes_intro",
+            "label": "Intro Text",
+            "name": "minutes_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro text below the heading (shown with red accent bar).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Please click on the links below to view approved Meeting Minutes, with redactions where appropriate.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_minutes_viewer_url",
+            "label": "PDF Viewer Link",
+            "name": "minutes_viewer_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "URL for the \"click here\" link in the PDF viewer note.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https://get.adobe.com/reader/",
+            "allow_in_bindings": 0,
+            "placeholder": "https://get.adobe.com/reader/"
+        },
+        {
+            "key": "field_psm_minutes_documents",
+            "label": "Documents",
+            "name": "minutes_documents",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use the default document list. PDF file is optional — sample PDF is used when omitted.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_minutes_document_label",
+            "button_label": "Add Document",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_psm_minutes_document_label",
+                    "label": "Label",
+                    "name": "minutes_document_label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Document title shown in the list.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Board Meeting Minutes 30 May 2024",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_minutes_documents"
+                },
+                {
+                    "key": "field_psm_minutes_document_file",
+                    "label": "PDF File",
+                    "name": "minutes_document_file",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "Optional PDF download.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "pdf",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_psm_minutes_documents"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-minutes.php"
+            }
+        ]
+    ],
+    "menu_order": 12,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner and minutes section for the meeting minutes page.",
+    "show_in_rest": 0,
+    "modified": 1749686400
+}

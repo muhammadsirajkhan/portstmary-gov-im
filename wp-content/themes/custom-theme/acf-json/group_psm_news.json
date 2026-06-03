@@ -1,0 +1,131 @@
+{
+    "key": "group_psm_news",
+    "title": "News Details",
+    "fields": [
+        {
+            "key": "field_psm_news_category",
+            "label": "Category Label",
+            "name": "news_category",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Shown above the title on the card.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Blog / Resources",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_news_time_label",
+            "label": "Time Label",
+            "name": "news_time_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Optional. Leave empty to use time since published.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "12 hours ago",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_news_excerpt",
+            "label": "Short Description",
+            "name": "news_excerpt",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Brief summary for carousel cards.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_news_image",
+            "label": "Card Image",
+            "name": "news_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Optional. Uses the featured image when empty.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_news_link",
+            "label": "Read More Link",
+            "name": "news_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Optional. Defaults to this news item's page URL.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "psm_news"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for news posts shown in the home carousel.",
+    "show_in_rest": 0,
+    "modified": 1749254400
+}

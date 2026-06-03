@@ -1,0 +1,236 @@
+{
+    "key": "group_psm_general_public_page",
+    "title": "General Public Page",
+    "fields": [
+        {
+            "key": "field_psm_gp_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_gp",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "default_value": "Welcome to the Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_inner_banner_title_gp",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "default_value": "General Public"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_gp",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "default_value": "Homes With Community at Heart"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_gp",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "default_value": "Providing quality housing and essential services for our vibrant Port St Mary community.",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_psm_inner_banner_image_gp",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "return_format": "url",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_gp_tab_housing",
+            "label": "Supporting Local Housing",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_housing_image",
+            "label": "Image",
+            "name": "housing_image",
+            "type": "image",
+            "instructions": "Single left column image.",
+            "return_format": "url",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_housing_badge",
+            "label": "Badge",
+            "name": "housing_badge",
+            "type": "text",
+            "default_value": "About The General Public"
+        },
+        {
+            "key": "field_psm_housing_title",
+            "label": "Heading",
+            "name": "housing_title",
+            "type": "text",
+            "default_value": "Supporting Local Housing Needs"
+        },
+        {
+            "key": "field_psm_housing_intro",
+            "label": "Intro",
+            "name": "housing_intro",
+            "type": "textarea",
+            "instructions": "Body copy. Use a blank line between paragraphs.",
+            "default_value": "Port St Mary Commissioners provide quality housing and essential services for residents, supporting a vibrant community where people can live with confidence and security.\r\n\r\nOur housing team works to meet local needs through general housing, sheltered accommodation, and ongoing support for tenants and applicants throughout Port St Mary.\r\n\r\nWe are committed to fair allocation, transparent processes, and maintaining homes to a high standard for the benefit of the whole community.\r\n\r\nWhether you are applying for housing or seeking information about our services, we are here to guide you through each stage with clarity and care.",
+            "rows": 8,
+            "new_lines": ""
+        },
+        {
+            "key": "field_psm_gp_tab_applying",
+            "label": "Applying for Housing",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_applying_badge",
+            "label": "Badge",
+            "name": "applying_badge",
+            "type": "text",
+            "default_value": "Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_applying_title",
+            "label": "Heading",
+            "name": "applying_title",
+            "type": "text",
+            "default_value": "Applying For Housing"
+        },
+        {
+            "key": "field_psm_applying_intro",
+            "label": "Intro",
+            "name": "applying_intro",
+            "type": "textarea",
+            "instructions": "Intro below heading. Use a blank line between paragraphs.",
+            "default_value": "Residents interested in applying for housing can complete an application form and submit the required information for review.\r\n\r\nApplications are assessed based on eligibility, housing availability, and community needs.",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_psm_applying_steps",
+            "label": "Steps",
+            "name": "applying_steps",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use default four steps. Upload PNG icons per step.",
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_step_title",
+            "button_label": "Add Step",
+            "sub_fields": [
+                {
+                    "key": "field_psm_step_number",
+                    "label": "Step Number",
+                    "name": "step_number",
+                    "type": "text",
+                    "instructions": "Optional. e.g. 01. Auto-numbered if empty.",
+                    "placeholder": "01",
+                    "parent_repeater": "field_psm_applying_steps"
+                },
+                {
+                    "key": "field_psm_step_title",
+                    "label": "Title",
+                    "name": "step_title",
+                    "type": "text",
+                    "placeholder": "Complete Application Form",
+                    "parent_repeater": "field_psm_applying_steps"
+                },
+                {
+                    "key": "field_psm_step_text",
+                    "label": "Description",
+                    "name": "step_text",
+                    "type": "textarea",
+                    "instructions": "Card description.",
+                    "rows": 2,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_step_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "default_value": "Provide your personal and housing information.",
+                    "parent_repeater": "field_psm_applying_steps"
+                },
+                {
+                    "key": "field_psm_step_icon",
+                    "label": "Icon (PNG)",
+                    "name": "step_icon",
+                    "type": "image",
+                    "instructions": "Step icon image (PNG recommended).",
+                    "return_format": "url",
+                    "library": "all",
+                    "mime_types": "png,jpg,jpeg,webp,svg",
+                    "preview_size": "thumbnail",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_step_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_applying_steps"
+                },
+                {
+                    "key": "field_psm_step_url",
+                    "label": "Link URL",
+                    "name": "step_url",
+                    "type": "url",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_step_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_applying_steps"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-general-public.php"
+            }
+        ]
+    ],
+    "menu_order": 16,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Inner banner, housing intro, and applying steps for the general public page.",
+    "show_in_rest": 0,
+    "modified": 1749945800
+}

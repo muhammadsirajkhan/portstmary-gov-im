@@ -1,0 +1,282 @@
+{
+    "key": "group_psm_remembrance_page",
+    "title": "Remembrance Page",
+    "fields": [
+        {
+            "key": "field_psm_remembrance_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_remembrance",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Welcome to Port St Mary Commissioners",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_title_remembrance",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Our Remembrance",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_remembrance",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Honouring Service & Sacrifice",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_intro_remembrance",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "We remember those who served and those who gave their lives, and we honour their sacrifice with dignity and respect.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_inner_banner_image_remembrance",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_remembrance_tab_respect",
+            "label": "Remembering with Respect",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_respect_badge",
+            "label": "Badge",
+            "name": "respect_badge",
+            "type": "text",
+            "default_value": "About Our Remembrance"
+        },
+        {
+            "key": "field_psm_respect_title",
+            "label": "Heading",
+            "name": "respect_title",
+            "type": "text",
+            "default_value": "Remembering with the Respect"
+        },
+        {
+            "key": "field_psm_respect_image_main",
+            "label": "Main Image",
+            "name": "respect_image_main",
+            "type": "image",
+            "instructions": "Large left column image.",
+            "return_format": "url",
+            "mime_types": "jpg,jpeg,png,webp",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_respect_intro",
+            "label": "Intro Text",
+            "name": "respect_intro",
+            "type": "textarea",
+            "instructions": "Intro in the right column. Use a blank line between paragraphs.",
+            "default_value": "Port St Mary Commissioners are committed to honouring those who served and those who gave their lives in service to our community and country.\r\n\r\nWe work with residents, veterans, and local organisations to ensure remembrance is observed with dignity, respect, and lasting community support.",
+            "rows": 4
+        },
+        {
+            "key": "field_psm_respect_signature",
+            "label": "Signature Line",
+            "name": "respect_signature",
+            "type": "text",
+            "default_value": "Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_respect_image_sub",
+            "label": "Secondary Image",
+            "name": "respect_image_sub",
+            "type": "image",
+            "instructions": "Smaller image below the signature.",
+            "return_format": "url",
+            "mime_types": "jpg,jpeg,png,webp",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_respect_prose",
+            "label": "Additional Text",
+            "name": "respect_prose",
+            "type": "textarea",
+            "instructions": "Text below the secondary image. Use a blank line between paragraphs.",
+            "default_value": "Each year we join residents, organisations, and visitors to mark Remembrance with dignity — from the memorial cross by the harbour to services across the town.\r\n\r\nWe welcome community participation and work to maintain local memorials so future generations can remember with respect.",
+            "rows": 4
+        },
+        {
+            "key": "field_psm_remembrance_tab_honour",
+            "label": "Honouring Service",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_honour_badge",
+            "label": "Badge",
+            "name": "honour_badge",
+            "type": "text",
+            "default_value": "Our Commitment"
+        },
+        {
+            "key": "field_psm_honour_title",
+            "label": "Heading",
+            "name": "honour_title",
+            "type": "text",
+            "default_value": "Honouring Service & Sacrifice"
+        },
+        {
+            "key": "field_psm_remembrance_cards",
+            "label": "Cards",
+            "name": "remembrance_cards",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use the default three cards.",
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_remembrance_card_title",
+            "button_label": "Add Card",
+            "sub_fields": [
+                {
+                    "key": "field_psm_remembrance_card_title",
+                    "label": "Title",
+                    "name": "remembrance_card_title",
+                    "type": "text",
+                    "parent_repeater": "field_psm_remembrance_cards"
+                },
+                {
+                    "key": "field_psm_remembrance_card_image",
+                    "label": "Image",
+                    "name": "remembrance_card_image",
+                    "type": "image",
+                    "return_format": "url",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_psm_remembrance_cards"
+                },
+                {
+                    "key": "field_psm_remembrance_card_text",
+                    "label": "Text",
+                    "name": "remembrance_card_text",
+                    "type": "textarea",
+                    "instructions": "Use a blank line between paragraphs.",
+                    "rows": 3,
+                    "parent_repeater": "field_psm_remembrance_cards"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-remembrance.php"
+            }
+        ]
+    ],
+    "menu_order": 13,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner and remembrance sections for the remembrance page.",
+    "show_in_rest": 0,
+    "modified": 1749859200
+}

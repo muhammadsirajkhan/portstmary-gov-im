@@ -1,0 +1,286 @@
+{
+    "key": "group_psm_home_hero",
+    "title": "Home — Hero",
+    "fields": [
+        {
+            "key": "field_psm_hero_tab",
+            "label": "Hero",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_hero_background_image",
+            "label": "Background Image",
+            "name": "hero_background_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Full-width hero background. Falls back to theme hero.png when empty.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_hero_side_label",
+            "label": "Side Label",
+            "name": "hero_side_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Vertical label on the right edge of the hero (desktop).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Port St Mary Commissioners",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_hero_primary_button",
+            "label": "Primary Button",
+            "name": "hero_primary_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Red primary call-to-action shown on every slide.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_psm_hero_secondary_button",
+            "label": "Secondary Button",
+            "name": "hero_secondary_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Outline secondary call-to-action shown on every slide.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_psm_hero_slides",
+            "label": "Slides",
+            "name": "hero_slides",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Carousel slides. Leave empty to use the default five slides on the front end.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 6,
+            "collapsed": "field_psm_hero_slide_title_1",
+            "button_label": "Add Slide",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_psm_hero_slide_kicker",
+                    "label": "Kicker",
+                    "name": "slide_kicker",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Small line above the heading.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_hero_slide_title_1",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Welcome to the",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_hero_slides"
+                },
+                {
+                    "key": "field_psm_hero_slide_title_1",
+                    "label": "Heading Line 1",
+                    "name": "slide_title_1",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "First line of the slide heading. Required for the slide to appear.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Port St Mary",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_hero_slides"
+                },
+                {
+                    "key": "field_psm_hero_slide_title_2",
+                    "label": "Heading Line 2",
+                    "name": "slide_title_2",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Second line of the heading (larger text).",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_hero_slide_title_1",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Commissioners",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_hero_slides"
+                },
+                {
+                    "key": "field_psm_hero_slide_ribbon",
+                    "label": "Ribbon",
+                    "name": "slide_ribbon",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Red ribbon label below the heading.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_hero_slide_title_1",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Caring for our village together",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_hero_slides"
+                },
+                {
+                    "key": "field_psm_hero_slide_intro",
+                    "label": "Intro",
+                    "name": "slide_intro",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Short description paragraph.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_hero_slide_title_1",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 3,
+                    "new_lines": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_psm_hero_slides"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "home.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Home page hero slider. This field group appears first in the page editor.",
+    "show_in_rest": 0,
+    "modified": 1780435200
+}

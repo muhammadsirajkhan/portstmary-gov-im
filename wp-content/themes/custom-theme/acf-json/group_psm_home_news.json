@@ -1,0 +1,160 @@
+{
+    "key": "group_psm_home_news",
+    "title": "Home — News",
+    "fields": [
+        {
+            "key": "field_psm_news_badge",
+            "label": "Badge",
+            "name": "news_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small label above the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Community News",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_news_title",
+            "label": "Heading",
+            "name": "news_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main section heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Latest News & Updates",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_news_intro",
+            "label": "Intro Text",
+            "name": "news_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro shown below the heading. Use a blank line between paragraphs.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Stay up to date with the latest announcements, community stories, and service updates from Port St Mary Commissioners.\r\n\r\nBrowse recent news below or view the full archive for meetings, events, and village initiatives.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_news_items",
+            "label": "News Items",
+            "name": "news_items",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "Optional. Pick specific news items. Leave empty to show the latest automatically.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "psm_news"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": 0,
+            "max": 0,
+            "allow_in_bindings": 0,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_psm_news_limit",
+            "label": "Auto News Limit",
+            "name": "news_limit",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Number of latest news items when none are selected above.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 4,
+            "min": 1,
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": 1,
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_news_button",
+            "label": "Button",
+            "name": "news_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Footer call-to-action button.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "home.php"
+            }
+        ]
+    ],
+    "menu_order": 60,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "News carousel section on the home page.",
+    "show_in_rest": 0,
+    "modified": 1749340800
+}

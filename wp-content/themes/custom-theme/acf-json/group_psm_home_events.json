@@ -1,0 +1,160 @@
+{
+    "key": "group_psm_home_events",
+    "title": "Home — Events",
+    "fields": [
+        {
+            "key": "field_psm_events_badge",
+            "label": "Badge",
+            "name": "events_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small label above the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Community Events",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_events_title",
+            "label": "Heading",
+            "name": "events_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main section heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Upcoming Events",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_events_intro",
+            "label": "Intro Text",
+            "name": "events_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro shown below the heading. Use a blank line between paragraphs.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_events_items",
+            "label": "Events",
+            "name": "events_items",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "Optional. Pick specific events. Leave empty to show upcoming events automatically.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "psm_event"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": 0,
+            "max": 0,
+            "allow_in_bindings": 0,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_psm_events_limit",
+            "label": "Auto Event Limit",
+            "name": "events_limit",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Number of upcoming events when none are selected above.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 3,
+            "min": 1,
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": 1,
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_events_button",
+            "label": "Button",
+            "name": "events_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Footer call-to-action button.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "home.php"
+            }
+        ]
+    ],
+    "menu_order": 50,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Events section on the home page.",
+    "show_in_rest": 0,
+    "modified": 1749168000
+}

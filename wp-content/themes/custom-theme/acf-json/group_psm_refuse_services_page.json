@@ -1,0 +1,483 @@
+{
+    "key": "group_psm_refuse_services_page",
+    "title": "Refuse Services Page",
+    "fields": [
+        {
+            "key": "field_psm_refuse_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_refuse",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Welcome to Port St Mary Commissioners",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_title_refuse",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Refuse Services",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_refuse",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Supporting a Cleaner Environment",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_intro_refuse",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Information about refuse collection, recycling, and keeping Port St Mary clean and sustainable.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_inner_banner_image_refuse",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_refuse_tab_rows",
+            "label": "Content Rows",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_refuse_rows",
+            "label": "Content Rows",
+            "name": "refuse_rows",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use the default refuse sections on the front end. Layout alternates automatically (white/image left, then grey/image right). When rows are added, only filled fields display.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_refuse_row_title",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_psm_refuse_row_title",
+                    "label": "Heading",
+                    "name": "refuse_row_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Row heading. Required for the row to appear.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Keeping Port St Mary Clean & Sustainable",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_refuse_rows"
+                },
+                {
+                    "key": "field_psm_refuse_row_image",
+                    "label": "Image",
+                    "name": "refuse_row_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Single row image.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_refuse_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_psm_refuse_rows"
+                },
+                {
+                    "key": "field_psm_refuse_row_intro",
+                    "label": "Intro Text",
+                    "name": "refuse_row_intro",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Main body copy for the row.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_refuse_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "parent_repeater": "field_psm_refuse_rows"
+                },
+                {
+                    "key": "field_psm_refuse_row_hours_title",
+                    "label": "Opening Times Heading",
+                    "name": "refuse_row_hours_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Optional. Leave blank to use \"Opening Times\".",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_refuse_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Opening Times",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_refuse_rows"
+                },
+                {
+                    "key": "field_psm_refuse_row_hours_label",
+                    "label": "Hours Label",
+                    "name": "refuse_row_hours_label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Left side of the hours row.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_refuse_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "(as at 12th August 2021)",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_refuse_rows"
+                },
+                {
+                    "key": "field_psm_refuse_row_hours_value",
+                    "label": "Hours Value",
+                    "name": "refuse_row_hours_value",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Right side of the hours row.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_refuse_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Daily: 10.00 to 4.00",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_refuse_rows"
+                },
+                {
+                    "key": "field_psm_refuse_row_hours_note",
+                    "label": "Hours Note",
+                    "name": "refuse_row_hours_note",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Short note below the hours row.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_refuse_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Gate shuts 10 minutes before closure time",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_refuse_rows"
+                },
+                {
+                    "key": "field_psm_refuse_row_closed_note",
+                    "label": "Closed Note",
+                    "name": "refuse_row_closed_note",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Holiday / closure information.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_refuse_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 3,
+                    "new_lines": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_psm_refuse_rows"
+                },
+                {
+                    "key": "field_psm_refuse_row_subheading",
+                    "label": "Subheading",
+                    "name": "refuse_row_subheading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Optional subheading below the main content.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_refuse_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Beach Clean Waste",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_refuse_rows"
+                },
+                {
+                    "key": "field_psm_refuse_row_extra_content",
+                    "label": "Extra Content",
+                    "name": "refuse_row_extra_content",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Optional content below the subheading.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_refuse_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "parent_repeater": "field_psm_refuse_rows"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-refuse-services.php"
+            }
+        ]
+    ],
+    "menu_order": 16,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner and refuse content rows for the refuse services page.",
+    "show_in_rest": 0,
+    "modified": 1780694400
+}

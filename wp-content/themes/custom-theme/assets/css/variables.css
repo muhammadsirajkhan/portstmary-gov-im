@@ -1,0 +1,94 @@
+/* Port St Mary Commissioners — design tokens */
+:root {
+    --psm-red: #d71921;
+    --psm-red-dark: #b8141b;
+    --psm-yellow: #ffd200;
+    --psm-black: #111111;
+    --psm-gray-dark: #333333;
+    --psm-gray: #5c5c5c;
+    --psm-gray-light: #f8f9fa;
+    --psm-white: #ffffff;
+    --psm-topbar: #1a1a1a;
+
+    --primary-color: var(--psm-red);
+    --secondary-color: var(--psm-black);
+    --accent-color: var(--psm-red);
+    --text-light: var(--psm-white);
+    --text-dark: var(--psm-black);
+    --text-muted: var(--psm-gray);
+    --background-light: var(--psm-white);
+    --background-muted: var(--psm-gray-light);
+    --footer-bg: var(--psm-black);
+    --border-color: rgba(0, 0, 0, 0.08);
+
+    --font-heading: "Montserrat", system-ui, sans-serif;
+    --font-body: "Montserrat", system-ui, sans-serif;
+    --font-1: var(--font-heading);
+    --font-2: var(--font-body);
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.375rem;
+    --font-size-28: 1.75rem;
+    --font-size-30: 1.875rem;
+    --font-size-36: 2.25rem;
+    --font-size-3xl: 2.5rem;
+    --font-size-50: 3.125rem;
+    --font-size-4xl: 3.75rem;
+    --font-size-5xl: 4.5rem;
+    --font-size-6xl: 5rem;
+    --font-size-7xl: 5.5rem;
+
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+
+    --line-height-one: 1.1;
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.6;
+    --line-height-relaxed: 1.75;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --spacing-4xl: 80px;
+    --spacing-5xl: 100px;
+    --spacing-6xl: 120px;
+
+    --border-radius-sm: 6px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 14px;
+    --border-radius-xl: 20px;
+    --border-radius-full: 999px;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.1);
+
+    --transition-fast: 0.15s;
+    --transition-normal: 0.3s;
+    --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+
+    --container-max: 1700px;
+    --header-height: 100px;
+    --topbar-height: 40px;
+
+    --btn-primary-bg: var(--psm-red);
+    --btn-primary-hover: var(--psm-red-dark);
+}

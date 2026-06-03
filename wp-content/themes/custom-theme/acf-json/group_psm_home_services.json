@@ -1,0 +1,218 @@
+{
+    "key": "group_psm_home_services",
+    "title": "Home — Services",
+    "fields": [
+        {
+            "key": "field_psm_svc_badge",
+            "label": "Badge",
+            "name": "services_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small label above the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Services Port St Mary Commissioners",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_svc_title",
+            "label": "Heading",
+            "name": "services_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main section heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Services for Residents",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_svc_intro",
+            "label": "Intro Text",
+            "name": "services_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro shown below the heading. Use a blank line between paragraphs.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_svc_cards",
+            "label": "Service Cards",
+            "name": "services_cards",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_svc_card_title",
+            "button_label": "Add Service Card",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_psm_svc_card_image",
+                    "label": "Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Alt text uses the card title automatically.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_psm_svc_cards"
+                },
+                {
+                    "key": "field_psm_svc_card_title",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_svc_cards"
+                },
+                {
+                    "key": "field_psm_svc_card_excerpt",
+                    "label": "Description",
+                    "name": "excerpt",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Optional. Shown when the card is hovered.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 3,
+                    "new_lines": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_psm_svc_cards"
+                },
+                {
+                    "key": "field_psm_svc_card_link",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_psm_svc_cards"
+                }
+            ]
+        },
+        {
+            "key": "field_psm_svc_button",
+            "label": "Button",
+            "name": "services_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Footer call-to-action button.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "home.php"
+            }
+        ]
+    ],
+    "menu_order": 40,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Services section on the home page.",
+    "show_in_rest": 0,
+    "modified": 1749081600
+}

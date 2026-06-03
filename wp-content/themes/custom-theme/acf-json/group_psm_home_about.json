@@ -1,0 +1,173 @@
+{
+    "key": "group_psm_home_about",
+    "title": "Home — About",
+    "fields": [
+        {
+            "key": "field_psm_about_image",
+            "label": "Image",
+            "name": "about_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Left column image. Alt text uses the heading automatically.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_about_badge",
+            "label": "Badge",
+            "name": "about_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small label above the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "About Port St Mary Commissioners",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_about_title",
+            "label": "Heading",
+            "name": "about_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main section heading. Also used as the image alt text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "A Council at the Heart of the Community",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_about_lead",
+            "label": "Lead Text",
+            "name": "about_lead",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro paragraph shown below the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_about_body",
+            "label": "Body Content",
+            "name": "about_body",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Additional paragraphs below the lead text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_psm_about_closing",
+            "label": "Closing Line",
+            "name": "about_closing",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Optional final line below the body content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Enjoy and thanks for visiting...",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_about_button",
+            "label": "Button",
+            "name": "about_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Primary call-to-action button.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "home.php"
+            }
+        ]
+    ],
+    "menu_order": 30,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "About section below quick links on the home page.",
+    "show_in_rest": 0,
+    "modified": 1748908800
+}
