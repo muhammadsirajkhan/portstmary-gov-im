@@ -28,17 +28,52 @@ function psm_is_news_page($post_id = 0) {
 /**
  * Current pagination page for a static News page.
  *
+ * Static WordPress pages use the `page` query var (/news/page/2/).
+ *
  * @return int
  */
 function psm_get_news_page_current() {
-    $paged = (int) get_query_var('paged');
-    if ($paged > 0) {
-        return $paged;
+    $current = (int) get_query_var('page');
+    if ($current > 0) {
+        return $current;
     }
 
-    $page = (int) get_query_var('page');
-    return $page > 0 ? $page : 1;
+    $current = (int) get_query_var('paged');
+    if ($current > 0) {
+        return $current;
+    }
+
+    if (isset($_GET['page'])) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        $current = (int) wp_unslash($_GET['page']); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        if ($current > 0) {
+            return $current;
+        }
+    }
+
+    return 1;
 }
+
+/**
+ * Prevent canonical redirects from breaking News page pagination URLs.
+ *
+ * @param string|false $redirect_url  Redirect URL.
+ * @param string       $requested_url Requested URL.
+ * @return string|false
+ */
+function psm_news_page_disable_canonical_redirect($redirect_url, $requested_url) {
+    unset($requested_url);
+
+    if (!is_page() || !psm_is_news_page()) {
+        return $redirect_url;
+    }
+
+    if (psm_get_news_page_current() > 1) {
+        return false;
+    }
+
+    return $redirect_url;
+}
+add_filter('redirect_canonical', 'psm_news_page_disable_canonical_redirect', 10, 2);
 
 /**
  * Archive section header from ACF or static defaults.
@@ -149,7 +184,18 @@ function psm_get_paged_page_link($page_num, $post_id = 0) {
         return $url;
     }
 
-    return trailingslashit($url) . user_trailingslashit($page_num, 'page');
+    global $wp_rewrite;
+
+    if ($wp_rewrite && $wp_rewrite->using_permalinks()) {
+        $pagination_base = $wp_rewrite->pagination_base ?: 'page';
+
+        return user_trailingslashit(
+            trailingslashit($url) . $pagination_base . '/' . $page_num,
+            'paged'
+        );
+    }
+
+    return add_query_arg('page', $page_num, $url);
 }
 
 /**

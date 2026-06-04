@@ -202,10 +202,27 @@ function psm_home_news_section_defaults() {
  * @return array{url: string, title: string, target: string}
  */
 function psm_news_default_button() {
-    $archive = get_post_type_archive_link('psm_news');
+    $pages = get_pages(
+        array(
+            'meta_key'   => '_wp_page_template',
+            'meta_value' => 'page-news.php',
+            'number'     => 1,
+        )
+    );
+
+    if (!empty($pages[0])) {
+        $url = get_permalink($pages[0]->ID);
+        if ($url) {
+            return array(
+                'url'    => $url,
+                'title'  => __('View All News', 'cmd-theme'),
+                'target' => '',
+            );
+        }
+    }
 
     return array(
-        'url'    => $archive ? $archive : '#',
+        'url'    => '#',
         'title'  => __('View All News', 'cmd-theme'),
         'target' => '',
     );

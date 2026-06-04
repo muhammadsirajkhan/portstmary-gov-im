@@ -20,16 +20,16 @@ get_header();
         array(
             'image'      => psm_theme_image('news-banner.jpg'),
             'image_seed' => 'psm-news-banner',
-            'breadcrumb' => array(
-                array(
-                    'label' => __('Home', 'cmd-theme'),
-                    'url'   => home_url('/'),
-                ),
-                array(
-                    'label' => __('News & Updates', 'cmd-theme'),
-                    'url'   => '',
-                ),
-            ),
+            // 'breadcrumb' => array(
+            //     array(
+            //         'label' => __('Home', 'cmd-theme'),
+            //         'url'   => home_url('/'),
+            //     ),
+            //     array(
+            //         'label' => __('News & Updates', 'cmd-theme'),
+            //         'url'   => '',
+            //     ),
+            // ),
         )
     );
 

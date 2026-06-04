@@ -34,7 +34,7 @@ function psm_register_news_post_type() {
             'show_ui'             => true,
             'show_in_menu'        => true,
             'show_in_rest'        => true,
-            'has_archive'         => true,
+            'has_archive'         => false,
             'menu_icon'           => 'dashicons-megaphone',
             'menu_position'       => 22,
             'supports'            => array('title', 'thumbnail', 'editor'),
