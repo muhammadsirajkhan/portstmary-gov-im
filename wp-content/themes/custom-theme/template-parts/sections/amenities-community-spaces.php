@@ -23,7 +23,7 @@ $img_sub  = psm_theme_image('amenities-community-sub.jpg') ?: '';
                     'image_main_alt'     => __('Community spaces in Port St Mary', 'cmd-theme'),
                     'image_sub_alt'      => __('Harbour and public amenities', 'cmd-theme'),
                     'show_experience'    => false,
-                    'show_welcome_badge' => true,
+                    'show_welcome_badge' => false,
                     'show_accent'        => false,
                 )
             );

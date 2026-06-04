@@ -15,6 +15,7 @@ $args = wp_parse_args(
         'layout'     => 'card-left',
         'title'      => '',
         'text'       => '',
+        'text_extra' => '',
         'list_items' => array(),
         'read_more'  => array(),
         'image'      => '',
@@ -39,12 +40,14 @@ $alt    = $args['title'];
             array(
                 'title'      => $args['title'],
                 'text'       => $args['text'],
+                'text_extra' => $args['text_extra'],
                 'list_items' => $args['list_items'],
                 'read_more'  => $args['read_more'],
             )
         );
         ?>
         <div class="psm-amenities-facility__media">
+            <span class="psm-amenities-facility__accent" aria-hidden="true"></span>
             <img
                 class="psm-amenities-facility__image"
                 src="<?php echo esc_url($image); ?>"

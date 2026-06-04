@@ -5442,7 +5442,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 /* ----- Public Amenities: Community Spaces & Facilities ----- */
 .psm-amenities-facilities {
     background: #ffffff;
-    padding: 0 0 80px;
+    padding: 80px 0 100px;
 }
 
 .psm-section-header--amenities-facilities {
@@ -5450,7 +5450,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 }
 
 .psm-section-header--amenities-facilities .psm-section-header__title {
-    font-size: 42px;
+    font-size: 52px;
 }
 
 .psm-amenities-facilities__rows {
@@ -5461,12 +5461,29 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 
 .psm-amenities-facilities__divider {
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin: 40px 0;
+    gap: 24px;
+    margin: 48px 0;
+}
+
+.psm-amenities-facilities__divider-mark {
+    flex: 1;
+    max-width: 280px;
+    height: 20px;
+    background: repeating-linear-gradient(
+        115deg,
+        transparent,
+        transparent 6px,
+        #d8d8d8 6px,
+        #d8d8d8 14px
+    );
+    opacity: 0.85;
 }
 
 .psm-amenities-facilities__divider .psm-welcome-badge {
     position: static;
+    flex-shrink: 0;
     transform: none;
     width: 88px;
     height: 88px;
@@ -5475,13 +5492,13 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 
 .psm-amenities-facility__inner {
     display: grid;
-    grid-template-columns: minmax(0, 0.44fr) minmax(0, 0.56fr);
+    grid-template-columns: minmax(0, 0.32fr) minmax(0, 0.68fr);
     align-items: center;
     gap: 0;
 }
 
 .psm-amenities-facility--card-right .psm-amenities-facility__inner {
-    grid-template-columns: minmax(0, 0.56fr) minmax(0, 0.44fr);
+    grid-template-columns: minmax(0, 0.68fr) minmax(0, 0.32fr);
 }
 
 .psm-amenities-facility--card-right .psm-amenities-facility-card {
@@ -5495,22 +5512,24 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 .psm-amenities-facility-card {
     position: relative;
     z-index: 2;
-    margin-right: -72px;
-    padding: 32px 28px 28px;
+    margin-right: -80px;
+    padding: 36px 32px 32px;
     background: #ffffff;
-    border-radius: 16px;
-    border-left: 3px solid #e31e24;
-    border-bottom: 3px solid #e31e24;
+    border-radius: 20px;
+    border: 2px solid #e31e24;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .psm-amenities-facility--card-right .psm-amenities-facility-card {
     margin-right: 0;
-    margin-left: -72px;
+    margin-left: -80px;
 }
 
 .psm-amenities-facility-card__icon {
-    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
 }
 
 .psm-amenities-facility-card__icon img {
@@ -5520,34 +5539,67 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     object-fit: contain;
 }
 
+.psm-amenities-facility-card__kicker {
+    margin: 0 0 14px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #e31e24;
+}
+
+.psm-amenities-facility-card__kicker span {
+    margin: 0 6px;
+}
+
 .psm-amenities-facility-card__title {
-    margin: 0 0 12px;
+    margin: 0 0 16px;
     font-size: 22px;
     font-weight: 800;
-    line-height: 1.2;
+    line-height: 1.25;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: #111111;
 }
 
-.psm-amenities-facility-card__title-dot {
-    color: #e31e24;
-}
-
 .psm-amenities-facility-card__text {
-    margin: 0 0 16px;
+    margin: 0 0 14px;
     font-size: 15px;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.65;
     color: #666666;
 }
 
+.psm-amenities-facility-card__text:last-of-type {
+    margin-bottom: 0;
+}
+
 .psm-amenities-facility-card .psm-housing-checklist {
-    margin-top: 8px;
+    margin: 20px auto 0;
+    max-width: 420px;
+    text-align: left;
+}
+
+.psm-amenities-facility-card .psm-housing-checklist--facility-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 20px;
+}
+
+.psm-amenities-facility-card .psm-housing-checklist--facility-grid-5 .psm-housing-checklist__item:nth-child(5) {
+    grid-column: 1 / -1;
+    justify-content: center;
+}
+
+.psm-amenities-facility-card .psm-housing-checklist__label {
+    font-size: 14px;
 }
 
 .psm-amenities-facility-card__cta {
-    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
 }
 
 .psm-amenities-facility__media {
@@ -5556,12 +5608,30 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     min-width: 0;
 }
 
+.psm-amenities-facility__accent {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    z-index: 2;
+    width: 10px;
+    height: 58%;
+    border-radius: 999px;
+    background: #e31e24;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.psm-amenities-facility--card-right .psm-amenities-facility__accent {
+    right: auto;
+    left: 12px;
+}
+
 .psm-amenities-facility__image {
     display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-    border-radius: 24px;
+    border-radius: 20px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
 

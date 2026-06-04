@@ -16,9 +16,10 @@ $rows = psm_get_amenities_facility_rows();
             'template-parts/components/section-header',
             null,
             array(
-                'badge'       => __('Our Facilities', 'cmd-theme'),
-                'badge_style' => 'red',
+                'badge'       => __('Port St Mary Commissioners', 'cmd-theme'),
+                'badge_style' => 'pill',
                 'title'       => __('Community Spaces & Facilities', 'cmd-theme'),
+                'title_dot'   => 'period',
                 'heading_id'  => 'psm-amenities-facilities-heading',
                 'class'       => 'psm-section-header--amenities-facilities',
             )
@@ -29,7 +30,9 @@ $rows = psm_get_amenities_facility_rows();
             <?php foreach ($rows as $index => $row) : ?>
                 <?php if ($index > 0) : ?>
                     <div class="psm-amenities-facilities__divider" aria-hidden="true">
+                        <span class="psm-amenities-facilities__divider-mark"></span>
                         <?php get_template_part('template-parts/components/welcome-badge'); ?>
+                        <span class="psm-amenities-facilities__divider-mark"></span>
                     </div>
                 <?php endif; ?>
                 <?php get_template_part('template-parts/components/amenities-facility-row', null, $row); ?>

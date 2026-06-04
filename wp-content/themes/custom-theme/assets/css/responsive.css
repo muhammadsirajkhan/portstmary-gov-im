@@ -416,12 +416,27 @@
 
     .psm-amenities-facility-card,
     .psm-amenities-facility--card-right .psm-amenities-facility-card {
-        margin: 0;
         order: 1;
+        margin: 0;
+        max-width: none;
     }
 
-    .psm-amenities-facility__media {
+    .psm-amenities-facility__media,
+    .psm-amenities-facility--card-right .psm-amenities-facility__media {
         order: 2;
+    }
+
+    .psm-amenities-facility-card .psm-housing-checklist--facility-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .psm-amenities-facility-card .psm-housing-checklist--facility-grid-5 .psm-housing-checklist__item:nth-child(5) {
+        grid-column: auto;
+        justify-content: flex-start;
+    }
+
+    .psm-amenities-facility__accent {
+        height: 48%;
     }
 
     .psm-jobs-work__grid {
@@ -1232,11 +1247,11 @@
 
     .psm-amenities-intro,
     .psm-amenities-facilities {
-        padding: 56px 0;
+        padding: 56px 0 72px;
     }
 
     .psm-amenities-facilities {
-        padding-top: 0;
+        padding-top: 56px;
     }
 
     .psm-section-header--amenities-intro .psm-section-header__title,
@@ -1245,7 +1260,12 @@
     }
 
     .psm-amenities-facilities__divider {
-        margin: 28px 0;
+        gap: 16px;
+        margin: 32px 0;
+    }
+
+    .psm-amenities-facilities__divider-mark {
+        max-width: 80px;
     }
 
     .psm-amenities-facilities__divider .psm-welcome-badge {

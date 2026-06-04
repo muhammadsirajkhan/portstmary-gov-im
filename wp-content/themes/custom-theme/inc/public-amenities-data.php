@@ -40,13 +40,15 @@ function psm_get_amenities_facility_rows() {
             'layout'     => 'card-left',
             'title'      => __('Parks & Open Spaces', 'cmd-theme'),
             'text'       => __(
-                'Enjoy well-kept parks and open spaces for recreation, events, and relaxation throughout Port St Mary.',
+                'Our parks and public open spaces provide opportunities for relaxation, recreation, and community enjoyment in a safe and attractive environment.',
                 'cmd-theme'
             ),
             'list_items' => array(
-                __('Play areas and green spaces', 'cmd-theme'),
-                __('Seasonal planting and maintenance', 'cmd-theme'),
-                __('Accessible paths and seating', 'cmd-theme'),
+                __('Landscaped Green Spaces', 'cmd-theme'),
+                __('Family-Friendly Areas', 'cmd-theme'),
+                __('Coastal Walks', 'cmd-theme'),
+                __('Seating & Picnic Areas', 'cmd-theme'),
+                __('Community Recreation Spaces', 'cmd-theme'),
             ),
             'read_more'  => array(
                 'label' => __('Read More', 'cmd-theme'),
@@ -59,7 +61,11 @@ function psm_get_amenities_facility_rows() {
             'layout'     => 'card-right',
             'title'      => __('Community Allotments', 'cmd-theme'),
             'text'       => __(
-                'Community allotments provide residents with space to grow produce, support local food initiatives, and enjoy outdoor activity in a shared setting.',
+                'Our community allotments offer residents the opportunity to cultivate produce in a peaceful, shared environment, supporting local food initiatives and outdoor activity.',
+                'cmd-theme'
+            ),
+            'text_extra' => __(
+                'Plots are managed in line with local guidelines to maintain a tidy, productive setting that benefits all allotment holders and the wider community.',
                 'cmd-theme'
             ),
             'list_items' => array(),
@@ -74,13 +80,14 @@ function psm_get_amenities_facility_rows() {
             'layout'     => 'card-left',
             'title'      => __('Parking Facilities', 'cmd-theme'),
             'text'       => __(
-                'Public parking supports access to the harbour, shops, and community facilities while helping manage traffic flow in the town centre.',
+                'Public parking areas are available throughout Port St Mary to support residents, visitors, and access to local amenities and coastal attractions.',
                 'cmd-theme'
             ),
             'list_items' => array(
-                __('Harbour and town centre parking', 'cmd-theme'),
-                __('Clear signage and marked bays', 'cmd-theme'),
-                __('Ongoing monitoring and maintenance', 'cmd-theme'),
+                __('Local Parking Guidance', 'cmd-theme'),
+                __('Coastal Access Parking', 'cmd-theme'),
+                __('Public Car Parks', 'cmd-theme'),
+                __('Accessibility Information', 'cmd-theme'),
             ),
             'read_more'  => array(
                 'label' => __('Read More', 'cmd-theme'),

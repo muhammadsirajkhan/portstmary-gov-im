@@ -28,16 +28,16 @@ get_header();
             'image'      => psm_theme_image('public-amenities-banner.jpg'),
             'image_seed' => 'psm-public-amenities-banner',
             'heading_id' => 'psm-public-amenities-page-title',
-            'breadcrumb' => array(
-                array(
-                    'label' => __('Home', 'cmd-theme'),
-                    'url'   => home_url('/'),
-                ),
-                array(
-                    'label' => __('Public Amenities', 'cmd-theme'),
-                    'url'   => '',
-                ),
-            ),
+            // 'breadcrumb' => array(
+            //     array(
+            //         'label' => __('Home', 'cmd-theme'),
+            //         'url'   => home_url('/'),
+            //     ),
+            //     array(
+            //         'label' => __('Public Amenities', 'cmd-theme'),
+            //         'url'   => '',
+            //     ),
+            // ),
         )
     );
 

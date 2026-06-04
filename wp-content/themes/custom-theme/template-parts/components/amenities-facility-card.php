@@ -5,8 +5,9 @@
  * @package CMD_Theme
  *
  * @var array $args {
- *     @type string   $title      Card heading (without period).
+ *     @type string   $title      Card heading.
  *     @type string   $text       Description paragraph.
+ *     @type string   $text_extra Optional second paragraph.
  *     @type string[] $list_items Optional checklist items.
  *     @type array    $read_more  { label, url }.
  * }
@@ -19,6 +20,7 @@ $args = wp_parse_args(
     array(
         'title'      => '',
         'text'       => '',
+        'text_extra' => '',
         'list_items' => array(),
         'read_more'  => array(),
     )
@@ -29,6 +31,14 @@ if (!$args['title']) {
 }
 
 $crest = psm_theme_image('header-logo.png') ?: psm_theme_image('logo-placeholder.svg');
+$list_count = count((array) $args['list_items']);
+$list_class = 'psm-housing-checklist';
+if ($list_count >= 4) {
+    $list_class .= ' psm-housing-checklist--facility-grid';
+}
+if (5 === $list_count) {
+    $list_class .= ' psm-housing-checklist--facility-grid-5';
+}
 ?>
 <article class="psm-amenities-facility-card">
     <div class="psm-amenities-facility-card__icon">
@@ -43,12 +53,20 @@ $crest = psm_theme_image('header-logo.png') ?: psm_theme_image('logo-placeholder
         >
     </div>
 
-    <h3 class="psm-amenities-facility-card__title">
-        <?php echo esc_html($args['title']); ?><span class="psm-amenities-facility-card__title-dot" aria-hidden="true">.</span>
-    </h3>
+    <p class="psm-amenities-facility-card__kicker">
+        <span aria-hidden="true">&bull;</span>
+        <?php esc_html_e('Port St Mary Commissioners', 'cmd-theme'); ?>
+        <span aria-hidden="true">&bull;</span>
+    </p>
+
+    <h3 class="psm-amenities-facility-card__title"><?php echo esc_html($args['title']); ?></h3>
 
     <?php if ($args['text']) : ?>
         <p class="psm-amenities-facility-card__text"><?php echo esc_html($args['text']); ?></p>
+    <?php endif; ?>
+
+    <?php if ($args['text_extra']) : ?>
+        <p class="psm-amenities-facility-card__text"><?php echo esc_html($args['text_extra']); ?></p>
     <?php endif; ?>
 
     <?php if (!empty($args['list_items'])) : ?>
@@ -57,7 +75,8 @@ $crest = psm_theme_image('header-logo.png') ?: psm_theme_image('logo-placeholder
             'template-parts/components/housing-check-list',
             null,
             array(
-                'items' => $args['list_items'],
+                'items'      => $args['list_items'],
+                'list_class' => $list_class,
             )
         );
         ?>
