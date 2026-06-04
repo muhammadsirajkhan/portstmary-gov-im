@@ -5411,6 +5411,16 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     align-items: center;
 }
 
+@media (min-width: 992px) {
+    .psm-amenities-intro__grid--image-right .psm-housing-zigzag-media {
+        order: 2;
+    }
+
+    .psm-amenities-intro__grid--image-right .psm-amenities-intro__content {
+        order: 1;
+    }
+}
+
 .psm-section-header--amenities-intro {
     margin-bottom: 24px;
     text-align: left;
@@ -5516,9 +5526,10 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     padding: 36px 32px 32px;
     background: #ffffff;
     border-radius: 20px;
-    border: 2px solid #e31e24;
+    outline: 2px solid #e31e24;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     text-align: center;
+    outline-offset: -10px;
 }
 
 .psm-amenities-facility--card-right .psm-amenities-facility-card {
@@ -5577,7 +5588,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 
 .psm-amenities-facility-card .psm-housing-checklist {
     margin: 20px auto 0;
-    max-width: 420px;
+    max-width: 460px;
     text-align: left;
 }
 
@@ -5629,10 +5640,10 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 .psm-amenities-facility__image {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    /* aspect-ratio: 16 / 9; */
+    /* object-fit: cover; */
+    /* border-radius: 20px; */
+    /* box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12); */
 }
 
 .psm-page-public-amenities .psm-news {

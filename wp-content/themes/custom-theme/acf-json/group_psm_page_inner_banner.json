@@ -160,13 +160,6 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-public-amenities.php"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
                 "value": "page-where-to-eat.php"
             }
         ]

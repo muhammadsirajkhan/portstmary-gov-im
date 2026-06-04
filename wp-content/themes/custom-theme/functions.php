@@ -56,6 +56,8 @@ require get_template_directory() . '/inc/jobs-helpers.php';
 require get_template_directory() . '/inc/acf-jobs-defaults.php';
 require get_template_directory() . '/inc/acf-job-cpt-defaults.php';
 require get_template_directory() . '/inc/public-amenities-data.php';
+require get_template_directory() . '/inc/public-amenities-helpers.php';
+require get_template_directory() . '/inc/acf-public-amenities-defaults.php';
 require get_template_directory() . '/inc/boat-park-data.php';
 require get_template_directory() . '/inc/consultations-data.php';
 require get_template_directory() . '/inc/elections-data.php';

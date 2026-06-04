@@ -1,6 +1,6 @@
 <?php
 /**
- * Public Amenities page content.
+ * Public Amenities page — static content fallbacks.
  *
  * @package CMD_Theme
  */
@@ -8,33 +8,86 @@
 defined('ABSPATH') || exit;
 
 /**
- * Supporting Community Spaces intro copy.
+ * Default inner banner values for the Public Amenities page.
  *
- * @return string[]
+ * @return array{kicker: string, title: string, ribbon: string, intro: string}
  */
-function psm_get_amenities_community_spaces_paragraphs() {
+function psm_public_amenities_inner_banner_defaults() {
     return array(
-        __(
-            'Port St Mary Commissioners maintain parks, open spaces, allotments, and public facilities that support everyday life and community wellbeing across the town.',
-            'cmd-theme'
-        ),
-        __(
-            'Our team works to keep these spaces clean, accessible, and welcoming for residents and visitors — from harbour walks and play areas to parking and community gardens.',
-            'cmd-theme'
-        ),
-        __(
-            'Explore the facilities below to learn more about what we provide and how you can use or access public amenities in Port St Mary.',
+        'kicker' => __('Welcome to Port St Mary Commissioners', 'cmd-theme'),
+        'title'  => __('Public Amenities', 'cmd-theme'),
+        'ribbon' => __('Facilities for Modern Day Living', 'cmd-theme'),
+        'intro'  => __(
+            'Discover parks, allotments, parking, and public facilities maintained for the Port St Mary community.',
             'cmd-theme'
         ),
     );
 }
 
 /**
- * Community Spaces & Facilities alternating rows.
+ * Default Supporting Community Spaces section.
+ *
+ * @return array{
+ *     image: string,
+ *     layout: string,
+ *     badge: string,
+ *     title: string,
+ *     paragraphs: string[]
+ * }
+ */
+function psm_public_amenities_intro_static() {
+    return array(
+        'image'      => psm_theme_image('amenities-community-main.jpg') ?: '',
+        'layout'     => 'image-left',
+        'badge'      => __('Public Amenities', 'cmd-theme'),
+        'title'      => __('Supporting Community Spaces', 'cmd-theme'),
+        'paragraphs' => array(
+            __(
+                'Port St Mary Commissioners maintain parks, open spaces, allotments, and public facilities that support everyday life and community wellbeing across the town.',
+                'cmd-theme'
+            ),
+            __(
+                'Our team works to keep these spaces clean, accessible, and welcoming for residents and visitors — from harbour walks and play areas to parking and community gardens.',
+                'cmd-theme'
+            ),
+            __(
+                'Explore the facilities below to learn more about what we provide and how you can use or access public amenities in Port St Mary.',
+                'cmd-theme'
+            ),
+        ),
+    );
+}
+
+/**
+ * Intro body textarea default (one paragraph per line).
+ *
+ * @return string
+ */
+function psm_public_amenities_intro_body_default_lines() {
+    return implode(
+        "\n",
+        psm_public_amenities_intro_static()['paragraphs']
+    );
+}
+
+/**
+ * Default Community Spaces & Facilities section header.
+ *
+ * @return array{badge: string, title: string}
+ */
+function psm_public_amenities_facilities_header_static() {
+    return array(
+        'badge' => __('Port St Mary Commissioners', 'cmd-theme'),
+        'title' => __('Community Spaces & Facilities', 'cmd-theme'),
+    );
+}
+
+/**
+ * Default facility rows for the Public Amenities page.
  *
  * @return array<int, array<string, mixed>>
  */
-function psm_get_amenities_facility_rows() {
+function psm_public_amenities_facility_rows_static() {
     return array(
         array(
             'layout'     => 'card-left',
@@ -43,6 +96,7 @@ function psm_get_amenities_facility_rows() {
                 'Our parks and public open spaces provide opportunities for relaxation, recreation, and community enjoyment in a safe and attractive environment.',
                 'cmd-theme'
             ),
+            'text_extra' => '',
             'list_items' => array(
                 __('Landscaped Green Spaces', 'cmd-theme'),
                 __('Family-Friendly Areas', 'cmd-theme'),
@@ -83,6 +137,7 @@ function psm_get_amenities_facility_rows() {
                 'Public parking areas are available throughout Port St Mary to support residents, visitors, and access to local amenities and coastal attractions.',
                 'cmd-theme'
             ),
+            'text_extra' => '',
             'list_items' => array(
                 __('Local Parking Guidance', 'cmd-theme'),
                 __('Coastal Access Parking', 'cmd-theme'),
@@ -97,4 +152,38 @@ function psm_get_amenities_facility_rows() {
             'image_seed' => 'psm-amenities-parking',
         ),
     );
+}
+
+/**
+ * Default ACF repeater rows for facility rows.
+ *
+ * @return array<int, array<string, mixed>>
+ */
+function psm_public_amenities_facility_rows_default_acf() {
+    $rows = array();
+
+    foreach (psm_public_amenities_facility_rows_static() as $row) {
+        $benefits = '';
+        if (!empty($row['list_items']) && is_array($row['list_items'])) {
+            $benefits = implode("\n", $row['list_items']);
+        }
+
+        $button = isset($row['read_more']) && is_array($row['read_more']) ? $row['read_more'] : array();
+
+        $rows[] = array(
+            'amenities_row_layout'     => isset($row['layout']) ? (string) $row['layout'] : 'card-left',
+            'amenities_row_title'      => isset($row['title']) ? (string) $row['title'] : '',
+            'amenities_row_text'       => isset($row['text']) ? (string) $row['text'] : '',
+            'amenities_row_text_extra' => isset($row['text_extra']) ? (string) $row['text_extra'] : '',
+            'amenities_row_benefits'   => $benefits,
+            'amenities_row_button'     => array(
+                'title'  => isset($button['label']) ? (string) $button['label'] : '',
+                'url'    => isset($button['url']) ? (string) $button['url'] : '',
+                'target' => '',
+            ),
+            'amenities_row_image'      => isset($row['image']) ? (string) $row['image'] : '',
+        );
+    }
+
+    return $rows;
 }

@@ -47,7 +47,7 @@ $alt    = $args['title'];
         );
         ?>
         <div class="psm-amenities-facility__media">
-            <span class="psm-amenities-facility__accent" aria-hidden="true"></span>
+            <!-- <span class="psm-amenities-facility__accent" aria-hidden="true"></span> -->
             <img
                 class="psm-amenities-facility__image"
                 src="<?php echo esc_url($image); ?>"

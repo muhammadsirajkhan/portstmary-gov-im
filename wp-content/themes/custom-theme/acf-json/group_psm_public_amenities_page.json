@@ -1,0 +1,574 @@
+{
+    "key": "group_psm_public_amenities_page",
+    "title": "Public Amenities Page",
+    "fields": [
+        {
+            "key": "field_psm_pa_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_pa",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Welcome to Port St Mary Commissioners",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_title_pa",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Public Amenities",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_pa",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Facilities for Modern Day Living",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_intro_pa",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Discover parks, allotments, parking, and public facilities maintained for the Port St Mary community.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_inner_banner_image_pa",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_pa_tab_intro",
+            "label": "Supporting Community Spaces",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_pa_intro_image",
+            "label": "Image",
+            "name": "amenities_intro_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Single image for the zigzag section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_pa_intro_layout",
+            "label": "Image Position",
+            "name": "amenities_intro_layout",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Which side the image appears on (desktop).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "image-left": "Image left",
+                "image-right": "Image right"
+            },
+            "default_value": "image-left",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_pa_intro_badge",
+            "label": "Badge",
+            "name": "amenities_intro_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Red eyebrow label above the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Public Amenities",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_pa_intro_title",
+            "label": "Heading",
+            "name": "amenities_intro_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Section heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Supporting Community Spaces",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_pa_intro_body",
+            "label": "Body Text",
+            "name": "amenities_intro_body",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro paragraphs. One paragraph per line.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_pa_intro_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 5,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_pa_tab_facilities",
+            "label": "Community Spaces & Facilities",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_pa_facilities_badge",
+            "label": "Section Badge",
+            "name": "amenities_facilities_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Pill label above the section heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Port St Mary Commissioners",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_pa_facilities_title",
+            "label": "Section Heading",
+            "name": "amenities_facilities_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Section heading (red period added in the theme).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Community Spaces & Facilities",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_pa_facility_rows",
+            "label": "Facility Rows",
+            "name": "amenities_facility_rows",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use default facility rows. Rows without a heading are hidden.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_pa_row_title",
+            "button_label": "Add Facility Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_psm_pa_row_layout",
+                    "label": "Layout",
+                    "name": "amenities_row_layout",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Card overlaps image from the left or right.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "card-left": "Card left",
+                        "card-right": "Card right"
+                    },
+                    "default_value": "card-left",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_psm_pa_facility_rows"
+                },
+                {
+                    "key": "field_psm_pa_row_title",
+                    "label": "Heading",
+                    "name": "amenities_row_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Row heading. Required for the row to appear.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Parks & Open Spaces",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_pa_facility_rows"
+                },
+                {
+                    "key": "field_psm_pa_row_image",
+                    "label": "Image",
+                    "name": "amenities_row_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Landscape row image.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_pa_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_psm_pa_facility_rows"
+                },
+                {
+                    "key": "field_psm_pa_row_text",
+                    "label": "Description",
+                    "name": "amenities_row_text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Main paragraph in the card.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_pa_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 3,
+                    "new_lines": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_psm_pa_facility_rows"
+                },
+                {
+                    "key": "field_psm_pa_row_text_extra",
+                    "label": "Extra Paragraph",
+                    "name": "amenities_row_text_extra",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Optional second paragraph.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_pa_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 3,
+                    "new_lines": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_psm_pa_facility_rows"
+                },
+                {
+                    "key": "field_psm_pa_row_benefits",
+                    "label": "Checklist",
+                    "name": "amenities_row_benefits",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Optional checklist items. One item per line.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_pa_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 5,
+                    "new_lines": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_psm_pa_facility_rows"
+                },
+                {
+                    "key": "field_psm_pa_row_button",
+                    "label": "Read More Link",
+                    "name": "amenities_row_button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Optional CTA button.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_pa_row_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_psm_pa_facility_rows"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-public-amenities.php"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner, supporting community spaces, and facility rows for the public amenities page.",
+    "show_in_rest": 0,
+    "modified": 1782595200
+}

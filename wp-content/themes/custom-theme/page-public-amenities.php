@@ -18,26 +18,8 @@ get_header();
         'template-parts/sections/inner-banner',
         null,
         array(
-            'kicker'     => __('Welcome to Port St Mary Commissioners', 'cmd-theme'),
-            'title'      => __('Public Amenities', 'cmd-theme'),
-            'ribbon'     => __('Facilities for Modern Day Living', 'cmd-theme'),
-            'intro'      => __(
-                'Discover parks, allotments, parking, and public facilities maintained for the Port St Mary community.',
-                'cmd-theme'
-            ),
             'image'      => psm_theme_image('public-amenities-banner.jpg'),
             'image_seed' => 'psm-public-amenities-banner',
-            'heading_id' => 'psm-public-amenities-page-title',
-            // 'breadcrumb' => array(
-            //     array(
-            //         'label' => __('Home', 'cmd-theme'),
-            //         'url'   => home_url('/'),
-            //     ),
-            //     array(
-            //         'label' => __('Public Amenities', 'cmd-theme'),
-            //         'url'   => '',
-            //     ),
-            // ),
         )
     );
 
