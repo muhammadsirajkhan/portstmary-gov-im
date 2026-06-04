@@ -109,6 +109,16 @@ function psm_body_class_home($classes) {
         $classes[] = 'psm-inner-page';
     }
 
+    if (is_singular('psm_news')) {
+        $classes[] = 'psm-inner-page';
+        $classes[] = 'psm-page-news-single';
+    }
+
+    if (is_singular('psm_event')) {
+        $classes[] = 'psm-inner-page';
+        $classes[] = 'psm-page-event-single';
+    }
+
     if (is_page_template('page-contact.php')) {
         $classes[] = 'psm-page-contact';
     }

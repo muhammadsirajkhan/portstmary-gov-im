@@ -67,12 +67,108 @@ function psm_parse_event_date_parts($date_raw) {
 }
 
 /**
- * Build event-card template args from a psm_event post.
+ * Full formatted event date label for single templates.
  *
  * @param int $post_id Event post ID.
+ * @return string
+ */
+function psm_get_event_date_label($post_id) {
+    $post_id = (int) $post_id;
+    if ($post_id <= 0) {
+        return '';
+    }
+
+    $date_raw = function_exists('get_field') ? get_field('event_date', $post_id) : '';
+    if (!$date_raw) {
+        return get_the_date('j F Y', $post_id);
+    }
+
+    $date_raw = trim((string) $date_raw);
+    $dt       = DateTime::createFromFormat('Y-m-d', $date_raw);
+    if (!$dt) {
+        $dt = DateTime::createFromFormat('Ymd', $date_raw);
+    }
+    if (!$dt) {
+        $timestamp = strtotime($date_raw);
+        if ($timestamp) {
+            $dt = new DateTime('@' . $timestamp);
+            $dt->setTimezone(wp_timezone());
+        }
+    }
+
+    if ($dt) {
+        return date_i18n('j F Y', $dt->getTimestamp());
+    }
+
+    return get_the_date('j F Y', $post_id);
+}
+
+/**
+ * Breadcrumb trail for a single event.
+ *
+ * @param int $post_id Post ID.
+ * @return array<int, array{label: string, url: string}>
+ */
+function psm_get_event_single_breadcrumbs($post_id) {
+    $post_id = (int) $post_id;
+    $title   = $post_id > 0 ? get_the_title($post_id) : '';
+
+    return array(
+        array(
+            'label' => __('Home', 'cmd-theme'),
+            'url'   => home_url('/'),
+        ),
+        array(
+            'label' => $title ?: __('Event', 'cmd-theme'),
+            'url'   => '',
+        ),
+    );
+}
+
+/**
+ * Display data for the single event template.
+ *
+ * @param int $post_id Post ID.
+ * @return array{
+ *     title: string,
+ *     date: string,
+ *     image: string,
+ *     image_alt: string,
+ *     breadcrumb: array
+ * }
+ */
+function psm_get_event_single_data($post_id) {
+    $post_id = (int) $post_id;
+    if ($post_id <= 0) {
+        return array();
+    }
+
+    $card = psm_get_event_card_args($post_id, array('context' => 'single'));
+
+    return array(
+        'title'      => $card['title'] ?? '',
+        'date'       => psm_get_event_date_label($post_id),
+        'image'      => $card['image'] ?? '',
+        'image_alt'  => $card['image_alt'] ?? '',
+        'breadcrumb' => psm_get_event_single_breadcrumbs($post_id),
+    );
+}
+
+/**
+ * Build event-card template args from a psm_event post.
+ *
+ * @param int   $post_id Event post ID.
+ * @param array $args    Optional context { context: carousel|single }.
  * @return array
  */
-function psm_get_event_card_args($post_id) {
+function psm_get_event_card_args($post_id, $args = array()) {
+    $args = wp_parse_args(
+        $args,
+        array(
+            'context' => 'carousel',
+        )
+    );
+
     $post_id = (int) $post_id;
     if ($post_id <= 0) {
         return array();
@@ -100,7 +196,7 @@ function psm_get_event_card_args($post_id) {
     }
 
     $url = get_permalink($post_id) ?: '';
-    if (function_exists('get_field')) {
+    if ('carousel' === $args['context'] && function_exists('get_field')) {
         $link = get_field('event_link', $post_id);
         if (is_array($link) && !empty($link['url'])) {
             $url = trim((string) $link['url']);

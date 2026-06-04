@@ -44,7 +44,7 @@ function psm_get_news_card_args($post_id, $args = array()) {
     $excerpt  = trim((string) $excerpt);
 
     if ('' === $time) {
-        if ('archive' === $args['context']) {
+        if (in_array($args['context'], array('archive', 'single'), true)) {
             $time = get_the_date('j F Y', $post_id);
         } else {
             $time = sprintf(
@@ -64,7 +64,7 @@ function psm_get_news_card_args($post_id, $args = array()) {
     }
 
     $url = get_permalink($post_id) ?: '';
-    if (function_exists('get_field')) {
+    if ('carousel' === $args['context'] && function_exists('get_field')) {
         $link = get_field('news_link', $post_id);
         if (is_array($link) && !empty($link['url'])) {
             $url = trim((string) $link['url']);
@@ -197,11 +197,11 @@ function psm_home_news_section_defaults() {
 }
 
 /**
- * Default link array for the home news footer button.
+ * URL of the News archive page (page-news.php template).
  *
- * @return array{url: string, title: string, target: string}
+ * @return string
  */
-function psm_news_default_button() {
+function psm_get_news_page_url() {
     $pages = get_pages(
         array(
             'meta_key'   => '_wp_page_template',
@@ -213,16 +213,85 @@ function psm_news_default_button() {
     if (!empty($pages[0])) {
         $url = get_permalink($pages[0]->ID);
         if ($url) {
-            return array(
-                'url'    => $url,
-                'title'  => __('View All News', 'cmd-theme'),
-                'target' => '',
-            );
+            return $url;
         }
     }
 
+    return home_url('/news/');
+}
+
+/**
+ * Breadcrumb trail for a single news item.
+ *
+ * @param int $post_id Post ID.
+ * @return array<int, array{label: string, url: string}>
+ */
+function psm_get_news_single_breadcrumbs($post_id) {
+    $post_id = (int) $post_id;
+    $title   = $post_id > 0 ? get_the_title($post_id) : '';
+
     return array(
-        'url'    => '#',
+        array(
+            'label' => __('Home', 'cmd-theme'),
+            'url'   => home_url('/'),
+        ),
+        array(
+            'label' => __('News & Updates', 'cmd-theme'),
+            'url'   => psm_get_news_page_url(),
+        ),
+        array(
+            'label' => $title ?: __('News', 'cmd-theme'),
+            'url'   => '',
+        ),
+    );
+}
+
+/**
+ * Display data for the single news template.
+ *
+ * @param int $post_id Post ID.
+ * @return array{
+ *     title: string,
+ *     category: string,
+ *     time: string,
+ *     image: string,
+ *     image_alt: string,
+ *     breadcrumb: array
+ * }
+ */
+function psm_get_news_single_data($post_id) {
+    $post_id = (int) $post_id;
+    if ($post_id <= 0) {
+        return array();
+    }
+
+    $card = psm_get_news_card_args($post_id, array('context' => 'single'));
+
+    $time = $card['time'] ?? '';
+    if ('' === trim((string) $time)) {
+        $time = get_the_date('j F Y', $post_id);
+    }
+
+    return array(
+        'title'      => $card['title'] ?? '',
+        'category'   => $card['category'] ?? '',
+        'time'       => $time,
+        'image'      => $card['image'] ?? '',
+        'image_alt'  => $card['image_alt'] ?? '',
+        'breadcrumb' => psm_get_news_single_breadcrumbs($post_id),
+    );
+}
+
+/**
+ * Default link array for the home news footer button.
+ *
+ * @return array{url: string, title: string, target: string}
+ */
+function psm_news_default_button() {
+    $url = psm_get_news_page_url();
+
+    return array(
+        'url'    => $url,
         'title'  => __('View All News', 'cmd-theme'),
         'target' => '',
     );
