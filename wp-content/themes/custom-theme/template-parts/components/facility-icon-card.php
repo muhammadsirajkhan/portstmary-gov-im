@@ -35,6 +35,10 @@ $icons = array(
     'safe-access',
     'coastal',
     'maintenance',
+    'community-representation',
+    'local-services',
+    'transparent-decisions',
+    'community-led',
 );
 $icon       = in_array($args['icon'], $icons, true) ? $args['icon'] : 'mooring';
 $icon_image = trim((string) $args['icon_image']);

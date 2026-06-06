@@ -118,13 +118,6 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-consultations.php"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
                 "value": "page-local-info.php"
             }
         ],

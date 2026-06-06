@@ -1,56 +1,76 @@
-<?php
-/**
- * Community Consultation & Engagement — about media + copy.
- *
- * @package CMD_Theme
- */
-
-defined('ABSPATH') || exit;
-
-$img_main = psm_theme_image('consultation-harbor.jpg') ?: '';
-$img_sub  = psm_theme_image('consultation-coast.jpg') ?: '';
-?>
-<section class="psm-consultation-engagement" id="consultation-engagement" aria-labelledby="psm-consultation-engagement-heading">
-    <div class="container psm-container">
-        <div class="psm-consultation-engagement__grid psm-about__grid">
-            <?php
-            get_template_part(
-                'template-parts/components/about-media',
-                null,
-                array(
-                    'image_main'         => $img_main,
-                    'image_sub'          => $img_sub,
-                    'image_main_alt'     => __('Port St Mary harbor consultation', 'cmd-theme'),
-                    'image_sub_alt'      => __('Coastal view near Port St Mary', 'cmd-theme'),
-                    'show_experience'    => true,
-                    'show_welcome_badge' => true,
-                    'show_accent'        => true,
-                )
-            );
-            ?>
-
-            <div class="psm-consultation-engagement__content psm-about__content">
-                <?php
-                get_template_part(
-                    'template-parts/components/section-header',
-                    null,
-                    array(
-                        'badge'       => __('About Our Work', 'cmd-theme'),
-                        'badge_style' => 'red',
-                        'title'       => __('Community Consultation & Engagement', 'cmd-theme'),
-                        'heading_id'  => 'psm-consultation-engagement-heading',
-                        'align'       => 'left',
-                        'class'       => 'psm-section-header--consultation-engagement',
-                    )
-                );
-                ?>
-
-                <div class="psm-consultation-engagement__prose">
-                    <?php foreach (psm_get_consultation_engagement_paragraphs() as $paragraph) : ?>
-                        <p><?php echo esc_html($paragraph); ?></p>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?php
+/**
+ * Community Consultation & Engagement — single image + copy.
+ *
+ * @package CMD_Theme
+ */
+
+defined('ABSPATH') || exit;
+
+$page_id = (int) get_queried_object_id();
+$section = psm_get_consultation_engagement_section($page_id);
+
+$image      = trim((string) $section['image']);
+$badge      = trim((string) $section['badge']);
+$title      = trim((string) $section['title']);
+$paragraphs = array_values(array_filter((array) $section['paragraphs']));
+
+$has_image  = '' !== $image;
+$has_header = '' !== $badge || '' !== $title;
+$has_prose  = !empty($paragraphs);
+
+if (!$has_image && !$has_header && !$has_prose) {
+    return;
+}
+
+$image_alt = $title ?: __('Port St Mary harbor consultation', 'cmd-theme');
+?>
+<section class="psm-consultation-engagement" id="consultation-engagement" <?php echo $title ? ' aria-labelledby="psm-consultation-engagement-heading"' : ''; ?>>
+    <div class="container psm-container">
+        <div class="psm-consultation-engagement__grid psm-about__grid">
+            <?php if ($has_image) : ?>
+                <?php
+                get_template_part(
+                    'template-parts/components/housing-zigzag-media',
+                    null,
+                    array(
+                        'variant'    => 'single-badge',
+                        'show_badge' => false,
+                        'image'      => $image,
+                        'image_seed' => 'psm-consultation-engagement',
+                        'accent'     => 'tl',
+                        'alt'        => $image_alt,
+                    )
+                );
+                ?>
+            <?php endif; ?>
+
+            <div class="psm-consultation-engagement__content psm-about__content">
+                <?php if ($has_header) : ?>
+                    <?php
+                    get_template_part(
+                        'template-parts/components/section-header',
+                        null,
+                        array(
+                            'badge'       => $badge,
+                            'badge_style' => 'pill',
+                            'title'       => $title,
+                            'heading_id'  => $title ? 'psm-consultation-engagement-heading' : '',
+                            'align'       => 'left',
+                            'class'       => 'psm-section-header--consultation-engagement',
+                        )
+                    );
+                    ?>
+                <?php endif; ?>
+
+                <?php if ($has_prose) : ?>
+                    <div class="psm-consultation-engagement__prose">
+                        <?php foreach ($paragraphs as $paragraph) : ?>
+                            <p><?php echo esc_html($paragraph); ?></p>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>

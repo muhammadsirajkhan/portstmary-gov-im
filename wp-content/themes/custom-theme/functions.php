@@ -62,6 +62,8 @@ require get_template_directory() . '/inc/boat-park-data.php';
 require get_template_directory() . '/inc/boat-park-helpers.php';
 require get_template_directory() . '/inc/acf-boat-park-defaults.php';
 require get_template_directory() . '/inc/consultations-data.php';
+require get_template_directory() . '/inc/consultations-helpers.php';
+require get_template_directory() . '/inc/acf-consultations-defaults.php';
 require get_template_directory() . '/inc/elections-data.php';
 require get_template_directory() . '/inc/gallery-data.php';
 require get_template_directory() . '/inc/local-info-data.php';

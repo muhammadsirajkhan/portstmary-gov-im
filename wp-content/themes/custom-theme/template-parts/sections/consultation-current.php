@@ -7,34 +7,46 @@
 
 defined('ABSPATH') || exit;
 
-$consultations = psm_get_current_consultations();
-?>
-<section class="psm-consultation-current" id="current-consultations" aria-labelledby="psm-consultation-current-heading">
-    <div class="container psm-container">
-        <?php
-        get_template_part(
-            'template-parts/components/section-header',
-            null,
-            array(
-                'badge'       => __('View Our Active Projects', 'cmd-theme'),
-                'badge_style' => 'red',
-                'title'       => __('Current Consultations', 'cmd-theme'),
-                'heading_id'  => 'psm-consultation-current-heading',
-                'intro'       => array(
-                    __(
-                        'Browse active consultations and share your views on projects and proposals currently open for comment.',
-                        'cmd-theme'
-                    ),
-                ),
-                'class'       => 'psm-section-header--consultation-current',
-            )
-        );
-        ?>
+$page_id       = (int) get_queried_object_id();
+$header        = psm_get_consultation_current_header($page_id);
+$consultations = psm_get_current_consultations($page_id);
 
-        <div class="psm-consultation-current__grid">
-            <?php foreach ($consultations as $item) : ?>
-                <?php get_template_part('template-parts/components/consultation-card', null, $item); ?>
-            <?php endforeach; ?>
-        </div>
+$badge = trim((string) $header['badge']);
+$title = trim((string) $header['title']);
+$intro = trim((string) $header['intro']);
+
+$has_header = '' !== $badge || '' !== $title || '' !== $intro;
+$has_cards  = !empty($consultations);
+
+if (!$has_header && !$has_cards) {
+    return;
+}
+?>
+<section class="psm-consultation-current" id="current-consultations" <?php echo $title ? ' aria-labelledby="psm-consultation-current-heading"' : ''; ?>>
+    <div class="container psm-container">
+        <?php if ($has_header) : ?>
+            <?php
+            get_template_part(
+                'template-parts/components/section-header',
+                null,
+                array(
+                    'badge'       => $badge,
+                    'badge_style' => 'pill',
+                    'title'       => $title,
+                    'heading_id'  => $title ? 'psm-consultation-current-heading' : '',
+                    'intro'       => '' !== $intro ? array($intro) : array(),
+                    'class'       => 'psm-section-header--consultation-current',
+                )
+            );
+            ?>
+        <?php endif; ?>
+
+        <?php if ($has_cards) : ?>
+            <div class="psm-consultation-current__grid">
+                <?php foreach ($consultations as $item) : ?>
+                    <?php get_template_part('template-parts/components/consultation-card', null, $item); ?>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
     </div>
 </section>

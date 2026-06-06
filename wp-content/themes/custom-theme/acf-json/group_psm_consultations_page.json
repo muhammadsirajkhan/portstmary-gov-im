@@ -1,0 +1,335 @@
+{
+    "key": "group_psm_consultations_page",
+    "title": "Consultations Page",
+    "fields": [
+        {
+            "key": "field_psm_consult_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_consult",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "default_value": "Welcome to Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_inner_banner_title_consult",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "default_value": "Consultations"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_consult",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "default_value": "Helping Shape Local Decisions"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_consult",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "default_value": "Share your views on local projects and proposals. Your feedback helps Port St Mary Commissioners make informed community decisions.",
+            "rows": 3
+        },
+        {
+            "key": "field_psm_inner_banner_image_consult",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_psm_consult_tab_engagement",
+            "label": "Community Consultation & Engagement",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_consult_engagement_image",
+            "label": "Image",
+            "name": "consult_engagement_image",
+            "type": "image",
+            "instructions": "Single image for the left column.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_consult_engagement_badge",
+            "label": "Badge",
+            "name": "consult_engagement_badge",
+            "type": "text",
+            "instructions": "Pill label above the heading.",
+            "default_value": "Port St Mary Commissioners",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_consult_engagement_title",
+            "label": "Heading",
+            "name": "consult_engagement_title",
+            "type": "text",
+            "instructions": "Section heading.",
+            "default_value": "Community Consultation & Engagement",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_consult_engagement_body",
+            "label": "Body Text",
+            "name": "consult_engagement_body",
+            "type": "textarea",
+            "instructions": "Intro paragraphs. One paragraph per line.",
+            "rows": 6,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_consult_engagement_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_consult_tab_current",
+            "label": "Current Consultations",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_consult_current_badge",
+            "label": "Section Badge",
+            "name": "consult_current_badge",
+            "type": "text",
+            "default_value": "Port St Mary Commissioners",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_consult_current_title",
+            "label": "Section Heading",
+            "name": "consult_current_title",
+            "type": "text",
+            "default_value": "Current Consultations",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_consult_current_intro",
+            "label": "Intro",
+            "name": "consult_current_intro",
+            "type": "textarea",
+            "instructions": "Centered intro below the heading.",
+            "rows": 3,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_consult_current_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_consult_current_cards",
+            "label": "Consultation Cards",
+            "name": "consult_current_cards",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use default cards. Rows without a title are hidden.",
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_consult_card_title",
+            "button_label": "Add Consultation",
+            "sub_fields": [
+                {
+                    "key": "field_psm_consult_card_title",
+                    "label": "Title",
+                    "name": "consult_card_title",
+                    "type": "text",
+                    "instructions": "Required for the card to appear.",
+                    "placeholder": "Consultation Title",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_consult_current_cards"
+                },
+                {
+                    "key": "field_psm_consult_card_image",
+                    "label": "Image",
+                    "name": "consult_card_image",
+                    "type": "image",
+                    "instructions": "Card thumbnail image.",
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "wrapper": { "width": "50" },
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_consult_card_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_consult_current_cards"
+                },
+                {
+                    "key": "field_psm_consult_card_link",
+                    "label": "Link",
+                    "name": "consult_card_link",
+                    "type": "link",
+                    "instructions": "Optional link for the card.",
+                    "return_format": "array",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_consult_card_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_consult_current_cards"
+                }
+            ]
+        },
+        {
+            "key": "field_psm_consult_tab_feedback",
+            "label": "Why Your Feedback Matters",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_consult_feedback_badge",
+            "label": "Section Badge",
+            "name": "consult_feedback_badge",
+            "type": "text",
+            "default_value": "Consultations",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_consult_feedback_title",
+            "label": "Section Heading",
+            "name": "consult_feedback_title",
+            "type": "text",
+            "default_value": "Why Your Feedback Matters",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_consult_feedback_intro",
+            "label": "Intro",
+            "name": "consult_feedback_intro",
+            "type": "textarea",
+            "instructions": "Intro paragraph beside the welcome badge.",
+            "rows": 3,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_consult_feedback_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_consult_feedback_cards",
+            "label": "Value Cards",
+            "name": "consult_feedback_cards",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use default cards.",
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_consult_feedback_card_title",
+            "button_label": "Add Card",
+            "sub_fields": [
+                {
+                    "key": "field_psm_consult_feedback_card_title",
+                    "label": "Title",
+                    "name": "consult_feedback_card_title",
+                    "type": "text",
+                    "instructions": "Required for the card to appear.",
+                    "placeholder": "Community Representation",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_consult_feedback_cards"
+                },
+                {
+                    "key": "field_psm_consult_feedback_card_icon",
+                    "label": "Icon",
+                    "name": "consult_feedback_card_icon",
+                    "type": "image",
+                    "instructions": "Line icon for the card.",
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "mime_types": "jpg,jpeg,png,webp,svg",
+                    "wrapper": { "width": "50" },
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_consult_feedback_card_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_consult_feedback_cards"
+                },
+                {
+                    "key": "field_psm_consult_feedback_card_text",
+                    "label": "Description",
+                    "name": "consult_feedback_card_text",
+                    "type": "textarea",
+                    "instructions": "Card description text.",
+                    "rows": 3,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_consult_feedback_card_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_consult_feedback_cards"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-consultations.php"
+            }
+        ]
+    ],
+    "menu_order": 22,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner, engagement, current consultations, and feedback sections for the consultations page.",
+    "show_in_rest": 0,
+    "modified": 1782681600
+}
