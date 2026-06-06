@@ -283,29 +283,37 @@
     .psm-history-timeline__entry {
         grid-template-columns: 1fr;
         gap: 16px;
-        text-align: center;
+        margin-bottom: 48px;
     }
 
-    .psm-history-timeline__entry--right .psm-history-timeline__side--card,
-    .psm-history-timeline__entry--right .psm-history-timeline__axis,
-    .psm-history-timeline__entry--right .psm-history-timeline__side--icon {
-        order: unset;
-    }
-
-    .psm-history-timeline__side--card,
-    .psm-history-timeline__entry--left .psm-history-timeline__side--icon,
-    .psm-history-timeline__entry--right .psm-history-timeline__side--card {
+    .psm-history-timeline__side--meta {
+        align-self: auto;
         justify-content: center;
     }
 
-    .psm-history-timeline__icon {
+    .psm-history-timeline__visual {
         margin: 0 auto;
+        padding-top: 28px;
     }
 
+    .psm-history-timeline__entry--left .psm-history-timeline__side--content,
+    .psm-history-timeline__entry--right .psm-history-timeline__side--content {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .psm-history-timeline__entry-title,
     .psm-history-timeline__card {
         max-width: none;
         margin: 0 auto;
         text-align: left;
+        align-items: flex-start;
+    }
+
+    .psm-history-timeline__icon,
+    .psm-history-timeline__icon-img {
+        width: 140px;
+        height: 140px;
     }
 
     .psm-gallery-community-life__grid {

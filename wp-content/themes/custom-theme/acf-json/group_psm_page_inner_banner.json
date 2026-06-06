@@ -118,13 +118,6 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-local-info.php"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
                 "value": "page-rates-finances.php"
             }
         ],

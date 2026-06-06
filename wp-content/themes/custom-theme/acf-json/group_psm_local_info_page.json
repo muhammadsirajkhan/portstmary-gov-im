@@ -1,0 +1,278 @@
+{
+    "key": "group_psm_local_info_page",
+    "title": "Local Info Page",
+    "fields": [
+        {
+            "key": "field_psm_local_info_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_local_info",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "default_value": "Explore the Heart of Our Community"
+        },
+        {
+            "key": "field_psm_inner_banner_title_local_info",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "default_value": "Local Info"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_local_info",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "default_value": "History, Community & Coastal Living"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_local_info",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "default_value": "Learn about Port St Mary — our history, community, and coastal heritage on the Isle of Man.",
+            "rows": 3
+        },
+        {
+            "key": "field_psm_inner_banner_image_local_info",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_psm_local_info_tab_about",
+            "label": "About Port St Mary",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_local_info_about_image",
+            "label": "Image",
+            "name": "local_info_about_image",
+            "type": "image",
+            "instructions": "Single image for the left column.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_local_info_about_badge",
+            "label": "Badge",
+            "name": "local_info_about_badge",
+            "type": "text",
+            "instructions": "Pill label above the heading.",
+            "default_value": "Information",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_local_info_about_title",
+            "label": "Heading",
+            "name": "local_info_about_title",
+            "type": "text",
+            "instructions": "Section heading.",
+            "default_value": "About Port St Mary",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_local_info_about_body",
+            "label": "Body Text",
+            "name": "local_info_about_body",
+            "type": "textarea",
+            "instructions": "Body paragraphs. One paragraph per line. The first line displays with the red accent.",
+            "rows": 8,
+            "default_value": "Port St Mary or Purt le Moirrey is a picturesque coastal village in the south west corner of the Isle of Man. The name is derived from the church of St Mary which once stood beside the shore of Chapel Bay.\nA sweeping beach edged with rocky pools which is popular with locals and tourists alike. Once a thriving fishing port, Port St Mary still processes the world famous 'queenie' scallop. It is also a centre for pleasure craft having deepwater berths and all states of tide slipways. Yachts, powerboats and jet skis can be safely launched from the slipway. The regular clink of sheets on masts echo around the Island's most attractive harbour.\nThe coast line entices a wide variety of both sea and land birds to take up residence. Basking sharks, harbour porpoises and grey seals are regular visitors and there are boat trips from the Port to see them as there are regular sailings during the summer months to the nature reserve on the Calf of Man. Scuba diving also offers an opportunity not only to view these creatures at close quarters but also to visit the many ship wrecks that are located around the southern coast line.\nFor the more active, Port St Mary offers a 9 hole municipal golf course designed by the 1920 British Open Champion George Duncan, Crown green bowling, croquet, tennis courts and spectacular scenic walks.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_local_info_about_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_local_info_tab_timeline",
+            "label": "History Timeline",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_local_info_timeline_badge",
+            "label": "Badge",
+            "name": "local_info_timeline_badge",
+            "type": "text",
+            "instructions": "Pill label above the heading.",
+            "default_value": "Timeline",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_local_info_timeline_title",
+            "label": "Heading",
+            "name": "local_info_timeline_title",
+            "type": "text",
+            "instructions": "Section heading.",
+            "default_value": "History Timeline",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_local_info_timeline_intro",
+            "label": "Intro",
+            "name": "local_info_timeline_intro",
+            "type": "textarea",
+            "instructions": "Intro paragraph below the heading.",
+            "rows": 4,
+            "default_value": "In 1996 Dollin Kelly edited 'New Manx Worthies', a substantial update of the original 'Manx Worthies' edited by the Manx historian W Moore (1901). Both contain profiles of Port St Mary people.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_local_info_timeline_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_local_info_timeline_entries",
+            "label": "Timeline Entries",
+            "name": "local_info_timeline_entries",
+            "type": "repeater",
+            "instructions": "Entries alternate left and right automatically. Upload an icon image for each entry.",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Entry",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_local_info_timeline_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_psm_local_info_timeline_period",
+                    "label": "Period",
+                    "name": "local_info_timeline_period",
+                    "type": "text",
+                    "instructions": "Date or period label shown on the pill.",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_local_info_timeline_entries"
+                },
+                {
+                    "key": "field_psm_local_info_timeline_icon",
+                    "label": "Icon Image",
+                    "name": "local_info_timeline_icon",
+                    "type": "image",
+                    "instructions": "Timeline illustration icon.",
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "mime_types": "jpg,jpeg,png,webp,svg",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_local_info_timeline_entries"
+                },
+                {
+                    "key": "field_psm_local_info_timeline_entry_title",
+                    "label": "Title",
+                    "name": "local_info_timeline_entry_title",
+                    "type": "text",
+                    "instructions": "Entry heading shown beside the timeline.",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_local_info_timeline_entries"
+                },
+                {
+                    "key": "field_psm_local_info_timeline_link",
+                    "label": "Learn More Link",
+                    "name": "local_info_timeline_link",
+                    "type": "link",
+                    "instructions": "Optional link at the bottom of the card.",
+                    "return_format": "array",
+                    "wrapper": { "width": "50" },
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_local_info_timeline_entry_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_local_info_timeline_entries"
+                },
+                {
+                    "key": "field_psm_local_info_timeline_text",
+                    "label": "Description",
+                    "name": "local_info_timeline_text",
+                    "type": "textarea",
+                    "instructions": "Card body text.",
+                    "rows": 4,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_local_info_timeline_entry_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_local_info_timeline_entries"
+                }
+            ]
+        },
+        {
+            "key": "field_psm_local_info_timeline_footer",
+            "label": "Footer Text",
+            "name": "local_info_timeline_footer",
+            "type": "textarea",
+            "instructions": "Footer paragraph below the timeline. HTML links are allowed.",
+            "rows": 3,
+            "default_value": "Copies of books and documents listed above are available at the Manx National Heritage Library and other locations. For more information visit <a href=\"https://www.isle-of-man.com/manxnotebook/\">www.isle-of-man.com/manxnotebook/</a> and <a href=\"https://www.gov.im/\">www.gov.im</a>.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_local_info_timeline_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-local-info.php"
+            }
+        ]
+    ],
+    "menu_order": 25,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Local Info page content. Empty fields are hidden on the front end.",
+    "show_in_rest": 0,
+    "modified": 1749600000
+}

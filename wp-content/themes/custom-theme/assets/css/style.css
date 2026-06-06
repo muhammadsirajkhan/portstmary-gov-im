@@ -7514,19 +7514,15 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     text-align: left;
 }
 
-.psm-section-header--local-info-about .psm-section-header__eyebrow {
+.psm-section-header--local-info-about .psm-section-header__badge {
     margin-left: 0;
+    color: #666666;
 }
 
 .psm-section-header--local-info-about .psm-section-header__title {
     margin-bottom: 0;
     font-size: 42px;
     max-width: 520px;
-}
-
-.psm-local-info-about__lead {
-    font-weight: 600;
-    color: #111111;
 }
 
 .psm-local-info-about__prose p {
@@ -7538,6 +7534,11 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     color: #666666;
 }
 
+.psm-local-info-about__prose .psm-about__lead {
+    margin-bottom: 20px;
+    color: #111111;
+}
+
 .psm-local-info-about__prose p:last-child {
     margin-bottom: 0;
 }
@@ -7545,6 +7546,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 .psm-local-info-about .psm-housing-zigzag-media--single-badge .psm-housing-zigzag-media__single {
     aspect-ratio: 3 / 4;
     max-height: 560px;
+    object-fit: cover;
 }
 
 /* ----- Local Info: History Timeline ----- */
@@ -7558,17 +7560,36 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     margin-bottom: 56px;
 }
 
+.psm-section-header--local-info-timeline .psm-section-header__badge {
+    margin-left: auto;
+    margin-right: auto;
+    color: #666666;
+}
+
 .psm-section-header--local-info-timeline .psm-section-header__title {
     font-size: 42px;
 }
 
-.psm-history-timeline {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 8px 0;
+.psm-section-header--local-info-timeline .psm-section-header__intro {
+    max-width: 820px;
 }
 
+.psm-history-timeline {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 74px 0 8px;
+}
+.psm-history-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 30%;
+    height: 2px;
+    background-color: #ddd;
+    transform: translateX(-50%);
+}
 .psm-history-timeline__line {
     position: absolute;
     left: 50%;
@@ -7576,92 +7597,189 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     bottom: 0;
     width: 2px;
     transform: translateX(-50%);
-    background: #e31e24;
+    background: #e0e0e0;
     pointer-events: none;
+}
+
+.psm-history-timeline__start {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #e31e24;
+    box-shadow: 0 0 0 4px #f9f9f9;
+    text-align: center;
+}
+
+.psm-history-timeline__start::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    transform: translate(-85%, -10%);
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    rotate: 45deg;
 }
 
 .psm-history-timeline__entry {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 140px minmax(0, 1fr);
-    gap: 24px 20px;
-    align-items: center;
-    margin-bottom: 48px;
+    grid-template-columns: minmax(0, 1fr) 80px minmax(0, 1fr);
+    gap: 20px 24px;
+    align-items: start;
+    margin-bottom: 64px;
 }
 
 .psm-history-timeline__entry:last-child {
     margin-bottom: 0;
 }
 
-.psm-history-timeline__entry--right .psm-history-timeline__side--card {
-    order: 3;
-}
-
-.psm-history-timeline__entry--right .psm-history-timeline__axis {
-    order: 2;
-}
-
-.psm-history-timeline__entry--right .psm-history-timeline__side--icon {
-    order: 1;
-}
-
-.psm-history-timeline__side--card {
+.psm-history-timeline__side--content {
     display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.psm-history-timeline__entry--left .psm-history-timeline__side--content {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.psm-history-timeline__entry--right .psm-history-timeline__side--content {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.psm-history-timeline__side--meta {
+    display: flex;
+    min-width: 0;
+    align-self: center;
+}
+
+.psm-history-timeline__entry--right .psm-history-timeline__side--meta {
     justify-content: flex-end;
 }
 
-.psm-history-timeline__entry--right .psm-history-timeline__side--card {
+.psm-history-timeline__entry--left .psm-history-timeline__side--meta {
     justify-content: flex-start;
 }
 
-.psm-history-timeline__side--icon {
+.psm-history-timeline__visual {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    width: min(100%, 220px);
+    min-height: 180px;
+    padding-top: 28px;
 }
 
-.psm-history-timeline__entry--left .psm-history-timeline__side--icon {
-    justify-content: flex-end;
+.psm-history-timeline__entry--right .psm-history-timeline__period {
+    top: 0;
+    right: 0;
+    left: auto;
+}
+
+.psm-history-timeline__entry--left .psm-history-timeline__period {
+    top: 0;
+    left: 0;
+    right: auto;
 }
 
 .psm-history-timeline__axis {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    justify-content: center;
+    padding-top: 10px;
 }
 
 .psm-history-timeline__dot {
-    width: 14px;
-    height: 14px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: #e31e24;
     border: 3px solid #ffffff;
-    box-shadow: 0 0 0 1px #e31e24;
+    /* box-shadow: 0 0 0 1px #e31e24; */
     flex-shrink: 0;
+    position: relative;
+}
+.psm-history-timeline__start::before {
+    content: '';
+    background-color: #e31e2429;
+    width: 140%;
+    height: 140%;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
+span.psm-history-timeline__dot::before {
+    content: '';
+    background-color: #e31e2429;
+    width: 150%;
+    height: 150%;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .psm-history-timeline__period {
+    position: absolute;
+    z-index: 2;
     display: inline-block;
-    padding: 8px 18px;
+    padding: 12px 24px;
     background: #111111;
     color: #ffffff;
     border-radius: 999px;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     white-space: nowrap;
 }
 
+.psm-history-timeline__entry-title {
+    margin: 0;
+    /* max-width: 360px; */
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #111111;
+}
+
 .psm-history-timeline__card {
-    max-width: 360px;
-    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    /* max-width: 360px; */
+    width: 100%;
+    padding: 24px;
     background: #ffffff;
     border-radius: 16px;
     box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
+}
+
+.psm-history-timeline__entry--left .psm-history-timeline__card {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.psm-history-timeline__entry--right .psm-history-timeline__card {
+    align-items: flex-start;
+    text-align: left;
 }
 
 .psm-history-timeline__card-title {
@@ -7673,22 +7791,33 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 }
 
 .psm-history-timeline__card-text {
-    margin: 0 0 16px;
+    margin: 0;
     font-size: 15px;
     font-weight: 400;
     line-height: 1.6;
     color: #666666;
 }
 
-.psm-history-timeline__card .psm-housing-zigzag__readmore {
-    margin-top: 4px;
+.psm-history-timeline__link {
+    display: inline-block;
+    margin-top: 45px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    color: #111111;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.psm-history-timeline__link:hover {
+    color: #e31e24;
 }
 
 .psm-history-timeline__icon {
     display: block;
-    width: 120px;
-    height: 120px;
-    opacity: 0.35;
+    width: 180px;
+    height: 180px;
+    opacity: 0.28;
     background: #c8c8c8;
     mask-size: contain;
     -webkit-mask-size: contain;
@@ -7696,6 +7825,13 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     -webkit-mask-repeat: no-repeat;
     mask-position: center;
     -webkit-mask-position: center;
+}
+
+.psm-history-timeline__icon-img {
+    display: block;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 .psm-history-timeline__icon--crane {
@@ -7724,6 +7860,8 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     font-size: 14px;
     line-height: 1.6;
     color: #666666;
+    max-width: 1200px;
+    margin: 48px auto 0;
 }
 
 .psm-local-info-timeline__resources a {
