@@ -22,7 +22,18 @@ $args = wp_parse_args(
     )
 );
 
-$icons = array('mooring', 'slipway', 'parking', 'services', 'community', 'voice', 'transparency');
+$icons = array(
+    'mooring',
+    'slipway',
+    'parking',
+    'services',
+    'community',
+    'voice',
+    'transparency',
+    'safe-access',
+    'coastal',
+    'maintenance',
+);
 $icon  = in_array($args['icon'], $icons, true) ? $args['icon'] : 'mooring';
 
 if (!$args['title']) {

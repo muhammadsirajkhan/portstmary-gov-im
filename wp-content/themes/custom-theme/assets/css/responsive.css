@@ -1224,9 +1224,20 @@
     }
 
     .psm-boat-park-community__title,
+    .psm-section-header--boat-park-community .psm-section-header__title,
     .psm-section-header--boat-park-facilities .psm-section-header__title,
     .psm-section-header--boat-park-mooring .psm-section-header__title {
         font-size: 32px;
+    }
+
+    .psm-boat-park-community__img--right,
+    .psm-boat-park-community__img--left {
+        border-radius: 20px;
+    }
+
+    .psm-boat-park-community__badge .psm-welcome-badge {
+        width: 104px;
+        height: 104px;
     }
 
     .psm-boat-park-facilities__grid {
@@ -1236,6 +1247,7 @@
 
     .psm-mooring-step {
         grid-template-columns: auto minmax(0, 1fr);
+        padding: 20px 20px 20px 18px;
     }
 
     .psm-mooring-step__number {
@@ -1243,6 +1255,29 @@
         grid-row: 1;
         justify-self: end;
         font-size: 40px;
+    }
+
+    .psm-video-media {
+        padding: 16px 0 0 16px;
+    }
+
+    .psm-video-media .psm-welcome-badge {
+        width: 104px;
+        height: 104px;
+        top: -12px;
+        right: -8px;
+    }
+
+    .psm-video-media__play {
+        right: 12px;
+        bottom: 12px;
+        padding: 6px 14px 6px 6px;
+        font-size: 14px;
+    }
+
+    .psm-video-media__play-icon {
+        width: 34px;
+        height: 34px;
     }
 
     .psm-amenities-intro,

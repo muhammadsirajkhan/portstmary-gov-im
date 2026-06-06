@@ -7,7 +7,7 @@
 
 defined('ABSPATH') || exit;
 
-$facilities   = psm_get_boat_park_facilities();
+$facilities    = psm_get_boat_park_facilities();
 $feature_image = psm_theme_image('boat-park-pier.jpg') ?: psm_placeholder_image(1200, 520, 'psm-boat-park-pier');
 ?>
 <section class="psm-boat-park-facilities" id="boat-park-facilities" aria-labelledby="psm-boat-park-facilities-heading">
@@ -17,15 +17,12 @@ $feature_image = psm_theme_image('boat-park-pier.jpg') ?: psm_placeholder_image(
             'template-parts/components/section-header',
             null,
             array(
-                'badge'       => __('Harbour Facilities', 'cmd-theme'),
-                'badge_style' => 'red',
+                'badge'       => __('Port St Mary Commissioners', 'cmd-theme'),
+                'badge_style' => 'pill',
                 'title'       => __('Boat Park Facilities', 'cmd-theme'),
                 'heading_id'  => 'psm-boat-park-facilities-heading',
                 'intro'       => array(
-                    __(
-                        'Our boat park provides essential facilities for mooring, access, and harbour use in Port St Mary.',
-                        'cmd-theme'
-                    ),
+                    psm_get_boat_park_facilities_intro(),
                 ),
                 'class'       => 'psm-section-header--boat-park-facilities',
             )

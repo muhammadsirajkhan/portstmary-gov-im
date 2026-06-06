@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initHeroSwiper();
   initNewsSwiper();
   initStickyHeader();
+  initVideoModals();
 });
 
 function initMobileMenu() {
@@ -225,4 +226,83 @@ function initStickyHeader() {
 
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
+}
+
+function initVideoModals() {
+  const triggers = document.querySelectorAll("[data-video-modal]");
+  if (!triggers.length) {
+    return;
+  }
+
+  const openModal = (modal) => {
+    const iframe = modal.querySelector(".psm-video-modal__iframe");
+    if (!iframe) {
+      return;
+    }
+
+    const baseSrc = iframe.getAttribute("data-src");
+    if (!baseSrc) {
+      return;
+    }
+
+    const separator = baseSrc.includes("?") ? "&" : "?";
+    iframe.src = baseSrc + separator + "autoplay=1";
+    modal.hidden = false;
+    modal.setAttribute("aria-hidden", "false");
+    modal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+
+    const closeButton = modal.querySelector(".psm-video-modal__close");
+    if (closeButton) {
+      closeButton.focus();
+    }
+  };
+
+  const closeModal = (modal) => {
+    const iframe = modal.querySelector(".psm-video-modal__iframe");
+    if (iframe) {
+      iframe.src = "";
+    }
+
+    modal.classList.remove("is-open");
+    modal.hidden = true;
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  };
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const modalId = trigger.getAttribute("data-video-modal");
+      if (!modalId) {
+        return;
+      }
+
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        openModal(modal);
+      }
+    });
+  });
+
+  document.querySelectorAll(".psm-video-modal").forEach((modal) => {
+    modal.querySelectorAll("[data-video-modal-close]").forEach((control) => {
+      control.addEventListener("click", () => closeModal(modal));
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal.querySelector(".psm-video-modal__backdrop")) {
+        closeModal(modal);
+      }
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if ("Escape" !== event.key) {
+      return;
+    }
+
+    document.querySelectorAll(".psm-video-modal.is-open").forEach((modal) => {
+      closeModal(modal);
+    });
+  });
 }

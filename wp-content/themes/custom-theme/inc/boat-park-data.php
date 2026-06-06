@@ -15,13 +15,25 @@ defined('ABSPATH') || exit;
 function psm_get_boat_park_community_paragraphs() {
     return array(
         __(
-            'Port St Mary Commissioners manage the town boat park to support local boat owners, harbour users, and the wider boating community on the Isle of Man.',
+            'Port St Mary Boat Park provides managed mooring and storage facilities for residents and boat owners within the community. It is designed to support safe, organised, and accessible use of the harbour area while maintaining the coastal environment.',
             'cmd-theme'
         ),
         __(
-            'We maintain moorings, slipway access, and related facilities so residents and visitors can enjoy safe, well-managed waterside amenities throughout the season.',
+            'We aim to ensure all boat park users enjoy a secure and well-maintained facility that supports both recreational and local fishing activities.',
             'cmd-theme'
         ),
+    );
+}
+
+/**
+ * Boat Park Facilities section intro.
+ *
+ * @return string
+ */
+function psm_get_boat_park_facilities_intro() {
+    return __(
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'cmd-theme'
     );
 }
 
@@ -35,24 +47,57 @@ function psm_get_boat_park_facilities() {
         array(
             'icon'  => 'mooring',
             'title' => __('Mooring Spaces', 'cmd-theme'),
-            'text'  => __('Allocated moorings for resident and visiting craft within the boat park.', 'cmd-theme'),
+            'text'  => __(
+                'Designated and well-managed mooring areas are available for local boat owners.',
+                'cmd-theme'
+            ),
         ),
         array(
-            'icon'  => 'slipway',
-            'title' => __('Slipway Access', 'cmd-theme'),
-            'text'  => __('Launch and recovery facilities for permitted vessels at scheduled times.', 'cmd-theme'),
+            'icon'  => 'safe-access',
+            'title' => __('Safe Access', 'cmd-theme'),
+            'text'  => __(
+                'The Boat Park provides clear and controlled access points to the harbour, helping ensure safe.',
+                'cmd-theme'
+            ),
         ),
         array(
-            'icon'  => 'parking',
-            'title' => __('Vehicle Parking', 'cmd-theme'),
-            'text'  => __('Parking areas for boat owners and visitors using harbour facilities.', 'cmd-theme'),
+            'icon'  => 'coastal',
+            'title' => __('Coastal Management', 'cmd-theme'),
+            'text'  => __(
+                'The harbour and surrounding areas are carefully managed to protect the coastal environment.',
+                'cmd-theme'
+            ),
         ),
         array(
-            'icon'  => 'services',
-            'title' => __('Harbour Services', 'cmd-theme'),
-            'text'  => __('Support for harbour users including information and seasonal guidance.', 'cmd-theme'),
+            'icon'  => 'maintenance',
+            'title' => __('Maintenance Support', 'cmd-theme'),
+            'text'  => __(
+                'Regular maintenance is carried out to keep the Boat Park clean, safe, and fully operational.',
+                'cmd-theme'
+            ),
         ),
     );
+}
+
+/**
+ * Mooring Applications section intro.
+ *
+ * @return string
+ */
+function psm_get_boat_park_mooring_intro() {
+    return __(
+        'Residents interested in using the Boat Park facilities must apply for mooring allocation. Applications are reviewed based on availability, suitability, & community requirements.',
+        'cmd-theme'
+    );
+}
+
+/**
+ * Dummy YouTube video ID for the mooring applications section.
+ *
+ * @return string
+ */
+function psm_get_boat_park_mooring_video_id() {
+    return 'M7lc1UVf-VE';
 }
 
 /**
@@ -64,28 +109,28 @@ function psm_get_boat_park_mooring_steps() {
     return array(
         array(
             'number' => '01',
-            'icon'   => 'form',
-            'title'  => __('Apply Online', 'cmd-theme'),
+            'icon'   => 'submit',
+            'title'  => __('Submit Application', 'cmd-theme'),
             'text'   => __(
-                'Complete the mooring application form with vessel details, owner information, and preferred mooring period.',
+                'Provide details of your vessel and usage requirements',
                 'cmd-theme'
             ),
         ),
         array(
             'number' => '02',
-            'icon'   => 'documents',
-            'title'  => __('Payment Policy', 'cmd-theme'),
+            'icon'   => 'review',
+            'title'  => __('Review Process', 'cmd-theme'),
             'text'   => __(
-                'Review fees, payment deadlines, and accepted methods before submitting your application.',
+                'Applications are assessed based on availability and regulations.',
                 'cmd-theme'
             ),
         ),
         array(
             'number' => '03',
-            'icon'   => 'assessment',
-            'title'  => __('Allocation & Confirmation', 'cmd-theme'),
+            'icon'   => 'allocation',
+            'title'  => __('Allocation Confirmation', 'cmd-theme'),
             'text'   => __(
-                'Applications are assessed based on availability. Successful applicants receive confirmation and mooring details.',
+                'Approved applicants will be assigned suitable mooring space.',
                 'cmd-theme'
             ),
         ),

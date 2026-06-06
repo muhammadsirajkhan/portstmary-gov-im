@@ -6106,7 +6106,9 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     gap: 5px;
     align-items: center;
 }
-
+.psm-boat-park-community__prose {
+    padding-left: 60px;
+}
 .psm-amenities-facility-card__kicker span {
     margin: 0 6px;
     font-size: 0;
@@ -6216,23 +6218,55 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 48px 64px;
+    gap: 48px 15px;
     align-items: start;
 }
 
-.psm-boat-park-community__title {
-    margin: 0 0 28px;
-    font-size: 42px;
-    font-weight: 800;
-    line-height: 1.12;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: #111111;
-    max-width: 520px;
+.psm-section-header--boat-park-community {
+    margin-bottom: 28px;
+    text-align: left;
 }
 
-.psm-boat-park-community__title-dot {
-    color: #e31e24;
+.psm-section-header--boat-park-community .psm-section-header__badge {
+    margin-bottom: 16px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: #666666;
+}
+
+.psm-section-header--boat-park-community .psm-section-header__title {
+    margin-bottom: 0;
+    font-size: 42px;
+    max-width: 520px;
+    text-align: left;
+}
+
+.psm-boat-park-community__media {
+    position: relative;
+}
+
+.psm-boat-park-community__accent {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    width: 8px;
+    height: 56%;
+    border-radius: 999px;
+    background: #e31e24;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.psm-boat-park-community__accent--right {
+    right: 0;
+}
+
+.psm-boat-park-community__accent--left {
+    left: 0;
 }
 
 .psm-boat-park-community__img {
@@ -6240,8 +6274,15 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     width: 100%;
     aspect-ratio: 14 / 9;
     object-fit: cover;
-    border-radius: 20px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.psm-boat-park-community__img--right {
+    border-radius: 32px 32px 32px 0;
+}
+
+.psm-boat-park-community__img--left {
+    border-radius: 32px 0 32px 32px;
 }
 
 .psm-boat-park-community__col--right {
@@ -6276,8 +6317,8 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 .psm-boat-park-community__badge .psm-welcome-badge {
     position: static;
     transform: none;
-    width: 112px;
-    height: 112px;
+    width: 128px;
+    height: 128px;
     filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.14));
 }
 
@@ -6285,7 +6326,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 .psm-boat-park-facilities {
     background-color: #f9f9f9;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    padding: 80px 0;
+    padding: 80px 0 100px;
 }
 
 .psm-section-header--boat-park-facilities {
@@ -6296,11 +6337,38 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     font-size: 42px;
 }
 
+.psm-section-header--boat-park-facilities .psm-section-header__intro {
+    max-width: 720px;
+}
+
 .psm-boat-park-facilities__grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;
     margin-bottom: 40px;
+}
+
+.psm-boat-park-facilities__grid .psm-facility-icon-card {
+    min-height: 100%;
+    padding: 36px 28px;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.psm-boat-park-facilities__grid .psm-facility-icon-card__icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+}
+
+.psm-boat-park-facilities__grid .psm-facility-icon-card__title {
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.psm-boat-park-facilities__grid .psm-facility-icon-card__text {
+    font-size: 15px;
+    line-height: 1.6;
 }
 
 .psm-facility-icon-card {
@@ -6329,8 +6397,8 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 }
 
 .psm-facility-icon-card__icon--mooring {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2v4M8 6h8M6 10h12v2H6v-2zm2 4h8l-1 10H9L8 14zm-2 12h12' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2v4M8 6h8M6 10h12v2H6v-2zm2 4h8l-1 10H9L8 14zm-2 12h12' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 18V8l6-4 6 4v10' stroke='%23000' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M9 18v-6h6v6' stroke='%23000' stroke-width='1.5'/%3E%3Cpath d='M4 20h16' stroke='%23e31e24' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M18 10l2-2M6 10L4 8' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 18V8l6-4 6 4v10' stroke='%23000' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M9 18v-6h6v6' stroke='%23000' stroke-width='1.5'/%3E%3Cpath d='M4 20h16' stroke='%23e31e24' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M18 10l2-2M6 10L4 8' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 .psm-facility-icon-card__icon--slipway {
@@ -6361,6 +6429,21 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 .psm-facility-icon-card__icon--transparency {
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 4l8 4v6c0 4-3.5 6-8 8-4.5-2-8-4-8-8V8l8-4z' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 4l8 4v6c0 4-3.5 6-8 8-4.5-2-8-4-8-8V8l8-4z' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+}
+
+.psm-facility-icon-card__icon--safe-access {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M7 10a5 5 0 0 1 10 0v1.5a5 5 0 0 1-10 0V10z' stroke='%23000' stroke-width='1.5'/%3E%3Cpath d='M9 14.5l2 2 4-4.5' stroke='%23e31e24' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5 8c1.5-2 4-3 7-3s5.5 1 7 3' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M7 10a5 5 0 0 1 10 0v1.5a5 5 0 0 1-10 0V10z' stroke='%23000' stroke-width='1.5'/%3E%3Cpath d='M9 14.5l2 2 4-4.5' stroke='%23e31e24' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5 8c1.5-2 4-3 7-3s5.5 1 7 3' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.psm-facility-icon-card__icon--coastal {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='12' cy='12' r='4.5' stroke='%23000' stroke-width='1.5'/%3E%3Cpath d='M12 7.5V5M12 19v-2.5M16.5 12H19M5 12h2.5' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M4 18c2-1.5 4.5-2 8-2s6 .5 8 2' stroke='%23e31e24' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='12' cy='12' r='4.5' stroke='%23000' stroke-width='1.5'/%3E%3Cpath d='M12 7.5V5M12 19v-2.5M16.5 12H19M5 12h2.5' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M4 18c2-1.5 4.5-2 8-2s6 .5 8 2' stroke='%23e31e24' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.psm-facility-icon-card__icon--maintenance {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8 14l-2 4 2 1 2-4-2-1z' stroke='%23000' stroke-width='1.5' stroke-linejoin='round'/%3E%3Ccircle cx='14' cy='10' r='4.5' stroke='%23000' stroke-width='1.5'/%3E%3Cpath d='M16.5 7.5l1.5-1.5M12 5.5V4M7.5 7.5L6 6' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M14.5 11.5l1.5 1.5' stroke='%23e31e24' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8 14l-2 4 2 1 2-4-2-1z' stroke='%23000' stroke-width='1.5' stroke-linejoin='round'/%3E%3Ccircle cx='14' cy='10' r='4.5' stroke='%23000' stroke-width='1.5'/%3E%3Cpath d='M16.5 7.5l1.5-1.5M12 5.5V4M7.5 7.5L6 6' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M14.5 11.5l1.5 1.5' stroke='%23e31e24' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 .psm-facility-icon-card__title {
@@ -6403,41 +6486,86 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     text-align: left;
 }
 
-.psm-section-header--boat-park-mooring .psm-section-header__eyebrow-red {
-    margin-left: 0;
+.psm-section-header--boat-park-mooring .psm-section-header__badge {
+    margin-bottom: 16px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: #666666;
 }
 
 .psm-section-header--boat-park-mooring .psm-section-header__title {
-    margin-bottom: 0;
+    margin-bottom: 16px;
     font-size: 42px;
-    max-width: 480px;
+    max-width: 520px;
+    text-align: left;
+}
+
+.psm-section-header--boat-park-mooring .psm-section-header__intro {
+    margin: 0;
+    max-width: none;
+    text-align: left;
+}
+
+.psm-section-header--boat-park-mooring .psm-section-header__intro p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #666666;
 }
 
 .psm-boat-park-mooring__steps {
     display: flex;
     flex-direction: column;
+    gap: 16px;
 }
 
 .psm-mooring-step {
+    position: relative;
     display: grid;
     grid-template-columns: auto minmax(0, 1fr) auto;
     gap: 20px 24px;
     align-items: center;
-    padding: 24px 0;
-    border-bottom: 1px solid #e8e8e8;
+    padding: 24px 28px 24px 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
 }
 
-.psm-mooring-step:first-child {
-    padding-top: 0;
-}
-
-.psm-mooring-step:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+.psm-mooring-step::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    background: #e31e24;
 }
 
 .psm-mooring-step__icon {
-    margin: 0;
+    display: block;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.psm-mooring-step__icon--submit {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'%3E%3Crect x='10' y='14' width='30' height='22' rx='3' stroke='%23111' stroke-width='2'/%3E%3Cpath d='M14 38h22v10H14z' stroke='%23111' stroke-width='2'/%3E%3Cpath d='M18 42h14' stroke='%23111' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M42 24h10v8H42z' stroke='%23e31e24' stroke-width='2'/%3E%3Cpath d='M52 28H58M55 25v6' stroke='%23e31e24' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.psm-mooring-step__icon--review {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'%3E%3Ccircle cx='28' cy='24' r='8' stroke='%23111' stroke-width='2'/%3E%3Cpath d='M14 44c0-8 6-12 14-12s14 4 14 12' stroke='%23111' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='46' cy='22' r='8' stroke='%23e31e24' stroke-width='2'/%3E%3Cpath d='M46 18v8M42 22h8' stroke='%23e31e24' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.psm-mooring-step__icon--allocation {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'%3E%3Ccircle cx='32' cy='18' r='7' stroke='%23e31e24' stroke-width='2'/%3E%3Ccircle cx='16' cy='44' r='6' stroke='%23111' stroke-width='2'/%3E%3Ccircle cx='48' cy='44' r='6' stroke='%23111' stroke-width='2'/%3E%3Cpath d='M28 24L18 38M36 24l10 14M22 44h20' stroke='%23111' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 .psm-mooring-step__title {
@@ -6463,6 +6591,173 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     letter-spacing: -0.02em;
     color: #ececec;
     user-select: none;
+}
+
+/* ----- Reusable: video play media ----- */
+.psm-video-media {
+    position: relative;
+    min-width: 0;
+    padding: 24px 0 0 24px;
+}
+
+.psm-video-media__accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 38%;
+    height: 42%;
+    background: #e31e24;
+    border-radius: 24px 0 24px 24px;
+    pointer-events: none;
+}
+
+.psm-video-media__wrap {
+    position: relative;
+    z-index: 1;
+}
+
+.psm-video-media__img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 5 / 6;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.psm-video-media .psm-welcome-badge {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    z-index: 3;
+    width: 128px;
+    height: 128px;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.14));
+}
+
+.psm-video-media__play {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 20px 8px 8px;
+    border: none;
+    border-radius: 999px;
+    background: #ffffff;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    color: #111111;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.psm-video-media__play:hover,
+.psm-video-media__play:focus-visible {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.psm-video-media__play-icon {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #111111;
+}
+
+.psm-video-media__play-icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 11px solid #ffffff;
+}
+
+/* ----- Reusable: video modal ----- */
+.psm-video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.psm-video-modal[hidden] {
+    display: none;
+}
+
+.psm-video-modal.is-open {
+    display: flex;
+}
+
+.psm-video-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+}
+
+.psm-video-modal__dialog {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 960px);
+}
+
+.psm-video-modal__close {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #ffffff;
+    font-size: 24px;
+    line-height: 1;
+    color: #111111;
+    cursor: pointer;
+}
+
+.psm-video-modal__close:hover,
+.psm-video-modal__close:focus-visible {
+    outline: none;
+    background: #f2f2f2;
+}
+
+.psm-video-modal__frame-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #000000;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+}
+
+.psm-video-modal__iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 .psm-page-boat-park .psm-news {
