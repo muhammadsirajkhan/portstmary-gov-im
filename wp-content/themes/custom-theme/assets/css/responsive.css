@@ -313,23 +313,8 @@
         gap: 40px;
     }
 
-    .psm-gallery-life-media {
-        padding: 0 0 64px 40px;
-    }
-
-    .psm-gallery-masonry {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .psm-gallery-masonry__item--a,
-    .psm-gallery-masonry__item--b,
-    .psm-gallery-masonry__item--c,
-    .psm-gallery-masonry__item--d,
-    .psm-gallery-masonry__item--e,
-    .psm-gallery-masonry__item--f,
-    .psm-gallery-masonry__item--g {
-        grid-column: span 1;
-        aspect-ratio: 4 / 3;
+    .psm-gallery-columns {
+        grid-template-columns: 1fr;
     }
 
     .psm-election-documents__grid {
@@ -1166,12 +1151,7 @@
         font-size: 32px;
     }
 
-    .psm-gallery-life-media__badge .psm-welcome-badge {
-        width: 88px;
-        height: 88px;
-    }
-
-    .psm-gallery-masonry {
+    .psm-gallery-columns__row {
         grid-template-columns: 1fr;
     }
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Gallery page content.
+ * Gallery page — layout helpers.
  *
  * @package CMD_Theme
  */
@@ -8,48 +8,135 @@
 defined('ABSPATH') || exit;
 
 /**
- * Capturing Community Life intro paragraphs.
+ * Featured gallery image slot order (maps repeater index to layout key).
  *
  * @return string[]
  */
-function psm_get_gallery_community_life_paragraphs() {
+function psm_gallery_featured_image_slot_keys() {
+    return array('a', 'b', 'e', 'c', 'f', 'd', 'g', 'h');
+}
+
+/**
+ * Featured gallery slot size map.
+ *
+ * @return array<string, string>
+ */
+function psm_gallery_featured_item_sizes() {
     return array(
-        __(
-            'Our community gallery celebrates life in Port St Mary — from harbour scenes and local events to the people and places that make our town special.',
-            'cmd-theme'
+        'a' => 'portrait',
+        'b' => 'landscape',
+        'c' => 'landscape-lg',
+        'd' => 'landscape-lg',
+        'e' => 'landscape',
+        'f' => 'landscape',
+        'g' => 'portrait',
+        'h' => 'portrait',
+    );
+}
+
+/**
+ * Empty featured gallery items keyed by layout slot.
+ *
+ * @return array<string, array{image: string, image_seed: string, alt: string, size: string}>
+ */
+function psm_gallery_featured_items_empty() {
+    $items = array();
+
+    foreach (psm_gallery_featured_item_sizes() as $key => $size) {
+        $items[ $key ] = array(
+            'image'      => '',
+            'image_seed' => '',
+            'alt'        => '',
+            'size'       => $size,
+        );
+    }
+
+    return $items;
+}
+
+/**
+ * Build featured gallery columns from keyed items.
+ *
+ * @param array<string, array{image: string, image_seed: string, alt: string, size: string}> $items Keyed gallery items.
+ * @return array<int, array{items: array<int, array<string, mixed>>}>
+ */
+function psm_build_gallery_featured_columns(array $items) {
+    return array(
+        array(
+            'items' => array(
+                array(
+                    'type'  => 'row',
+                    'items' => array(
+                        $items['a'],
+                        $items['b'],
+                    ),
+                ),
+                $items['e'],
+            ),
         ),
-        __(
-            'These images capture the spirit of our coastal community and the work of Port St Mary Commissioners in supporting residents and visitors alike.',
-            'cmd-theme'
+        array(
+            'items' => array(
+                $items['c'],
+                $items['f'],
+            ),
         ),
-        __(
-            'Browse the featured gallery below for highlights from recent events, projects, and everyday moments across the town.',
-            'cmd-theme'
+        array(
+            'items' => array(
+                $items['d'],
+                array(
+                    'type'  => 'row',
+                    'items' => array(
+                        $items['g'],
+                        $items['h'],
+                    ),
+                ),
+            ),
         ),
     );
 }
 
 /**
- * Featured gallery masonry items.
+ * Remove gallery column items that have no image.
  *
- * @return array<int, array{image: string, image_seed: string, alt: string, span: string}>
+ * @param array<int, array{items: array<int, array<string, mixed>>}> $columns Gallery columns.
+ * @return array<int, array{items: array<int, array<string, mixed>>}>
  */
-function psm_get_gallery_featured_items() {
-    $items = array(
-        array('span' => 'a', 'seed' => 'psm-gallery-1', 'alt' => __('Port St Mary harbor view', 'cmd-theme')),
-        array('span' => 'b', 'seed' => 'psm-gallery-2', 'alt' => __('Community event in Port St Mary', 'cmd-theme')),
-        array('span' => 'c', 'seed' => 'psm-gallery-3', 'alt' => __('Coastal landscape near Port St Mary', 'cmd-theme')),
-        array('span' => 'd', 'seed' => 'psm-gallery-4', 'alt' => __('Town centre and shops', 'cmd-theme')),
-        array('span' => 'e', 'seed' => 'psm-gallery-5', 'alt' => __('Harbor boats at Port St Mary', 'cmd-theme')),
-        array('span' => 'f', 'seed' => 'psm-gallery-6', 'alt' => __('Community gathering outdoors', 'cmd-theme')),
-        array('span' => 'g', 'seed' => 'psm-gallery-7', 'alt' => __('Sunset over Port St Mary bay', 'cmd-theme')),
-    );
+function psm_filter_gallery_featured_columns(array $columns) {
+    $filtered_columns = array();
 
-    foreach ($items as $index => $item) {
-        $file = 'gallery-featured-' . ( $index + 1 ) . '.jpg';
-        $items[ $index ]['image'] = psm_theme_image($file) ?: '';
-        $items[ $index ]['image_seed'] = $item['seed'];
+    foreach ($columns as $column) {
+        $column_items = isset($column['items']) && is_array($column['items']) ? $column['items'] : array();
+        $items        = array();
+
+        foreach ($column_items as $item) {
+            if (!empty($item['type']) && 'row' === $item['type']) {
+                $row_items = array();
+
+                foreach ((array) ( $item['items'] ?? array() ) as $sub_item) {
+                    if (!empty($sub_item['image'])) {
+                        $row_items[] = $sub_item;
+                    }
+                }
+
+                if (!empty($row_items)) {
+                    $items[] = array(
+                        'type'  => 'row',
+                        'items' => $row_items,
+                    );
+                }
+
+                continue;
+            }
+
+            if (!empty($item['image'])) {
+                $items[] = $item;
+            }
+        }
+
+        if (!empty($items)) {
+            $filtered_columns[] = array('items' => $items);
+        }
     }
 
-    return $items;
+    return $filtered_columns;
 }

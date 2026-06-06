@@ -1,0 +1,206 @@
+{
+    "key": "group_psm_gallery_page",
+    "title": "Gallery Page",
+    "fields": [
+        {
+            "key": "field_psm_gallery_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_gallery",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "default_value": "Welcome to Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_inner_banner_title_gallery",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "default_value": "Community Gallery"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_gallery",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "default_value": "Celebrating Coastal Community Life"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_gallery",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "default_value": "Explore photographs and moments from Port St Mary — our harbor, events, and community life.",
+            "rows": 3
+        },
+        {
+            "key": "field_psm_inner_banner_image_gallery",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_psm_gallery_tab_community",
+            "label": "Capturing Community Life",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_gallery_community_image",
+            "label": "Image",
+            "name": "gallery_community_image",
+            "type": "image",
+            "instructions": "Single image for the left column.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_gallery_community_badge",
+            "label": "Badge",
+            "name": "gallery_community_badge",
+            "type": "text",
+            "instructions": "Pill label above the heading.",
+            "default_value": "Port St Mary Commissioners",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_gallery_community_title",
+            "label": "Heading",
+            "name": "gallery_community_title",
+            "type": "text",
+            "instructions": "Section heading.",
+            "default_value": "Capturing Community Life",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_gallery_community_body",
+            "label": "Body Text",
+            "name": "gallery_community_body",
+            "type": "textarea",
+            "instructions": "Intro paragraphs. One paragraph per line.",
+            "rows": 6,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_gallery_community_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_gallery_tab_featured",
+            "label": "Featured Gallery",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_gallery_featured_badge",
+            "label": "Badge",
+            "name": "gallery_featured_badge",
+            "type": "text",
+            "instructions": "Pill label above the heading.",
+            "default_value": "The TSS Mona's Queen III Anchor Memorial",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_gallery_featured_title",
+            "label": "Heading",
+            "name": "gallery_featured_title",
+            "type": "text",
+            "instructions": "Section heading.",
+            "default_value": "Featured Gallery",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_gallery_featured_intro",
+            "label": "Intro",
+            "name": "gallery_featured_intro",
+            "type": "textarea",
+            "instructions": "Intro paragraph below the heading.",
+            "rows": 4,
+            "default_value": "Port St Mary Commissioners proudly unveiled the Islands newest memorial on 29th May 2012. The TSS Mona's Queen III Anchor Memorial was the end result of a monumental effort from many people of the Isle of Man, France and the UK in raising the anchor from the Mona's Queen III from the seabed off Dunkirk and returning it to rest at Kallow Point, Port St Mary.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_gallery_featured_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_gallery_featured_images",
+            "label": "Gallery Images",
+            "name": "gallery_featured_images",
+            "type": "repeater",
+            "instructions": "Add up to 8 images in layout order: 1–2 left top row, 3 left bottom, 4–5 center, 6 right top, 7–8 right bottom row.",
+            "min": 0,
+            "max": 8,
+            "layout": "block",
+            "button_label": "Add Image",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_gallery_featured_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_psm_gallery_featured_image",
+                    "label": "Image",
+                    "name": "gallery_featured_image",
+                    "type": "image",
+                    "instructions": "",
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "parent_repeater": "field_psm_gallery_featured_images"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-gallery.php"
+            }
+        ]
+    ],
+    "menu_order": 24,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Gallery page content. Empty fields are hidden on the front end.",
+    "show_in_rest": 0,
+    "modified": 1749513600
+}

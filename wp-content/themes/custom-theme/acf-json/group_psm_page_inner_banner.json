@@ -125,13 +125,6 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-gallery.php"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
                 "value": "page-rates-finances.php"
             }
         ],
