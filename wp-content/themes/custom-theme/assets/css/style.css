@@ -1096,7 +1096,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 
 .psm-about__grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
     gap: 64px;
     align-items: center;
 }
@@ -6223,19 +6223,19 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 }
 
 .psm-section-header--boat-park-community {
-    margin-bottom: 28px;
+    margin-bottom: 85px;
     text-align: left;
 }
 
 .psm-section-header--boat-park-community .psm-section-header__badge {
-    margin-bottom: 16px;
-    padding: 0;
-    background: transparent;
-    border: none;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    color: #666666;
+    /* margin-bottom: 16px; */
+    /* padding: 0; */
+    /* background: transparent; */
+    /* border: none; */
+    /* font-size: 12px; */
+    /* font-weight: 600; */
+    /* letter-spacing: 0.14em; */
+    /* color: #666666; */
 }
 
 .psm-section-header--boat-park-community .psm-section-header__title {
@@ -6272,13 +6272,13 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 .psm-boat-park-community__img {
     display: block;
     width: 100%;
-    aspect-ratio: 14 / 9;
-    object-fit: cover;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    /* aspect-ratio: 14 / 9; */
+    /* object-fit: cover; */
+    /* box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); */
 }
 
 .psm-boat-park-community__img--right {
-    border-radius: 32px 32px 32px 0;
+    /* border-radius: 32px 32px 32px 0; */
 }
 
 .psm-boat-park-community__img--left {
@@ -6289,7 +6289,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     display: flex;
     flex-direction: column;
     gap: 28px;
-    margin-top: -48px;
+    /* margin-top: -48px; */
 }
 
 .psm-boat-park-community__prose p {
@@ -6308,7 +6308,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 .psm-boat-park-community__badge {
     position: absolute;
     left: 50%;
-    top: 42%;
+    top: 55%;
     z-index: 2;
     transform: translate(-50%, -50%);
     pointer-events: none;
@@ -6350,7 +6350,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 
 .psm-boat-park-facilities__grid .psm-facility-icon-card {
     min-height: 100%;
-    padding: 36px 28px;
+    padding: 50px 40px 80px;
     border-radius: 20px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
@@ -6359,6 +6359,13 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     width: 48px;
     height: 48px;
     margin-bottom: 24px;
+}
+
+.psm-boat-park-facilities__grid .psm-facility-icon-card__icon-img {
+    width: auto;
+    height: auto;
+    margin-bottom: 24px;
+    object-fit: contain;
 }
 
 .psm-boat-park-facilities__grid .psm-facility-icon-card__title {
@@ -6394,6 +6401,14 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     -webkit-mask-repeat: no-repeat;
     mask-position: center;
     -webkit-mask-position: center;
+}
+
+.psm-facility-icon-card__icon-img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+    object-fit: contain;
 }
 
 .psm-facility-icon-card__icon--mooring {
@@ -6487,14 +6502,14 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 }
 
 .psm-section-header--boat-park-mooring .psm-section-header__badge {
-    margin-bottom: 16px;
-    padding: 0;
-    background: transparent;
-    border: none;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    color: #666666;
+    /* margin-bottom: 16px; */
+    /* padding: 0; */
+    /* background: transparent; */
+    /* border: none; */
+    /* font-size: 12px; */
+    /* font-weight: 600; */
+    /* letter-spacing: 0.14em; */
+    /* color: #666666; */
 }
 
 .psm-section-header--boat-park-mooring .psm-section-header__title {
@@ -6530,7 +6545,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     align-items: center;
     padding: 24px 28px 24px 24px;
     background: #ffffff;
-    border-radius: 16px;
+    border-radius: 8px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
     overflow: hidden;
 }
@@ -6554,6 +6569,14 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.psm-mooring-step__icon-img {
+    display: block;
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+    object-fit: contain;
 }
 
 .psm-mooring-step__icon--submit {
@@ -6618,12 +6641,12 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 }
 
 .psm-video-media__img {
-    display: block;
+    /* display: block; */
     width: 100%;
-    aspect-ratio: 5 / 6;
-    object-fit: cover;
-    border-radius: 24px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    /* aspect-ratio: 5 / 6; */
+    /* object-fit: cover; */
+    /* border-radius: 24px; */
+    /* box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12); */
 }
 
 .psm-video-media .psm-welcome-badge {
@@ -6638,7 +6661,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 
 .psm-video-media__play {
     position: absolute;
-    right: 20px;
+    right: 125px;
     bottom: 20px;
     z-index: 4;
     display: inline-flex;

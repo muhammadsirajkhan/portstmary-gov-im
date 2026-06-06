@@ -31,7 +31,7 @@ $alt      = $args['alt'] ?: __('Port St Mary boat park', 'cmd-theme');
 $modal_id = trim((string) $args['modal_id']);
 ?>
 <div class="psm-video-media">
-    <span class="psm-video-media__accent" aria-hidden="true"></span>
+    <!-- <span class="psm-video-media__accent" aria-hidden="true"></span> -->
     <div class="psm-video-media__wrap">
         <img
             class="psm-video-media__img"
@@ -42,7 +42,7 @@ $modal_id = trim((string) $args['modal_id']);
             loading="lazy"
             decoding="async"
         >
-        <?php get_template_part('template-parts/components/welcome-badge'); ?>
+        <?php // get_template_part('template-parts/components/welcome-badge'); ?>
 
         <?php if ($modal_id) : ?>
             <button

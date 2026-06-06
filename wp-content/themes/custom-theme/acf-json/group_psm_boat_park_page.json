@@ -1,0 +1,381 @@
+{
+    "key": "group_psm_boat_park_page",
+    "title": "Boat Park Page",
+    "fields": [
+        {
+            "key": "field_psm_bp_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_bp",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "default_value": "Welcome to Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_inner_banner_title_bp",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "default_value": "Our Boat Park"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_bp",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "default_value": "Your Community Boat Park"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_bp",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "default_value": "Moorings, slipway access, and harbour facilities managed for the Port St Mary boating community.",
+            "rows": 3
+        },
+        {
+            "key": "field_psm_inner_banner_image_bp",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_psm_bp_tab_community",
+            "label": "Supporting Community",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_bp_community_badge",
+            "label": "Badge",
+            "name": "boat_community_badge",
+            "type": "text",
+            "instructions": "Grey eyebrow label above the heading.",
+            "default_value": "Port St Mary Commissioners",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_bp_community_title",
+            "label": "Heading",
+            "name": "boat_community_title",
+            "type": "text",
+            "instructions": "Section heading.",
+            "default_value": "Supporting the Local and Boating Community",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_bp_community_image_harbor",
+            "label": "Harbor Image",
+            "name": "boat_community_image_harbor",
+            "type": "image",
+            "instructions": "Bottom-left image.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_bp_community_image_lighthouse",
+            "label": "Lighthouse Image",
+            "name": "boat_community_image_lighthouse",
+            "type": "image",
+            "instructions": "Top-right image.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_bp_community_body",
+            "label": "Body Text",
+            "name": "boat_community_body",
+            "type": "textarea",
+            "instructions": "Intro paragraphs. One paragraph per line.",
+            "rows": 5,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_bp_community_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_bp_tab_facilities",
+            "label": "Boat Park Facilities",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_bp_facilities_badge",
+            "label": "Section Badge",
+            "name": "boat_facilities_badge",
+            "type": "text",
+            "default_value": "Port St Mary Commissioners",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_bp_facilities_title",
+            "label": "Section Heading",
+            "name": "boat_facilities_title",
+            "type": "text",
+            "default_value": "Boat Park Facilities",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_bp_facilities_intro",
+            "label": "Intro",
+            "name": "boat_facilities_intro",
+            "type": "textarea",
+            "instructions": "Centered intro below the heading.",
+            "rows": 3,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_bp_facilities_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_bp_facility_cards",
+            "label": "Facility Cards",
+            "name": "boat_facility_cards",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use default cards.",
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_bp_facility_card_title",
+            "button_label": "Add Card",
+            "sub_fields": [
+                {
+                    "key": "field_psm_bp_facility_card_title",
+                    "label": "Title",
+                    "name": "facility_card_title",
+                    "type": "text",
+                    "instructions": "Required for the card to appear.",
+                    "placeholder": "Mooring Spaces",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_bp_facility_cards"
+                },
+                {
+                    "key": "field_psm_bp_facility_card_icon",
+                    "label": "Icon",
+                    "name": "facility_card_icon",
+                    "type": "image",
+                    "instructions": "Line icon for the card.",
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "mime_types": "jpg,jpeg,png,webp,svg",
+                    "wrapper": { "width": "50" },
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_bp_facility_card_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_bp_facility_cards"
+                },
+                {
+                    "key": "field_psm_bp_facility_card_text",
+                    "label": "Description",
+                    "name": "facility_card_text",
+                    "type": "textarea",
+                    "rows": 3,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_bp_facility_card_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_bp_facility_cards"
+                }
+            ]
+        },
+        {
+            "key": "field_psm_bp_facilities_feature_image",
+            "label": "Feature Image",
+            "name": "boat_facilities_feature_image",
+            "type": "image",
+            "instructions": "Wide image below the cards.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_psm_bp_tab_mooring",
+            "label": "Mooring Applications",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_bp_mooring_badge",
+            "label": "Badge",
+            "name": "boat_mooring_badge",
+            "type": "text",
+            "default_value": "Boat Park",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_bp_mooring_title",
+            "label": "Heading",
+            "name": "boat_mooring_title",
+            "type": "text",
+            "default_value": "Mooring Applications",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_bp_mooring_intro",
+            "label": "Intro",
+            "name": "boat_mooring_intro",
+            "type": "textarea",
+            "rows": 3,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_bp_mooring_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_bp_mooring_image",
+            "label": "Video Image",
+            "name": "boat_mooring_image",
+            "type": "image",
+            "instructions": "Left-column image with play button.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_bp_mooring_video_id",
+            "label": "YouTube Video ID",
+            "name": "boat_mooring_video_id",
+            "type": "text",
+            "instructions": "YouTube video ID only (not the full URL).",
+            "default_value": "M7lc1UVf-VE",
+            "placeholder": "M7lc1UVf-VE",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_bp_mooring_steps",
+            "label": "Application Steps",
+            "name": "boat_mooring_steps",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use default steps.",
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_bp_mooring_step_title",
+            "button_label": "Add Step",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_bp_mooring_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_psm_bp_mooring_step_title",
+                    "label": "Title",
+                    "name": "mooring_step_title",
+                    "type": "text",
+                    "instructions": "Required for the step to appear.",
+                    "placeholder": "Submit Application",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_bp_mooring_steps"
+                },
+                {
+                    "key": "field_psm_bp_mooring_step_icon",
+                    "label": "Icon",
+                    "name": "mooring_step_icon",
+                    "type": "image",
+                    "instructions": "Line icon for the step.",
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "mime_types": "jpg,jpeg,png,webp,svg",
+                    "wrapper": { "width": "50" },
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_bp_mooring_step_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_bp_mooring_steps"
+                },
+                {
+                    "key": "field_psm_bp_mooring_step_text",
+                    "label": "Description",
+                    "name": "mooring_step_text",
+                    "type": "textarea",
+                    "rows": 2,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_bp_mooring_step_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_bp_mooring_steps"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-boat-park.php"
+            }
+        ]
+    ],
+    "menu_order": 21,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Inner banner and Boat Park page sections.",
+    "show_in_rest": 0,
+    "modified": 1782768000
+}

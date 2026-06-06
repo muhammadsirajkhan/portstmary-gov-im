@@ -7,33 +7,49 @@
 
 defined('ABSPATH') || exit;
 
-$facilities    = psm_get_boat_park_facilities();
-$feature_image = psm_theme_image('boat-park-pier.jpg') ?: psm_placeholder_image(1200, 520, 'psm-boat-park-pier');
-?>
-<section class="psm-boat-park-facilities" id="boat-park-facilities" aria-labelledby="psm-boat-park-facilities-heading">
-    <div class="container psm-container">
-        <?php
-        get_template_part(
-            'template-parts/components/section-header',
-            null,
-            array(
-                'badge'       => __('Port St Mary Commissioners', 'cmd-theme'),
-                'badge_style' => 'pill',
-                'title'       => __('Boat Park Facilities', 'cmd-theme'),
-                'heading_id'  => 'psm-boat-park-facilities-heading',
-                'intro'       => array(
-                    psm_get_boat_park_facilities_intro(),
-                ),
-                'class'       => 'psm-section-header--boat-park-facilities',
-            )
-        );
-        ?>
+$page_id = (int) get_queried_object_id();
+$section = psm_get_boat_park_facilities_section($page_id);
 
-        <div class="psm-boat-park-facilities__grid">
-            <?php foreach ($facilities as $facility) : ?>
-                <?php get_template_part('template-parts/components/facility-icon-card', null, $facility); ?>
-            <?php endforeach; ?>
-        </div>
+$badge         = trim((string) $section['badge']);
+$title         = trim((string) $section['title']);
+$intro         = trim((string) $section['intro']);
+$cards         = array_values(array_filter((array) $section['cards']));
+$feature_image = trim((string) $section['feature_image']);
+
+if ('' === $badge && '' === $title && '' === $intro && empty($cards) && '' === $feature_image) {
+    return;
+}
+
+if ('' === $feature_image) {
+    $feature_image = psm_placeholder_image(1200, 520, 'psm-boat-park-pier');
+}
+?>
+<section class="psm-boat-park-facilities" id="boat-park-facilities"<?php echo $title ? ' aria-labelledby="psm-boat-park-facilities-heading"' : ''; ?>>
+    <div class="container psm-container">
+        <?php if ('' !== $badge || '' !== $title || '' !== $intro) : ?>
+            <?php
+            get_template_part(
+                'template-parts/components/section-header',
+                null,
+                array(
+                    'badge'       => $badge,
+                    'badge_style' => 'pill',
+                    'title'       => $title,
+                    'heading_id'  => 'psm-boat-park-facilities-heading',
+                    'intro'       => '' !== $intro ? array($intro) : array(),
+                    'class'       => 'psm-section-header--boat-park-facilities',
+                )
+            );
+            ?>
+        <?php endif; ?>
+
+        <?php if (!empty($cards)) : ?>
+            <div class="psm-boat-park-facilities__grid">
+                <?php foreach ($cards as $facility) : ?>
+                    <?php get_template_part('template-parts/components/facility-icon-card', null, $facility); ?>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
 
         <img
             class="psm-boat-park-facilities__feature"

@@ -18,26 +18,8 @@ get_header();
         'template-parts/sections/inner-banner',
         null,
         array(
-            'kicker'     => __('Welcome to Port St Mary Commissioners', 'cmd-theme'),
-            'title'      => __('Our Boat Park', 'cmd-theme'),
-            'ribbon'     => __('Your Community Boat Park', 'cmd-theme'),
-            'intro'      => __(
-                'Moorings, slipway access, and harbour facilities managed for the Port St Mary boating community.',
-                'cmd-theme'
-            ),
             'image'      => psm_theme_image('boat-park-banner.jpg'),
             'image_seed' => 'psm-boat-park-banner',
-            'heading_id' => 'psm-boat-park-page-title',
-            'breadcrumb' => array(
-                array(
-                    'label' => __('Home', 'cmd-theme'),
-                    'url'   => home_url('/'),
-                ),
-                array(
-                    'label' => __('Boat Park', 'cmd-theme'),
-                    'url'   => '',
-                ),
-            ),
         )
     );
 

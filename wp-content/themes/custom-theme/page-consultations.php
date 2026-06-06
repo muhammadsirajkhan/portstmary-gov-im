@@ -18,7 +18,7 @@ get_header();
         'template-parts/sections/inner-banner',
         null,
         array(
-            'variant'        => 'featured',
+ 
             'kicker'         => __('Welcome to Port St Mary Commissioners', 'cmd-theme'),
             'title'          => __('Consultations', 'cmd-theme'),
             'ribbon'         => __('Helping Shape Local Decisions', 'cmd-theme'),
@@ -28,19 +28,9 @@ get_header();
             ),
             'image'          => psm_theme_image('consultations-hero-bg.jpg'),
             'image_seed'     => 'psm-consultations-hero-bg',
-            'featured_image' => psm_theme_image('consultations-hero-featured.jpg'),
-            'featured_seed'  => 'psm-consultations-hero-featured',
+
             'heading_id'     => 'psm-consultations-page-title',
-            'breadcrumb'     => array(
-                array(
-                    'label' => __('Home', 'cmd-theme'),
-                    'url'   => home_url('/'),
-                ),
-                array(
-                    'label' => __('Consultations', 'cmd-theme'),
-                    'url'   => '',
-                ),
-            ),
+           
         )
     );
 

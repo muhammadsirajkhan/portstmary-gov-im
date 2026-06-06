@@ -153,13 +153,6 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-boat-park.php"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
                 "value": "page-where-to-eat.php"
             }
         ]
