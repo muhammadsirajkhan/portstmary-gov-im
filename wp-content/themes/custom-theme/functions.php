@@ -65,6 +65,8 @@ require get_template_directory() . '/inc/consultations-data.php';
 require get_template_directory() . '/inc/consultations-helpers.php';
 require get_template_directory() . '/inc/acf-consultations-defaults.php';
 require get_template_directory() . '/inc/elections-data.php';
+require get_template_directory() . '/inc/elections-helpers.php';
+require get_template_directory() . '/inc/acf-elections-defaults.php';
 require get_template_directory() . '/inc/gallery-data.php';
 require get_template_directory() . '/inc/local-info-data.php';
 require get_template_directory() . '/inc/rates-finances-data.php';

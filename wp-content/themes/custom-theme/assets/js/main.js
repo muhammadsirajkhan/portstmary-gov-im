@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initMobileSubmenus();
   initHeroSwiper();
   initNewsSwiper();
+  initElectionDocumentsSwipers();
   initStickyHeader();
   initVideoModals();
 });
@@ -211,6 +212,109 @@ function initNewsSwiper() {
         spaceBetween: 32,
       },
     },
+  });
+}
+
+function initElectionDocumentsSwipers() {
+  if (typeof Swiper === "undefined") {
+    return;
+  }
+
+  document.querySelectorAll(".psm-election-documents-swiper").forEach((root) => {
+    if (root.swiper) {
+      return;
+    }
+
+    const carousel = root.closest(".psm-election-documents__carousel");
+    const pager = carousel ? carousel.querySelector(".psm-election-documents__pager") : null;
+    const slideCount = root.querySelectorAll(".swiper-slide").length;
+
+    if (slideCount < 1) {
+      return;
+    }
+
+    const swiper = new Swiper(root, {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      loop: slideCount > 2,
+      speed: 600,
+      grabCursor: slideCount > 1,
+      watchOverflow: true,
+      observer: true,
+      observeParents: true,
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 32,
+        },
+      },
+      on: {
+        init(swiperInstance) {
+          buildElectionDocumentsPager(swiperInstance, pager, slideCount);
+          updateElectionDocumentsPager(swiperInstance, pager);
+        },
+        slideChange(swiperInstance) {
+          updateElectionDocumentsPager(swiperInstance, pager);
+        },
+      },
+    });
+
+    if (pager && pager.dataset.bound !== "true") {
+      pager.dataset.bound = "true";
+      pager.addEventListener("click", (event) => {
+        const button = event.target.closest(".psm-election-documents__pager-btn");
+        if (!button) {
+          return;
+        }
+
+        const index = parseInt(button.getAttribute("data-slide"), 10);
+        if (Number.isNaN(index)) {
+          return;
+        }
+
+        if (swiper.params.loop) {
+          swiper.slideToLoop(index);
+        } else {
+          swiper.slideTo(index);
+        }
+      });
+    }
+  });
+}
+
+function buildElectionDocumentsPager(swiper, pager, slideCount) {
+  if (!pager || pager.dataset.built === "true") {
+    return;
+  }
+
+  pager.dataset.built = "true";
+  pager.innerHTML = "";
+
+  for (let index = 0; index < slideCount; index += 1) {
+    const item = document.createElement("li");
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "psm-election-documents__pager-btn";
+    button.setAttribute("data-slide", String(index));
+    button.setAttribute("aria-label", "Go to slide " + (index + 1));
+
+    const line = document.createElement("span");
+    line.className = "psm-election-documents__pager-line";
+    line.setAttribute("aria-hidden", "true");
+
+    button.appendChild(line);
+    item.appendChild(button);
+    pager.appendChild(item);
+  }
+}
+
+function updateElectionDocumentsPager(swiper, pager) {
+  if (!pager) {
+    return;
+  }
+
+  pager.querySelectorAll("li").forEach((item, index) => {
+    item.classList.toggle("is-active", index === swiper.realIndex);
   });
 }
 

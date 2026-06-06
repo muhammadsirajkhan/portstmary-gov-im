@@ -1,0 +1,892 @@
+{
+    "key": "group_psm_elections_page",
+    "title": "Elections Page",
+    "fields": [
+        {
+            "key": "field_psm_election_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_election",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Elections",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_title_election",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "General Election",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_election",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Your Community, Your Voice, Your Vote, Your Future",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_inner_banner_intro_election",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Stay informed about elections, candidates, voting, and official notices from Port St Mary Commissioners.",
+            "rows": 3,
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_inner_banner_image_election",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0
+        },
+        {
+            "key": "field_psm_election_tab_results",
+            "label": "General Election Results",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_election_results_badge",
+            "label": "Section Badge",
+            "name": "election_results_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Community Events",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_election_results_title",
+            "label": "Section Heading",
+            "name": "election_results_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "2025 General Election Results",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_election_results_intro",
+            "label": "Intro",
+            "name": "election_results_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Centered intro below the heading.",
+            "required": false,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_election_results_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_election_results_cards",
+            "label": "Result Documents",
+            "name": "election_results_cards",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use default result cards. Rows without a title are hidden.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_election_doc_title_results",
+            "button_label": "Add Document",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_psm_election_doc_image_results",
+                    "label": "Preview Image",
+                    "name": "election_doc_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Document preview thumbnail.",
+                    "required": false,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_election_doc_title_results",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "parent_repeater": "field_psm_election_results_cards",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0
+                },
+                {
+                    "key": "field_psm_election_doc_link_results",
+                    "label": "Document Link",
+                    "name": "election_doc_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Optional PDF or document URL.",
+                    "required": false,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_election_doc_title_results",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_psm_election_results_cards"
+                }
+            ]
+        },
+        {
+            "key": "field_psm_election_results_footer",
+            "label": "Footer Text",
+            "name": "election_results_footer",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Footer paragraphs. One paragraph per line.",
+            "required": false,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_election_results_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 4,
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_election_results_footer_link",
+            "label": "Footer Link",
+            "name": "election_results_footer_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "External link shown below the footer text.",
+            "required": false,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_election_results_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/www.gov.im\/local-authority-elections",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_election_tab_candidates",
+            "label": "Candidates",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_election_candidates_badge",
+            "label": "Section Badge",
+            "name": "election_candidates_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Candidates",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_election_candidates_title",
+            "label": "Section Heading",
+            "name": "election_candidates_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Candidates",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_election_candidates_lead",
+            "label": "Intro",
+            "name": "election_candidates_lead",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Main paragraph with red accent border.",
+            "required": false,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_election_candidates_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 4,
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_election_candidates_link_url",
+            "label": "Information Link",
+            "name": "election_candidates_link_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Nomination forms and candidate information URL.",
+            "required": false,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_election_candidates_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/www.gov.im\/categories\/home-and-neighbourhood\/elections-and-voting\/local-authority-election\/stand-as-a-local-candidate\/",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_election_candidates_phone",
+            "label": "Phone",
+            "name": "election_candidates_phone",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_election_candidates_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "+44 1624 832101",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_election_candidates_email",
+            "label": "Email",
+            "name": "election_candidates_email",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_election_candidates_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "commissioners@portstmary.gov.im",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_election_candidates_image",
+            "label": "Image",
+            "name": "election_candidates_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Right column image. Click opens video modal when YouTube ID is set.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0
+        },
+        {
+            "key": "field_psm_election_candidates_video_id",
+            "label": "YouTube Video ID",
+            "name": "election_candidates_video_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "YouTube video ID for the modal player (e.g. M7lc1UVf-VE).",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "M7lc1UVf-VE",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_election_tab_voting",
+            "label": "Voting",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_election_voting_badge",
+            "label": "Section Badge",
+            "name": "election_voting_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Voting",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_election_voting_title",
+            "label": "Section Heading",
+            "name": "election_voting_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Voting",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_election_voting_intro",
+            "label": "Intro",
+            "name": "election_voting_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_election_voting_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_election_voting_image",
+            "label": "Image",
+            "name": "election_voting_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Centered feature image.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0
+        },
+        {
+            "key": "field_psm_election_voting_link_url",
+            "label": "How To Vote Link",
+            "name": "election_voting_link_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "External how-to-vote page URL.",
+            "required": false,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_election_voting_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/www.gov.im\/categories\/home-and-neighbourhood\/elections-and-voting\/local-authority-election\/how-to-vote\/",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_election_tab_notice",
+            "label": "Notice of Election",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_election_notice_badge",
+            "label": "Section Badge",
+            "name": "election_notice_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Voting",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_election_notice_title",
+            "label": "Section Heading",
+            "name": "election_notice_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Notice of Election – 24 April 2025",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_election_notice_intro",
+            "label": "Intro",
+            "name": "election_notice_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_election_notice_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_election_notice_cards",
+            "label": "Notice Documents",
+            "name": "election_notice_cards",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Optional. Leave empty to use default notice cards. Displayed in a swiper slider.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_election_doc_title_notice",
+            "button_label": "Add Document",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_psm_election_doc_title_notice",
+                    "label": "Title",
+                    "name": "election_doc_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Required for the card to appear.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "Result for General Election 2025",
+                    "parent_repeater": "field_psm_election_notice_cards",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_psm_election_doc_image_notice",
+                    "label": "Preview Image",
+                    "name": "election_doc_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Document preview thumbnail.",
+                    "required": false,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_election_doc_title_notice",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "parent_repeater": "field_psm_election_notice_cards",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0
+                },
+                {
+                    "key": "field_psm_election_doc_link_notice",
+                    "label": "Document Link",
+                    "name": "election_doc_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "Optional PDF or document URL.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_election_doc_title_notice",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_psm_election_notice_cards"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-elections.php"
+            }
+        ]
+    ],
+    "menu_order": 23,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner, election results, candidates, voting, and notice of election sections.",
+    "show_in_rest": 0,
+    "modified": 1780784674
+}

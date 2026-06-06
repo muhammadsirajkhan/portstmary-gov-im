@@ -337,6 +337,10 @@
         gap: 20px;
     }
 
+    .psm-election-documents__carousel {
+        max-width: none;
+    }
+
     .psm-elections-candidates__grid {
         grid-template-columns: 1fr;
         gap: 40px;

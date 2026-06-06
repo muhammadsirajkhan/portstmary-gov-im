@@ -132,13 +132,6 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-elections.php"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
                 "value": "page-rates-finances.php"
             }
         ],

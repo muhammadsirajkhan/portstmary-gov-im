@@ -47,6 +47,14 @@ $modal_id = trim((string) $args['modal_id']);
         <?php if ($modal_id) : ?>
             <button
                 type="button"
+                class="psm-video-media__overlay"
+                data-video-modal="<?php echo esc_attr($modal_id); ?>"
+                aria-haspopup="dialog"
+                aria-controls="<?php echo esc_attr($modal_id); ?>"
+                aria-label="<?php echo esc_attr($args['play_label']); ?>"
+            ></button>
+            <!-- <button
+                type="button"
                 class="psm-video-media__play"
                 data-video-modal="<?php echo esc_attr($modal_id); ?>"
                 aria-haspopup="dialog"
@@ -54,7 +62,7 @@ $modal_id = trim((string) $args['modal_id']);
             >
                 <span class="psm-video-media__play-icon" aria-hidden="true"></span>
                 <span class="psm-video-media__play-label"><?php echo esc_html($args['play_label']); ?></span>
-            </button>
+            </button> -->
         <?php endif; ?>
     </div>
 </div>
