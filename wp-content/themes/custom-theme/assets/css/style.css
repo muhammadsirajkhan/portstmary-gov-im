@@ -6099,11 +6099,25 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     line-height: 1.2;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #e31e24;
+    /* color: #e31e24; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
 }
 
 .psm-amenities-facility-card__kicker span {
     margin: 0 6px;
+    font-size: 0;
+    height: 8px;
+    display: inline-block;
+    width: 8px;
+    background-color: #e31e24;
+    border-radius: 50%;
+    /* display: flex; */
+    align-items: center;
+    /* flex-direction: column; */
 }
 
 .psm-amenities-facility-card__title {

@@ -59,7 +59,6 @@ $image_alt = $title ?: __('Community spaces in Port St Mary', 'cmd-theme');
                         null,
                         array(
                             'badge'       => $badge,
-                            'badge_style' => 'red',
                             'title'       => $title,
                             'heading_id'  => 'psm-amenities-intro-heading',
                             'align'       => 'left',
