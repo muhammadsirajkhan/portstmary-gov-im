@@ -143,7 +143,7 @@ if ('single-badge' === $variant) {
     $alt   = $args['alt'] ?: __('Port St Mary refuse services', 'cmd-theme');
     ?>
     <div class="<?php echo esc_attr($wrap_class); ?> psm-housing-zigzag-media--single-badge">
-        <span class="psm-housing-zigzag-media__corner" aria-hidden="true"></span>
+        <!-- <span class="psm-housing-zigzag-media__corner" aria-hidden="true"></span> -->
         <div class="psm-housing-zigzag-media__single-wrap">
             <img
                 class="psm-housing-zigzag-media__single"
@@ -155,7 +155,7 @@ if ('single-badge' === $variant) {
                 decoding="async"
             >
             <?php if (!empty($args['show_badge'])) : ?>
-                <?php get_template_part('template-parts/components/welcome-badge'); ?>
+                <?php // get_template_part('template-parts/components/welcome-badge'); ?>
             <?php endif; ?>
         </div>
     </div>
@@ -167,7 +167,7 @@ $image = $args['image'] ?: psm_placeholder_image(800, 560, $args['image_seed']);
 $alt   = $args['alt'] ?: __('Port St Mary housing', 'cmd-theme');
 ?>
 <div class="<?php echo esc_attr($wrap_class); ?>">
-    <span class="psm-housing-zigzag-media__corner" aria-hidden="true"></span>
+    <!-- <span class="psm-housing-zigzag-media__corner" aria-hidden="true"></span> -->
     <img
         class="psm-housing-zigzag-media__single"
         src="<?php echo esc_url($image); ?>"

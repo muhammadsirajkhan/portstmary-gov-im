@@ -7544,9 +7544,9 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 }
 
 .psm-local-info-about .psm-housing-zigzag-media--single-badge .psm-housing-zigzag-media__single {
-    aspect-ratio: 3 / 4;
-    max-height: 560px;
-    object-fit: cover;
+    /* aspect-ratio: 3 / 4; */
+    /* max-height: 560px; */
+    /* object-fit: cover; */
 }
 
 /* ----- Local Info: History Timeline ----- */
