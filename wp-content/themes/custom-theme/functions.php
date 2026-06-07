@@ -81,3 +81,6 @@ require get_template_directory() . '/inc/acf-mission-statement-defaults.php';
 require get_template_directory() . '/inc/byelaws-data.php';
 require get_template_directory() . '/inc/byelaws-helpers.php';
 require get_template_directory() . '/inc/acf-byelaws-defaults.php';
+require get_template_directory() . '/inc/complaints-data.php';
+require get_template_directory() . '/inc/complaints-helpers.php';
+require get_template_directory() . '/inc/acf-complaints-defaults.php';

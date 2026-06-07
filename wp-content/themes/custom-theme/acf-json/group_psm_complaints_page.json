@@ -1,0 +1,179 @@
+{
+    "key": "group_psm_complaints_page",
+    "title": "Complaints Page",
+    "fields": [
+        {
+            "key": "field_psm_complaints_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_complaints",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "default_value": "Welcome to Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_inner_banner_title_complaints",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "default_value": "Complaints"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_complaints",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "default_value": "Support, Complaints & Guidance"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_complaints",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "default_value": "This issue can be resolved quickly through direct communication, and we appreciate the opportunity to assist you as efficiently as possible.",
+            "rows": 3
+        },
+        {
+            "key": "field_psm_inner_banner_image_complaints",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_psm_complaints_tab_how_to",
+            "label": "How to Make a Complaint",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_complaints_image",
+            "label": "Image",
+            "name": "complaints_image",
+            "type": "image",
+            "instructions": "Single image for the left column.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_complaints_badge",
+            "label": "Badge",
+            "name": "complaints_badge",
+            "type": "text",
+            "default_value": "Complaints",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_complaints_title",
+            "label": "Heading",
+            "name": "complaints_title",
+            "type": "text",
+            "default_value": "How to Make a Complaint",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_complaints_body",
+            "label": "Body Text",
+            "name": "complaints_body",
+            "type": "textarea",
+            "instructions": "One paragraph per line. The first line displays with the red accent.",
+            "rows": 5,
+            "default_value": "If you have a concern about a service provided by Port St Mary Commissioners, we encourage you to contact us so the matter can be addressed as quickly as possible.\r\nWe take all complaints seriously and aim to resolve them fairly, transparently and in confidence.\r\nPlease use the telephone or email details below, or submit your complaint using our online form.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_complaints_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_complaints_phone",
+            "label": "Phone",
+            "name": "complaints_phone",
+            "type": "text",
+            "instructions": "Display phone number (Tel: prefix added automatically).",
+            "default_value": "+44 1624 832101",
+            "wrapper": { "width": "50" },
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_complaints_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_complaints_email",
+            "label": "Email",
+            "name": "complaints_email",
+            "type": "email",
+            "default_value": "commissioners@portstmary.gov.im",
+            "wrapper": { "width": "50" },
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_complaints_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_complaints_button",
+            "label": "Button",
+            "name": "complaints_button",
+            "type": "link",
+            "instructions": "Complaints form call-to-action button.",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_complaints_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-complaints.php"
+            }
+        ]
+    ],
+    "menu_order": 32,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner and how-to section for the Complaints page.",
+    "show_in_rest": 0,
+    "modified": 1780500600
+}

@@ -1204,14 +1204,16 @@
     .psm-where-to-stay-featured,
     .psm-who-we-are-about,
     .psm-mission-statement-commitment,
-    .psm-byelaws-guidance {
+    .psm-byelaws-guidance,
+    .psm-complaints-how-to {
         padding: 56px 0;
     }
 
     .psm-section-header--who-we-are-about .psm-section-header__title,
     .psm-section-header--who-we-are-role .psm-section-header__title,
     .psm-section-header--mission-statement-commitment .psm-section-header__title,
-    .psm-section-header--byelaws-guidance .psm-section-header__title {
+    .psm-section-header--byelaws-guidance .psm-section-header__title,
+    .psm-section-header--complaints-how-to .psm-section-header__title {
         font-size: 32px;
     }
 
@@ -1226,7 +1228,8 @@
 
     .psm-who-we-are-about__grid,
     .psm-mission-statement-commitment__grid,
-    .psm-byelaws-guidance__grid {
+    .psm-byelaws-guidance__grid,
+    .psm-complaints-how-to__grid {
         grid-template-columns: 1fr;
         gap: 32px;
     }
