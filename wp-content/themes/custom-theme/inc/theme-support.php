@@ -20,6 +20,8 @@ function psm_theme_setup() {
     add_theme_support('editor-styles');
     add_editor_style(
         array(
+            'assets/fonts/stylesheet.css',
+            'https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap',
             'assets/css/variables.css',
             'assets/css/editor-style.css',
         )

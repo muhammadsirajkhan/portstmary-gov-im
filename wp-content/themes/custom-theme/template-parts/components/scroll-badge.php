@@ -29,7 +29,7 @@ $circle_id = 'psm-scroll-circle-' . wp_unique_id();
                 <path id="<?php echo esc_attr($circle_id); ?>" d="M 60,60 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0"/>
             </defs>
             <circle cx="60" cy="60" r="54" fill="#ffffff" stroke="#d8d8d8" stroke-width="1"/>
-            <text fill="#111111" font-family="Montserrat, sans-serif" font-size="9" font-weight="700" letter-spacing="2">
+            <text fill="#111111" font-family="Figtree, sans-serif" font-size="9" font-weight="700" letter-spacing="2">
                 <textPath href="#<?php echo esc_attr($circle_id); ?>" startOffset="6%">
                     <?php echo esc_html(strtoupper(__('Scroll down', 'cmd-theme'))); ?>
                     <tspan fill="#e31e24"> • </tspan>

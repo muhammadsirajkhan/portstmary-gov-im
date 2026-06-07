@@ -21,8 +21,8 @@
     --footer-bg: var(--psm-black);
     --border-color: rgba(0, 0, 0, 0.08);
 
-    --font-heading: "Montserrat", system-ui, sans-serif;
-    --font-body: "Montserrat", system-ui, sans-serif;
+    --font-heading: "Figtree", system-ui, sans-serif;
+    --font-body: "Satoshi", system-ui, sans-serif;
     --font-1: var(--font-heading);
     --font-2: var(--font-body);
 

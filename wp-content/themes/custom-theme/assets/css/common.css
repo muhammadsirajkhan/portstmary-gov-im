@@ -55,6 +55,23 @@ h4 { font-size: var(--font-size-2xl); }
 h5 { font-size: var(--font-size-xl); }
 h6 { font-size: var(--font-size-lg); }
 
+.section-heading__title,
+.psm-section-header__title,
+.psm-section-header__eyebrow,
+.psm-section-header__eyebrow-red,
+.psm-section-header__kicker {
+    font-family: var(--font-heading);
+}
+
+p,
+li,
+label,
+input,
+textarea,
+select {
+    font-family: var(--font-body);
+}
+
 p {
     margin-bottom: var(--spacing-md);
     color: var(--text-muted);

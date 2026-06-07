@@ -45,8 +45,7 @@ $card_attr = $has_url ? ' href="' . esc_url($url) . '"' : '';
                     class="psm-quick-card__icon"
                     src="<?php echo esc_url($icon); ?>"
                     alt="<?php echo '' !== $title ? esc_attr($title) : ''; ?>"
-                    width="48"
-                    height="48"
+                  
                     decoding="async"
                 >
             <?php endif; ?>

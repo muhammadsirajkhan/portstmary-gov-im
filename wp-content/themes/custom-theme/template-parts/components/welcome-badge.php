@@ -28,7 +28,7 @@ $label     = strtoupper($args['label']);
             <path id="<?php echo esc_attr($circle_id); ?>" d="M 70,70 m -50,0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"/>
         </defs>
         <circle cx="70" cy="70" r="66" fill="#ffffff" stroke="#e31e24" stroke-width="3"/>
-        <text fill="#111111" font-family="Montserrat, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1.8">
+        <text fill="#111111" font-family="Figtree, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1.8">
             <textPath href="#<?php echo esc_attr($circle_id); ?>" startOffset="2%">
                 <?php echo esc_html($label); ?>
             </textPath>

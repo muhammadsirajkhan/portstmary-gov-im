@@ -3,7 +3,7 @@
  */
 
 .editor-styles-wrapper {
-    font-family: Montserrat, system-ui, sans-serif;
+    font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
     color: #111111;
@@ -11,7 +11,11 @@
 
 .editor-styles-wrapper h1,
 .editor-styles-wrapper h2,
-.editor-styles-wrapper h3 {
-    font-weight: 800;
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
     letter-spacing: 0.02em;
 }

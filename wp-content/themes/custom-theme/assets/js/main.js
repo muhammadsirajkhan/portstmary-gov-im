@@ -81,14 +81,15 @@ function initHeroSwiper() {
       crossFade: true,
     },
     speed: 900,
-    autoplay:
-      slideCount > 1
-        ? {
-            delay: 6000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }
-        : false,
+    // autoplay:
+    //   slideCount > 1
+    //     ? {
+    //         delay: 6000,
+    //         disableOnInteraction: false,
+    //         pauseOnMouseEnter: true,
+    //       }
+    //     : false,
+    autoplay: false,
     allowTouchMove: slideCount > 1,
     watchOverflow: true,
     observer: true,
@@ -98,9 +99,9 @@ function initHeroSwiper() {
         bindHeroPager(swiperInstance, pager);
         updateHeroPager(swiperInstance, pager);
         updateHeroSlideA11y(swiperInstance);
-        if (swiperInstance.autoplay) {
-          swiperInstance.autoplay.start();
-        }
+        // if (swiperInstance.autoplay) {
+        //   swiperInstance.autoplay.start();
+        // }
       },
       slideChange(swiperInstance) {
         updateHeroPager(swiperInstance, pager);
