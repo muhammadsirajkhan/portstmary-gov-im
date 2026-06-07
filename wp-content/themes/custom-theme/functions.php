@@ -15,6 +15,8 @@ require get_template_directory() . '/inc/class-psm-mobile-nav-walker.php';
 require get_template_directory() . '/inc/acf-json.php';
 require get_template_directory() . '/inc/acf-header-options.php';
 require get_template_directory() . '/inc/header-helpers.php';
+require get_template_directory() . '/inc/acf-footer-options.php';
+require get_template_directory() . '/inc/footer-helpers.php';
 require get_template_directory() . '/inc/cpt-events.php';
 require get_template_directory() . '/inc/event-helpers.php';
 require get_template_directory() . '/inc/cpt-news.php';

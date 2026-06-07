@@ -1,0 +1,436 @@
+{
+    "key": "group_psm_footer_settings",
+    "title": "Footer Settings",
+    "fields": [
+        {
+            "key": "field_psm_footer_tab_brand",
+            "label": "Brand",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_footer_logo",
+            "label": "Footer logo",
+            "name": "footer_logo",
+            "type": "image",
+            "instructions": "Optional logo shown above the footer content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "return_format": "array",
+            "library": "all",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,svg,webp"
+        },
+        {
+            "key": "field_psm_footer_show_social",
+            "label": "Show social icons",
+            "name": "footer_show_social",
+            "type": "true_false",
+            "instructions": "Social icons beside the footer logo.",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide"
+        },
+        {
+            "key": "field_psm_footer_social_links",
+            "label": "Social links",
+            "name": "footer_social_links",
+            "type": "repeater",
+            "instructions": "Only rows with a network and URL are shown.",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_social", "operator": "==", "value": "1" }]
+            ],
+            "layout": "table",
+            "min": 0,
+            "max": 6,
+            "button_label": "Add social link",
+            "sub_fields": [
+                {
+                    "key": "field_psm_footer_social_network",
+                    "label": "Network",
+                    "name": "network",
+                    "type": "select",
+                    "required": 1,
+                    "wrapper": { "width": "35", "class": "", "id": "" },
+                    "choices": {
+                        "facebook": "Facebook",
+                        "instagram": "Instagram",
+                        "twitter": "X (Twitter)",
+                        "linkedin": "LinkedIn"
+                    },
+                    "default_value": "facebook",
+                    "return_format": "value",
+                    "parent_repeater": "field_psm_footer_social_links"
+                },
+                {
+                    "key": "field_psm_footer_social_url",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "required": 1,
+                    "wrapper": { "width": "45", "class": "", "id": "" },
+                    "placeholder": "https://",
+                    "parent_repeater": "field_psm_footer_social_links"
+                },
+                {
+                    "key": "field_psm_footer_social_label",
+                    "label": "Accessible label",
+                    "name": "label",
+                    "type": "text",
+                    "wrapper": { "width": "20", "class": "", "id": "" },
+                    "placeholder": "Facebook",
+                    "parent_repeater": "field_psm_footer_social_links"
+                }
+            ]
+        },
+        {
+            "key": "field_psm_footer_tab_about",
+            "label": "About",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_footer_show_about",
+            "label": "Show about column",
+            "name": "footer_show_about",
+            "type": "true_false",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide"
+        },
+        {
+            "key": "field_psm_footer_about_heading",
+            "label": "About heading",
+            "name": "footer_about_heading",
+            "type": "text",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_about", "operator": "==", "value": "1" }]
+            ],
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "Want to know more?"
+        },
+        {
+            "key": "field_psm_footer_about_text",
+            "label": "About text",
+            "name": "footer_about_text",
+            "type": "textarea",
+            "instructions": "Separate paragraphs with a blank line.",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_about", "operator": "==", "value": "1" }]
+            ],
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "Port St Mary Commissioners are dedicated to supporting residents, maintaining public spaces, and ensuring the village remains a welcoming and vibrant place to live and visit.\r\n\r\nFrom essential services like waste collection and housing to community events and local initiatives, our focus is on delivering practical support with a personal touch.",
+            "rows": 6,
+            "new_lines": ""
+        },
+        {
+            "key": "field_psm_footer_tab_links",
+            "label": "Link columns",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_footer_show_link_columns",
+            "label": "Show link columns",
+            "name": "footer_show_link_columns",
+            "type": "true_false",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide"
+        },
+        {
+            "key": "field_psm_footer_col_1_heading",
+            "label": "Column 1 heading",
+            "name": "footer_col_1_heading",
+            "type": "text",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_link_columns", "operator": "==", "value": "1" }]
+            ],
+            "wrapper": { "width": "33", "class": "", "id": "" },
+            "default_value": "Quick Links"
+        },
+        {
+            "key": "field_psm_footer_col_2_heading",
+            "label": "Column 2 heading",
+            "name": "footer_col_2_heading",
+            "type": "text",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_link_columns", "operator": "==", "value": "1" }]
+            ],
+            "wrapper": { "width": "33", "class": "", "id": "" },
+            "default_value": "Services"
+        },
+        {
+            "key": "field_psm_footer_col_3_heading",
+            "label": "Column 3 heading",
+            "name": "footer_col_3_heading",
+            "type": "text",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_link_columns", "operator": "==", "value": "1" }]
+            ],
+            "wrapper": { "width": "34", "class": "", "id": "" },
+            "default_value": "Council & Community"
+        },
+        {
+            "key": "field_psm_footer_col_1_links",
+            "label": "Column 1 links",
+            "name": "footer_col_1_links",
+            "type": "repeater",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_link_columns", "operator": "==", "value": "1" }]
+            ],
+            "layout": "table",
+            "min": 0,
+            "max": 6,
+            "button_label": "Add link",
+            "sub_fields": [
+                {
+                    "key": "field_psm_footer_col_1_link",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
+                    "return_format": "array",
+                    "parent_repeater": "field_psm_footer_col_1_links"
+                }
+            ]
+        },
+        {
+            "key": "field_psm_footer_col_2_links",
+            "label": "Column 2 links",
+            "name": "footer_col_2_links",
+            "type": "repeater",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_link_columns", "operator": "==", "value": "1" }]
+            ],
+            "layout": "table",
+            "min": 0,
+            "max": 6,
+            "button_label": "Add link",
+            "sub_fields": [
+                {
+                    "key": "field_psm_footer_col_2_link",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
+                    "return_format": "array",
+                    "parent_repeater": "field_psm_footer_col_2_links"
+                }
+            ]
+        },
+        {
+            "key": "field_psm_footer_col_3_links",
+            "label": "Column 3 links",
+            "name": "footer_col_3_links",
+            "type": "repeater",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_link_columns", "operator": "==", "value": "1" }]
+            ],
+            "layout": "table",
+            "min": 0,
+            "max": 6,
+            "button_label": "Add link",
+            "sub_fields": [
+                {
+                    "key": "field_psm_footer_col_3_link",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
+                    "return_format": "array",
+                    "parent_repeater": "field_psm_footer_col_3_links"
+                }
+            ]
+        },
+        {
+            "key": "field_psm_footer_tab_contact",
+            "label": "Contact & subscribe",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_footer_show_phone",
+            "label": "Show phone block",
+            "name": "footer_show_phone",
+            "type": "true_false",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide"
+        },
+        {
+            "key": "field_psm_footer_phone_label",
+            "label": "Phone label",
+            "name": "footer_phone_label",
+            "type": "text",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_phone", "operator": "==", "value": "1" }]
+            ],
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "Call Us Now"
+        },
+        {
+            "key": "field_psm_footer_phone_number",
+            "label": "Phone number",
+            "name": "footer_phone_number",
+            "type": "text",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_phone", "operator": "==", "value": "1" }]
+            ],
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "(01624) 832101"
+        },
+        {
+            "key": "field_psm_footer_show_email",
+            "label": "Show email block",
+            "name": "footer_show_email",
+            "type": "true_false",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide"
+        },
+        {
+            "key": "field_psm_footer_email_label",
+            "label": "Email label",
+            "name": "footer_email_label",
+            "type": "text",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_email", "operator": "==", "value": "1" }]
+            ],
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "Chat With Us"
+        },
+        {
+            "key": "field_psm_footer_email_address",
+            "label": "Email address",
+            "name": "footer_email_address",
+            "type": "email",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_email", "operator": "==", "value": "1" }]
+            ],
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "commissioners@portstmary.gov.im"
+        },
+        {
+            "key": "field_psm_footer_show_subscribe",
+            "label": "Show subscribe form",
+            "name": "footer_show_subscribe",
+            "type": "true_false",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide"
+        },
+        {
+            "key": "field_psm_footer_subscribe_label",
+            "label": "Subscribe label",
+            "name": "footer_subscribe_label",
+            "type": "text",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_subscribe", "operator": "==", "value": "1" }]
+            ],
+            "wrapper": { "width": "33", "class": "", "id": "" },
+            "default_value": "Stay in Touch"
+        },
+        {
+            "key": "field_psm_footer_subscribe_placeholder",
+            "label": "Email placeholder",
+            "name": "footer_subscribe_placeholder",
+            "type": "text",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_subscribe", "operator": "==", "value": "1" }]
+            ],
+            "wrapper": { "width": "33", "class": "", "id": "" },
+            "default_value": "Email Address"
+        },
+        {
+            "key": "field_psm_footer_subscribe_button",
+            "label": "Subscribe button",
+            "name": "footer_subscribe_button",
+            "type": "text",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_subscribe", "operator": "==", "value": "1" }]
+            ],
+            "wrapper": { "width": "34", "class": "", "id": "" },
+            "default_value": "Subscribe"
+        },
+        {
+            "key": "field_psm_footer_tab_legal",
+            "label": "Legal",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_psm_footer_copyright",
+            "label": "Copyright text",
+            "name": "footer_copyright",
+            "type": "text",
+            "instructions": "Shown after the copyright year.",
+            "default_value": "Port St Mary Commissioners. All Rights Reserved"
+        },
+        {
+            "key": "field_psm_footer_show_legal_links",
+            "label": "Show legal links",
+            "name": "footer_show_legal_links",
+            "type": "true_false",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide"
+        },
+        {
+            "key": "field_psm_footer_legal_links",
+            "label": "Legal links",
+            "name": "footer_legal_links",
+            "type": "repeater",
+            "conditional_logic": [
+                [{ "field": "field_psm_footer_show_legal_links", "operator": "==", "value": "1" }]
+            ],
+            "layout": "table",
+            "min": 0,
+            "max": 6,
+            "button_label": "Add legal link",
+            "sub_fields": [
+                {
+                    "key": "field_psm_footer_legal_link",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
+                    "return_format": "array",
+                    "parent_repeater": "field_psm_footer_legal_links"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "psm-footer-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Site-wide footer content, links, contact blocks, and legal bar.",
+    "show_in_rest": 0,
+    "modified": 1781299200
+}

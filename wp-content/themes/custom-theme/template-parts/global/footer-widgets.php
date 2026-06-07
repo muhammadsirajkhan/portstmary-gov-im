@@ -1,6 +1,6 @@
 <?php
 /**
- * Site footer — matches Figma footer section.
+ * Site footer — ACF Footer Settings.
  *
  * @package CMD_Theme
  */
@@ -10,240 +10,218 @@ defined('ABSPATH') || exit;
 $args = wp_parse_args(
     isset($args) && is_array($args) ? $args : array(),
     array(
-        'variant' => 'default', // default|white
+        'variant' => 'default',
     )
 );
 
-$variant = 'white' === $args['variant'] ? 'white' : 'default';
-$footer_class = 'psm-footer' . ( 'white' === $variant ? ' psm-footer--white' : '' );
-$footer_style = 'white' === $variant
-    ? ''
-    : ' style="background-image: url(' . esc_url(get_template_directory_uri() . '/assets/images/footer-bg.png') . ');"';
+$variant      = 'white' === $args['variant'] ? 'white' : 'default';
+$footer_class = 'psm-footer' . ('white' === $variant ? ' psm-footer--white' : '');
+$footer       = function_exists('psm_get_footer_settings') ? psm_get_footer_settings() : array();
 
-$logo_url = psm_theme_image('logo.png');
-$wave_url = psm_theme_image('footer-wave.svg');
+$logo_url           = trim((string) ($footer['logo_url'] ?? ''));
+$social_links       = isset($footer['social_links']) && is_array($footer['social_links']) ? $footer['social_links'] : array();
+$show_about         = !empty($footer['show_about']);
+$about_heading      = trim((string) ($footer['about_heading'] ?? ''));
+$about_paragraphs   = isset($footer['about_paragraphs']) && is_array($footer['about_paragraphs']) ? $footer['about_paragraphs'] : array();
+$link_columns       = !empty($footer['show_links']) && !empty($footer['link_columns']) ? $footer['link_columns'] : array();
+$show_phone         = !empty($footer['show_phone']) && '' !== ($footer['phone_display'] ?? '');
+$show_email         = !empty($footer['show_email']) && '' !== ($footer['email_display'] ?? '');
+$show_subscribe     = !empty($footer['show_subscribe']);
+$subscribe_label    = trim((string) ($footer['subscribe_label'] ?? ''));
+$subscribe_placeholder = trim((string) ($footer['subscribe_placeholder'] ?? ''));
+$subscribe_button   = trim((string) ($footer['subscribe_button'] ?? ''));
+$copyright          = trim((string) ($footer['copyright'] ?? ''));
+$legal_links        = !empty($footer['show_legal']) && !empty($footer['legal_links']) ? $footer['legal_links'] : array();
 
-$footer_about = array(
-    'heading' => __('Want to know more?', 'cmd-theme'),
-    'paragraphs' => array(
-        __('Port St Mary Commissioners are dedicated to supporting residents, maintaining public spaces, and ensuring the village remains a welcoming and vibrant place to live and visit.
-
-', 'cmd-theme'),
-        __('From essential services like waste collection and housing to community events and local initiatives, our focus is on delivering practical support with a personal touch.', 'cmd-theme'),
-    ),
-);
-
-$contact_url = function_exists('psm_contact_page_url') ? psm_contact_page_url() : home_url('/contact/');
-$foi_url     = function_exists('psm_foi_page_url') ? psm_foi_page_url() : home_url('/foi/');
-$minutes_url = function_exists('psm_minutes_page_url') ? psm_minutes_page_url() : home_url('/meeting-minutes/');
-$news_url    = function_exists('psm_get_news_page_url') ? psm_get_news_page_url() : home_url('/news/');
-
-$footer_link_columns = array(
-    array(
-        'heading' => __('Quick Links', 'cmd-theme'),
-        'links'   => array(
-            array(__('Home', 'cmd-theme'), home_url('/')),
-            array(__('About', 'cmd-theme'), home_url('/#about')),
-            array(__('Services', 'cmd-theme'), home_url('/#services')),
-            array(__('News', 'cmd-theme'), $news_url),
-            array(__('Events', 'cmd-theme'), home_url('/#events')),
-            array(__('Contact Us', 'cmd-theme'), $contact_url),
-        ),
-    ),
-    array(
-        'heading' => __('Services', 'cmd-theme'),
-        'links'   => array(
-            array(__('General Public', 'cmd-theme'), home_url('/general-public/')),
-            array(__('Housing Services', 'cmd-theme'), home_url('/housing-services/')),
-            array(__('Refuse Services', 'cmd-theme'), home_url('/refuse-services/')),
-            array(__('Southern Sheltered', 'cmd-theme'), home_url('/southern-sheltered/')),
-            array(__('Boat Park', 'cmd-theme'), home_url('/boat-park/')),
-            array(__('Consultations', 'cmd-theme'), home_url('/consultations/')),
-        ),
-    ),
-    array(
-        'heading' => __('Council & Community', 'cmd-theme'),
-        'links'   => array(
-            array(__('Who We Are', 'cmd-theme'), home_url('/who-we-are/')),
-            array(__('Your Commissioners', 'cmd-theme'), home_url('/your-commissioners/')),
-            array(__('Byelaws', 'cmd-theme'), home_url('/byelaws/')),
-            array(__('Complaints', 'cmd-theme'), home_url('/complaints/')),
-            array(__('FOI', 'cmd-theme'), $foi_url),
-            array(__('Meeting Minutes', 'cmd-theme'), $minutes_url),
-        ),
-    ),
-);
-
-$social_networks = array(
-    array('id' => 'facebook', 'label' => 'Facebook', 'url' => '#', 'modifier' => ''),
-    array('id' => 'instagram', 'label' => 'Instagram', 'url' => '#', 'modifier' => 'is-instagram'),
-    array('id' => 'twitter', 'label' => 'Twitter', 'url' => '#', 'modifier' => ''),
-    array('id' => 'linkedin', 'label' => 'LinkedIn', 'url' => '#', 'modifier' => ''),
-);
-
-$phone_display = '(01624) 832101';
-$phone_href = 'tel:+441624832101';
-$email_display = 'commissioners@portstmary.gov.im';
-$email_href = 'mailto:commissioners@portstmary.gov.im';
-
-$legal_links = array(
-    array(__('Privacy Policy', 'cmd-theme'), '#'),
-    array(__('Terms', 'cmd-theme'), '#'),
-    array(__('Accessibility', 'cmd-theme'), '#'),
-);
+$has_brand_row  = ('' !== $logo_url || !empty($social_links));
+$has_about      = $show_about && ('' !== $about_heading || !empty($about_paragraphs));
+$has_main       = $has_about || !empty($link_columns);
+$has_contact    = $show_phone || $show_email;
+$has_utility    = $has_contact || $show_subscribe;
+$has_legal      = '' !== $copyright || !empty($legal_links);
+$theme_uri      = get_template_directory_uri();
 ?>
-<footer class="<?php echo esc_attr($footer_class); ?>" id="contact"<?php echo $footer_style; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> style="background-image: url(<?php echo esc_url(get_template_directory_uri() . '/assets/images/footer-bg.png'); ?>);">
+<footer class="<?php echo esc_attr($footer_class); ?>" id="contact" style="background-image: url(<?php echo esc_url($theme_uri . '/assets/images/footer-bg.png'); ?>);">
     <div class="psm-footer__transition">
-        <?php if ($wave_url): ?>
-            <!-- <div class="psm-footer__wave" aria-hidden="true">
-                <img src="<?php echo esc_url($wave_url); ?>" alt="" width="1440" height="120" loading="lazy" decoding="async">
-            </div> -->
-        <?php endif; ?>
-
-        <?php
-        // get_template_part(
-        //     'template-parts/components/scroll-badge',
-        //     null,
-        //     array(
-        //         'href'  => '#footer-main',
-        //         'label' => __('Scroll down to footer content', 'cmd-theme'),
-        //     )
-        // );
-        ?>
         <div class="footer-scroll">
-            <a href="#"><img
-                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/footer-scroll.png'); ?>"
-                    alt="" decoding="async"></a>
+            <a href="#footer-main">
+                <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-scroll.png'); ?>" alt="" decoding="async">
+            </a>
         </div>
     </div>
 
     <div class="psm-footer__body" id="footer-main">
         <div class="container psm-container">
-            <div class="psm-footer__brand-row">
-                <div class="psm-footer__logo">
-                  
-                        <img src="<?php echo get_template_directory_uri() . '/assets/images/header-logo.png'; ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-                            width="108" height="108" loading="lazy">
-                  
-                </div>
-                <div class="psm-footer__social" role="navigation"
-                    aria-label="<?php esc_attr_e('Social media', 'cmd-theme'); ?>">
-                    <?php foreach ($social_networks as $network): ?>
-                        <a href="<?php echo esc_url($network['url']); ?>"
-                            class="psm-footer-social <?php echo esc_attr($network['modifier']); ?>"
-                            data-network="<?php echo esc_attr($network['id']); ?>">
-                            <span class="psm-footer-social__icon" aria-hidden="true"></span>
-                            <span class="psm-footer-social__label"><?php echo esc_html($network['label']); ?></span>
-                        </a>
-                    <?php endforeach; ?>
-                </div>
-            </div>
+            <?php if ($has_brand_row) : ?>
+                <div class="psm-footer__brand-row">
+                    <?php if ('' !== $logo_url) : ?>
+                        <div class="psm-footer__logo">
+                            <img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" width="108" height="108" loading="lazy">
+                        </div>
+                    <?php endif; ?>
 
-            <div class="psm-footer__main">
-                <div class="psm-footer__about">
-                    <h2 class="psm-footer__about-title"><?php echo esc_html($footer_about['heading']); ?></h2>
-                    <?php foreach ($footer_about['paragraphs'] as $paragraph): ?>
-                        <p><?php echo esc_html($paragraph); ?></p>
-                    <?php endforeach; ?>
+                    <?php if (!empty($social_links)) : ?>
+                        <div class="psm-footer__social" role="navigation" aria-label="<?php esc_attr_e('Social media', 'cmd-theme'); ?>">
+                            <?php foreach ($social_links as $network) : ?>
+                                <a
+                                    href="<?php echo esc_url($network['url']); ?>"
+                                    class="psm-footer-social <?php echo esc_attr($network['modifier']); ?>"
+                                    data-network="<?php echo esc_attr($network['id']); ?>"
+                                    aria-label="<?php echo esc_attr($network['label']); ?>"
+                                    <?php echo 0 === strpos($network['url'], 'http') ? ' target="_blank" rel="noopener noreferrer"' : ''; ?>
+                                >
+                                    <span class="psm-footer-social__icon" aria-hidden="true"></span>
+                                    <span class="psm-footer-social__label"><?php echo esc_html($network['label']); ?></span>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
+            <?php endif; ?>
 
-                <div class="psm-footer__links-area">
-                    <div class="psm-footer__links-grid">
-                        <?php foreach ($footer_link_columns as $column_index => $column) : ?>
-                            <?php
-                            $sidebar_id     = 'footer-col-' . ($column_index + 1);
-                            $column_heading = isset($column['heading']) ? $column['heading'] : __('Links', 'cmd-theme');
-                            $column_links   = isset($column['links']) ? $column['links'] : $column;
-                            if (is_active_sidebar($sidebar_id)) :
-                                ?>
-                                <div class="psm-footer__links-col">
-                                    <?php dynamic_sidebar($sidebar_id); ?>
-                                </div>
-                            <?php else : ?>
-                                <div class="psm-footer__links-col">
-                                    <h3 class="psm-footer__links-heading"><?php echo esc_html($column_heading); ?></h3>
-                                    <ul class="psm-footer__links list-unstyled">
-                                        <?php foreach ($column_links as $link) : ?>
-                                            <li>
-                                                <a href="<?php echo esc_url($link[1]); ?>">
-                                                    <span class="psm-footer__links-chevron" aria-hidden="true">»</span>
-                                                    <?php echo esc_html($link[0]); ?>
-                                                </a>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </div>
+            <?php if ($has_main) : ?>
+                <div class="psm-footer__main">
+                    <?php if ($has_about) : ?>
+                        <div class="psm-footer__about">
+                            <?php if ('' !== $about_heading) : ?>
+                                <h2 class="psm-footer__about-title"><?php echo esc_html($about_heading); ?></h2>
                             <?php endif; ?>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </div>
+                            <?php foreach ($about_paragraphs as $paragraph) : ?>
+                                <p><?php echo esc_html($paragraph); ?></p>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
 
-            <div class="psm-footer__utility">
-                <div class="psm-footer__contact-group">
-                    <a class="psm-footer-contact" href="<?php echo esc_url($phone_href); ?>">
-                        <span class="psm-footer-contact__icon psm-footer-contact__icon-phone"
-                            aria-hidden="true">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/images/footer-phone.png'; ?>" alt="" decoding="async">
-                        </span>
-                        <span class="psm-footer-contact__text">
-                            <span
-                                class="psm-footer-contact__label"><?php esc_html_e('Call Us Now', 'cmd-theme'); ?></span>
-                            <span class="psm-footer-contact__value"><?php echo esc_html($phone_display); ?></span>
-                        </span>
-                        <span class="psm-footer-contact__arrow-icon" aria-hidden="true">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/images/footer-arrow.png'; ?>" alt="" decoding="async">
-                        </span>
-                    </a>
-                    <a class="psm-footer-contact" href="<?php echo esc_url($email_href); ?>">
-                        <span class="psm-footer-contact__icon psm-footer-contact__icon-email"
-                            aria-hidden="true">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/images/footer-email.png'; ?>" alt="" decoding="async">
-                        </span>
-                        <span class="psm-footer-contact__text">
-                            <span
-                                class="psm-footer-contact__label"><?php esc_html_e('Chat With Us', 'cmd-theme'); ?></span>
-                            <span class="psm-footer-contact__value"><?php echo esc_html($email_display); ?></span>
-                        </span>
-                        <span class="psm-footer-contact__arrow-icon" aria-hidden="true">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/images/footer-arrow.png'; ?>" alt="" decoding="async">
-                        </span>
-                    </a>
+                    <?php if (!empty($link_columns)) : ?>
+                        <div class="psm-footer__links-area">
+                            <div class="psm-footer__links-grid">
+                                <?php foreach ($link_columns as $column) : ?>
+                                    <?php
+                                    $column_heading = trim((string) ($column['heading'] ?? ''));
+                                    $column_links   = isset($column['links']) && is_array($column['links']) ? $column['links'] : array();
+                                    if ('' === $column_heading && empty($column_links)) {
+                                        continue;
+                                    }
+                                    ?>
+                                    <div class="psm-footer__links-col">
+                                        <?php if ('' !== $column_heading) : ?>
+                                            <h3 class="psm-footer__links-heading"><?php echo esc_html($column_heading); ?></h3>
+                                        <?php endif; ?>
+                                        <?php if (!empty($column_links)) : ?>
+                                            <ul class="psm-footer__links list-unstyled">
+                                                <?php foreach ($column_links as $link) : ?>
+                                                    <li>
+                                                        <a
+                                                            href="<?php echo esc_url($link['url']); ?>"
+                                                            <?php echo '_blank' === ($link['target'] ?? '') ? ' target="_blank" rel="noopener noreferrer"' : ''; ?>
+                                                        >
+                                                            <span class="psm-footer__links-chevron" aria-hidden="true">»</span>
+                                                            <?php echo esc_html($link['label']); ?>
+                                                        </a>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
+            <?php endif; ?>
 
-                <div class="psm-footer__subscribe">
-                    <p class="psm-footer__subscribe-label"><?php esc_html_e('Stay in Touch', 'cmd-theme'); ?></p>
-                    <form class="psm-footer-subscribe" action="#" method="post">
-                        <label class="screen-reader-text"
-                            for="psm-footer-email"><?php esc_html_e('Email address', 'cmd-theme'); ?></label>
-                        <input type="email" id="psm-footer-email" name="email" class="psm-footer-subscribe__input"
-                            placeholder="<?php esc_attr_e('Email Address', 'cmd-theme'); ?>" required>
-                        <button type="submit"
-                            class="psm-footer-subscribe__btn"><?php esc_html_e('Subscribe', 'cmd-theme'); ?></button>
-                    </form>
+            <?php if ($has_utility) : ?>
+                <div class="psm-footer__utility">
+                    <?php if ($has_contact) : ?>
+                        <div class="psm-footer__contact-group">
+                            <?php if ($show_phone) : ?>
+                                <a class="psm-footer-contact" href="<?php echo esc_url($footer['phone_href']); ?>">
+                                    <span class="psm-footer-contact__icon psm-footer-contact__icon-phone" aria-hidden="true">
+                                        <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-phone.png'); ?>" alt="" decoding="async">
+                                    </span>
+                                    <span class="psm-footer-contact__text">
+                                        <?php if ('' !== ($footer['phone_label'] ?? '')) : ?>
+                                            <span class="psm-footer-contact__label"><?php echo esc_html($footer['phone_label']); ?></span>
+                                        <?php endif; ?>
+                                        <span class="psm-footer-contact__value"><?php echo esc_html($footer['phone_display']); ?></span>
+                                    </span>
+                                    <span class="psm-footer-contact__arrow-icon" aria-hidden="true">
+                                        <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-arrow.png'); ?>" alt="" decoding="async">
+                                    </span>
+                                </a>
+                            <?php endif; ?>
+
+                            <?php if ($show_email) : ?>
+                                <a class="psm-footer-contact" href="<?php echo esc_url($footer['email_href']); ?>">
+                                    <span class="psm-footer-contact__icon psm-footer-contact__icon-email" aria-hidden="true">
+                                        <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-email.png'); ?>" alt="" decoding="async">
+                                    </span>
+                                    <span class="psm-footer-contact__text">
+                                        <?php if ('' !== ($footer['email_label'] ?? '')) : ?>
+                                            <span class="psm-footer-contact__label"><?php echo esc_html($footer['email_label']); ?></span>
+                                        <?php endif; ?>
+                                        <span class="psm-footer-contact__value"><?php echo esc_html($footer['email_display']); ?></span>
+                                    </span>
+                                    <span class="psm-footer-contact__arrow-icon" aria-hidden="true">
+                                        <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-arrow.png'); ?>" alt="" decoding="async">
+                                    </span>
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($show_subscribe && ('' !== $subscribe_label || '' !== $subscribe_placeholder || '' !== $subscribe_button)) : ?>
+                        <div class="psm-footer__subscribe">
+                            <?php if ('' !== $subscribe_label) : ?>
+                                <p class="psm-footer__subscribe-label"><?php echo esc_html($subscribe_label); ?></p>
+                            <?php endif; ?>
+                            <form class="psm-footer-subscribe" action="#" method="post">
+                                <label class="screen-reader-text" for="psm-footer-email"><?php esc_html_e('Email address', 'cmd-theme'); ?></label>
+                                <input
+                                    type="email"
+                                    id="psm-footer-email"
+                                    name="email"
+                                    class="psm-footer-subscribe__input"
+                                    placeholder="<?php echo esc_attr($subscribe_placeholder); ?>"
+                                    required
+                                >
+                                <?php if ('' !== $subscribe_button) : ?>
+                                    <button type="submit" class="psm-footer-subscribe__btn"><?php echo esc_html($subscribe_button); ?></button>
+                                <?php endif; ?>
+                            </form>
+                        </div>
+                    <?php endif; ?>
                 </div>
-            </div>
+            <?php endif; ?>
         </div>
     </div>
 
-    <div class="psm-footer__legal">
-        <div class="container psm-container">
-            <div class="psm-footer__legal-inner">
-                <p class="psm-footer__legal-copy mb-0">
-                    &copy; <?php echo esc_html(gmdate('Y')); ?>
-                    <?php // echo esc_html(get_bloginfo('name')); ?>.
-                    <?php esc_html_e('Port St Mary Commissioners. All Rights Reserved', 'cmd-theme'); ?>
-                    <!-- <span class="psm-footer__legal-sep" aria-hidden="true">|</span>
-                    <a href="#"><?php esc_html_e('Sitemap', 'cmd-theme'); ?></a> -->
-                </p>
-                <nav class="psm-footer__legal-nav" aria-label="<?php esc_attr_e('Legal links', 'cmd-theme'); ?>">
-                    <ul class="list-unstyled mb-0">
-                        <?php foreach ($legal_links as $legal): ?>
-                            <li><a href="<?php echo esc_url($legal[1]); ?>"><?php echo esc_html($legal[0]); ?></a></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </nav>
+    <?php if ($has_legal) : ?>
+        <div class="psm-footer__legal">
+            <div class="container psm-container">
+                <div class="psm-footer__legal-inner">
+                    <?php if ('' !== $copyright) : ?>
+                        <p class="psm-footer__legal-copy mb-0">
+                            &copy; <?php echo esc_html(gmdate('Y')); ?> <?php echo esc_html($copyright); ?>
+                        </p>
+                    <?php endif; ?>
+
+                    <?php if (!empty($legal_links)) : ?>
+                        <nav class="psm-footer__legal-nav" aria-label="<?php esc_attr_e('Legal links', 'cmd-theme'); ?>">
+                            <ul class="list-unstyled mb-0">
+                                <?php foreach ($legal_links as $legal) : ?>
+                                    <li>
+                                        <a
+                                            href="<?php echo esc_url($legal['url']); ?>"
+                                            <?php echo '_blank' === ($legal['target'] ?? '') ? ' target="_blank" rel="noopener noreferrer"' : ''; ?>
+                                        ><?php echo esc_html($legal['label']); ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </nav>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
-    </div>
+    <?php endif; ?>
 </footer>
