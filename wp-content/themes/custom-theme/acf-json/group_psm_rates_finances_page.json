@@ -1,0 +1,229 @@
+{
+    "key": "group_psm_rates_finances_page",
+    "title": "Rates & Finances Page",
+    "fields": [
+        {
+            "key": "field_psm_rates_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_rates",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "default_value": "Welcome to Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_inner_banner_title_rates",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "default_value": "Rates & Finances"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_rates",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "default_value": "Access Audited Accounts & Financial Reports"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_rates",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "default_value": "View village rates information and download audited accounts and financial statements for Port St Mary Commissioners.",
+            "rows": 3
+        },
+        {
+            "key": "field_psm_inner_banner_image_rates",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_psm_rates_tab_village",
+            "label": "Village Rates",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_rates_village_image",
+            "label": "Image",
+            "name": "rates_village_image",
+            "type": "image",
+            "instructions": "Single image for the left column.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_rates_village_badge",
+            "label": "Badge",
+            "name": "rates_village_badge",
+            "type": "text",
+            "instructions": "Pill label above the heading.",
+            "default_value": "Information",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_rates_village_title",
+            "label": "Heading",
+            "name": "rates_village_title",
+            "type": "text",
+            "instructions": "Section heading.",
+            "default_value": "Village Rates",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_rates_village_body",
+            "label": "Body Text",
+            "name": "rates_village_body",
+            "type": "textarea",
+            "instructions": "Body paragraphs. One paragraph per line. The first line displays with the red accent.",
+            "rows": 8,
+            "default_value": "The Village Rate is fixed in accordance with the provisions of the Local Government Act 1985 (as amended). Rates are collected on behalf of Port St Mary Commissioners by The Treasury. Should you wish to pay your rates within the village,\nPort St Mary Commissioners prepares its financial statements in accordance with the Isle of Man Statement of Recommended Practice 2007 (SORP) and the requirements of the Audit Act 2006.\nThe SORP is recognised under the Audit Act 2006 and the Accounts and Audit Regulations 2007 as representing proper accounting practice.\nCopies of the audited financial statements are available to download below.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_rates_village_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_rates_tab_financial",
+            "label": "Financial Statements",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_rates_financial_background",
+            "label": "Background Image",
+            "name": "rates_financial_background",
+            "type": "image",
+            "instructions": "Decorative background image (lighthouse watermark on the right).",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_rates_financial_badge",
+            "label": "Badge",
+            "name": "rates_financial_badge",
+            "type": "text",
+            "instructions": "Pill label above the heading.",
+            "default_value": "Information",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_rates_financial_title",
+            "label": "Heading",
+            "name": "rates_financial_title",
+            "type": "text",
+            "instructions": "Section heading.",
+            "default_value": "Financial Statements",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_rates_financial_intro",
+            "label": "Intro",
+            "name": "rates_financial_intro",
+            "type": "textarea",
+            "instructions": "Intro paragraphs. One paragraph per line.",
+            "rows": 4,
+            "default_value": "The SORP is recognised under the Audit Act 2006 and the Accounts and Audit Regulations 2007 as representing proper accounting practice.\nCopies of the audited financial statements for the authority can be downloaded below:",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_rates_financial_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_rates_financial_documents",
+            "label": "Documents",
+            "name": "rates_financial_documents",
+            "type": "repeater",
+            "instructions": "PDF download links. PDF file is optional — a sample PDF is used when omitted.",
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_rates_financial_document_label",
+            "button_label": "Add Document",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_rates_financial_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_psm_rates_financial_document_label",
+                    "label": "Label",
+                    "name": "rates_financial_document_label",
+                    "type": "text",
+                    "instructions": "Document title shown in the list.",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_rates_financial_documents"
+                },
+                {
+                    "key": "field_psm_rates_financial_document_file",
+                    "label": "PDF File",
+                    "name": "rates_financial_document_file",
+                    "type": "file",
+                    "instructions": "Optional PDF download.",
+                    "return_format": "url",
+                    "mime_types": "pdf",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_rates_financial_documents"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-rates-finances.php"
+            }
+        ]
+    ],
+    "menu_order": 26,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner, village rates, and financial statements for the Rates & Finances page.",
+    "show_in_rest": 0,
+    "modified": 1749945600
+}

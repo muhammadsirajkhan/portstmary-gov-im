@@ -7895,13 +7895,7 @@ span.psm-history-timeline__dot::before {
 
 .psm-section-header--rates-village-rates .psm-section-header__badge {
     margin-left: 0;
-    background: #e31e24;
-    border-color: #e31e24;
-    color: #ffffff;
-}
-
-.psm-section-header--rates-village-rates .psm-section-header__badge-dot {
-    background: #ffffff;
+    color: #666666;
 }
 
 .psm-section-header--rates-village-rates .psm-section-header__title {
@@ -7916,6 +7910,11 @@ span.psm-history-timeline__dot::before {
     font-weight: 400;
     line-height: 1.65;
     letter-spacing: 0.01em;
+    color: #666666;
+}
+
+.psm-rates-village-rates__prose .psm-about__lead {
+    margin-bottom: 20px;
     color: #111111;
 }
 
@@ -7923,35 +7922,58 @@ span.psm-history-timeline__dot::before {
     margin-bottom: 0;
 }
 
-.psm-rates-village-rates__contact {
-    margin: 28px 0 0;
+.psm-rates-village-rates .psm-housing-zigzag-media__corner {
+    display: none;
+}
+
+.psm-rates-village-rates .psm-housing-zigzag-media--single-badge .psm-housing-zigzag-media__single-wrap::before {
+    /* content: ""; */
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    right: 18px;
+    bottom: 18px;
+    border: 2px solid #e31e24;
+    border-radius: 24px;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .psm-rates-village-rates .psm-housing-zigzag-media--single-badge .psm-housing-zigzag-media__single {
-    aspect-ratio: 4 / 3;
-    max-height: 480px;
+    /* aspect-ratio: 3 / 4; */
+    /* max-height: 560px; */
+    /* object-fit: cover; */
+    /* border-radius: 24px; */
+    /* box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); */
+}
+
+.psm-rates-village-rates .psm-housing-zigzag-media--single-badge .psm-welcome-badge {
+    left: auto;
+    right: -4%;
+    top: auto;
+    bottom: 8%;
+    transform: none;
 }
 
 /* ----- Rates & Finances: Financial Statements ----- */
 .psm-rates-financial-statements {
     position: relative;
     overflow: hidden;
-    background: #f9f5eb;
+    /* background: #f9f5eb; */
     padding: 80px 0 88px;
 }
 
 .psm-rates-financial-statements__watermark {
     position: absolute;
-    right: -24px;
+    /* right: -24px; */
     top: 50%;
-    width: min(42vw, 480px);
-    height: auto;
-    max-height: min(72vh, 620px);
-    object-fit: contain;
-    object-position: center right;
-    transform: translateY(-50%);
-    opacity: 0.1;
-    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: 0;
+    right: 0;
+    top: 0;
+    object-position: center;
 }
 
 .psm-section-header--rates-financial-statements {
@@ -7963,13 +7985,7 @@ span.psm-history-timeline__dot::before {
 
 .psm-section-header--rates-financial-statements .psm-section-header__badge {
     margin-left: 0;
-    background: #e31e24;
-    border-color: #e31e24;
-    color: #ffffff;
-}
-
-.psm-section-header--rates-financial-statements .psm-section-header__badge-dot {
-    background: #ffffff;
+    color: #666666;
 }
 
 .psm-section-header--rates-financial-statements .psm-section-header__title {
