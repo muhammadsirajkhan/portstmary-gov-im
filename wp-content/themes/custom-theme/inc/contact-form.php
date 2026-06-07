@@ -160,3 +160,42 @@ function psm_job_application_cf7_hidden_fields($fields) {
     return $fields;
 }
 add_filter('wpcf7_form_hidden_fields', 'psm_job_application_cf7_hidden_fields');
+
+/**
+ * CF7 shortcode for the footer subscribe form (Footer Settings ACF field).
+ */
+function psm_get_footer_subscribe_form_shortcode() {
+    $shortcode = '';
+
+    if (function_exists('get_field')) {
+        $acf_shortcode = get_field('footer_subscribe_form_shortcode', 'option');
+        if (is_string($acf_shortcode) && '' !== trim($acf_shortcode)) {
+            $shortcode = trim($acf_shortcode);
+        }
+    }
+
+    if ('' === $shortcode) {
+        $shortcode = apply_filters('psm_footer_subscribe_form_shortcode', '');
+    }
+
+    return $shortcode;
+}
+
+/**
+ * Render footer subscribe Contact Form 7 or admin placeholder.
+ */
+function psm_render_footer_subscribe_form() {
+    $shortcode = psm_get_footer_subscribe_form_shortcode();
+
+    if ($shortcode && function_exists('wpcf7_contact_form')) {
+        echo do_shortcode($shortcode); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        return;
+    }
+
+    echo '<p class="psm-contact-form__notice">';
+    esc_html_e(
+        'Add your subscribe Contact Form 7 shortcode under Appearance → Footer (Contact Form 7 shortcode) or via the psm_footer_subscribe_form_shortcode filter.',
+        'cmd-theme'
+    );
+    echo '</p>';
+}

@@ -72,7 +72,7 @@ if ($title) {
     $section_attrs .= ' aria-labelledby="psm-events-heading"';
 }
 ?>
-<section <?php echo $section_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> style="background-image:url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/events-bg.png'); ?>');">
+<section <?php echo $section_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> style="background-image:url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/events-bg.webp'); ?>');">
     <div class="container psm-container" >
         <?php if ($has_header) : ?>
             <?php

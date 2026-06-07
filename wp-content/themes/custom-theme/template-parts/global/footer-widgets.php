@@ -26,10 +26,10 @@ $about_paragraphs   = isset($footer['about_paragraphs']) && is_array($footer['ab
 $link_columns       = !empty($footer['show_links']) && !empty($footer['link_columns']) ? $footer['link_columns'] : array();
 $show_phone         = !empty($footer['show_phone']) && '' !== ($footer['phone_display'] ?? '');
 $show_email         = !empty($footer['show_email']) && '' !== ($footer['email_display'] ?? '');
-$show_subscribe     = !empty($footer['show_subscribe']);
-$subscribe_label    = trim((string) ($footer['subscribe_label'] ?? ''));
-$subscribe_placeholder = trim((string) ($footer['subscribe_placeholder'] ?? ''));
-$subscribe_button   = trim((string) ($footer['subscribe_button'] ?? ''));
+$show_subscribe      = !empty($footer['show_subscribe']);
+$subscribe_label     = trim((string) ($footer['subscribe_label'] ?? ''));
+$subscribe_shortcode = trim((string) ($footer['subscribe_shortcode'] ?? ''));
+$has_subscribe       = $show_subscribe && ('' !== $subscribe_label || '' !== $subscribe_shortcode);
 $copyright          = trim((string) ($footer['copyright'] ?? ''));
 $legal_links        = !empty($footer['show_legal']) && !empty($footer['legal_links']) ? $footer['legal_links'] : array();
 
@@ -37,11 +37,11 @@ $has_brand_row  = ('' !== $logo_url || !empty($social_links));
 $has_about      = $show_about && ('' !== $about_heading || !empty($about_paragraphs));
 $has_main       = $has_about || !empty($link_columns);
 $has_contact    = $show_phone || $show_email;
-$has_utility    = $has_contact || $show_subscribe;
+$has_utility    = $has_contact || $has_subscribe;
 $has_legal      = '' !== $copyright || !empty($legal_links);
 $theme_uri      = get_template_directory_uri();
 ?>
-<footer class="<?php echo esc_attr($footer_class); ?>" id="contact" style="background-image: url(<?php echo esc_url($theme_uri . '/assets/images/footer-bg.png'); ?>);">
+<footer class="<?php echo esc_attr($footer_class); ?>" id="contact" style="background-image: url(<?php echo esc_url($theme_uri . '/assets/images/footer-bg.webp'); ?>);">
     <div class="psm-footer__transition">
         <div class="footer-scroll">
             <a href="#footer-main">
@@ -170,25 +170,18 @@ $theme_uri      = get_template_directory_uri();
                         </div>
                     <?php endif; ?>
 
-                    <?php if ($show_subscribe && ('' !== $subscribe_label || '' !== $subscribe_placeholder || '' !== $subscribe_button)) : ?>
+                    <?php if ($has_subscribe) : ?>
                         <div class="psm-footer__subscribe">
                             <?php if ('' !== $subscribe_label) : ?>
                                 <p class="psm-footer__subscribe-label"><?php echo esc_html($subscribe_label); ?></p>
                             <?php endif; ?>
-                            <form class="psm-footer-subscribe" action="#" method="post">
-                                <label class="screen-reader-text" for="psm-footer-email"><?php esc_html_e('Email address', 'cmd-theme'); ?></label>
-                                <input
-                                    type="email"
-                                    id="psm-footer-email"
-                                    name="email"
-                                    class="psm-footer-subscribe__input"
-                                    placeholder="<?php echo esc_attr($subscribe_placeholder); ?>"
-                                    required
-                                >
-                                <?php if ('' !== $subscribe_button) : ?>
-                                    <button type="submit" class="psm-footer-subscribe__btn"><?php echo esc_html($subscribe_button); ?></button>
-                                <?php endif; ?>
-                            </form>
+                            <div class="psm-footer-subscribe">
+                                <?php
+                                if (function_exists('psm_render_footer_subscribe_form')) {
+                                    psm_render_footer_subscribe_form();
+                                }
+                                ?>
+                            </div>
                         </div>
                     <?php endif; ?>
                 </div>

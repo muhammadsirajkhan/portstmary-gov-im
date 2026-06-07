@@ -108,9 +108,8 @@ function psm_get_footer_settings() {
         'email_display'  => '',
         'email_href'     => '',
         'show_subscribe' => false,
-        'subscribe_label'       => '',
-        'subscribe_placeholder' => '',
-        'subscribe_button'      => '',
+        'subscribe_label'    => '',
+        'subscribe_shortcode' => '',
         'copyright'      => '',
         'show_legal'     => false,
         'legal_links'  => array(),
@@ -195,10 +194,9 @@ function psm_get_footer_settings() {
         $settings['email_href'] = 'mailto:' . sanitize_email($settings['email_display']);
     }
 
-    $settings['show_subscribe']         = (bool) get_field('footer_show_subscribe', 'option');
-    $settings['subscribe_label']        = trim((string) get_field('footer_subscribe_label', 'option'));
-    $settings['subscribe_placeholder']  = trim((string) get_field('footer_subscribe_placeholder', 'option'));
-    $settings['subscribe_button']       = trim((string) get_field('footer_subscribe_button', 'option'));
+    $settings['show_subscribe']      = (bool) get_field('footer_show_subscribe', 'option');
+    $settings['subscribe_label']     = trim((string) get_field('footer_subscribe_label', 'option'));
+    $settings['subscribe_shortcode'] = trim((string) get_field('footer_subscribe_form_shortcode', 'option'));
 
     $settings['copyright'] = trim((string) get_field('footer_copyright', 'option'));
     $settings['show_legal'] = (bool) get_field('footer_show_legal_links', 'option');

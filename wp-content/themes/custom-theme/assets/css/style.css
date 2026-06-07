@@ -3328,6 +3328,9 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     display: flex;
     gap: 15px;
     align-items: center;
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
 }
 .psm-footer__subscribe-label {
     font-size: 22px;
@@ -3346,10 +3349,11 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     width: 100%;
     max-width: 100%;
     min-height: 56px;
-    padding: 6px 6px 6px 24px;
+    /* padding: 6px 6px 6px 24px; */
     background: #ffffff;
     border-radius: 999px;
-    overflow: hidden;
+    /* overflow: hidden; */
+    position: relative;
 }
 
 .psm-footer-subscribe__input {
@@ -3362,7 +3366,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     font-weight: 400;
     line-height: 1.4;
     color: #111111;
-    padding: 12px 12px 12px 0;
+    padding: 12px 12px 12px 26px;
     outline: none;
 }
 
@@ -3390,6 +3394,94 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 
 .psm-footer-subscribe__btn:hover {
     background: #c91920;
+}
+
+/* CF7 footer subscribe — email + submit live in one <p> with a <br> */
+.psm-footer-subscribe .wpcf7 {
+    width: 100%;
+    position: relative;
+}
+
+.psm-footer-subscribe .wpcf7-form {
+    width: 100%;
+    margin: 0;
+}
+
+.psm-footer-subscribe .hidden-fields-container {
+    display: none;
+}
+
+.psm-footer-subscribe .wpcf7-form > p {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    gap: 0;
+    overflow: hidden;
+    border-radius: 28px;
+}
+
+.psm-footer-subscribe .wpcf7-form > p br {
+    display: none;
+}
+
+.psm-footer-subscribe .wpcf7-form-control-wrap {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: block;
+    position: relative;
+}
+
+.psm-footer-subscribe .wpcf7-form-control {
+    margin: 0;
+    max-width: none;
+}
+
+.psm-footer-subscribe input.psm-footer-subscribe__input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.psm-footer-subscribe input.psm-footer-subscribe__btn {
+    flex: 0 0 auto;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 56px;
+    font-size: 17px;
+}
+
+.psm-footer-subscribe .wpcf7-not-valid-tip {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    font-size: 12px;
+    color: #ffb4b4;
+    white-space: nowrap;
+}
+
+.psm-footer-subscribe .wpcf7-response-output {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% - 16px);
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 13px;
+    color: #ffffff;
+    text-align: left;
+}
+
+.psm-footer-subscribe .wpcf7-spinner {
+    flex: 0 0 auto;
+    margin-left: 8px;
+    display: none;
+}
+
+.psm-footer-subscribe .wpcf7-form.submitting input.psm-footer-subscribe__btn {
+    opacity: 0.85;
+    pointer-events: none;
 }
 
 /* Legal bar */

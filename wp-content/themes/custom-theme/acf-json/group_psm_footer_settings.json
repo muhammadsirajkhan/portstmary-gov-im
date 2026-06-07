@@ -340,30 +340,21 @@
             "conditional_logic": [
                 [{ "field": "field_psm_footer_show_subscribe", "operator": "==", "value": "1" }]
             ],
-            "wrapper": { "width": "33", "class": "", "id": "" },
+            "wrapper": { "width": "50", "class": "", "id": "" },
             "default_value": "Stay in Touch"
         },
         {
-            "key": "field_psm_footer_subscribe_placeholder",
-            "label": "Email placeholder",
-            "name": "footer_subscribe_placeholder",
+            "key": "field_psm_footer_subscribe_form_shortcode",
+            "label": "Contact Form 7 shortcode",
+            "name": "footer_subscribe_form_shortcode",
             "type": "text",
+            "instructions": "Newsletter subscribe CF7 shortcode. Use classes psm-footer-subscribe__input on the email field and psm-footer-subscribe__btn on submit.",
             "conditional_logic": [
                 [{ "field": "field_psm_footer_show_subscribe", "operator": "==", "value": "1" }]
             ],
-            "wrapper": { "width": "33", "class": "", "id": "" },
-            "default_value": "Email Address"
-        },
-        {
-            "key": "field_psm_footer_subscribe_button",
-            "label": "Subscribe button",
-            "name": "footer_subscribe_button",
-            "type": "text",
-            "conditional_logic": [
-                [{ "field": "field_psm_footer_show_subscribe", "operator": "==", "value": "1" }]
-            ],
-            "wrapper": { "width": "34", "class": "", "id": "" },
-            "default_value": "Subscribe"
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "[contact-form-7 id=\"\" title=\"Subscribe\"]"
         },
         {
             "key": "field_psm_footer_tab_legal",
