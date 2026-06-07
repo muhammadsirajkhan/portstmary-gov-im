@@ -116,6 +116,11 @@ function psm_body_class_home($classes) {
         $classes[] = 'psm-page-news-single';
     }
 
+    if (is_singular('psm_job')) {
+        $classes[] = 'psm-inner-page';
+        $classes[] = 'psm-page-job-single';
+    }
+
     if (is_singular('psm_event')) {
         $classes[] = 'psm-inner-page';
         $classes[] = 'psm-page-event-single';

@@ -463,6 +463,87 @@
             ]
         },
         {
+            "key": "field_psm_jobs_tab_application_form",
+            "label": "Job Application Form",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_job_form_title",
+            "label": "Form heading",
+            "name": "job_form_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Heading shown above the application form on single job pages.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Apply for this Role",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_job_form_intro",
+            "label": "Form intro",
+            "name": "job_form_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Short text below the form heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Complete the form below to submit your application. Please attach your CV where requested.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "new_lines": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_psm_job_form_shortcode",
+            "label": "Contact Form 7 shortcode",
+            "name": "job_form_shortcode",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Job application CF7 shortcode with CV file field, e.g. [contact-form-7 id=\"456\" title=\"Job Application\"].",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "[contact-form-7 id=\"\" title=\"Job Application\"]",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_psm_jobs_tab_opportunities",
             "label": "Latest Opportunities",
             "name": "",

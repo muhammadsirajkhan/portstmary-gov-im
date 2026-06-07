@@ -193,23 +193,20 @@ function psm_get_job_listing_card_args($post_id) {
     $title = get_the_title($post_id);
     $location = '';
     $category = '';
-    $pdf_url  = '';
 
     if (function_exists('get_field')) {
         $location = get_field('job_location', $post_id);
         $category = get_field('job_category', $post_id);
-        $pdf_url  = psm_normalize_acf_image_url(get_field('job_pdf', $post_id));
     }
 
-    $url    = '' !== $pdf_url ? $pdf_url : (get_permalink($post_id) ?: '#');
-    $target = '' !== $pdf_url ? '_blank' : '';
+    $permalink = get_permalink($post_id) ?: '#';
 
     return array(
         'title'    => trim((string) $title),
         'location' => trim((string) $location),
         'category' => trim((string) $category),
-        'url'      => $url,
-        'target'   => $target,
+        'url'      => $permalink,
+        'target'   => '',
     );
 }
 
@@ -256,4 +253,98 @@ function psm_get_jobs_opportunities() {
     }
 
     return $cards;
+}
+
+/**
+ * Jobs archive page URL (page-jobs.php template).
+ *
+ * @return string
+ */
+function psm_get_jobs_page_url() {
+    $pages = get_pages(
+        array(
+            'meta_key'   => '_wp_page_template',
+            'meta_value' => 'page-jobs.php',
+            'number'     => 1,
+        )
+    );
+
+    if (!empty($pages[0])) {
+        $url = get_permalink($pages[0]->ID);
+        if ($url) {
+            return $url;
+        }
+    }
+
+    return home_url('/jobs/');
+}
+
+/**
+ * Jobs page post ID.
+ *
+ * @return int
+ */
+function psm_get_jobs_page_id() {
+    $pages = get_pages(
+        array(
+            'meta_key'   => '_wp_page_template',
+            'meta_value' => 'page-jobs.php',
+            'number'     => 1,
+        )
+    );
+
+    return !empty($pages[0]) ? (int) $pages[0]->ID : 0;
+}
+
+/**
+ * Breadcrumbs for a single job post.
+ *
+ * @param int $post_id Job post ID.
+ * @return array<int, array{label: string, url: string}>
+ */
+function psm_get_job_single_breadcrumbs($post_id) {
+    $post_id = (int) $post_id;
+    $title   = $post_id > 0 ? get_the_title($post_id) : '';
+
+    return array(
+        array(
+            'label' => __('Home', 'cmd-theme'),
+            'url'   => home_url('/'),
+        ),
+        array(
+            'label' => __('Jobs', 'cmd-theme'),
+            'url'   => psm_get_jobs_page_url(),
+        ),
+        array(
+            'label' => $title ?: __('Job', 'cmd-theme'),
+            'url'   => '',
+        ),
+    );
+}
+
+/**
+ * Display data for the single job template.
+ *
+ * @param int $post_id Job post ID.
+ * @return array{
+ *     title: string,
+ *     location: string,
+ *     category: string,
+ *     breadcrumb: array
+ * }
+ */
+function psm_get_job_single_data($post_id) {
+    $post_id = (int) $post_id;
+    if ($post_id <= 0) {
+        return array();
+    }
+
+    $card = psm_get_job_listing_card_args($post_id);
+
+    return array(
+        'title'      => $card['title'] ?? '',
+        'location'   => $card['location'] ?? '',
+        'category'   => $card['category'] ?? '',
+        'breadcrumb' => psm_get_job_single_breadcrumbs($post_id),
+    );
 }

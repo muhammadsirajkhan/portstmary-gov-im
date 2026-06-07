@@ -45,6 +45,11 @@ function psm_acf_jobs_page_default_value($value, $post_id, $field) {
         'apply_title'           => $apply['title'],
         'opportunities_badge'   => $header['badge'],
         'opportunities_title'   => $header['title'],
+        'job_form_title'        => __('Apply for this Role', 'cmd-theme'),
+        'job_form_intro'        => __(
+            'Complete the form below to submit your application. Please attach your CV where requested.',
+            'cmd-theme'
+        ),
     );
 
     return isset($map[ $name ]) ? $map[ $name ] : $value;
@@ -85,6 +90,8 @@ $psm_jobs_page_text_fields = array(
     'apply_title',
     'opportunities_badge',
     'opportunities_title',
+    'job_form_title',
+    'job_form_intro',
 );
 
 foreach ($psm_jobs_page_text_fields as $field_name) {

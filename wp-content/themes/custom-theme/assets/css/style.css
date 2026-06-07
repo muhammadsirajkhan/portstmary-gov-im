@@ -2535,6 +2535,57 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     margin-right: auto;
 }
 
+/* ----- Job single ----- */
+.psm-page-job-single {
+    background: #ffffff;
+}
+
+.psm-job-single {
+    padding: calc(24px + 58px + 30px) 0 88px;
+}
+
+.psm-job-single__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 600px);
+    gap: 48px;
+    align-items: start;
+}
+
+.psm-job-single__header {
+    margin: 0 0 32px;
+}
+
+.psm-job-single__meta {
+    margin: 0 0 16px;
+}
+
+.psm-job-single__title {
+    margin: 0;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #111111;
+}
+
+.psm-job-single__content-col .psm-job-single__content {
+    max-width: none;
+}
+
+.psm-job-single__form-card {
+    position: sticky;
+    top: calc(var(--header-height) + 24px);
+}
+
+.psm-job-single__form .psm-cf7-input--file,
+.psm-job-single__form input.psm-cf7-input--file,
+.psm-job-single__form .psm-cf7-input--cv,
+.psm-job-single__form input.psm-cf7-input--cv {
+    padding: 12px 16px 12px 48px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 4v12M8 8l4-4 4 4' stroke='%23111' stroke-width='2'/%3E%3Cpath d='M6 18h12' stroke='%23e31e24' stroke-width='2'/%3E%3C/svg%3E");
+}
+
 /* ----- Event single (matches news single layout) ----- */
 .psm-page-event-single {
     background: #ffffff;
@@ -3775,8 +3826,9 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 
 .psm-contact-form .psm-cf7-input--file,
 .psm-contact-form input.psm-cf7-input--file {
-    padding: 12px 16px 12px 48px;
+    padding: 12px 16px 12px 16px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 4v12M8 8l4-4 4 4' stroke='%23111' stroke-width='2'/%3E%3Cpath d='M6 18h12' stroke='%23e31e24' stroke-width='2'/%3E%3C/svg%3E");
+    background-image: unset;
 }
 
 .psm-contact-form .psm-cf7-input:focus,
@@ -8783,4 +8835,6 @@ span.psm-history-timeline__dot::before {
     left: 50%;
 }.hero-scroll-badge img {
     max-width: 170px;
+}.psm-job-single .psm-breadcrumb {
+    max-width: 100%;
 }
