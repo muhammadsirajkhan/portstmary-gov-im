@@ -8022,43 +8022,64 @@ span.psm-history-timeline__dot::before {
 
 .psm-section-header--where-to-eat-places {
     margin-bottom: 48px;
+    text-align: center;
+}
+
+.psm-section-header--where-to-eat-places .psm-section-header__badge {
+    margin-left: auto;
+    margin-right: auto;
+    color: #666666;
 }
 
 .psm-section-header--where-to-eat-places .psm-section-header__title {
     font-size: 42px;
 }
 
+.psm-section-header--where-to-eat-places .psm-section-header__intro {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.psm-section-header--where-to-eat-places .psm-section-header__intro p {
+    color: #666666;
+}
+
 .psm-where-to-eat-places__grid {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 16px;
+    gap: 20px;
 }
 
 .psm-dining-place-card {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    background: #ffffff;
-    border-radius: 12px;
+    background: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     transition: box-shadow 0.2s ease, transform 0.2s ease;
+    padding: 6px;
 }
 
 .psm-dining-place-card:hover {
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
     transform: translateY(-2px);
+    background-color: #fff;
 }
 
 .psm-dining-place-card__image {
     display: block;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    /* aspect-ratio: 4 / 3; */
+    /* object-fit: cover; */
 }
 
 .psm-dining-place-card__body {
-    padding: 16px 14px 18px;
+    padding: 18px 15px 20px;
+    text-align: center;
 }
 
 .psm-dining-place-card__title {
@@ -8072,18 +8093,29 @@ span.psm-history-timeline__dot::before {
 .psm-dining-place-card__meta {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    gap: 0;
+}
+
+.psm-dining-place-card__divider {
+    width: 100%;
+    margin: 10px 0;
+    border: 0;
+    border-top: 3px dashed #ddd;
 }
 
 .psm-dining-place-card__meta-row {
-    display: flex;
+    display: inline-flex;
     align-items: flex-start;
+    justify-content: center;
     gap: 8px;
     margin: 0;
+    max-width: 100%;
     font-size: 13px;
     font-weight: 400;
     line-height: 1.45;
     color: #666666;
+    text-align: left;
 }
 
 .psm-dining-place-card__meta-row a {
@@ -8097,11 +8129,11 @@ span.psm-history-timeline__dot::before {
 }
 
 .psm-dining-place-card__icon {
-    width: 16px;
-    height: 16px;
+    /* width: 16px; */
+    /* height: 16px; */
     flex-shrink: 0;
     margin-top: 2px;
-    background: #e31e24;
+    /* background: #e31e24; */
     mask-size: contain;
     -webkit-mask-size: contain;
     mask-repeat: no-repeat;

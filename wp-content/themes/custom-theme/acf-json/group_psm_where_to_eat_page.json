@@ -1,0 +1,198 @@
+{
+    "key": "group_psm_where_to_eat_page",
+    "title": "Where to Eat Page",
+    "fields": [
+        {
+            "key": "field_psm_wte_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_wte",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "default_value": "Welcome to Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_inner_banner_title_wte",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "default_value": "Where to Eat"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_wte",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "default_value": "Discover Local Places to Eat in Port St Mary"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_wte",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "default_value": "Explore local cafes, restaurants, and takeaways in Port St Mary. Whether you're after a quick coffee, a casual meal, or a convenient takeaway.",
+            "rows": 3
+        },
+        {
+            "key": "field_psm_inner_banner_image_wte",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_psm_wte_tab_places",
+            "label": "Places to Eat",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_where_to_eat_places_badge",
+            "label": "Badge",
+            "name": "where_to_eat_places_badge",
+            "type": "text",
+            "instructions": "Pill label above the heading.",
+            "default_value": "Local Dining",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_where_to_eat_places_title",
+            "label": "Heading",
+            "name": "where_to_eat_places_title",
+            "type": "text",
+            "instructions": "Section heading.",
+            "default_value": "Places to Eat",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_where_to_eat_places_intro",
+            "label": "Intro",
+            "name": "where_to_eat_places_intro",
+            "type": "textarea",
+            "instructions": "Intro paragraph below the heading.",
+            "rows": 4,
+            "default_value": "Explore local cafés, restaurants, and takeaways in Port St Mary. Whether you're looking for a quick coffee, a relaxed meal, or a takeaway option, you'll find a range of local favourites below.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_where_to_eat_places_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_where_to_eat_places",
+            "label": "Venues",
+            "name": "where_to_eat_places",
+            "type": "repeater",
+            "instructions": "Add dining venues. Title is required for each card.",
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_where_to_eat_place_title",
+            "button_label": "Add Venue",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_where_to_eat_places_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_psm_where_to_eat_place_image",
+                    "label": "Image",
+                    "name": "where_to_eat_place_image",
+                    "type": "image",
+                    "instructions": "Card image.",
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_where_to_eat_places"
+                },
+                {
+                    "key": "field_psm_where_to_eat_place_title",
+                    "label": "Title",
+                    "name": "where_to_eat_place_title",
+                    "type": "text",
+                    "instructions": "Venue name.",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_where_to_eat_places"
+                },
+                {
+                    "key": "field_psm_where_to_eat_place_location",
+                    "label": "Address",
+                    "name": "where_to_eat_place_location",
+                    "type": "text",
+                    "instructions": "Address line shown with the location icon.",
+                    "wrapper": { "width": "50" },
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_where_to_eat_place_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_where_to_eat_places"
+                },
+                {
+                    "key": "field_psm_where_to_eat_place_phone",
+                    "label": "Phone",
+                    "name": "where_to_eat_place_phone",
+                    "type": "text",
+                    "instructions": "Display phone number.",
+                    "wrapper": { "width": "50" },
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_where_to_eat_place_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_where_to_eat_places"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-where-to-eat.php"
+            }
+        ]
+    ],
+    "menu_order": 27,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner and places to eat section for the Where to Eat page.",
+    "show_in_rest": 0,
+    "modified": 1750035600
+}
