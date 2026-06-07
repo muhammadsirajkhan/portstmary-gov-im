@@ -33,30 +33,44 @@ $footer_about = array(
     ),
 );
 
+$contact_url = function_exists('psm_contact_page_url') ? psm_contact_page_url() : home_url('/contact/');
+$foi_url     = function_exists('psm_foi_page_url') ? psm_foi_page_url() : home_url('/foi/');
+$minutes_url = function_exists('psm_minutes_page_url') ? psm_minutes_page_url() : home_url('/meeting-minutes/');
+$news_url    = function_exists('psm_get_news_page_url') ? psm_get_news_page_url() : home_url('/news/');
+
 $footer_link_columns = array(
     array(
-        array(__('Home', 'cmd-theme'), home_url('/')),
-        array(__('About', 'cmd-theme'), home_url('/#about')),
-        array(__('Services', 'cmd-theme'), home_url('/#services')),
-        array(__('Event', 'cmd-theme'), home_url('/#events')),
-        array(__('Blog', 'cmd-theme'), '#'),
-        array(__('Contact Us', 'cmd-theme'), psm_contact_page_url()),
+        'heading' => __('Quick Links', 'cmd-theme'),
+        'links'   => array(
+            array(__('Home', 'cmd-theme'), home_url('/')),
+            array(__('About', 'cmd-theme'), home_url('/#about')),
+            array(__('Services', 'cmd-theme'), home_url('/#services')),
+            array(__('News', 'cmd-theme'), $news_url),
+            array(__('Events', 'cmd-theme'), home_url('/#events')),
+            array(__('Contact Us', 'cmd-theme'), $contact_url),
+        ),
     ),
     array(
-        array(__('Where to Stay', 'cmd-theme'), home_url('/where-to-stay/')),
-        array(__('Community', 'cmd-theme'), '#'),
-        array(__('Council', 'cmd-theme'), '#'),
-        array(__('Documents', 'cmd-theme'), '#'),
-        array(__('Who We Are', 'cmd-theme'), home_url('/who-we-are/')),
-        array(__('Where to Eat', 'cmd-theme'), home_url('/where-to-eat/')),
+        'heading' => __('Services', 'cmd-theme'),
+        'links'   => array(
+            array(__('General Public', 'cmd-theme'), home_url('/general-public/')),
+            array(__('Housing Services', 'cmd-theme'), home_url('/housing-services/')),
+            array(__('Refuse Services', 'cmd-theme'), home_url('/refuse-services/')),
+            array(__('Southern Sheltered', 'cmd-theme'), home_url('/southern-sheltered/')),
+            array(__('Boat Park', 'cmd-theme'), home_url('/boat-park/')),
+            array(__('Consultations', 'cmd-theme'), home_url('/consultations/')),
+        ),
     ),
     array(
-        array(__('Mission Statement', 'cmd-theme'), '#'),
-        array(__('Byelaws', 'cmd-theme'), '#'),
-        array(__('Climate Change', 'cmd-theme'), '#'),
-        array(__('Complaints', 'cmd-theme'), '#'),
-        array(__('Events', 'cmd-theme'), home_url('/#events')),
-        array(__('FOI', 'cmd-theme'), '#'),
+        'heading' => __('Council & Community', 'cmd-theme'),
+        'links'   => array(
+            array(__('Who We Are', 'cmd-theme'), home_url('/who-we-are/')),
+            array(__('Your Commissioners', 'cmd-theme'), home_url('/your-commissioners/')),
+            array(__('Byelaws', 'cmd-theme'), home_url('/byelaws/')),
+            array(__('Complaints', 'cmd-theme'), home_url('/complaints/')),
+            array(__('FOI', 'cmd-theme'), $foi_url),
+            array(__('Meeting Minutes', 'cmd-theme'), $minutes_url),
+        ),
     ),
 );
 
@@ -135,19 +149,21 @@ $legal_links = array(
 
                 <div class="psm-footer__links-area">
                     <div class="psm-footer__links-grid">
-                        <?php foreach ($footer_link_columns as $column_index => $column_links): ?>
+                        <?php foreach ($footer_link_columns as $column_index => $column) : ?>
                             <?php
-                            $sidebar_id = 'footer-col-' . ($column_index + 1);
-                            if (is_active_sidebar($sidebar_id)):
+                            $sidebar_id     = 'footer-col-' . ($column_index + 1);
+                            $column_heading = isset($column['heading']) ? $column['heading'] : __('Links', 'cmd-theme');
+                            $column_links   = isset($column['links']) ? $column['links'] : $column;
+                            if (is_active_sidebar($sidebar_id)) :
                                 ?>
                                 <div class="psm-footer__links-col">
                                     <?php dynamic_sidebar($sidebar_id); ?>
                                 </div>
-                            <?php else: ?>
+                            <?php else : ?>
                                 <div class="psm-footer__links-col">
-                                    <h3 class="psm-footer__links-heading"><?php esc_html_e('Links', 'cmd-theme'); ?></h3>
+                                    <h3 class="psm-footer__links-heading"><?php echo esc_html($column_heading); ?></h3>
                                     <ul class="psm-footer__links list-unstyled">
-                                        <?php foreach ($column_links as $link): ?>
+                                        <?php foreach ($column_links as $link) : ?>
                                             <li>
                                                 <a href="<?php echo esc_url($link[1]); ?>">
                                                     <span class="psm-footer__links-chevron" aria-hidden="true">»</span>
