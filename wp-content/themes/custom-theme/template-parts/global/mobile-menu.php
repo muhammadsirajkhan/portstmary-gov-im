@@ -7,6 +7,10 @@
 
 defined('ABSPATH') || exit;
 
+$header   = function_exists('psm_get_header_settings') ? psm_get_header_settings() : array();
+$cta      = isset($header['cta']) && is_array($header['cta']) ? $header['cta'] : array();
+$show_cta = !empty($header['show_cta']) && '' !== ($cta['url'] ?? '') && '' !== ($cta['title'] ?? '');
+
 $mobile_walker = class_exists('PSM_Mobile_Nav_Walker') ? new PSM_Mobile_Nav_Walker() : null;
 ?>
 <div class="mobile-nav-overlay" aria-hidden="true"></div>
@@ -21,7 +25,7 @@ $mobile_walker = class_exists('PSM_Mobile_Nav_Walker') ? new PSM_Mobile_Nav_Walk
                 'theme_location' => 'primary_left',
                 'container'      => false,
                 'menu_class'     => 'psm-mobile-menu',
-                'fallback_cb'    => 'psm_fallback_nav_left_mobile',
+                'fallback_cb'    => false,
                 'depth'          => 2,
                 'walker'         => $mobile_walker,
             )
@@ -31,22 +35,25 @@ $mobile_walker = class_exists('PSM_Mobile_Nav_Walker') ? new PSM_Mobile_Nav_Walk
                 'theme_location' => 'primary_right',
                 'container'      => false,
                 'menu_class'     => 'psm-mobile-menu psm-mobile-menu--right',
-                'fallback_cb'    => 'psm_fallback_nav_right_mobile',
+                'fallback_cb'    => false,
                 'depth'          => 2,
                 'walker'         => $mobile_walker,
             )
         );
         ?>
-        <?php
-        get_template_part(
-            'template-parts/components/button-pill',
-            null,
-            array(
-                'text'    => __('Report an Issue', 'cmd-theme'),
-                'url'     => '#',
-                'variant' => 'primary',
-            )
-        );
-        ?>
+        <?php if ($show_cta) : ?>
+            <?php
+            get_template_part(
+                'template-parts/components/button-pill',
+                null,
+                array(
+                    'text'    => $cta['title'],
+                    'url'     => $cta['url'],
+                    'target'  => $cta['target'],
+                    'variant' => 'primary',
+                )
+            );
+            ?>
+        <?php endif; ?>
     </nav>
 </aside>

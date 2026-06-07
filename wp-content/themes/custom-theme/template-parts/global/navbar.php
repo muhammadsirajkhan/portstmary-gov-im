@@ -1,13 +1,16 @@
 <?php
 /**
- * Main navigation.
+ * Main navigation (ACF Header Settings + WordPress menus).
  *
  * @package CMD_Theme
  */
 
 defined('ABSPATH') || exit;
 
-$logo_url   = get_template_directory_uri() . '/assets/images/header-logo.png';
+$header     = function_exists('psm_get_header_settings') ? psm_get_header_settings() : array();
+$acf_logo   = trim((string) ($header['logo_url'] ?? ''));
+$cta        = isset($header['cta']) && is_array($header['cta']) ? $header['cta'] : array();
+$show_cta   = !empty($header['show_cta']) && '' !== ($cta['url'] ?? '') && '' !== ($cta['title'] ?? '');
 $is_home    = is_front_page();
 $header_cls = 'psm-header' . ($is_home ? ' psm-header--home' : '');
 ?>
@@ -23,7 +26,7 @@ $header_cls = 'psm-header' . ($is_home ? ' psm-header--home' : '');
                             'theme_location' => 'primary_left',
                             'container'      => false,
                             'menu_class'     => 'psm-nav-list',
-                            'fallback_cb'    => 'psm_fallback_nav_left',
+                            'fallback_cb'    => false,
                             'depth'          => 2,
                         )
                     );
@@ -34,9 +37,9 @@ $header_cls = 'psm-header' . ($is_home ? ' psm-header--home' : '');
                     <div class="psm-header__logo-tab">
                         <?php if (function_exists('the_custom_logo') && has_custom_logo()) : ?>
                             <?php the_custom_logo(); ?>
-                        <?php elseif ($logo_url) : ?>
+                        <?php elseif ('' !== $acf_logo) : ?>
                             <a href="<?php echo esc_url(home_url('/')); ?>" class="psm-logo-link">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/header-logo.png" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" width="130" height="130" loading="eager">
+                                <img src="<?php echo esc_url($acf_logo); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" width="130" height="130" loading="eager">
                             </a>
                         <?php else : ?>
                             <a href="<?php echo esc_url(home_url('/')); ?>" class="psm-logo-link psm-logo-fallback" aria-label="<?php echo esc_attr(get_bloginfo('name')); ?>"></a>
@@ -52,24 +55,26 @@ $header_cls = 'psm-header' . ($is_home ? ' psm-header--home' : '');
                                 'theme_location' => 'primary_right',
                                 'container'      => false,
                                 'menu_class'     => 'psm-nav-list',
-                                'fallback_cb'    => 'psm_fallback_nav_right',
+                                'fallback_cb'    => false,
                                 'depth'          => 2,
                             )
                         );
                         ?>
                     </nav>
-                    <!-- <button type="button" class="psm-header__search" aria-label="<?php esc_attr_e('Search', 'cmd-theme'); ?>"></button> -->
-                    <?php
-                    get_template_part(
-                        'template-parts/components/button-pill',
-                        null,
-                        array(
-                            'text'    => __('Report an Issue', 'cmd-theme'),
-                            'url'     => psm_contact_page_url(),
-                            'variant' => 'primary',
-                        )
-                    );
-                    ?>
+                    <?php if ($show_cta) : ?>
+                        <?php
+                        get_template_part(
+                            'template-parts/components/button-pill',
+                            null,
+                            array(
+                                'text'    => $cta['title'],
+                                'url'     => $cta['url'],
+                                'target'  => $cta['target'],
+                                'variant' => 'primary',
+                            )
+                        );
+                        ?>
+                    <?php endif; ?>
                 </div>
 
                 <button type="button" class="psm-burger d-lg-none mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="<?php esc_attr_e('Open menu', 'cmd-theme'); ?>">

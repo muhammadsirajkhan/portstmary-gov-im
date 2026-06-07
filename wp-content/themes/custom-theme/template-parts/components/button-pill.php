@@ -18,13 +18,15 @@ $args = wp_parse_args(
     array(
         'text'    => '',
         'url'     => '#',
+        'target'  => '',
         'variant' => 'primary',
     )
 );
 
 $variant = 'secondary' === $args['variant'] ? 'secondary' : 'primary';
+$target  = '_blank' === $args['target'] ? ' target="_blank" rel="noopener noreferrer"' : '';
 ?>
-<a href="<?php echo esc_url($args['url']); ?>" class="psm-btn-pill psm-btn-pill--<?php echo esc_attr($variant); ?>">
+<a href="<?php echo esc_url($args['url']); ?>" class="psm-btn-pill psm-btn-pill--<?php echo esc_attr($variant); ?>"<?php echo $target; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
     <span class="psm-btn-pill__text"><?php echo esc_html($args['text']); ?></span>
     <span class="psm-btn-pill__icon" aria-hidden="true">
     <?php if ( 'secondary' === $variant ) : ?>

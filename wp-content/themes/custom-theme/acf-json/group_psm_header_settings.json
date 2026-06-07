@@ -1,0 +1,345 @@
+{
+    "key": "group_psm_header_settings",
+    "title": "Header Settings",
+    "fields": [
+        {
+            "key": "field_psm_header_tab_topbar",
+            "label": "Top Bar",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_header_show_topbar",
+            "label": "Show top bar",
+            "name": "header_show_topbar",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Email and social links row above the main navigation.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide"
+        },
+        {
+            "key": "field_psm_header_email_label",
+            "label": "Email label",
+            "name": "header_email_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Text before the email address.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_header_show_topbar",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Email Now:",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_header_email",
+            "label": "Email address",
+            "name": "header_email",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "Shown in the top bar and used for the mailto link.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_header_show_topbar",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "commissioners@portstmary.gov.im",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_header_social_label",
+            "label": "Social label",
+            "name": "header_social_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Text before social icons.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_header_show_topbar",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Follow Us Online:",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_psm_header_social_links",
+            "label": "Social links",
+            "name": "header_social_links",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Only rows with a network and URL are shown.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_header_show_topbar",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 6,
+            "collapsed": "field_psm_header_social_network",
+            "button_label": "Add social link",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_psm_header_social_network",
+                    "label": "Network",
+                    "name": "network",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "facebook": "Facebook",
+                        "twitter": "X (Twitter)",
+                        "youtube": "YouTube",
+                        "linkedin": "LinkedIn",
+                        "instagram": "Instagram",
+                        "tiktok": "TikTok"
+                    },
+                    "default_value": "facebook",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_psm_header_social_links"
+                },
+                {
+                    "key": "field_psm_header_social_url",
+                    "label": "URL",
+                    "name": "url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "45",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "https://",
+                    "parent_repeater": "field_psm_header_social_links"
+                },
+                {
+                    "key": "field_psm_header_social_item_label",
+                    "label": "Accessible label",
+                    "name": "label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Optional. Used for aria-label on the icon link.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Facebook",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_psm_header_social_links"
+                }
+            ]
+        },
+        {
+            "key": "field_psm_header_tab_main",
+            "label": "Main Header",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_header_logo",
+            "label": "Logo override",
+            "name": "header_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Optional. Used when no logo is set under Appearance → Customize → Site Identity. Menus are managed under Appearance → Menus.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,svg,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_psm_header_show_cta",
+            "label": "Show header button",
+            "name": "header_show_cta",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Primary call-to-action button on the right of the navigation.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide"
+        },
+        {
+            "key": "field_psm_header_cta_link",
+            "label": "Header button",
+            "name": "header_cta_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Link and label for the header button (desktop and mobile menu).",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_header_show_cta",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "psm-header-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Site-wide header: top bar, logo override, and CTA button. Navigation menus use Appearance → Menus.",
+    "show_in_rest": 0,
+    "modified": 1781212800
+}
