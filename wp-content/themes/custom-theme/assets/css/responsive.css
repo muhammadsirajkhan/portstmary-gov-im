@@ -352,6 +352,10 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
+    .psm-where-to-stay-featured__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .psm-consultation-feedback__header {
         grid-template-columns: 1fr;
     }
@@ -778,6 +782,10 @@
     .psm-where-to-eat-places__grid {
         grid-template-columns: 1fr;
     }
+
+    .psm-where-to-stay-featured__grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media only screen and (min-width: 100px) and (max-width: 1199px) {
@@ -1192,17 +1200,28 @@
         gap: 12px;
     }
 
-    .psm-where-to-eat-places {
+    .psm-where-to-eat-places,
+    .psm-where-to-stay-featured {
         padding: 56px 0;
     }
 
-    .psm-section-header--where-to-eat-places .psm-section-header__title {
+    .psm-section-header--where-to-eat-places .psm-section-header__title,
+    .psm-section-header--where-to-stay-featured .psm-section-header__title {
         font-size: 32px;
     }
 
     .psm-where-to-eat-places__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
+    }
+
+    .psm-where-to-stay-featured__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .psm-where-to-stay-featured__category {
+        margin-bottom: 28px;
     }
 
     .psm-consultation-feedback__grid {

@@ -43,12 +43,12 @@ $footer_link_columns = array(
         array(__('Contact Us', 'cmd-theme'), psm_contact_page_url()),
     ),
     array(
-        array(__('Where to Stay', 'cmd-theme'), '#'),
+        array(__('Where to Stay', 'cmd-theme'), home_url('/where-to-stay/')),
         array(__('Community', 'cmd-theme'), '#'),
         array(__('Council', 'cmd-theme'), '#'),
         array(__('Documents', 'cmd-theme'), '#'),
         array(__('Who We Are', 'cmd-theme'), '#'),
-        array(__('Where to Eat', 'cmd-theme'), '#'),
+        array(__('Where to Eat', 'cmd-theme'), home_url('/where-to-eat/')),
     ),
     array(
         array(__('Mission Statement', 'cmd-theme'), '#'),

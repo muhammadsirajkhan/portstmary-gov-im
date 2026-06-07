@@ -267,6 +267,7 @@ function psm_fallback_nav_items_left() {
             array(
                 array(__('Local Info', 'cmd-theme'), home_url('/local-info/')),
                 array(__('Where to Eat', 'cmd-theme'), home_url('/where-to-eat/')),
+                array(__('Where to Stay', 'cmd-theme'), home_url('/where-to-stay/')),
             ),
         ),
         array(__('Council', 'cmd-theme'), home_url('/#about')),

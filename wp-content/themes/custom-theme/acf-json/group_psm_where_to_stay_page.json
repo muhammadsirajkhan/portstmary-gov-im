@@ -1,0 +1,252 @@
+{
+    "key": "group_psm_where_to_stay_page",
+    "title": "Where to Stay Page",
+    "fields": [
+        {
+            "key": "field_psm_wts_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_wts",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "default_value": "Visit Port St Mary & Surrounding"
+        },
+        {
+            "key": "field_psm_inner_banner_title_wts",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "default_value": "Where to Stay"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_wts",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "default_value": "Stay in Port St Mary"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_wts",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "default_value": "There is a variety of accommodation options in Port St Mary, from hotels and guest houses to self catering.",
+            "rows": 3
+        },
+        {
+            "key": "field_psm_inner_banner_image_wts",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_psm_wts_tab_featured",
+            "label": "Featured Places to Stay",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_where_to_stay_featured_badge",
+            "label": "Badge",
+            "name": "where_to_stay_featured_badge",
+            "type": "text",
+            "instructions": "Pill label above the heading.",
+            "default_value": "Port St Mary Commissioners",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_where_to_stay_featured_title",
+            "label": "Heading",
+            "name": "where_to_stay_featured_title",
+            "type": "text",
+            "instructions": "Section heading.",
+            "default_value": "Featured Places to Stay",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_where_to_stay_featured_intro",
+            "label": "Intro",
+            "name": "where_to_stay_featured_intro",
+            "type": "textarea",
+            "instructions": "Intro paragraph below the heading.",
+            "rows": 4,
+            "default_value": "Port St Mary benefits from a wide variety of quality accommodation and food establishments including those listed below. This list is not exhaustive, also please see visitisleofman.com",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_where_to_stay_featured_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_where_to_stay_featured_category",
+            "label": "Category Label",
+            "name": "where_to_stay_featured_category",
+            "type": "text",
+            "instructions": "Label shown above the accommodation grid.",
+            "default_value": "Accommodation",
+            "wrapper": { "width": "50" },
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_where_to_stay_featured_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_where_to_stay_accommodations",
+            "label": "Accommodation",
+            "name": "where_to_stay_accommodations",
+            "type": "repeater",
+            "instructions": "Add accommodation listings. Title is required for each card.",
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_where_to_stay_accommodation_title",
+            "button_label": "Add Accommodation",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_where_to_stay_featured_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_psm_where_to_stay_accommodation_image",
+                    "label": "Image",
+                    "name": "where_to_stay_accommodation_image",
+                    "type": "image",
+                    "instructions": "Card image.",
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_where_to_stay_accommodations"
+                },
+                {
+                    "key": "field_psm_where_to_stay_accommodation_title",
+                    "label": "Title",
+                    "name": "where_to_stay_accommodation_title",
+                    "type": "text",
+                    "instructions": "Property name.",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_where_to_stay_accommodations"
+                },
+                {
+                    "key": "field_psm_where_to_stay_accommodation_location",
+                    "label": "Address",
+                    "name": "where_to_stay_accommodation_location",
+                    "type": "text",
+                    "instructions": "Address line shown with the location icon.",
+                    "wrapper": { "width": "50" },
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_where_to_stay_accommodation_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_where_to_stay_accommodations"
+                },
+                {
+                    "key": "field_psm_where_to_stay_accommodation_phone",
+                    "label": "Phone",
+                    "name": "where_to_stay_accommodation_phone",
+                    "type": "text",
+                    "instructions": "Display phone number.",
+                    "wrapper": { "width": "50" },
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_where_to_stay_accommodation_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_where_to_stay_accommodations"
+                },
+                {
+                    "key": "field_psm_where_to_stay_accommodation_contact",
+                    "label": "Email or Website",
+                    "name": "where_to_stay_accommodation_contact",
+                    "type": "text",
+                    "instructions": "Email address or website URL shown with the envelope icon.",
+                    "wrapper": { "width": "50" },
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_where_to_stay_accommodation_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_where_to_stay_accommodations"
+                },
+                {
+                    "key": "field_psm_where_to_stay_accommodation_link",
+                    "label": "Read More Link",
+                    "name": "where_to_stay_accommodation_link",
+                    "type": "link",
+                    "instructions": "Optional. URL for the Read More button on the card.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_where_to_stay_accommodation_title",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": { "width": "50" },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_psm_where_to_stay_accommodations"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-where-to-stay.php"
+            }
+        ]
+    ],
+    "menu_order": 28,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner and featured accommodation section for the Where to Stay page.",
+    "show_in_rest": 0,
+    "modified": 1780500000
+}

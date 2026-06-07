@@ -72,3 +72,4 @@ require get_template_directory() . '/inc/gallery-helpers.php';
 require get_template_directory() . '/inc/local-info-helpers.php';
 require get_template_directory() . '/inc/rates-finances-helpers.php';
 require get_template_directory() . '/inc/where-to-eat-helpers.php';
+require get_template_directory() . '/inc/where-to-stay-helpers.php';
