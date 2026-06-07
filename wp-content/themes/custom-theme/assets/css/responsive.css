@@ -1439,31 +1439,36 @@
 
     .psm-news-single,
     .psm-event-single,
-    .psm-job-single {
+    .psm-job-single,
+    .psm-policy-single {
         padding: calc(44px + 72px + 24px) 0 56px;
     }
 
     .psm-news-single__title,
     .psm-event-single__title,
-    .psm-job-single__title {
+    .psm-job-single__title,
+    .psm-policy-single__title {
         font-size: 1.5rem;
     }
 
     .psm-news-single__content,
     .psm-event-single__content,
-    .psm-job-single__content {
+    .psm-job-single__content,
+    .psm-policy-single__content {
         font-size: 15px;
     }
 
     .psm-news-single__content h2,
     .psm-event-single__content h2,
-    .psm-job-single__content h2 {
+    .psm-job-single__content h2,
+    .psm-policy-single__content h2 {
         font-size: 1.375rem;
     }
 
     .psm-news-single__content table,
     .psm-event-single__content table,
-    .psm-job-single__content table {
+    .psm-job-single__content table,
+    .psm-policy-single__content table {
         display: block;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;

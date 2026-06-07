@@ -1,0 +1,54 @@
+{
+    "key": "group_psm_policy_page",
+    "title": "Policy Page",
+    "fields": [
+        {
+            "key": "field_psm_policy_show_last_updated",
+            "label": "Show last updated",
+            "name": "policy_show_last_updated",
+            "type": "true_false",
+            "instructions": "Display the last updated date below the breadcrumbs.",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide"
+        },
+        {
+            "key": "field_psm_policy_last_updated",
+            "label": "Last updated date",
+            "name": "policy_last_updated",
+            "type": "date_picker",
+            "instructions": "Optional override. Leave empty to use the page modified date.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_policy_show_last_updated",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "display_format": "j F Y",
+            "return_format": "Y-m-d",
+            "first_day": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-policy.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Optional settings for Privacy Policy, Terms, Accessibility, and other policy pages.",
+    "show_in_rest": 0,
+    "modified": 1781385600
+}

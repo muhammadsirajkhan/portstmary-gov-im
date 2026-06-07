@@ -2535,6 +2535,96 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     margin-right: auto;
 }
 
+/* ----- Policy single (matches news single layout) ----- */
+.psm-page-policy-single {
+    background: #ffffff;
+}
+
+.psm-policy-single {
+    padding: calc(24px + 58px + 30px) 0 88px;
+}
+
+.psm-policy-single__header {
+    max-width: 800px;
+    margin: 0 auto 32px;
+}
+
+.psm-policy-single__meta {
+    margin: 0 0 16px;
+}
+
+.psm-policy-single__title {
+    margin: 0;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #111111;
+}
+
+.psm-policy-single__content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #333333;
+}
+
+.psm-policy-single__content > *:first-child {
+    margin-top: 0;
+}
+
+.psm-policy-single__content > *:last-child {
+    margin-bottom: 0;
+}
+
+.psm-policy-single__content h2,
+.psm-policy-single__content h3,
+.psm-policy-single__content h4,
+.psm-policy-single__content h5,
+.psm-policy-single__content h6 {
+    margin: 1.75em 0 0.75em;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    color: #111111;
+}
+
+.psm-policy-single__content h2 {
+    font-size: clamp(1.375rem, 3vw, 1.75rem);
+}
+
+.psm-policy-single__content h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+.psm-policy-single__content p {
+    margin: 0 0 1em;
+}
+
+.psm-policy-single__content a {
+    color: #e31e24;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.psm-policy-single__content a:hover {
+    color: #c91920;
+}
+
+.psm-policy-single__content ul,
+.psm-policy-single__content ol {
+    margin: 0 0 1em;
+    padding-left: 1.25em;
+}
+
+.psm-policy-single__content li {
+    margin-bottom: 0.35em;
+}
+
 /* ----- Job single ----- */
 .psm-page-job-single {
     background: #ffffff;
