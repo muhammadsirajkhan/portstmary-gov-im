@@ -1,0 +1,195 @@
+{
+    "key": "group_psm_byelaws_page",
+    "title": "Byelaws Page",
+    "fields": [
+        {
+            "key": "field_psm_byelaws_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_byelaws",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "default_value": "Welcome to Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_inner_banner_title_byelaws",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "default_value": "Local Byelaws"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_byelaws",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "default_value": "Helping Maintain Our Community"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_byelaws",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "default_value": "View local byelaws, standing orders and community guidance published by Port St Mary Commissioners.",
+            "rows": 3
+        },
+        {
+            "key": "field_psm_inner_banner_image_byelaws",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_psm_byelaws_tab_guidance",
+            "label": "Guidance",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_byelaws_image",
+            "label": "Image",
+            "name": "byelaws_image",
+            "type": "image",
+            "instructions": "Single image for the left column.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_byelaws_badge",
+            "label": "Badge",
+            "name": "byelaws_badge",
+            "type": "text",
+            "default_value": "Port St Mary Commissioners",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_byelaws_title",
+            "label": "Heading",
+            "name": "byelaws_title",
+            "type": "text",
+            "default_value": "Guidance for Community Living",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_byelaws_subheading",
+            "label": "Subheading",
+            "name": "byelaws_subheading",
+            "type": "text",
+            "instructions": "Smaller heading below the main heading (renders as H3).",
+            "default_value": "Local Byelaws & Orders",
+            "wrapper": { "width": "50" },
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_byelaws_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_byelaws_body",
+            "label": "Body Text",
+            "name": "byelaws_body",
+            "type": "textarea",
+            "instructions": "One paragraph per line.",
+            "rows": 4,
+            "default_value": "The Commissioners of Port St Mary have made a number of byelaws & orders relating to Port St Mary, based upon those issued by Government and used by other local authorities.\r\nThese regulations cover a range of topics relating to public behaviour, amenities, environmental responsibilities, and the use of community spaces.\r\nThe various documents can be downloaded below:",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_byelaws_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_byelaws_documents",
+            "label": "Documents",
+            "name": "byelaws_documents",
+            "type": "repeater",
+            "instructions": "PDF download links. A link is shown only when both label and PDF are provided.",
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_byelaws_document_label",
+            "button_label": "Add Document",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_byelaws_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_psm_byelaws_document_label",
+                    "label": "Label",
+                    "name": "byelaws_document_label",
+                    "type": "text",
+                    "wrapper": { "width": "50" },
+                    "parent_repeater": "field_psm_byelaws_documents"
+                },
+                {
+                    "key": "field_psm_byelaws_document_file",
+                    "label": "PDF File",
+                    "name": "byelaws_document_file",
+                    "type": "file",
+                    "return_format": "url",
+                    "mime_types": "pdf",
+                    "wrapper": { "width": "50" },
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_byelaws_document_label",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_byelaws_documents"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-byelaws.php"
+            }
+        ]
+    ],
+    "menu_order": 31,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner and guidance section for the Byelaws page.",
+    "show_in_rest": 0,
+    "modified": 1780500500
+}

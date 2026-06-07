@@ -78,3 +78,6 @@ require get_template_directory() . '/inc/acf-who-we-are-defaults.php';
 require get_template_directory() . '/inc/mission-statement-data.php';
 require get_template_directory() . '/inc/mission-statement-helpers.php';
 require get_template_directory() . '/inc/acf-mission-statement-defaults.php';
+require get_template_directory() . '/inc/byelaws-data.php';
+require get_template_directory() . '/inc/byelaws-helpers.php';
+require get_template_directory() . '/inc/acf-byelaws-defaults.php';

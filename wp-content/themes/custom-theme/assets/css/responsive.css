@@ -1203,14 +1203,20 @@
     .psm-where-to-eat-places,
     .psm-where-to-stay-featured,
     .psm-who-we-are-about,
-    .psm-mission-statement-commitment {
+    .psm-mission-statement-commitment,
+    .psm-byelaws-guidance {
         padding: 56px 0;
     }
 
     .psm-section-header--who-we-are-about .psm-section-header__title,
     .psm-section-header--who-we-are-role .psm-section-header__title,
-    .psm-section-header--mission-statement-commitment .psm-section-header__title {
+    .psm-section-header--mission-statement-commitment .psm-section-header__title,
+    .psm-section-header--byelaws-guidance .psm-section-header__title {
         font-size: 32px;
+    }
+
+    .psm-byelaws-guidance__subheading {
+        font-size: 18px;
     }
 
     .psm-who-we-are-role > .container {
@@ -1219,7 +1225,8 @@
     }
 
     .psm-who-we-are-about__grid,
-    .psm-mission-statement-commitment__grid {
+    .psm-mission-statement-commitment__grid,
+    .psm-byelaws-guidance__grid {
         grid-template-columns: 1fr;
         gap: 32px;
     }
