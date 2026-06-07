@@ -73,3 +73,5 @@ require get_template_directory() . '/inc/local-info-helpers.php';
 require get_template_directory() . '/inc/rates-finances-helpers.php';
 require get_template_directory() . '/inc/where-to-eat-helpers.php';
 require get_template_directory() . '/inc/where-to-stay-helpers.php';
+require get_template_directory() . '/inc/who-we-are-helpers.php';
+require get_template_directory() . '/inc/acf-who-we-are-defaults.php';

@@ -1,0 +1,353 @@
+{
+    "key": "group_psm_who_we_are_page",
+    "title": "Who We Are Page",
+    "fields": [
+        {
+            "key": "field_psm_wwa_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_wwa",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "default_value": "Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_inner_banner_title_wwa",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "default_value": "Who We Are"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_wwa",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "default_value": "Trusted Local Leadership"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_wwa",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "default_value": "The Port St Mary Commissioners are responsible for the day to day running of the village and its various departments.",
+            "rows": 3
+        },
+        {
+            "key": "field_psm_inner_banner_image_wwa",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_psm_wwa_tab_about",
+            "label": "About",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_who_we_are_about_image",
+            "label": "Image",
+            "name": "who_we_are_about_image",
+            "type": "image",
+            "instructions": "Single image for the left column.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_who_we_are_about_badge",
+            "label": "Eyebrow",
+            "name": "who_we_are_about_badge",
+            "type": "text",
+            "default_value": "About Port St Mary",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_who_we_are_about_title",
+            "label": "Heading",
+            "name": "who_we_are_about_title",
+            "type": "text",
+            "default_value": "About Port St Mary Commissioners",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_who_we_are_about_body",
+            "label": "Body Text",
+            "name": "who_we_are_about_body",
+            "type": "textarea",
+            "instructions": "One paragraph per line.",
+            "rows": 6,
+            "default_value": "Port St Mary Commissioners are the local authority for the village of Port St Mary on the Isle of Man.\r\nThe Board of Port St Mary Commissioners has represented the Village District of Port St Mary since its formation in 1890. The Board consists of seven members who are elected by public vote every four years, with the next election due in 2029.\r\nPort St Mary Commissioners deliver essential local services including refuse collection, housing, beach cleaning, street lighting, and the maintenance of public spaces and facilities throughout the village.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_who_we_are_about_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_wwa_tab_role",
+            "label": "Our Role",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_who_we_are_role_badge",
+            "label": "Badge",
+            "name": "who_we_are_role_badge",
+            "type": "text",
+            "default_value": "What We Do for Our Community",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_who_we_are_role_title",
+            "label": "Heading",
+            "name": "who_we_are_role_title",
+            "type": "text",
+            "default_value": "Our Role in the Community",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_who_we_are_role_rows",
+            "label": "Content Rows",
+            "name": "who_we_are_role_rows",
+            "type": "repeater",
+            "instructions": "Alternating image and text rows.",
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "button_label": "Add Row",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_who_we_are_role_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_psm_who_we_are_role_row_layout",
+                    "label": "Layout",
+                    "name": "who_we_are_role_row_layout",
+                    "type": "select",
+                    "choices": {
+                        "image-left": "Image Left",
+                        "image-right": "Image Right"
+                    },
+                    "default_value": "image-left",
+                    "return_format": "value",
+                    "wrapper": { "width": "33" },
+                    "parent_repeater": "field_psm_who_we_are_role_rows"
+                },
+                {
+                    "key": "field_psm_who_we_are_role_row_accent",
+                    "label": "Accent Corner",
+                    "name": "who_we_are_role_row_accent",
+                    "type": "select",
+                    "choices": {
+                        "tl": "Top Left",
+                        "tr": "Top Right",
+                        "bl": "Bottom Left",
+                        "br": "Bottom Right"
+                    },
+                    "default_value": "bl",
+                    "return_format": "value",
+                    "wrapper": { "width": "33" },
+                    "parent_repeater": "field_psm_who_we_are_role_rows"
+                },
+                {
+                    "key": "field_psm_who_we_are_role_row_image",
+                    "label": "Image",
+                    "name": "who_we_are_role_row_image",
+                    "type": "image",
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "wrapper": { "width": "34" },
+                    "parent_repeater": "field_psm_who_we_are_role_rows"
+                },
+                {
+                    "key": "field_psm_who_we_are_role_row_body",
+                    "label": "Body Text",
+                    "name": "who_we_are_role_row_body",
+                    "type": "textarea",
+                    "instructions": "One paragraph per line.",
+                    "rows": 4,
+                    "parent_repeater": "field_psm_who_we_are_role_rows"
+                },
+                {
+                    "key": "field_psm_who_we_are_role_row_highlight",
+                    "label": "Highlight Text",
+                    "name": "who_we_are_role_row_highlight",
+                    "type": "textarea",
+                    "instructions": "Optional highlighted callout below the paragraphs.",
+                    "rows": 2,
+                    "parent_repeater": "field_psm_who_we_are_role_rows"
+                }
+            ]
+        },
+        {
+            "key": "field_psm_wwa_tab_officers",
+            "label": "Our Officers",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_who_we_are_officers_badge",
+            "label": "Badge",
+            "name": "who_we_are_officers_badge",
+            "type": "text",
+            "default_value": "Meet the Team",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_who_we_are_officers_title",
+            "label": "Heading",
+            "name": "who_we_are_officers_title",
+            "type": "text",
+            "default_value": "Our Officers",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_who_we_are_officers_rows",
+            "label": "Officers",
+            "name": "who_we_are_officers_rows",
+            "type": "repeater",
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_psm_who_we_are_officer_name",
+            "button_label": "Add Officer",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_who_we_are_officers_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_psm_who_we_are_officer_name",
+                    "label": "Name",
+                    "name": "who_we_are_officer_name",
+                    "type": "text",
+                    "parent_repeater": "field_psm_who_we_are_officers_rows"
+                },
+                {
+                    "key": "field_psm_who_we_are_officer_role",
+                    "label": "Role",
+                    "name": "who_we_are_officer_role",
+                    "type": "text",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_who_we_are_officer_name",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_who_we_are_officers_rows"
+                },
+                {
+                    "key": "field_psm_who_we_are_officer_image",
+                    "label": "Photo",
+                    "name": "who_we_are_officer_image",
+                    "type": "image",
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_who_we_are_officer_name",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_who_we_are_officers_rows"
+                },
+                {
+                    "key": "field_psm_who_we_are_officer_tone",
+                    "label": "Background Tone",
+                    "name": "who_we_are_officer_tone",
+                    "type": "select",
+                    "choices": {
+                        "grey": "Grey",
+                        "teal": "Teal",
+                        "rose": "Rose"
+                    },
+                    "default_value": "grey",
+                    "return_format": "value",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_who_we_are_officer_name",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_who_we_are_officers_rows"
+                },
+                {
+                    "key": "field_psm_who_we_are_officer_linkedin",
+                    "label": "LinkedIn URL",
+                    "name": "who_we_are_officer_linkedin",
+                    "type": "url",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_psm_who_we_are_officer_name",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "parent_repeater": "field_psm_who_we_are_officers_rows"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-who-we-are.php"
+            }
+        ]
+    ],
+    "menu_order": 29,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner, about, role, and officers for the Who We Are page.",
+    "show_in_rest": 0,
+    "modified": 1780500100
+}

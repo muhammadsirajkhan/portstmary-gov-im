@@ -59,7 +59,7 @@ if ('collage3' === $variant) {
 if ('collage4' === $variant) {
     ?>
     <div class="<?php echo esc_attr($wrap_class); ?>">
-        <span class="psm-housing-zigzag-media__corner" aria-hidden="true"></span>
+        <!-- <span class="psm-housing-zigzag-media__corner" aria-hidden="true"></span> -->
         <?php
         get_template_part(
             'template-parts/components/housing-collage-media',
@@ -78,7 +78,7 @@ if ('collage4' === $variant) {
 if ('stack' === $variant) {
     ?>
     <div class="<?php echo esc_attr($wrap_class); ?>">
-        <span class="psm-housing-zigzag-media__corner" aria-hidden="true"></span>
+        <!-- <span class="psm-housing-zigzag-media__corner" aria-hidden="true"></span> -->
         <?php
         get_template_part(
             'template-parts/components/about-media',
@@ -105,7 +105,7 @@ if ('dual-stack' === $variant) {
     $alt  = $args['alt'] ?: __('Sheltered housing in Port St Mary', 'cmd-theme');
     ?>
     <div class="<?php echo esc_attr($wrap_class); ?>">
-        <span class="psm-housing-zigzag-media__corner" aria-hidden="true"></span>
+        <!-- <span class="psm-housing-zigzag-media__corner" aria-hidden="true"></span> -->
         <img
             class="psm-housing-zigzag-media__main"
             src="<?php echo esc_url($main); ?>"
@@ -143,7 +143,7 @@ if ('single-badge' === $variant) {
     $alt   = $args['alt'] ?: __('Port St Mary refuse services', 'cmd-theme');
     ?>
     <div class="<?php echo esc_attr($wrap_class); ?> psm-housing-zigzag-media--single-badge">
-        <span class="psm-housing-zigzag-media__corner" aria-hidden="true"></span>
+        <!-- <span class="psm-housing-zigzag-media__corner" aria-hidden="true"></span> -->
         <div class="psm-housing-zigzag-media__single-wrap">
             <img
                 class="psm-housing-zigzag-media__single"

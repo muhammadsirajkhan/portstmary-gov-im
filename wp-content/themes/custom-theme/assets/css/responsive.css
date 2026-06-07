@@ -1201,8 +1201,28 @@
     }
 
     .psm-where-to-eat-places,
-    .psm-where-to-stay-featured {
+    .psm-where-to-stay-featured,
+    .psm-who-we-are-about {
         padding: 56px 0;
+    }
+
+    .psm-section-header--who-we-are-about .psm-section-header__title,
+    .psm-section-header--who-we-are-role .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-who-we-are-role > .container {
+        padding-top: 56px;
+        padding-bottom: 32px;
+    }
+
+    .psm-who-we-are-about__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .psm-who-we-are-role .psm-housing-zigzag__row + .psm-housing-zigzag__row {
+        margin-top: 32px;
     }
 
     .psm-section-header--where-to-eat-places .psm-section-header__title,

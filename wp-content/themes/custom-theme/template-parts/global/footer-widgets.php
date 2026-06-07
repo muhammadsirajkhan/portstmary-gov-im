@@ -47,7 +47,7 @@ $footer_link_columns = array(
         array(__('Community', 'cmd-theme'), '#'),
         array(__('Council', 'cmd-theme'), '#'),
         array(__('Documents', 'cmd-theme'), '#'),
-        array(__('Who We Are', 'cmd-theme'), '#'),
+        array(__('Who We Are', 'cmd-theme'), home_url('/who-we-are/')),
         array(__('Where to Eat', 'cmd-theme'), home_url('/where-to-eat/')),
     ),
     array(
