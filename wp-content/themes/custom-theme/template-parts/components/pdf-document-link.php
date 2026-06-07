@@ -35,7 +35,7 @@ $filename = psm_document_download_filename($args['label']);
     rel="noopener noreferrer"
 >
     <span class="" aria-hidden="true">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/download-icon.png'); ?>" alt="" width="24" height="24" decoding="async">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/download-icon.webp'); ?>" alt="" width="24" height="24" decoding="async">
     </span>
     <span class="psm-pdf-doc__label"><?php echo esc_html($args['label']); ?></span>
 </a>

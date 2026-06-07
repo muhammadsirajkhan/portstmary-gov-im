@@ -26,7 +26,7 @@
             "name": "hero_background_image",
             "aria-label": "",
             "type": "image",
-            "instructions": "Full-width hero background. Falls back to theme hero.png when empty.",
+            "instructions": "Full-width hero background. Falls back to theme hero.webp when empty.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {

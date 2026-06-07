@@ -49,7 +49,7 @@ $has_url     = '' !== $url;
 $has_image   = '' !== $image;
 $has_content = $has_title || $has_excerpt || $has_url;
 
-$crest = psm_theme_image('header-logo.png') ?: psm_theme_image('logo-placeholder.svg');
+$crest = psm_theme_image('header-logo.webp') ?: psm_theme_image('logo-placeholder.svg');
 $alt   = $alt ?: $title;
 
 $date_label = '';

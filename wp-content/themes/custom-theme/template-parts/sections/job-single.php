@@ -38,7 +38,7 @@ $has_meta = '' !== ($data['location'] ?? '') || '' !== ($data['category'] ?? '')
 $has_content = get_the_content();
 $has_form = '' !== $shortcode;
 $has_form_header = '' !== $form_title || '' !== $form_intro;
-$logo_mark = psm_theme_image('header-logo.png') ?: psm_theme_image('logo-placeholder.svg');
+$logo_mark = psm_theme_image('header-logo.webp') ?: psm_theme_image('logo-placeholder.svg');
 $form_heading_id = '' !== $form_title ? 'psm-job-application-form-heading' : '';
 $aside_attrs = '' !== $form_heading_id
     ? ' aria-labelledby="' . esc_attr($form_heading_id) . '"'
@@ -47,17 +47,17 @@ $aside_attrs = '' !== $form_heading_id
 <style>
     .psm-contact-form .psm-cf7-input--user,
     .psm-contact-form input.psm-cf7-input--user {
-        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f1.png'; ?>');
+        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f1.webp'; ?>');
     }
 
     .psm-contact-form .psm-cf7-input--email,
     .psm-contact-form input.psm-cf7-input--email {
-        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f2.png'; ?>');
+        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f2.webp'; ?>');
     }
 
     .psm-contact-form .psm-cf7-input--phone,
     .psm-contact-form input.psm-cf7-input--phone {
-        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f3.png'; ?>');
+        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f3.webp'; ?>');
     }
 
 
@@ -66,18 +66,18 @@ $aside_attrs = '' !== $form_heading_id
     .psm-contact-form select.psm-cf7-input--work {
         background-image:
             url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23111' d='M1 1l5 5 5-5'/%3E%3C/svg%3E"),
-            url('<?php echo get_template_directory_uri() . '/assets/images/f4.png'; ?>');
+            url('<?php echo get_template_directory_uri() . '/assets/images/f4.webp'; ?>');
         /* url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M4 20V8l8-4 8 4v12' stroke='%23111' stroke-width='2'/%3E%3Cpath d='M9 20v-6h6v6' stroke='%23e31e24' stroke-width='2'/%3E%3C/svg%3E"),  */
     }
 
     .psm-contact-form .psm-cf7-input--location,
     .psm-contact-form input.psm-cf7-input--psm-cf7-input--location {
-        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f5.png'; ?>');
+        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f5.webp'; ?>');
     }
 
     .psm-contact-form .psm-cf7-input--message,
     .psm-contact-form textarea.psm-cf7-input--message {
-        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f6.png'; ?>');
+        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f6.webp'; ?>');
     }
 </style>
 <article <?php post_class('psm-job-single'); ?> id="post-<?php echo esc_attr((string) $post_id); ?>">

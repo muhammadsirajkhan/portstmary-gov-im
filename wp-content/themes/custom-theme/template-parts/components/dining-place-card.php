@@ -54,7 +54,7 @@ $has_phone    = '' !== trim((string) $args['phone']);
             <?php if ($has_location) : ?>
                 <p class="psm-dining-place-card__meta-row">
                     <span class="psm-dining-place-card__icon psm-dining-place-card__icon--pin_icon_img" aria-hidden="true">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pin.png" alt="Pin">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pin.webp" alt="Pin">
                     </span>
                     <?php if ($args['location_url']) : ?>
                         <a href="<?php echo esc_url($args['location_url']); ?>"><?php echo esc_html($args['location']); ?></a>
@@ -69,7 +69,7 @@ $has_phone    = '' !== trim((string) $args['phone']);
             <?php if ($has_phone) : ?>
                 <p class="psm-dining-place-card__meta-row">
                     <span class="psm-dining-place-card__icon psm-dining-place-card__icon--phone_icon_img" aria-hidden="true">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/phone.png" alt="Phone">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/phone.webp" alt="Phone">
                     </span>
                     <?php if ($args['phone_href']) : ?>
                         <a href="<?php echo esc_url($args['phone_href']); ?>"><?php echo esc_html($args['phone']); ?></a>

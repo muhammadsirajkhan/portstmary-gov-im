@@ -63,7 +63,7 @@ $card_attr = $has_url ? ' href="' . esc_url($url) . '"' : '';
         <span class="psm-quick-card__link">
             <span class="psm-quick-card__link-text"><?php esc_html_e('Learn More', 'cmd-theme'); ?></span>
             <span class="psm-quick-card__link-icon" aria-hidden="true">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/arrow-right.png'); ?>" alt="<?php esc_attr_e('Arrow', 'cmd-theme'); ?>">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/arrow-right.webp'); ?>" alt="<?php esc_attr_e('Arrow', 'cmd-theme'); ?>">
             </span>
         </span>
     <?php endif; ?>

@@ -40,7 +40,7 @@ $has_excerpt = '' !== $excerpt;
 $has_overlay = $has_title || $has_excerpt || $has_url;
 $tag         = $has_url ? 'a' : 'div';
 $card_attr   = $has_url ? ' href="' . esc_url($url) . '"' : '';
-$arrow_src   = get_template_directory_uri() . '/assets/images/arrow-red.png';
+$arrow_src   = get_template_directory_uri() . '/assets/images/arrow-red.webp';
 ?>
 <<?php echo $tag; ?> class="psm-service-card"<?php echo $card_attr; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
     <?php if ($has_image) : ?>

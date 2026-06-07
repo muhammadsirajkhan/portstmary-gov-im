@@ -30,7 +30,7 @@ if (!$args['title']) {
     return;
 }
 
-$crest = psm_theme_image('header-logo.png') ?: psm_theme_image('logo-placeholder.svg');
+$crest = psm_theme_image('header-logo.webp') ?: psm_theme_image('logo-placeholder.svg');
 $list_count = count((array) $args['list_items']);
 $list_class = 'psm-housing-checklist';
 if ($list_count >= 4) {

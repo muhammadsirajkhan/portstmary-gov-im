@@ -18,7 +18,7 @@ $args = wp_parse_args(
     )
 );
 
-$crest     = psm_theme_image('header-logo.png') ?: psm_theme_image('logo-placeholder.svg');
+$crest     = psm_theme_image('header-logo.webp') ?: psm_theme_image('logo-placeholder.svg');
 $circle_id = 'psm-welcome-circle-' . wp_unique_id();
 $label     = strtoupper($args['label']);
 ?>

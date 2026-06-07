@@ -30,9 +30,9 @@ $target  = '_blank' === $args['target'] ? ' target="_blank" rel="noopener norefe
     <span class="psm-btn-pill__text"><?php echo esc_html($args['text']); ?></span>
     <span class="psm-btn-pill__icon" aria-hidden="true">
     <?php if ( 'secondary' === $variant ) : ?>
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/btn-arrow-black.png'); ?>" alt="<?php esc_attr_e('Arrow', 'cmd-theme'); ?>">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/btn-arrow-black.webp'); ?>" alt="<?php esc_attr_e('Arrow', 'cmd-theme'); ?>">
     <?php else : ?>
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/btn-arrow.png'); ?>" alt="<?php esc_attr_e('Arrow', 'cmd-theme'); ?>">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/btn-arrow.webp'); ?>" alt="<?php esc_attr_e('Arrow', 'cmd-theme'); ?>">
     <?php endif; ?>
     </span>
 </a>

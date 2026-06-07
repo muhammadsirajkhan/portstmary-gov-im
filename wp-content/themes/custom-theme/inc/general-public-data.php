@@ -48,7 +48,7 @@ function psm_general_public_housing_steps_static() {
         array(
             'step'       => '01',
             'icon'       => 'form',
-            'icon_image' => psm_theme_image('housing-step-form.png') ?: '',
+            'icon_image' => psm_theme_image('housing-step-form.webp') ?: '',
             'title'      => __('Complete Application Form', 'cmd-theme'),
             'text'       => $description,
             'url'        => '#',
@@ -56,7 +56,7 @@ function psm_general_public_housing_steps_static() {
         array(
             'step'       => '02',
             'icon'       => 'documents',
-            'icon_image' => psm_theme_image('housing-step-documents.png') ?: '',
+            'icon_image' => psm_theme_image('housing-step-documents.webp') ?: '',
             'title'      => __('Submit Supporting Documents', 'cmd-theme'),
             'text'       => $description,
             'url'        => '#',
@@ -64,7 +64,7 @@ function psm_general_public_housing_steps_static() {
         array(
             'step'       => '03',
             'icon'       => 'review',
-            'icon_image' => psm_theme_image('housing-step-review.png') ?: '',
+            'icon_image' => psm_theme_image('housing-step-review.webp') ?: '',
             'title'      => __('Application Review', 'cmd-theme'),
             'text'       => $description,
             'url'        => '#',
@@ -72,7 +72,7 @@ function psm_general_public_housing_steps_static() {
         array(
             'step'       => '04',
             'icon'       => 'waiting',
-            'icon_image' => psm_theme_image('housing-step-waiting.png') ?: '',
+            'icon_image' => psm_theme_image('housing-step-waiting.webp') ?: '',
             'title'      => __('Waiting List & Availability', 'cmd-theme'),
             'text'       => $description,
             'url'        => '#',

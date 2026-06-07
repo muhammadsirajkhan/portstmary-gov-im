@@ -45,7 +45,7 @@ $theme_uri      = get_template_directory_uri();
     <div class="psm-footer__transition">
         <div class="footer-scroll">
             <a href="#footer-main">
-                <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-scroll.png'); ?>" alt="" decoding="async">
+                <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-scroll.webp'); ?>" alt="" decoding="async">
             </a>
         </div>
     </div>
@@ -137,7 +137,7 @@ $theme_uri      = get_template_directory_uri();
                             <?php if ($show_phone) : ?>
                                 <a class="psm-footer-contact" href="<?php echo esc_url($footer['phone_href']); ?>">
                                     <span class="psm-footer-contact__icon psm-footer-contact__icon-phone" aria-hidden="true">
-                                        <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-phone.png'); ?>" alt="" decoding="async">
+                                        <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-phone.webp'); ?>" alt="" decoding="async">
                                     </span>
                                     <span class="psm-footer-contact__text">
                                         <?php if ('' !== ($footer['phone_label'] ?? '')) : ?>
@@ -146,7 +146,7 @@ $theme_uri      = get_template_directory_uri();
                                         <span class="psm-footer-contact__value"><?php echo esc_html($footer['phone_display']); ?></span>
                                     </span>
                                     <span class="psm-footer-contact__arrow-icon" aria-hidden="true">
-                                        <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-arrow.png'); ?>" alt="" decoding="async">
+                                        <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-arrow.webp'); ?>" alt="" decoding="async">
                                     </span>
                                 </a>
                             <?php endif; ?>
@@ -154,7 +154,7 @@ $theme_uri      = get_template_directory_uri();
                             <?php if ($show_email) : ?>
                                 <a class="psm-footer-contact" href="<?php echo esc_url($footer['email_href']); ?>">
                                     <span class="psm-footer-contact__icon psm-footer-contact__icon-email" aria-hidden="true">
-                                        <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-email.png'); ?>" alt="" decoding="async">
+                                        <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-email.webp'); ?>" alt="" decoding="async">
                                     </span>
                                     <span class="psm-footer-contact__text">
                                         <?php if ('' !== ($footer['email_label'] ?? '')) : ?>
@@ -163,7 +163,7 @@ $theme_uri      = get_template_directory_uri();
                                         <span class="psm-footer-contact__value"><?php echo esc_html($footer['email_display']); ?></span>
                                     </span>
                                     <span class="psm-footer-contact__arrow-icon" aria-hidden="true">
-                                        <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-arrow.png'); ?>" alt="" decoding="async">
+                                        <img src="<?php echo esc_url($theme_uri . '/assets/images/footer-arrow.webp'); ?>" alt="" decoding="async">
                                     </span>
                                 </a>
                             <?php endif; ?>

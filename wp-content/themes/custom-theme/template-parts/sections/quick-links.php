@@ -56,7 +56,7 @@ if (empty($boxes)) {
     <div class="hero-scroll-badge">
         <a href="#quick-links" class="hero-scroll-badge__link"
             aria-label="<?php esc_attr_e('Scroll down', 'cmd-theme'); ?>">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/hero-down.png'); ?>"
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/hero-down.webp'); ?>"
                 alt="<?php esc_attr_e('Scroll down', 'cmd-theme'); ?>" width="180" height="180">
         </a>
     </div>

@@ -42,7 +42,7 @@ if ('' === $badge && '' === $title && empty($rows)) {
                 <?php foreach ($rows as $index => $row): ?>
                     <?php if ($index > 0): ?>
                         <div class="psm-amenities-facilities__divider" aria-hidden="true">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pa-divider.png" alt="" class="img-fluid">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pa-divider.webp" alt="" class="img-fluid">
                         </div>
                     <?php endif; ?>
                     <?php get_template_part('template-parts/components/amenities-facility-row', null, $row); ?>

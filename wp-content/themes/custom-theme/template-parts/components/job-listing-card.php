@@ -52,7 +52,7 @@ $link_target = '_blank' === $args['target'] ? ' target="_blank" rel="noopener no
     <a class="psm-btn-pill psm-btn-pill--primary psm-job-card__btn" href="<?php echo esc_url($args['url']); ?>"<?php echo $link_target; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
         <span class="psm-btn-pill__text"><?php esc_html_e('View Job', 'cmd-theme'); ?></span>
         <span class="psm-btn-pill__icon" aria-hidden="true">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/btn-arrow.png'); ?>" alt="" role="presentation">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/btn-arrow.webp'); ?>" alt="" role="presentation">
         </span>
     </a>
 </article>

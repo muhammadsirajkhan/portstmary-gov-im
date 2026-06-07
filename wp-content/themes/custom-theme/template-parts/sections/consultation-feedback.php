@@ -42,7 +42,7 @@ if (!$has_header && !$has_cards) {
                 );
                 ?>
                 <div class="psm-consultation-feedback__stamp" aria-hidden="true">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/badge.png" alt="Port St Mary Commissioners">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/badge.webp" alt="Port St Mary Commissioners">
                 </div>
             </div>
         <?php endif; ?>

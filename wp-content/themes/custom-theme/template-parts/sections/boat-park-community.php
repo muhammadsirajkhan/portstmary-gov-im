@@ -82,7 +82,7 @@ if (!$has_light) {
             </div>
 
             <div class="psm-boat-park-community__badge">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/badge.png"
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/badge.webp"
                     alt="Port St Mary Commissioners">
             </div>
         </div>

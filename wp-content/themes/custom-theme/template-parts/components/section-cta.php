@@ -69,14 +69,14 @@ if ($button_target) {
                 <span class="psm-section-cta__button-text"><?php echo esc_html($button_text); ?></span>
             <?php endif; ?>
             <span class="psm-section-cta__button-icon" aria-hidden="true">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/btn-arrow.png'); ?>" alt="<?php esc_attr_e('Arrow', 'cmd-theme'); ?>">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/btn-arrow.webp'); ?>" alt="<?php esc_attr_e('Arrow', 'cmd-theme'); ?>">
             </span>
         </a>
     <?php endif; ?>
     <?php if ($has_phone) : ?>
         <a class="psm-section-cta__phone" href="<?php echo esc_url($phone_href); ?>">
             <span class="" aria-hidden="true">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/btn-phone.png'); ?>" alt="<?php esc_attr_e('Phone', 'cmd-theme'); ?>">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/btn-phone.webp'); ?>" alt="<?php esc_attr_e('Phone', 'cmd-theme'); ?>">
             </span>
             <span class="psm-section-cta__phone-copy">
                 <?php if ('' !== trim((string) $args['phone_label'])) : ?>

@@ -25,7 +25,7 @@ $has_social   = !empty($social_links);
         <?php if ($has_email) : ?>
             <a class="psm-topbar__email" href="<?php echo esc_url('mailto:' . $email); ?>">
                 <span class="psm-topbar__email" aria-hidden="true">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/h1.png'); ?>" alt="" decoding="async">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/h1.webp'); ?>" alt="" decoding="async">
                 </span>
                 <span class="psm-topbar__email-text">
                     <?php if ('' !== $email_label) : ?>
@@ -52,7 +52,7 @@ $has_social   = !empty($social_links);
                                 <?php echo 0 === strpos($network['url'], 'http') ? ' target="_blank" rel="noopener noreferrer"' : ''; ?>
                             >
                                 <span class="psm-topbar-social" aria-hidden="true">
-                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $network['icon'] . '.png'); ?>" alt="" decoding="async">
+                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $network['icon'] . '.webp'); ?>" alt="" decoding="async">
                                 </span>
                             </a>
                         </li>

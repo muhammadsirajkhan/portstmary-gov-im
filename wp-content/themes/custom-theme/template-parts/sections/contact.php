@@ -100,7 +100,7 @@ if (!$has_info_column && !$has_form_header && !$has_form) {
     return;
 }
 
-$logo_mark = psm_theme_image('header-logo.png') ?: psm_theme_image('logo-placeholder.svg');
+$logo_mark = psm_theme_image('header-logo.webp') ?: psm_theme_image('logo-placeholder.svg');
 
 $form_heading_id = $has_form_title ? 'psm-contact-form-heading' : '';
 $section_labelledby = $form_heading_id ?: ($has_title ? 'psm-contact-info-title' : '');
@@ -108,17 +108,17 @@ $section_labelledby = $form_heading_id ?: ($has_title ? 'psm-contact-info-title'
 <style>
     .psm-contact-form .psm-cf7-input--user,
     .psm-contact-form input.psm-cf7-input--user {
-        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f1.png'; ?>');
+        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f1.webp'; ?>');
     }
 
     .psm-contact-form .psm-cf7-input--email,
     .psm-contact-form input.psm-cf7-input--email {
-        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f2.png'; ?>');
+        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f2.webp'; ?>');
     }
 
     .psm-contact-form .psm-cf7-input--phone,
     .psm-contact-form input.psm-cf7-input--phone {
-        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f3.png'; ?>');
+        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f3.webp'; ?>');
     }
 
 
@@ -127,18 +127,18 @@ $section_labelledby = $form_heading_id ?: ($has_title ? 'psm-contact-info-title'
     .psm-contact-form select.psm-cf7-input--work {
         background-image:
             url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23111' d='M1 1l5 5 5-5'/%3E%3C/svg%3E"), 
-            url('<?php echo get_template_directory_uri() . '/assets/images/f4.png'; ?>');
+            url('<?php echo get_template_directory_uri() . '/assets/images/f4.webp'; ?>');
             /* url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M4 20V8l8-4 8 4v12' stroke='%23111' stroke-width='2'/%3E%3Cpath d='M9 20v-6h6v6' stroke='%23e31e24' stroke-width='2'/%3E%3C/svg%3E"),  */
     }
 
     .psm-contact-form .psm-cf7-input--location,
     .psm-contact-form input.psm-cf7-input--psm-cf7-input--location {
-        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f5.png'; ?>');
+        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f5.webp'; ?>');
     }
 
     .psm-contact-form .psm-cf7-input--message,
     .psm-contact-form textarea.psm-cf7-input--message {
-        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f6.png'; ?>');
+        background-image: url('<?php echo get_template_directory_uri() . '/assets/images/f6.webp'; ?>');
     }
 </style>
 
@@ -179,7 +179,7 @@ $section_labelledby = $form_heading_id ?: ($has_title ? 'psm-contact-info-title'
                             <?php if ($has_phone): ?>
                                 <li>
                                     <span class="psm-contact-info__list-icon" aria-hidden="true">
-                                        <img src="<?php echo get_template_directory_uri() . '/assets/images/c1.png'; ?>" alt=""
+                                        <img src="<?php echo get_template_directory_uri() . '/assets/images/c1.webp'; ?>" alt=""
                                             decoding="async">
                                     </span>
                                     <?php if ($phone_href): ?>
@@ -192,7 +192,7 @@ $section_labelledby = $form_heading_id ?: ($has_title ? 'psm-contact-info-title'
                             <?php if ($has_email): ?>
                                 <li>
                                     <span class="psm-contact-info__list-icon" aria-hidden="true">
-                                        <img src="<?php echo get_template_directory_uri() . '/assets/images/c2.png'; ?>" alt=""
+                                        <img src="<?php echo get_template_directory_uri() . '/assets/images/c2.webp'; ?>" alt=""
                                             decoding="async">
                                     </span>
                                     <?php if ($email_href): ?>
@@ -206,7 +206,7 @@ $section_labelledby = $form_heading_id ?: ($has_title ? 'psm-contact-info-title'
                             <?php if ($has_address): ?>
                                 <li>
                                     <span class="psm-contact-info__list-icon" aria-hidden="true">
-                                        <img src="<?php echo get_template_directory_uri() . '/assets/images/c3.png'; ?>" alt=""
+                                        <img src="<?php echo get_template_directory_uri() . '/assets/images/c3.webp'; ?>" alt=""
                                             decoding="async">
                                     </span>
                                     <span><?php echo esc_html($address); ?></span>
@@ -235,7 +235,7 @@ $section_labelledby = $form_heading_id ?: ($has_title ? 'psm-contact-info-title'
                                         <a class="psm-contact-info__social-btn" href="<?php echo esc_url($facebook_url); ?>"
                                             aria-label="<?php esc_attr_e('Facebook', 'cmd-theme'); ?>">
                                             <span class="psm-contact-info__social-icon" aria-hidden="true">
-                                                <img src="<?php echo get_template_directory_uri() . '/assets/images/contact-face.png'; ?>"
+                                                <img src="<?php echo get_template_directory_uri() . '/assets/images/contact-face.webp'; ?>"
                                                     alt="" decoding="async">
                                             </span>
                                         </a>
@@ -244,7 +244,7 @@ $section_labelledby = $form_heading_id ?: ($has_title ? 'psm-contact-info-title'
                                         <a class="psm-contact-info__social-btn" href="<?php echo esc_url($twitter_url); ?>"
                                             aria-label="<?php esc_attr_e('X (Twitter)', 'cmd-theme'); ?>">
                                             <span class="psm-contact-info__social-icon" aria-hidden="true">
-                                                <img src="<?php echo get_template_directory_uri() . '/assets/images/contact-twit.png'; ?>"
+                                                <img src="<?php echo get_template_directory_uri() . '/assets/images/contact-twit.webp'; ?>"
                                                     alt="" decoding="async">
                                             </span>
                                         </a>

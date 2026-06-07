@@ -93,7 +93,7 @@ function psm_hero_buttons_static() {
  * @return array{background: string, background_alt: string, side_label: string}
  */
 function psm_hero_background_static() {
-    $bg = function_exists('psm_theme_image') ? psm_theme_image('hero.png') : '';
+    $bg = function_exists('psm_theme_image') ? psm_theme_image('hero.webp') : '';
 
     return array(
         'background'     => $bg ?: '',

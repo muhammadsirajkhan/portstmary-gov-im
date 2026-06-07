@@ -18,7 +18,7 @@ get_header();
         'template-parts/sections/inner-banner',
         null,
         array(
-            'image'      => psm_theme_image('contact.png'),
+            'image'      => psm_theme_image('contact.webp'),
             'image_seed' => 'psm-contact-banner',
         )
     );
