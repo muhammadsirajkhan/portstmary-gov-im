@@ -8411,6 +8411,86 @@ span.psm-history-timeline__dot::before {
     margin-bottom: 0;
 }
 
+/* ----- Mission Statement: Our Commitment ----- */
+.psm-mission-statement-commitment {
+    background: #ffffff;
+    padding: 80px 0;
+}
+
+.psm-mission-statement-commitment__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 64px;
+    align-items: center;
+}
+
+.psm-mission-statement-commitment__media {
+    padding: 0;
+    min-height: 0;
+}
+
+.psm-mission-statement-commitment__media .psm-about__img-main {
+    /* width: auto; */
+    max-width: 100%;
+    display: block;
+    /* border-radius: 20px; */
+}
+
+.psm-section-header--mission-statement-commitment {
+    margin-bottom: 28px;
+    text-align: left;
+}
+
+.psm-section-header--mission-statement-commitment .psm-section-header__eyebrow-red {
+    margin-left: 0;
+}
+
+.psm-section-header--mission-statement-commitment .psm-section-header__title {
+    margin-bottom: 0;
+    font-size: 42px;
+    max-width: 560px;
+}
+
+.psm-mission-statement-commitment__prose p {
+    margin: 0 0 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+    color: #666666;
+}
+
+.psm-mission-statement-commitment__prose .psm-about__lead {
+    margin-bottom: 20px;
+    color: #111111;
+}
+
+.psm-mission-statement-commitment__prose p:last-child {
+    margin-bottom: 0;
+}
+
+.psm-mission-statement-commitment__document {
+    margin: 28px 0 0;
+}
+
+.psm-mission-statement-commitment__document-link {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.45;
+    color: #111111;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.psm-mission-statement-commitment__document-link:hover {
+    color: #e31e24;
+}
+
+.psm-page-mission-statement .psm-news {
+    margin-top: 0;
+}
+
 /* ----- Who We Are: Our Role ----- */
 .psm-who-we-are-role {
     background-color: #f9f9f9;

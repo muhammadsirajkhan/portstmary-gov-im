@@ -75,3 +75,6 @@ require get_template_directory() . '/inc/where-to-eat-helpers.php';
 require get_template_directory() . '/inc/where-to-stay-helpers.php';
 require get_template_directory() . '/inc/who-we-are-helpers.php';
 require get_template_directory() . '/inc/acf-who-we-are-defaults.php';
+require get_template_directory() . '/inc/mission-statement-data.php';
+require get_template_directory() . '/inc/mission-statement-helpers.php';
+require get_template_directory() . '/inc/acf-mission-statement-defaults.php';
