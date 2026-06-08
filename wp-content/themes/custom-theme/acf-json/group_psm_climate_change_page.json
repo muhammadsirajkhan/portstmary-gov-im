@@ -1,0 +1,165 @@
+{
+    "key": "group_psm_climate_change_page",
+    "title": "Climate Change Page",
+    "fields": [
+        {
+            "key": "field_psm_cc_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_cc",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "default_value": "Welcome to Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_inner_banner_title_cc",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "default_value": "Climate Change"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_cc",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "default_value": "Environment & Sustainability"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_cc",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "default_value": "We are committed to addressing climate change through responsible local action, protecting our coastal environment, and supporting sustainable practices within the community.",
+            "rows": 3
+        },
+        {
+            "key": "field_psm_inner_banner_image_cc",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_psm_cc_tab_commitment",
+            "label": "Commitment",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_climate_change_image",
+            "label": "Image",
+            "name": "climate_change_image",
+            "type": "image",
+            "instructions": "Single image for the left column.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_climate_change_badge",
+            "label": "Eyebrow",
+            "name": "climate_change_badge",
+            "type": "text",
+            "default_value": "Port St Mary Mission Statement",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_climate_change_title",
+            "label": "Heading",
+            "name": "climate_change_title",
+            "type": "text",
+            "default_value": "Our Commitment to the Community",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_climate_change_body",
+            "label": "Body Text",
+            "name": "climate_change_body",
+            "type": "textarea",
+            "instructions": "One paragraph per line.",
+            "rows": 6,
+            "default_value": "The Port St Mary Commissioners are committed to serving our community with transparency, integrity and care. Our mission is to support local needs, maintain essential services and help Port St Mary thrive as a vibrant seaside village.\r\nWe work collaboratively with residents, local organisations and stakeholders to deliver services that reflect the values and priorities of our community. Through open communication and responsible stewardship, we aim to build trust and strengthen community engagement.\r\nOur focus is on maintaining public spaces, supporting local initiatives and ensuring that decisions are made in the best interests of those who live, work and visit Port St Mary. We are dedicated to listening, responding and acting with accountability at all times.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_climate_change_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_climate_change_document_label",
+            "label": "Document Label",
+            "name": "climate_change_document_label",
+            "type": "text",
+            "instructions": "Link text for the document PDF.",
+            "default_value": "BM Mission Statement July 2024",
+            "wrapper": { "width": "50" },
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_climate_change_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_psm_climate_change_document_file",
+            "label": "Document PDF",
+            "name": "climate_change_document_file",
+            "type": "file",
+            "instructions": "PDF download for the document link.",
+            "return_format": "url",
+            "mime_types": "pdf",
+            "wrapper": { "width": "50" },
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_climate_change_document_label",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-climate-change.php"
+            }
+        ]
+    ],
+    "menu_order": 31,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner and commitment section for the Climate Change page.",
+    "show_in_rest": 0,
+    "modified": 1780601400
+}

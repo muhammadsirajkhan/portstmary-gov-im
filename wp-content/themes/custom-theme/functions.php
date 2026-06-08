@@ -89,3 +89,6 @@ require get_template_directory() . '/inc/acf-byelaws-defaults.php';
 require get_template_directory() . '/inc/complaints-data.php';
 require get_template_directory() . '/inc/complaints-helpers.php';
 require get_template_directory() . '/inc/acf-complaints-defaults.php';
+require get_template_directory() . '/inc/climate-change-data.php';
+require get_template_directory() . '/inc/climate-change-helpers.php';
+require get_template_directory() . '/inc/acf-climate-change-defaults.php';
