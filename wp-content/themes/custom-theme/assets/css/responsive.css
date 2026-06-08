@@ -1,3 +1,19 @@
+@media only screen and (min-width: 1800px) {
+    :root {
+        --container-max: 1700px;
+    }
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl,
+    .container-fluid.psm-container {
+        max-width: var(--container-max);
+    }
+}
+
 @media only screen and (min-width: 100px) and (max-width: 1799px) {
     :root {
         --font-size-xs: 12px;
@@ -51,13 +67,50 @@
     :root {
         --container-max: 1440px;
     }
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl,
+    .container-fluid.psm-container {
+        max-width: var(--container-max);
+    }
 }
+
+@media only screen and (min-width: 100px) and (max-width: 1440px) {
+    :root {
+        --container-max: 1200px;
+    }
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl,
+    .container-fluid.psm-container {
+        max-width: var(--container-max);
+    }
+}
+
 
 @media only screen and (min-width: 100px) and (max-width: 1366px) {
     :root {
-        --container-max: 1280px;
+        --container-max: 1200px;
         --spacing-4xl: 56px;
         --spacing-5xl: 72px;
+    }
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl,
+    .container-fluid.psm-container {
+        max-width: var(--container-max);
     }
 
     .psm-hero {
@@ -71,7 +124,17 @@
 
 @media only screen and (min-width: 100px) and (max-width: 1299px) {
     :root {
-        --container-max: 1140px;
+        --container-max: 1200px;
+    }
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl,
+    .container-fluid.psm-container {
+        max-width: var(--container-max);
     }
 
     .psm-event-card {
@@ -542,6 +605,16 @@
         --font-size-28: 22px;
         --spacing-3xl: 32px;
         --spacing-4xl: 40px;
+    }
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl,
+    .container-fluid.psm-container {
+        max-width: var(--container-max);
     }
 
     .section-block {
