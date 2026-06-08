@@ -28,7 +28,7 @@
         --spacing-6xl: 65px;
 
         --header-height: 88px;
-        --container-max: 1600px;
+        --container-max: 1440px;
     }
 
     .container,
@@ -39,6 +39,11 @@
     .container-xxl,
     .container-fluid.psm-container {
         max-width: var(--container-max);
+    }
+
+    .psm-nav-list,
+    .psm-fallback-menu {
+        gap: 8px 50px;
     }
 }
 
@@ -80,6 +85,45 @@
     .psm-footer__links-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 28px 32px;
+    }
+}
+
+@media only screen and (min-width: 100px) and (max-width: 1199px) {
+    .psm-contact__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .psm-job-single__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .psm-job-single__form-card {
+        position: static;
+    }
+
+    .psm-contact-info__title {
+        font-size: 36px;
+    }
+
+    .psm-foi__intro {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .psm-foi__documents {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 32px;
+    }
+
+    .psm-minutes__documents {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 40px;
+    }
+
+    .psm-section-header--minutes .psm-section-header__title {
+        font-size: 36px;
     }
 }
 
@@ -700,7 +744,7 @@
         text-align: center;
     }
 
-    .psm-topbar .row > [class*="col-"] {
+    .psm-topbar .row>[class*="col-"] {
         text-align: center;
     }
 
@@ -713,6 +757,707 @@
     .psm-footer-contact__value {
         font-size: 16px;
     }
+
+    .psm-inner-banner {
+        min-height: 360px;
+        padding: 32px 0 88px;
+    }
+
+    .psm-inner-banner__title {
+        font-size: 2rem;
+    }
+
+    .psm-inner-banner__ribbon span {
+        padding: 10px 36px;
+        font-size: 12px;
+    }
+
+    .psm-contact {
+        padding: 56px 0;
+    }
+
+    .psm-contact-form-card {
+        padding: 28px 20px;
+    }
+
+    .psm-contact-form-card__title {
+        font-size: 24px;
+    }
+
+    .psm-contact-info__actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .psm-foi {
+        padding: 56px 0;
+    }
+
+    .psm-section-header--foi .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-foi__documents {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .psm-minutes {
+        padding: 56px 0 64px;
+    }
+
+    .psm-minutes__header {
+        margin-bottom: 32px;
+    }
+
+    .psm-section-header--minutes .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-minutes__intro-lead {
+        font-size: 15px;
+    }
+
+    .psm-minutes__note {
+        font-size: 13px;
+    }
+
+    .psm-minutes__documents {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .psm-remembrance-respect {
+        padding: 64px 0 72px;
+    }
+
+    .psm-remembrance-respect__grid {
+        gap: 40px;
+    }
+
+    .psm-section-header--remembrance-respect {
+        margin-bottom: 32px;
+    }
+
+    .psm-remembrance-respect__signature {
+        font-size: 34px;
+        margin: 24px 0 28px;
+    }
+
+    .psm-remembrance-media--main .psm-remembrance-media__img {
+        min-height: 320px;
+    }
+
+    .psm-remembrance-honour {
+        padding: 64px 0 72px;
+    }
+
+    .psm-remembrance-honour .psm-section-header {
+        margin-bottom: 40px;
+    }
+
+    .psm-remembrance-honour__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .psm-page-remembrance .psm-news {
+        padding-top: 64px;
+    }
+
+    .psm-venue-hire {
+        padding: 56px 0 72px;
+    }
+
+    .psm-venue-hire__rows {
+        gap: 56px;
+    }
+
+    .psm-venue-zigzag__row {
+        gap: 32px;
+    }
+
+    .psm-venue-zigzag__image-wrap {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .psm-venue-zigzag__image {
+        border-radius: 20px;
+    }
+
+    .psm-section-header--venue-zigzag .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-venue-zigzag__media--image-left .psm-welcome-badge,
+    .psm-venue-zigzag__media--image-right .psm-welcome-badge {
+        width: 104px;
+        height: 104px;
+    }
+
+    .psm-southern-sheltered-tenders {
+        padding: 56px 0;
+    }
+
+    .psm-section-header--southern-sheltered .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-commissioners-serving,
+    .psm-commissioners-officers,
+    .psm-commissioners-hours {
+        padding: 56px 0;
+    }
+
+    .psm-section-header--commissioners-serving .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-section-header--commissioners-officers .psm-section-header__title,
+    .psm-section-header--commissioners-hours .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-section-header--commissioners-officers,
+    .psm-section-header--commissioners-hours {
+        margin-bottom: 32px;
+    }
+
+    .psm-commissioners-services {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .psm-commissioners-services__item:nth-child(n + 3) {
+        border-top: none;
+        padding-top: 0;
+    }
+
+    .psm-commissioners-services__item:nth-child(n + 2) {
+        border-top: 1px solid #e8e8e8;
+        padding-top: 12px;
+    }
+
+    .psm-commissioners-officers__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .psm-commissioners-hours__row {
+        padding: 16px 18px;
+        gap: 16px;
+    }
+
+    .psm-commissioners-hours__time {
+        font-size: 15px;
+    }
+
+    .psm-commissioners-hours__note {
+        margin-top: 32px;
+    }
+
+    .psm-general-public-housing,
+    .psm-general-public-applying {
+        padding: 56px 0;
+    }
+
+    .psm-section-header--general-public-housing .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-section-header--general-public-applying .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-housing-collage__grid {
+        border-radius: 32px;
+    }
+
+    .psm-housing-collage__badge .psm-welcome-badge {
+        width: 96px;
+        height: 96px;
+    }
+
+    .psm-general-public-applying__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .psm-refuse-zigzag__row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .psm-refuse-zigzag__row--image-right .psm-housing-zigzag-media,
+    .psm-refuse-zigzag__row--image-right .psm-refuse-zigzag__content {
+        order: unset;
+    }
+
+    .psm-refuse-services .psm-opening-times__row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .psm-section-header--venue-zigzag .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-housing-zigzag__block {
+        padding: 56px 0;
+    }
+
+    .psm-section-header--housing-zigzag .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-housing-zigzag-media--dual-stack {
+        min-height: 0;
+        padding-bottom: 0;
+    }
+
+    .psm-housing-zigzag-media__sub {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        max-width: none;
+        margin-top: 12px;
+    }
+
+    .psm-housing-zigzag-media__sub--2 {
+        width: 100%;
+    }
+
+    .psm-refuse-collage__badge {
+        left: 50%;
+        top: 38%;
+    }
+
+    .psm-refuse-collage__badge .psm-welcome-badge {
+        width: 96px;
+        height: 96px;
+    }
+
+    .psm-housing-zigzag-media--single-badge .psm-welcome-badge {
+        left: 50%;
+        top: auto;
+        bottom: -24px;
+        transform: translate(-50%, 0);
+        width: 96px;
+        height: 96px;
+    }
+
+    .psm-inner-banner--featured {
+        padding: 40px 0 72px;
+    }
+
+    .psm-local-info-about,
+    .psm-local-info-timeline,
+    .psm-rates-village-rates,
+    .psm-rates-financial-statements {
+        padding: 56px 0;
+    }
+
+    .psm-rates-financial-statements {
+        padding-bottom: 64px;
+    }
+
+    .psm-section-header--rates-village-rates .psm-section-header__title,
+    .psm-section-header--rates-financial-statements .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-rates-financial-statements__watermark {
+        width: 240px;
+        max-height: 320px;
+        right: -48px;
+        opacity: 0.08;
+    }
+
+    .psm-rates-financial-statements__documents {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .psm-section-header--local-info-about .psm-section-header__title,
+    .psm-section-header--local-info-timeline .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-history-timeline__line {
+        left: 20px;
+        transform: none;
+    }
+
+    .psm-history-timeline__axis {
+        align-items: flex-start;
+        padding-left: 8px;
+    }
+
+    .psm-gallery-community-life,
+    .psm-gallery-featured {
+        padding: 56px 0;
+    }
+
+    .psm-section-header--gallery-community-life .psm-section-header__title,
+    .psm-section-header--gallery-featured .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-gallery-columns__row {
+        grid-template-columns: 1fr;
+    }
+
+    .psm-election-documents,
+    .psm-elections-candidates,
+    .psm-elections-voting {
+        padding: 56px 0;
+    }
+
+    .psm-section-header--election-documents .psm-section-header__title,
+    .psm-section-header--elections-candidates .psm-section-header__title,
+    .psm-section-header--elections-voting .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-consultation-engagement,
+    .psm-consultation-current,
+    .psm-consultation-feedback {
+        padding: 56px 0;
+    }
+
+    .psm-section-header--consultation-engagement .psm-section-header__title,
+    .psm-section-header--consultation-current .psm-section-header__title,
+    .psm-section-header--consultation-feedback .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-consultation-current__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .psm-where-to-eat-places,
+    .psm-where-to-stay-featured,
+    .psm-who-we-are-about,
+    .psm-mission-statement-commitment,
+    .psm-byelaws-guidance,
+    .psm-complaints-how-to,
+    .psm-climate-change-commitment {
+        padding: 56px 0;
+    }
+
+    .psm-section-header--who-we-are-about .psm-section-header__title,
+    .psm-section-header--who-we-are-role .psm-section-header__title,
+    .psm-section-header--mission-statement-commitment .psm-section-header__title,
+    .psm-section-header--byelaws-guidance .psm-section-header__title,
+    .psm-section-header--complaints-how-to .psm-section-header__title,
+    .psm-section-header--climate-change-commitment .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-byelaws-guidance__subheading {
+        font-size: 18px;
+    }
+
+    .psm-who-we-are-role>.container {
+        padding-top: 56px;
+        padding-bottom: 32px;
+    }
+
+    .psm-who-we-are-about__grid,
+    .psm-mission-statement-commitment__grid,
+    .psm-byelaws-guidance__grid,
+    .psm-complaints-how-to__grid,
+    .psm-climate-change-commitment__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .psm-climate-change-media {
+        padding: 16px 16px 48px 12px;
+    }
+
+    .psm-climate-change-media__frame {
+        right: 8px;
+        bottom: 32px;
+    }
+
+    .psm-climate-change-media__badge {
+        right: -12px;
+        width: 96px;
+        height: 96px;
+    }
+
+    .psm-climate-change-media__action {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 12px 16px 12px 12px;
+        border-radius: 0 24px 0 0;
+    }
+
+    .psm-climate-change-media__action-phone-icon img {
+        width: 40px;
+    }
+
+    .psm-climate-change-media__action-phone-number {
+        font-size: 16px;
+    }
+
+    .psm-who-we-are-role .psm-housing-zigzag__row+.psm-housing-zigzag__row {
+        margin-top: 32px;
+    }
+
+    .psm-section-header--where-to-eat-places .psm-section-header__title,
+    .psm-section-header--where-to-stay-featured .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-where-to-eat-places__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .psm-where-to-stay-featured__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .psm-where-to-stay-featured__category {
+        margin-bottom: 28px;
+    }
+
+    .psm-consultation-feedback__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .psm-boat-park-community,
+    .psm-boat-park-facilities,
+    .psm-boat-park-mooring {
+        padding: 56px 0;
+    }
+
+    .psm-boat-park-community__title,
+    .psm-section-header--boat-park-community .psm-section-header__title,
+    .psm-section-header--boat-park-facilities .psm-section-header__title,
+    .psm-section-header--boat-park-mooring .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-boat-park-community__img--right,
+    .psm-boat-park-community__img--left {
+        border-radius: 20px;
+    }
+
+    .psm-boat-park-community__badge .psm-welcome-badge {
+        width: 104px;
+        height: 104px;
+    }
+
+    .psm-boat-park-facilities__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .psm-mooring-step {
+        grid-template-columns: auto minmax(0, 1fr);
+        padding: 20px 20px 20px 18px;
+    }
+
+    .psm-mooring-step__number {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        font-size: 40px;
+    }
+
+    .psm-video-media {
+        padding: 16px 0 0 16px;
+    }
+
+    .psm-video-media .psm-welcome-badge {
+        width: 104px;
+        height: 104px;
+        top: -12px;
+        right: -8px;
+    }
+
+    .psm-video-media__play {
+        right: 12px;
+        bottom: 12px;
+        padding: 6px 14px 6px 6px;
+        font-size: 14px;
+    }
+
+    .psm-video-media__play-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .psm-amenities-intro,
+    .psm-amenities-facilities {
+        padding: 56px 0 72px;
+    }
+
+    .psm-amenities-facilities {
+        padding-top: 56px;
+    }
+
+    .psm-section-header--amenities-intro .psm-section-header__title,
+    .psm-section-header--amenities-facilities .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-amenities-facilities__divider {
+        gap: 16px;
+        margin: 32px 0;
+    }
+
+    .psm-amenities-facilities__divider-mark {
+        max-width: 80px;
+    }
+
+    .psm-amenities-facilities__divider .psm-welcome-badge {
+        width: 72px;
+        height: 72px;
+    }
+
+    .psm-jobs-work,
+    .psm-jobs-apply,
+    .psm-jobs-opportunities {
+        padding: 56px 0;
+    }
+
+    .psm-jobs-work .psm-section-header__title,
+    .psm-section-header--jobs-apply .psm-section-header__title,
+    .psm-section-header--jobs-opportunities .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-jobs-work .psm-housing-zigzag-media--single-badge .psm-welcome-badge {
+        left: 50%;
+        right: auto;
+        top: auto;
+        bottom: -24px;
+        transform: translate(-50%, 0);
+        width: 96px;
+        height: 96px;
+    }
+
+    .psm-jobs-process {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .psm-jobs-process__item {
+        max-width: none;
+    }
+
+    .psm-jobs-process__connector {
+        align-self: center;
+        margin: 4px auto;
+        transform: rotate(90deg);
+    }
+
+    .psm-jobs-process__number {
+        font-size: 88px;
+    }
+
+    .psm-job-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 24px 20px;
+    }
+
+    .psm-job-card__field {
+        padding-left: 0;
+    }
+
+    .psm-job-card__field::before {
+        display: none;
+    }
+
+    .psm-job-card__btn {
+        justify-self: stretch;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .psm-news-archive {
+        padding: 56px 0 72px;
+    }
+
+    .psm-section-header--news-archive .psm-section-header__title {
+        font-size: 32px;
+    }
+
+    .psm-news-archive__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    .psm-news-single,
+    .psm-event-single,
+    .psm-job-single,
+    .psm-policy-single {
+        padding: calc(44px + 72px + 24px) 0 56px;
+    }
+
+    .psm-news-single__title,
+    .psm-event-single__title,
+    .psm-job-single__title,
+    .psm-policy-single__title {
+        font-size: 1.5rem;
+    }
+
+    .psm-news-single__content,
+    .psm-event-single__content,
+    .psm-job-single__content,
+    .psm-policy-single__content {
+        font-size: 15px;
+    }
+
+    .psm-news-single__content h2,
+    .psm-event-single__content h2,
+    .psm-job-single__content h2,
+    .psm-policy-single__content h2 {
+        font-size: 1.375rem;
+    }
+
+    .psm-news-single__content table,
+    .psm-event-single__content table,
+    .psm-job-single__content table,
+    .psm-policy-single__content table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .psm-pagination__inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px 12px;
+        border-radius: 20px;
+        max-width: 100%;
+    }
+
+    .psm-pagination__btn {
+        min-height: 40px;
+        padding: 0 18px;
+        font-size: 13px;
+    }
+
+    .psm-pagination__page {
+        width: 40px;
+        height: 40px;
+        font-size: 13px;
+    }
+
 }
 
 @media only screen and (min-width: 100px) and (max-width: 599px) {
@@ -769,6 +1514,7 @@
 }
 
 @media only screen and (min-width: 100px) and (max-width: 399px) {
+
     .psm-logo-link img,
     .psm-logo-fallback {
         width: 72px;
@@ -788,45 +1534,8 @@
     }
 }
 
-@media only screen and (min-width: 100px) and (max-width: 1199px) {
-    .psm-contact__grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
 
-    .psm-job-single__grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .psm-job-single__form-card {
-        position: static;
-    }
-
-    .psm-contact-info__title {
-        font-size: 36px;
-    }
-
-    .psm-foi__intro {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-
-    .psm-foi__documents {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 28px 32px;
-    }
-
-    .psm-minutes__documents {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px 40px;
-    }
-
-    .psm-section-header--minutes .psm-section-header__title {
-        font-size: 36px;
-    }
-}
-
+/* 
 @media only screen and (min-width: 100px) and (max-width: 767px) {
     .psm-inner-banner {
         min-height: 360px;
@@ -1232,7 +1941,7 @@
         font-size: 18px;
     }
 
-    .psm-who-we-are-role > .container {
+    .psm-who-we-are-role>.container {
         padding-top: 56px;
         padding-bottom: 32px;
     }
@@ -1276,7 +1985,7 @@
         font-size: 16px;
     }
 
-    .psm-who-we-are-role .psm-housing-zigzag__row + .psm-housing-zigzag__row {
+    .psm-who-we-are-role .psm-housing-zigzag__row+.psm-housing-zigzag__row {
         margin-top: 32px;
     }
 
@@ -1527,4 +2236,4 @@
         height: 40px;
         font-size: 13px;
     }
-}
+} */
