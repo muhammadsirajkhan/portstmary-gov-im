@@ -36,7 +36,7 @@ function psm_climate_change_social_icon_url($network) {
         'facebook'  => 'c-facebook.webp',
         'instagram' => 'c-insta.webp',
         'linkedin'  => 'c-linkendin.webp',
-        'twitter'   => 'contact-twit.webp',
+        'twitter'   => 'c-twitt.webp',
     );
 
     $network = sanitize_key((string) $network);
