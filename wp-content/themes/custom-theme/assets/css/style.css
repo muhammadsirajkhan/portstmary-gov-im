@@ -2249,6 +2249,28 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
     margin-bottom: 0;
 }
 
+/* ----- Events Page: archive list ----- */
+.psm-events-archive {
+    background: #ffffff;
+    padding: 80px 0 100px;
+}
+
+.psm-section-header--events-archive {
+    margin-bottom: 48px;
+}
+
+.psm-section-header--events-archive .psm-section-header__title {
+    font-size: 52px;
+}
+
+.psm-events-archive__list {
+    margin-bottom: 56px;
+}
+
+.psm-page-events .psm-inner-banner {
+    margin-bottom: 0;
+}
+
 /* ----- Breadcrumbs (standalone) ----- */
 .psm-breadcrumb {
     margin: 0 auto 32px;

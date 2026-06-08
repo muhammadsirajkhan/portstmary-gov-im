@@ -1,0 +1,121 @@
+{
+    "key": "group_psm_events_page",
+    "title": "Events Page",
+    "fields": [
+        {
+            "key": "field_psm_events_page_tab_banner",
+            "label": "Inner Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 1
+        },
+        {
+            "key": "field_psm_inner_banner_kicker_events_page",
+            "label": "Kicker",
+            "name": "inner_banner_kicker",
+            "type": "text",
+            "instructions": "Small line above the page title.",
+            "default_value": "Welcome to Port St Mary Commissioners"
+        },
+        {
+            "key": "field_psm_inner_banner_title_events_page",
+            "label": "Heading",
+            "name": "inner_banner_title",
+            "type": "text",
+            "instructions": "Main page heading (H1).",
+            "default_value": "Events"
+        },
+        {
+            "key": "field_psm_inner_banner_ribbon_events_page",
+            "label": "Ribbon",
+            "name": "inner_banner_ribbon",
+            "type": "text",
+            "instructions": "Red ribbon label below the heading.",
+            "default_value": "Community Events & Activities"
+        },
+        {
+            "key": "field_psm_inner_banner_intro_events_page",
+            "label": "Intro",
+            "name": "inner_banner_intro",
+            "type": "textarea",
+            "instructions": "Description paragraph in the banner.",
+            "default_value": "Discover upcoming events, community gatherings, and local activities happening in and around Port St Mary.",
+            "rows": 3
+        },
+        {
+            "key": "field_psm_inner_banner_image_events_page",
+            "label": "Background Image",
+            "name": "inner_banner_image",
+            "type": "image",
+            "instructions": "Banner background image.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_psm_events_page_tab_archive",
+            "label": "Events List",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_psm_events_archive_badge",
+            "label": "Badge",
+            "name": "archive_badge",
+            "type": "text",
+            "instructions": "Small label above the section heading.",
+            "default_value": "Community Events",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_events_archive_title",
+            "label": "Heading",
+            "name": "archive_title",
+            "type": "text",
+            "instructions": "Section heading.",
+            "default_value": "Upcoming Events",
+            "wrapper": { "width": "50" }
+        },
+        {
+            "key": "field_psm_events_archive_intro",
+            "label": "Intro Text",
+            "name": "archive_intro",
+            "type": "textarea",
+            "instructions": "Intro below the heading. Use a blank line between paragraphs. Event cards are pulled from Event posts.",
+            "rows": 4,
+            "default_value": "Stay up to date with community events, local gatherings, and activities organised in and around Port St Mary.\r\n\r\nBrowse the events below for dates, details, and links to full event information.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_psm_events_archive_title",
+                        "operator": "!=empty"
+                    }
+                ]
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-events.php"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner banner and events list for the Events page. Cards come from Event posts.",
+    "show_in_rest": 0,
+    "modified": 1781040600
+}
