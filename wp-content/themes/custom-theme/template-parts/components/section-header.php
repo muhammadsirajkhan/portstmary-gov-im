@@ -71,11 +71,11 @@ if ($args['heading_id']) {
     <?php endif; ?>
     <?php if ($args['title']) : ?>
         <h2 class="psm-section-header__title"<?php echo $heading_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-            <?php echo esc_html($args['title']); ?><span class="psm-section-header__title-dot" aria-hidden="true">.</span>
+            <?php echo esc_html($args['title']); ?>
             <?php if ('square' === $args['title_dot']) : ?>
-                <!-- <span class="psm-section-header__title-square" aria-hidden="true"></span> -->
-            <?php elseif ('period' === $args['title_dot']) : ?>
-                <!-- <span class="psm-section-header__title-dot" aria-hidden="true">.</span> -->
+                <span class="psm-section-header__title-square" aria-hidden="true"></span>
+            <?php else : ?>
+                <span class="psm-section-header__title-dot" aria-hidden="true">.</span>
             <?php endif; ?>
         </h2>
     <?php endif; ?>

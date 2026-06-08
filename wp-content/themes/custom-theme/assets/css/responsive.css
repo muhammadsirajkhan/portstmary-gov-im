@@ -1214,7 +1214,8 @@
     .psm-who-we-are-about,
     .psm-mission-statement-commitment,
     .psm-byelaws-guidance,
-    .psm-complaints-how-to {
+    .psm-complaints-how-to,
+    .psm-climate-change-commitment {
         padding: 56px 0;
     }
 
@@ -1222,7 +1223,8 @@
     .psm-section-header--who-we-are-role .psm-section-header__title,
     .psm-section-header--mission-statement-commitment .psm-section-header__title,
     .psm-section-header--byelaws-guidance .psm-section-header__title,
-    .psm-section-header--complaints-how-to .psm-section-header__title {
+    .psm-section-header--complaints-how-to .psm-section-header__title,
+    .psm-section-header--climate-change-commitment .psm-section-header__title {
         font-size: 32px;
     }
 
@@ -1238,9 +1240,40 @@
     .psm-who-we-are-about__grid,
     .psm-mission-statement-commitment__grid,
     .psm-byelaws-guidance__grid,
-    .psm-complaints-how-to__grid {
+    .psm-complaints-how-to__grid,
+    .psm-climate-change-commitment__grid {
         grid-template-columns: 1fr;
         gap: 32px;
+    }
+
+    .psm-climate-change-media {
+        padding: 16px 16px 48px 12px;
+    }
+
+    .psm-climate-change-media__frame {
+        right: 8px;
+        bottom: 32px;
+    }
+
+    .psm-climate-change-media__badge {
+        right: -12px;
+        width: 96px;
+        height: 96px;
+    }
+
+    .psm-climate-change-media__action {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 12px 16px 12px 12px;
+        border-radius: 0 24px 0 0;
+    }
+
+    .psm-climate-change-media__action-phone-icon img {
+        width: 40px;
+    }
+
+    .psm-climate-change-media__action-phone-number {
+        font-size: 16px;
     }
 
     .psm-who-we-are-role .psm-housing-zigzag__row + .psm-housing-zigzag__row {
