@@ -8,8 +8,12 @@
 defined('ABSPATH') || exit;
 
 $page_id = (int) get_queried_object_id();
+if (!$page_id) {
+    $match   = psm_match_static_page_pagination_from_uri();
+    $page_id = (int) $match['page_id'];
+}
 $header  = psm_get_news_page_archive_header($page_id);
-$paged   = psm_get_news_page_current();
+$paged   = psm_get_news_page_current($page_id);
 $query   = psm_get_news_page_query($page_id, $paged);
 
 $badge       = trim((string) $header['badge']);

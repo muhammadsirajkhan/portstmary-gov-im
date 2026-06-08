@@ -28,50 +28,16 @@ function psm_is_events_page($post_id = 0) {
 /**
  * Current pagination page for a static Events page.
  *
+ * @param int $page_id Optional page ID.
  * @return int
  */
-function psm_get_events_page_current() {
-    $current = (int) get_query_var('page');
-    if ($current > 0) {
-        return $current;
+function psm_get_events_page_current($page_id = 0) {
+    if (!$page_id) {
+        $page_id = (int) get_queried_object_id();
     }
 
-    $current = (int) get_query_var('paged');
-    if ($current > 0) {
-        return $current;
-    }
-
-    if (isset($_GET['page'])) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        $current = (int) wp_unslash($_GET['page']); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        if ($current > 0) {
-            return $current;
-        }
-    }
-
-    return 1;
+    return psm_get_static_page_current($page_id);
 }
-
-/**
- * Prevent canonical redirects from breaking Events page pagination URLs.
- *
- * @param string|false $redirect_url  Redirect URL.
- * @param string       $requested_url Requested URL.
- * @return string|false
- */
-function psm_events_page_disable_canonical_redirect($redirect_url, $requested_url) {
-    unset($requested_url);
-
-    if (!is_page() || !psm_is_events_page()) {
-        return $redirect_url;
-    }
-
-    if (psm_get_events_page_current() > 1) {
-        return false;
-    }
-
-    return $redirect_url;
-}
-add_filter('redirect_canonical', 'psm_events_page_disable_canonical_redirect', 10, 2);
 
 /**
  * Archive section header from ACF or defaults.
@@ -128,7 +94,7 @@ function psm_get_events_page_query($page_id = 0, $paged = 0) {
     }
 
     if ($paged <= 0) {
-        $paged = psm_get_events_page_current();
+        $paged = psm_get_events_page_current($page_id);
     }
 
     return new WP_Query(

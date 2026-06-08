@@ -23,6 +23,7 @@ require get_template_directory() . '/inc/event-helpers.php';
 require get_template_directory() . '/inc/cpt-news.php';
 require get_template_directory() . '/inc/news-helpers.php';
 require get_template_directory() . '/inc/acf-news-defaults.php';
+require get_template_directory() . '/inc/static-page-pagination.php';
 require get_template_directory() . '/inc/news-page-data.php';
 require get_template_directory() . '/inc/news-page-helpers.php';
 require get_template_directory() . '/inc/acf-news-page-defaults.php';
