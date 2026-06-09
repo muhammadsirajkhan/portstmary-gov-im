@@ -203,6 +203,46 @@ function psm_get_footer_settings() {
 }
 
 /**
+ * Site-wide phone number from Footer Settings.
+ *
+ * @return string
+ */
+function psm_get_site_phone_display() {
+    if (!function_exists('get_field')) {
+        return '';
+    }
+
+    return trim((string) get_field('footer_phone_number', 'option'));
+}
+
+/**
+ * tel: link for the site-wide footer phone number.
+ *
+ * @return string
+ */
+function psm_get_site_phone_href() {
+    $phone = psm_get_site_phone_display();
+
+    if ('' !== $phone && function_exists('psm_phone_href_from_display')) {
+        return psm_phone_href_from_display($phone);
+    }
+
+    return '';
+}
+
+/**
+ * Site-wide phone display + tel link.
+ *
+ * @return array{display: string, href: string}
+ */
+function psm_get_site_phone() {
+    return array(
+        'display' => psm_get_site_phone_display(),
+        'href'    => psm_get_site_phone_href(),
+    );
+}
+
+/**
  * Seed footer link column repeaters from default data.
  *
  * @return array{success: bool, message: string, counts: array<string, int>}

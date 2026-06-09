@@ -60,8 +60,9 @@ $has_header = '' !== $badge || '' !== $title || !empty($intro);
 $has_events = !empty($events);
 $has_button = '' !== $button['url'];
 
-$phone_display = '+ (01624) 832101';
-$phone_href    = 'tel:+441624832101';
+$site_phone    = psm_get_site_phone();
+$phone_display = $site_phone['display'];
+$phone_href    = $site_phone['href'];
 
 if (!$has_header && !$has_events && !$has_button) {
     return;

@@ -75,9 +75,13 @@ function psm_election_results_footer_text_static() {
             'Port St Mary Commissioners will have 7 available seats available in the upcoming election.',
             'cmd-theme'
         ),
-        __(
-            'Further information regarding Local Authorities and their functions can be found here on the following link, alternatively please contact the office on 832101 or commissioners@portstmary.gov.im for any Port St Mary specific related queries.',
-            'cmd-theme'
+        sprintf(
+            __(
+                'Further information regarding Local Authorities and their functions can be found here on the following link, alternatively please contact the office on %1$s or %2$s for any Port St Mary specific related queries.',
+                'cmd-theme'
+            ),
+            psm_get_site_phone_display(),
+            'commissioners@portstmary.gov.im'
         ),
     );
 }
@@ -196,7 +200,7 @@ function psm_election_candidates_static() {
             'cmd-theme'
         ),
         'link_url' => 'https://www.gov.im/categories/home-and-neighbourhood/elections-and-voting/local-authority-election/stand-as-a-local-candidate/',
-        'phone'    => '+44 1624 832101',
+        'phone'    => psm_get_site_phone_display(),
         'email'    => 'commissioners@portstmary.gov.im',
         'image'    => psm_theme_image('election-candidate-main.jpg') ?: '',
         'video_id' => 'M7lc1UVf-VE',

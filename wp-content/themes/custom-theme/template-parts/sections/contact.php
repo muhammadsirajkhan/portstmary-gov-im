@@ -71,6 +71,11 @@ $twitter_url = trim((string) $twitter_url);
 $form_title = trim((string) $form_title);
 $form_intro = trim((string) $form_intro);
 
+$site_phone = psm_get_site_phone();
+if ('' !== $site_phone['display']) {
+    $phone = $site_phone['display'];
+}
+
 $phone_href = psm_phone_href_from_display($phone);
 $email_href = '' !== $email ? 'mailto:' . $email : '';
 

@@ -64,8 +64,9 @@ $has_body    = '' !== trim(wp_strip_all_tags($body));
 $has_closing = '' !== $closing;
 $has_button  = '' !== $button['url'];
 
-$phone_display = '+ (01624) 832101';
-$phone_href    = 'tel:+441624832101';
+$site_phone    = psm_get_site_phone();
+$phone_display = $site_phone['display'];
+$phone_href    = $site_phone['href'];
 
 if (!$has_image && !$has_header && !$has_lead && !$has_body && !$has_closing && !$has_button) {
     return;

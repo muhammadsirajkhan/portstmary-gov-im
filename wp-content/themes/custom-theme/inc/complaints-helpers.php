@@ -92,5 +92,10 @@ function psm_get_complaints_how_to_section($page_id = 0) {
         $defaults['button']
     );
 
+    $site_phone = psm_get_site_phone();
+    if ('' !== $site_phone['display']) {
+        $data['phone'] = $site_phone['display'];
+    }
+
     return $data;
 }

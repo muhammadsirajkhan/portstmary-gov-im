@@ -297,6 +297,11 @@ function psm_get_election_candidates_content($page_id = 0) {
         $data['video_id'] = trim($video_id);
     }
 
+    $site_phone = psm_get_site_phone();
+    if ('' !== $site_phone['display']) {
+        $data['phone'] = $site_phone['display'];
+    }
+
     return $data;
 }
 

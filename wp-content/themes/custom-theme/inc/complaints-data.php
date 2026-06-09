@@ -33,7 +33,7 @@ function psm_complaints_how_to_defaults() {
     return array(
         'badge'  => __('Complaints', 'cmd-theme'),
         'title'  => __('How to Make a Complaint', 'cmd-theme'),
-        'phone'  => '+44 1624 832101',
+        'phone'  => psm_get_site_phone_display(),
         'email'  => 'commissioners@portstmary.gov.im',
         'button' => array(
             'title'  => __('Complaints Form', 'cmd-theme'),
