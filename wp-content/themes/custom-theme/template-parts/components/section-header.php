@@ -21,14 +21,14 @@ defined('ABSPATH') || exit;
 $args = wp_parse_args(
     isset($args) ? $args : array(),
     array(
-        'badge'        => '',
-        'badge_style'  => 'pill',
-        'title'        => '',
-        'title_dot'    => 'period',
-        'heading_id'   => '',
-        'intro'        => array(),
-        'class'        => '',
-        'align'        => 'center',
+        'badge' => '',
+        'badge_style' => 'pill',
+        'title' => '',
+        'title_dot' => 'period',
+        'heading_id' => '',
+        'intro' => array(),
+        'class' => '',
+        'align' => 'center',
     )
 );
 
@@ -46,42 +46,39 @@ if ($args['heading_id']) {
 }
 ?>
 <header class="<?php echo esc_attr($header_class); ?>">
-    <?php if ($args['badge']) : ?>
-        <?php if ('dash' === $args['badge_style']) : ?>
+    <?php if ($args['badge']): ?>
+        <?php if ('dash' === $args['badge_style']): ?>
             <p class="psm-section-header__kicker">
                 <span class="psm-section-header__kicker-dot" aria-hidden="true"></span>
                 <span class="psm-section-header__kicker-dash" aria-hidden="true">&mdash;</span>
                 <?php echo esc_html(strtoupper($args['badge'])); ?>
             </p>
-        <?php elseif ('line' === $args['badge_style']) : ?>
+        <?php elseif ('line' === $args['badge_style']): ?>
             <p class="psm-section-header__eyebrow">
                 <span class="psm-section-header__eyebrow-line" aria-hidden="true"></span>
                 <?php echo esc_html(strtoupper($args['badge'])); ?>
             </p>
-        <?php elseif ('red' === $args['badge_style']) : ?>
+        <?php elseif ('red' === $args['badge_style']): ?>
             <p class="psm-section-header__eyebrow-red">
                 <?php echo esc_html(strtoupper($args['badge'])); ?>
             </p>
-        <?php else : ?>
+        <?php else: ?>
             <p class="psm-section-header__badge">
                 <span class="psm-section-header__badge-dot" aria-hidden="true"></span>
                 <?php echo esc_html(strtoupper($args['badge'])); ?>
             </p>
         <?php endif; ?>
     <?php endif; ?>
-    <?php if ($args['title']) : ?>
-        <h2 class="psm-section-header__title"<?php echo $heading_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-            <?php echo esc_html($args['title']); ?>
-            <?php if ('square' === $args['title_dot']) : ?>
-                <span class="psm-section-header__title-square" aria-hidden="true"></span>
-            <?php else : ?>
-                <span class="psm-section-header__title-dot" aria-hidden="true">.</span>
-            <?php endif; ?>
+    <?php if ($args['title']): ?>
+        <h2 class="psm-section-header__title" <?php echo $heading_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+            <?php echo esc_html($args['title']); ?><?php if ('square' === $args['title_dot']): ?><span
+                    class="psm-section-header__title-square" aria-hidden="true"></span><?php else: ?><span
+                    class="psm-section-header__title-dot" aria-hidden="true">.</span><?php endif; ?>
         </h2>
     <?php endif; ?>
-    <?php if (!empty($args['intro'])) : ?>
+    <?php if (!empty($args['intro'])): ?>
         <div class="psm-section-header__intro">
-            <?php foreach ((array) $args['intro'] as $line) : ?>
+            <?php foreach ((array) $args['intro'] as $line): ?>
                 <p><?php echo esc_html($line); ?></p>
             <?php endforeach; ?>
         </div>
