@@ -31,7 +31,6 @@
         --font-size-5xl: 66px;
         --font-size-6xl: 74px;
         --font-size-7xl: 80px;
-
         --spacing-xs: 8px;
         --spacing-sm: 12px;
         --spacing-md: 16px;
@@ -42,7 +41,6 @@
         --spacing-4xl: 68px;
         --spacing-5xl: 85px;
         --spacing-6xl: 102px;
-
         --section-py: var(--spacing-4xl);
         --section-pb-extended: var(--spacing-5xl);
         --section-pb-medium: 75px;
@@ -52,8 +50,7 @@
         --section-inner-py: 48px;
         --section-hero-pt: 100px;
         --section-hero-pb: 136px;
-        --section-header-mb: 52px;
-
+        --section-header-mb: 22px;
         --header-height: 88px;
         --container-max: 1440px;
     }
@@ -244,6 +241,14 @@
         height: 100%;
         width: auto;
     }
+
+    .psm-climate-change-media__action {
+        left: revert-layer;
+    }
+
+    .psm-remembrance-respect__grid {
+        grid-template-columns: minmax(0, 0.62fr) minmax(0, 0.52fr);
+    }
 }
 
 @media only screen and (min-width: 100px) and (max-width: 1599px) {
@@ -278,6 +283,37 @@
         height: 100%;
         width: auto;
     }
+
+    .psm-climate-change-media__action {
+        /* flex-direction: column; */
+        left: 0;
+        bottom: 20px;
+    }
+
+    .psm-climate-change-media__action-phone-icon img {
+        width: 50px;
+    }
+
+    .psm-climate-change-media__action-social-btn img {
+        width: 42px;
+    }
+
+    .psm-climate-change-commitment__grid {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    }
+
+    .psm-remembrance-respect__grid {
+        grid-template-columns: minmax(0, 0.72fr) minmax(0, 0.50fr);
+        gap: 15px;
+    }
+
+    .psm-remembrance-respect__col--content .psm-remembrance-media--sub {
+        padding-right: 0px;
+    }
+
+    .psm-commissioners-services {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 @media only screen and (min-width: 100px) and (max-width: 1440px) {
@@ -297,7 +333,6 @@
         --font-size-5xl: 58px;
         --font-size-6xl: 64px;
         --font-size-7xl: 70px;
-
         --spacing-3xl: 44px;
         --spacing-4xl: 60px;
         --spacing-5xl: 75px;
@@ -309,8 +344,7 @@
         --section-inner-py: 44px;
         --section-hero-pt: 88px;
         --section-hero-pb: 120px;
-        --section-header-mb: 48px;
-
+        --section-header-mb: 20px;
         --container-max: 1200px;
     }
 
@@ -423,6 +457,10 @@
     .psm-news-nav--next {
         right: -44px;
     }
+
+    .psm-venue-zigzag__row {
+        gap: 15px;
+    }
 }
 
 
@@ -516,7 +554,8 @@
         max-width: 650px;
     }
 
-    .psm-inner-banner::before {
+    .psm-inner-banner::before,
+    .psm-home .psm-hero::before {
         content: '';
         position: absolute;
         width: 100%;
@@ -541,7 +580,6 @@
         --font-size-5xl: 54px;
         --font-size-6xl: 60px;
         --font-size-7xl: 66px;
-
         --spacing-3xl: 40px;
         --spacing-4xl: 56px;
         --spacing-5xl: 70px;
@@ -553,7 +591,7 @@
         --section-inner-py: 40px;
         --section-hero-pt: 80px;
         --section-hero-pb: 108px;
-        --section-header-mb: 44px;
+        --section-header-mb: 24px;
     }
 
     .psm-contact__grid {
@@ -895,7 +933,38 @@
 
     .psm-history-timeline__visual {
         margin: 0 auto;
-        padding-top: 28px;
+        padding-top: 58px;
+    }
+
+    .psm-history-timeline__entry--left .psm-history-timeline__card {
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .psm-history-timeline__dot {
+        display: none;
+    }
+
+    .psm-history-timeline__line {
+        display: none;
+    }
+
+    .psm-history-timeline__entry--right .psm-history-timeline__period {
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .psm-history-timeline__entry--left .psm-history-timeline__period {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .psm-history-timeline__entry--left .psm-history-timeline__side--meta {
+        grid-row: 1/1;
+    }
+
+    .psm-history-timeline__entry--left .psm-history-timeline__axis {
+        grid-row: 2/3;
     }
 
     .psm-history-timeline__entry--left .psm-history-timeline__side--content,
@@ -977,6 +1046,7 @@
 
     .psm-boat-park-community__col--right {
         margin-top: 0;
+        flex-direction: column-reverse;
     }
 
     .psm-boat-park-community__col--left {
@@ -992,6 +1062,7 @@
         justify-content: center;
         margin: -8px 0;
         order: 2;
+        display: none;
     }
 
     .psm-boat-park-community__col--right {
@@ -1013,7 +1084,7 @@
     }
 
     .psm-amenities-facility__inner {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 24px;
     }
 
@@ -1104,6 +1175,57 @@
     .psm-hero__content {
         max-width: 100%;
     }
+
+    .psm-hero__slide {
+        padding-top: 180px;
+        padding-top: 100px;
+    }
+
+    .psm-inner-banner::before,
+    .psm-home .psm-hero::before {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.45) 71%, rgba(255, 255, 255, 0) 100%);
+        height: 400px;
+    }
+
+    .psm-inner-banner__intro {
+        font-weight: 800;
+    }
+
+    .psm-contact-info__subtitle {
+        font-size: 18px;
+    }
+
+    .psm-climate-change-media__action {
+        position: relative;
+        margin-top: 30px;
+    }
+
+    .psm-climate-change-media__action-social-btn img,
+    .psm-climate-change-media__action-phone-icon img {
+        filter: brightness(1) invert(1);
+    }
+
+    .psm-climate-change-media__action-phone-label,
+    .psm-climate-change-media__action-phone-number {
+        color: #000;
+    }
+
+    .psm-boat-park-community__prose {
+        padding-left: 0px;
+    }
+
+    .psm-accommodation-card__body {
+        padding: 15px 0px 0px;
+    }
+
+    .psm-news-card__meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #our-role-in-the-community .psm-housing-zigzag__block--grey {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media only screen and (min-width: 100px) and (max-width: 767px) {
@@ -1135,7 +1257,7 @@
         --section-inner-py: 32px;
         --section-hero-pt: 72px;
         --section-hero-pb: 96px;
-        --section-header-mb: 40px;
+        --section-header-mb: 22px;
     }
 
     .container,
@@ -1159,8 +1281,9 @@
 
     .psm-home .psm-hero {
         padding-top: calc(44px + 72px + 48px);
-        min-height: 560px;
+        min-height: 700px;
         padding-bottom: 140px;
+        max-width: 100%;
     }
 
     .psm-hero__actions {
@@ -1182,6 +1305,7 @@
 
     .psm-hero__intro {
         font-size: 15px;
+        font-weight: 800;
     }
 
     .psm-hero__title-line {
@@ -1390,7 +1514,7 @@
     }
 
     .psm-inner-banner {
-        min-height: 360px;
+        min-height: 500px;
         padding: 32px 0 88px;
     }
 
@@ -1509,8 +1633,8 @@
     }
 
     .psm-venue-zigzag__image-wrap {
-        margin-left: 20px;
-        margin-right: 20px;
+        /* margin-left: 20px; */
+        /* margin-right: 20px; */
     }
 
     .psm-venue-zigzag__image {
@@ -1578,6 +1702,7 @@
     .psm-commissioners-hours__row {
         padding: 16px 18px;
         gap: 16px;
+        flex-direction: column;
     }
 
     .psm-commissioners-hours__time {
@@ -1766,7 +1891,7 @@
     }
 
     .psm-consultation-current__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(1, minmax(0, 1fr));
         gap: 12px;
     }
 
@@ -1808,7 +1933,7 @@
     }
 
     .psm-climate-change-media {
-        padding: 16px 16px 48px 12px;
+        padding: 30px 0 0;
     }
 
     .psm-climate-change-media__frame {
@@ -1847,12 +1972,12 @@
     }
 
     .psm-where-to-eat-places__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(1, minmax(0, 1fr));
         gap: 12px;
     }
 
     .psm-where-to-stay-featured__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(1, minmax(0, 1fr));
         gap: 16px;
     }
 
@@ -2041,7 +2166,7 @@
     .psm-event-single,
     .psm-job-single,
     .psm-policy-single {
-        padding: calc(44px + 72px + 24px) 0 56px;
+        padding: 50px 0 56px;
     }
 
     .psm-news-single__title,
@@ -2225,6 +2350,8 @@
     .psm-inner-banner {
         padding-top: var(--section-inner-py);
         padding-bottom: var(--section-pb-medium);
+        max-width: 100%;
+        padding-top: 0;
     }
 
     .psm-section-header {
@@ -2250,7 +2377,7 @@
 
     .psm-logo-link img,
     .psm-header__logo .custom-logo {
-        width: 90px;
+        width: 80px;
         height: auto;
     }
 }
@@ -2268,7 +2395,7 @@
         --section-inner-py: 28px;
         --section-hero-pt: 64px;
         --section-hero-pb: 84px;
-        --section-header-mb: 36px;
+        --section-header-mb: 20px;
     }
 
     .psm-hero__title-line {

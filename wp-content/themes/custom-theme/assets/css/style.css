@@ -4586,7 +4586,7 @@ body:not(.psm-home) .psm-header__logo .custom-logo {
 .psm-venue-zigzag__media {
     position: relative;
     min-width: 0;
-    padding: 0 24px;
+    /* padding: 0 24px; */
 }
 
 .psm-venue-zigzag__vertical-label {
