@@ -195,11 +195,23 @@
             "button_label": "Add link",
             "sub_fields": [
                 {
-                    "key": "field_psm_footer_col_1_link",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "link",
-                    "return_format": "array",
+                    "key": "field_psm_footer_col_1_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 0,
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "placeholder": "General Public",
+                    "parent_repeater": "field_psm_footer_col_1_links"
+                },
+                {
+                    "key": "field_psm_footer_col_1_url",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "required": 0,
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "placeholder": "http://localhost/cmd/general-public/",
                     "parent_repeater": "field_psm_footer_col_1_links"
                 }
             ]
@@ -218,11 +230,23 @@
             "button_label": "Add link",
             "sub_fields": [
                 {
-                    "key": "field_psm_footer_col_2_link",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "link",
-                    "return_format": "array",
+                    "key": "field_psm_footer_col_2_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 0,
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "placeholder": "Our Venue Hire",
+                    "parent_repeater": "field_psm_footer_col_2_links"
+                },
+                {
+                    "key": "field_psm_footer_col_2_url",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "required": 0,
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "placeholder": "http://localhost/cmd/our-venue-hire/",
                     "parent_repeater": "field_psm_footer_col_2_links"
                 }
             ]
@@ -241,11 +265,23 @@
             "button_label": "Add link",
             "sub_fields": [
                 {
-                    "key": "field_psm_footer_col_3_link",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "link",
-                    "return_format": "array",
+                    "key": "field_psm_footer_col_3_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 0,
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "placeholder": "Our Remembrance",
+                    "parent_repeater": "field_psm_footer_col_3_links"
+                },
+                {
+                    "key": "field_psm_footer_col_3_url",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "required": 0,
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "placeholder": "http://localhost/cmd/our-remembrance/",
                     "parent_repeater": "field_psm_footer_col_3_links"
                 }
             ]
@@ -396,11 +432,23 @@
             "button_label": "Add legal link",
             "sub_fields": [
                 {
-                    "key": "field_psm_footer_legal_link",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "link",
-                    "return_format": "array",
+                    "key": "field_psm_footer_legal_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 0,
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "placeholder": "Privacy Policy",
+                    "parent_repeater": "field_psm_footer_legal_links"
+                },
+                {
+                    "key": "field_psm_footer_legal_url",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "required": 0,
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "placeholder": "http://creativeisaac.com/psm/privacy-policy/",
                     "parent_repeater": "field_psm_footer_legal_links"
                 }
             ]

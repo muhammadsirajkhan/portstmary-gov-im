@@ -47,7 +47,7 @@ function psm_footer_split_paragraphs($text) {
 /**
  * Build footer link list from ACF repeater rows.
  *
- * @param mixed $rows Repeater rows with `link` sub field.
+ * @param mixed $rows Repeater rows with `title` and `url` sub fields.
  * @return array<int, array{label: string, url: string, target: string}>
  */
 function psm_footer_parse_link_rows($rows) {
@@ -62,22 +62,17 @@ function psm_footer_parse_link_rows($rows) {
             continue;
         }
 
-        $link = function_exists('psm_header_normalise_link')
-            ? psm_header_normalise_link($row['link'] ?? array())
-            : array(
-                'url'    => '',
-                'title'  => '',
-                'target' => '',
-            );
+        $title = isset($row['title']) ? trim((string) $row['title']) : '';
+        $url   = isset($row['url']) ? trim((string) $row['url']) : '';
 
-        if ('' === $link['url'] || '' === $link['title']) {
+        if ('' === $url || '' === $title) {
             continue;
         }
 
         $links[] = array(
-            'label'  => $link['title'],
-            'url'    => $link['url'],
-            'target' => $link['target'],
+            'label'  => $title,
+            'url'    => $url,
+            'target' => '',
         );
     }
 
@@ -205,6 +200,58 @@ function psm_get_footer_settings() {
     }
 
     return $settings;
+}
+
+/**
+ * Seed footer link column repeaters from default data.
+ *
+ * @return array{success: bool, message: string, counts: array<string, int>}
+ */
+function psm_seed_footer_link_columns() {
+    if (!function_exists('update_field')) {
+        return array(
+            'success' => false,
+            'message' => 'ACF is not available.',
+            'counts'  => array(),
+        );
+    }
+
+    $data   = require get_template_directory() . '/inc/footer-links-data.php';
+    $counts = array();
+
+    if (!is_array($data)) {
+        return array(
+            'success' => false,
+            'message' => 'Footer links data not found.',
+            'counts'  => array(),
+        );
+    }
+
+    foreach ($data as $field_name => $rows) {
+        if (!is_array($rows)) {
+            continue;
+        }
+
+        delete_field($field_name, 'option');
+        update_field($field_name, $rows, 'option');
+
+        $saved = get_field($field_name, 'option');
+        if (!is_array($saved) || count($saved) !== count($rows)) {
+            return array(
+                'success' => false,
+                'message' => 'Failed to update ' . $field_name . '.',
+                'counts'  => $counts,
+            );
+        }
+
+        $counts[ $field_name ] = count($saved);
+    }
+
+    return array(
+        'success' => true,
+        'message' => 'Footer links seeded successfully.',
+        'counts'  => $counts,
+    );
 }
 
 /**
