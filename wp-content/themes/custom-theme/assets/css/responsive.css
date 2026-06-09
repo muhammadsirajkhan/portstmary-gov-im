@@ -1,4 +1,4 @@
-﻿@media only screen and (min-width: 1800px) {
+@media only screen and (min-width: 1800px) {
     :root {
         --container-max: 1700px;
     }
@@ -38,10 +38,21 @@
         --spacing-lg: 20px;
         --spacing-xl: 24px;
         --spacing-2xl: 32px;
-        --spacing-3xl: 40px;
-        --spacing-4xl: 48px;
-        --spacing-5xl: 55px;
-        --spacing-6xl: 65px;
+        --spacing-3xl: 52px;
+        --spacing-4xl: 68px;
+        --spacing-5xl: 85px;
+        --spacing-6xl: 102px;
+
+        --section-py: var(--spacing-4xl);
+        --section-pb-extended: var(--spacing-5xl);
+        --section-pb-medium: 75px;
+        --section-py-featured: 85px;
+        --section-pb-featured: 95px;
+        --section-py-lg: 82px;
+        --section-inner-py: 48px;
+        --section-hero-pt: 100px;
+        --section-hero-pb: 136px;
+        --section-header-mb: 52px;
 
         --header-height: 88px;
         --container-max: 1440px;
@@ -114,6 +125,125 @@
     .psm-event-card__day {
         font-size: 48px;
     }
+
+    .psm-hero__title-line {
+        font-size: clamp(2.25rem, 5.5vw, 4.875rem);
+    }
+
+    .psm-hero__title-line--lg {
+        font-size: clamp(2.5rem, 6vw, 5.375rem);
+    }
+
+    .section-block,
+    .psm-about,
+    .psm-services,
+    .psm-contact,
+    .psm-foi,
+    .psm-commissioners-serving,
+    .psm-commissioners-officers,
+    .psm-general-public-housing,
+    .psm-southern-sheltered-tenders,
+    .psm-jobs-work,
+    .psm-jobs-apply,
+    .psm-jobs-opportunities,
+    .psm-amenities-intro,
+    .psm-boat-park-community,
+    .psm-boat-park-mooring,
+    .psm-consultation-engagement,
+    .psm-consultation-current,
+    .psm-consultation-feedback,
+    .psm-election-documents,
+    .psm-elections-candidates,
+    .psm-elections-voting,
+    .psm-gallery-community-life,
+    .psm-gallery-featured,
+    .psm-local-info-about,
+    .psm-local-info-timeline,
+    .psm-rates-village-rates,
+    .psm-where-to-eat-places,
+    .psm-where-to-stay-featured,
+    .psm-who-we-are-about,
+    .psm-mission-statement-commitment,
+    .psm-byelaws-guidance,
+    .psm-complaints-how-to,
+    .psm-climate-change-commitment,
+    .psm-housing-zigzag__block {
+        padding-top: var(--section-py);
+        padding-bottom: var(--section-py);
+    }
+
+    .psm-news-archive,
+    .psm-events-archive,
+    .psm-venue-hire,
+    .psm-commissioners-hours,
+    .psm-general-public-applying,
+    .psm-amenities-facilities,
+    .psm-boat-park-facilities {
+        padding-top: var(--section-py);
+        padding-bottom: var(--section-pb-extended);
+    }
+
+    .psm-minutes,
+    .psm-rates-financial-statements {
+        padding-top: var(--section-py);
+        padding-bottom: var(--section-pb-medium);
+    }
+
+    .psm-remembrance-respect {
+        padding-top: var(--section-py-featured);
+        padding-bottom: var(--section-pb-featured);
+    }
+
+    .psm-remembrance-honour {
+        padding-top: var(--section-py-lg);
+        padding-bottom: var(--section-pb-extended);
+    }
+
+    .psm-inner-banner--featured {
+        padding-top: var(--section-inner-py);
+        padding-bottom: var(--section-pb-extended);
+    }
+
+    .psm-hero {
+        padding-top: var(--section-hero-pt);
+        padding-bottom: var(--section-hero-pb);
+    }
+
+    .psm-events,
+    .psm-news {
+        padding-top: var(--section-py);
+    }
+
+    .psm-quick-links {
+        padding-bottom: var(--section-py);
+    }
+
+    .psm-section-header {
+        margin-bottom: var(--section-header-mb);
+    }
+
+    .psm-footer__contact-group {
+        padding-right: 20px;
+    }
+
+    .psm-footer__utility {
+        gap: 0 20px;
+
+    }
+
+    .psm-footer__contact-group {
+        padding-right: 10px;
+        grid-template-columns: 1fr 1.3fr;
+    }
+
+    .psm-inner-banner {
+        aspect-ratio: 1920 / 920;
+    }
+
+    .psm-inner-banner__bg {
+        height: 100%;
+        width: auto;
+    }
 }
 
 @media only screen and (min-width: 100px) and (max-width: 1599px) {
@@ -129,6 +259,24 @@
     .container-xxl,
     .container-fluid.psm-container {
         max-width: var(--container-max);
+    }
+
+    .psm-footer__utility {
+        grid-template-columns: 1.3fr 1fr;
+
+    }
+
+    .psm-footer__contact-group {
+        grid-template-columns: 1fr 1.5fr;
+    }
+
+    .psm-inner-banner {
+        aspect-ratio: 1920 / 1020;
+    }
+
+    .psm-inner-banner__bg {
+        height: 100%;
+        width: auto;
     }
 }
 
@@ -149,6 +297,19 @@
         --font-size-5xl: 58px;
         --font-size-6xl: 64px;
         --font-size-7xl: 70px;
+
+        --spacing-3xl: 44px;
+        --spacing-4xl: 60px;
+        --spacing-5xl: 75px;
+        --spacing-6xl: 90px;
+        --section-pb-medium: 66px;
+        --section-py-featured: 75px;
+        --section-pb-featured: 84px;
+        --section-py-lg: 72px;
+        --section-inner-py: 44px;
+        --section-hero-pt: 88px;
+        --section-hero-pb: 120px;
+        --section-header-mb: 48px;
 
         --container-max: 1200px;
     }
@@ -215,14 +376,59 @@
     .psm-event-card__day {
         font-size: 44px;
     }
+
+    .psm-hero__title-line {
+        font-size: clamp(2rem, 5vw, 4.25rem);
+    }
+
+    .psm-hero__title-line--lg {
+        font-size: clamp(2.25rem, 5.5vw, 4.625rem);
+    }
+
+    .psm-nav-list,
+    .psm-fallback-menu {
+        gap: 8px 35px;
+    }
+
+    .psm-header__right {
+        gap: 35px;
+    }
+
+    .psm-header__logo-tab {
+        padding: 7px 18px;
+        width: 170px;
+        text-align: center;
+    }
+
+    .psm-header__logo {
+        width: 200px;
+    }
+
+    .psm-quick-card__title {
+        font-size: 18px;
+    }
+
+    .psm-event-card__title {
+        font-size: 28px;
+    }
+
+    .psm-news__carousel {
+        padding: 0 32px;
+    }
+
+    .psm-news-nav--prev {
+        left: -44px;
+    }
+
+    .psm-news-nav--next {
+        right: -44px;
+    }
 }
 
 
 @media only screen and (min-width: 100px) and (max-width: 1366px) {
     :root {
         --container-max: 1200px;
-        --spacing-4xl: 56px;
-        --spacing-5xl: 72px;
     }
 
     .container,
@@ -237,6 +443,35 @@
 
     .psm-hero {
         min-height: 560px;
+    }
+
+    .psm-news__carousel {
+        padding: 0 0px;
+    }
+
+    .psm-news-nav--prev {
+        left: -34px;
+    }
+
+    .psm-news-nav--next {
+        right: -34px;
+    }
+
+    .psm-inner-banner {
+        aspect-ratio: 1920 / 1050;
+    }
+
+    .psm-inner-banner__bg {
+        height: 100%;
+        width: auto;
+    }
+
+    .psm-hero__slide {
+        padding-top: 180px;
+    }
+
+    .psm-event-card__title {
+        font-size: 26px;
     }
 }
 
@@ -263,6 +498,38 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 28px 32px;
     }
+
+    .psm-inner-banner {
+        aspect-ratio: 1920 / 1080;
+    }
+
+    .psm-inner-banner__bg {
+        height: 100%;
+        width: auto;
+    }
+
+    .psm-hero__slide {
+        padding-top: 160px;
+    }
+
+    .psm-inner-banner__intro {
+        max-width: 650px;
+    }
+
+    .psm-inner-banner::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 350px;
+        background: #fff;
+        /* background: linear-gradient(180deg, rgba(0, 0, 0, 0.13) 0%, rgba(0, 0, 0, 0.13) 71%, rgba(0, 0, 0, 0) 100%); */
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.33) 0%, rgba(255, 255, 255, 0.33) 71%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .psm-event-card__title {
+        font-size: 24px;
+    }
 }
 
 @media only screen and (min-width: 100px) and (max-width: 1199px) {
@@ -274,6 +541,19 @@
         --font-size-5xl: 54px;
         --font-size-6xl: 60px;
         --font-size-7xl: 66px;
+
+        --spacing-3xl: 40px;
+        --spacing-4xl: 56px;
+        --spacing-5xl: 70px;
+        --spacing-6xl: 84px;
+        --section-pb-medium: 62px;
+        --section-py-featured: 70px;
+        --section-pb-featured: 78px;
+        --section-py-lg: 68px;
+        --section-inner-py: 40px;
+        --section-hero-pt: 80px;
+        --section-hero-pb: 108px;
+        --section-header-mb: 44px;
     }
 
     .psm-contact__grid {
@@ -361,12 +641,50 @@
     .psm-event-card__day {
         font-size: 40px;
     }
+
+    .psm-hero__title-line {
+        font-size: clamp(1.875rem, 4.5vw, 3.75rem);
+    }
+
+    .psm-hero__title-line--lg {
+        font-size: clamp(2rem, 5vw, 4.125rem);
+    }
+
+    .psm-service-card .psm-service-card__corner-arrow,
+    .psm-service-card .psm-service-card__corner-arrow {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1);
+        pointer-events: none;
+    }
+
+    .psm-service-card .psm-service-card__excerpt,
+    .psm-service-card .psm-service-card__excerpt {
+        max-height: 120px;
+        opacity: 1;
+        margin: 10px 0 16px;
+    }
+
+    .psm-service-card .psm-service-card__readmore,
+    .psm-service-card .psm-service-card__readmore {
+        max-height: 44px;
+        opacity: 1;
+    }
+
+    .psm-service-card .psm-service-card__overlay,
+    .psm-service-card .psm-service-card__overlay {
+        align-items: stretch;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.78) 100%);
+    }
+
+    .psm-event-card__title {
+        font-size: 22px;
+    }
 }
 
 @media only screen and (min-width: 100px) and (max-width: 991px) {
     :root {
         --header-height: 72px;
-        --spacing-4xl: 48px;
     }
 
     .psm-header__bar {
@@ -382,6 +700,9 @@
         position: relative;
         left: auto;
         transform: none;
+        box-shadow: unset;
+        padding: 0;
+        text-align: left;
     }
 
     .psm-burger {
@@ -389,7 +710,8 @@
     }
 
     .psm-header__main {
-        padding-bottom: 16px;
+        padding-bottom: 6px;
+        padding-top: 6px;
     }
 
     .psm-quick-links {
@@ -481,13 +803,13 @@
     }
 
     .psm-about__media {
-        padding: 0 0 80px;
+        /* padding: 0 0 80px; */
         margin-bottom: 0;
         min-height: 0;
     }
 
     .psm-about__img-main {
-        max-width: none;
+        /* max-width: none; */
     }
 
     .psm-welcome-badge {
@@ -768,6 +1090,20 @@
         grid-column: 1 / -1;
         justify-self: start;
     }
+
+    .psm-event-card__title {
+        font-size: 20px;
+    }
+
+    .psm-hero-swiper {
+        position: relative;
+        height: auto;
+        width: 100%;
+    }
+
+    .psm-hero__content {
+        max-width: 100%;
+    }
 }
 
 @media only screen and (min-width: 100px) and (max-width: 767px) {
@@ -789,7 +1125,17 @@
         --font-size-6xl: 52px;
         --font-size-7xl: 56px;
         --spacing-3xl: 32px;
-        --spacing-4xl: 40px;
+        --spacing-4xl: 48px;
+        --spacing-5xl: 60px;
+        --spacing-6xl: 72px;
+        --section-pb-medium: 52px;
+        --section-py-featured: 64px;
+        --section-pb-featured: 68px;
+        --section-py-lg: 60px;
+        --section-inner-py: 32px;
+        --section-hero-pt: 72px;
+        --section-hero-pb: 96px;
+        --section-header-mb: 40px;
     }
 
     .container,
@@ -803,7 +1149,7 @@
     }
 
     .section-block {
-        padding: var(--spacing-3xl) 0;
+        padding: var(--section-py) 0;
     }
 
     .psm-hero {
@@ -838,15 +1184,24 @@
         font-size: 15px;
     }
 
+    .psm-hero__title-line {
+        font-size: clamp(1.75rem, 4vw, 3rem);
+    }
+
+    .psm-hero__title-line--lg {
+        font-size: clamp(1.875rem, 4.5vw, 3.25rem);
+    }
+
     .psm-topbar__inner {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         padding: 10px 0;
         gap: 10px;
     }
 
     .psm-topbar__social-wrap {
         flex-wrap: wrap;
+        display: none;
     }
 
     .psm-scroll-badge__ring {
@@ -924,7 +1279,7 @@
     }
 
     .psm-events {
-        padding: 56px 0;
+        padding: 56px 0 125px;
     }
 
     .psm-event-card {
@@ -934,14 +1289,23 @@
 
     .psm-event-card__media {
         order: 1;
+        padding-bottom: 0;
     }
 
     .psm-event-card__date {
         order: 2;
         flex-direction: row;
-        gap: 16px;
-        padding: 16px 20px;
-        border-radius: 0;
+        gap: 15px;
+        padding: 5px 20px;
+        border-radius: 0 0 16px 16px;
+        margin: 10px;
+        margin-top: 0;
+        /* border-bottom-left-radius: 50px; */
+        /* border-bottom-right-radius: 50px; */
+    }
+
+    .psm-event-card__crest {
+        margin-bottom: 0;
     }
 
     .psm-event-card__content {
@@ -974,12 +1338,21 @@
     }
 
     .psm-news__carousel {
-        padding: 0 44px;
+        padding: 0;
     }
 
     .psm-news-nav {
         width: 44px;
         height: 44px;
+        top: 27%;
+    }
+
+    .psm-news-nav--prev {
+        left: 0px;
+    }
+
+    .psm-news-nav--next {
+        right: 0;
     }
 
     .psm-section-cta {
@@ -1772,18 +2145,138 @@
     }
 
     .psm-event-card__day {
-        font-size: 36px;
+        font-size: 20px;
     }
 
     .psm-contact-info__title {
         font-size: 32px;
     }
 
+    .section-block,
+    .psm-about,
+    .psm-services,
+    .psm-contact,
+    .psm-foi,
+    .psm-commissioners-serving,
+    .psm-commissioners-officers,
+    .psm-general-public-housing,
+    .psm-southern-sheltered-tenders,
+    .psm-jobs-work,
+    .psm-jobs-apply,
+    .psm-jobs-opportunities,
+    .psm-amenities-intro,
+    .psm-boat-park-community,
+    .psm-boat-park-mooring,
+    .psm-consultation-engagement,
+    .psm-consultation-current,
+    .psm-consultation-feedback,
+    .psm-election-documents,
+    .psm-elections-candidates,
+    .psm-elections-voting,
+    .psm-gallery-community-life,
+    .psm-gallery-featured,
+    .psm-local-info-about,
+    .psm-local-info-timeline,
+    .psm-rates-village-rates,
+    .psm-where-to-eat-places,
+    .psm-where-to-stay-featured,
+    .psm-who-we-are-about,
+    .psm-mission-statement-commitment,
+    .psm-byelaws-guidance,
+    .psm-complaints-how-to,
+    .psm-climate-change-commitment,
+    .psm-housing-zigzag__block {
+        padding-top: var(--section-py);
+        padding-bottom: var(--section-py);
+    }
+
+    .psm-news-archive,
+    .psm-events-archive,
+    .psm-venue-hire,
+    .psm-commissioners-hours,
+    .psm-general-public-applying,
+    .psm-amenities-facilities,
+    .psm-boat-park-facilities {
+        padding-top: var(--section-py);
+        padding-bottom: var(--section-pb-extended);
+    }
+
+    .psm-minutes,
+    .psm-rates-financial-statements {
+        padding-top: var(--section-py);
+        padding-bottom: var(--section-pb-medium);
+    }
+
+    .psm-remembrance-respect {
+        padding-top: var(--section-py-featured);
+        padding-bottom: var(--section-pb-featured);
+    }
+
+    .psm-remembrance-honour {
+        padding-top: var(--section-py-lg);
+        padding-bottom: var(--section-pb-extended);
+    }
+
+    .psm-inner-banner--featured {
+        padding-top: var(--section-inner-py);
+        padding-bottom: var(--section-pb-extended);
+    }
+
+    .psm-inner-banner {
+        padding-top: var(--section-inner-py);
+        padding-bottom: var(--section-pb-medium);
+    }
+
+    .psm-section-header {
+        margin-bottom: var(--section-header-mb);
+    }
+
+    .psm-event-card__title {
+        font-size: 18px;
+    }
+
+    .psm-footer__subscribe {
+        flex-direction: column;
+    }
+
+    .psm-footer__logo img,
+    .psm-footer__logo .custom-logo {
+        width: 120px;
+    }
+
+    a.hero-scroll-badge__link {
+        display: none;
+    }
+
+    .psm-logo-link img,
+    .psm-header__logo .custom-logo {
+        width: 90px;
+        height: auto;
+    }
 }
 
 @media only screen and (min-width: 100px) and (max-width: 599px) {
-    .psm-hero__title {
-        font-size: 1.75rem;
+    :root {
+        --spacing-3xl: 28px;
+        --spacing-4xl: 40px;
+        --spacing-5xl: 52px;
+        --spacing-6xl: 64px;
+        --section-pb-medium: 44px;
+        --section-py-featured: 56px;
+        --section-pb-featured: 60px;
+        --section-py-lg: 52px;
+        --section-inner-py: 28px;
+        --section-hero-pt: 64px;
+        --section-hero-pb: 84px;
+        --section-header-mb: 36px;
+    }
+
+    .psm-hero__title-line {
+        font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    }
+
+    .psm-hero__title-line--lg {
+        font-size: clamp(1.625rem, 4vw, 2.75rem);
     }
 
     .psm-hero__tagline {
@@ -1830,7 +2323,16 @@
     }
 
     .psm-footer__body {
-        padding-top: 56px;
+        padding-top: 100px;
+    }
+
+    .psm-quick-links__grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .psm-event-card__title {
+        font-size: 16px;
     }
 }
 
