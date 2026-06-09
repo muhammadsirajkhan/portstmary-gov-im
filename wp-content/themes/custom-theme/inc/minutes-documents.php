@@ -79,6 +79,23 @@ function psm_get_minutes_document_columns_static() {
         return array();
     }
 
+    if (isset($data[0]) && is_string($data[0])) {
+        $columns = array(
+            array(),
+            array(),
+            array(),
+        );
+
+        foreach ($data as $index => $label) {
+            $columns[ $index % 3 ][] = array(
+                'label'    => (string) $label,
+                'file_url' => '',
+            );
+        }
+
+        return $columns;
+    }
+
     $columns = array();
     foreach ($data as $column) {
         if (!is_array($column)) {
@@ -138,6 +155,51 @@ function psm_get_minutes_documents_from_acf($page_id = 0) {
             'label'    => $label,
             'file_url' => $file_url,
         );
+    }
+
+    return $items;
+}
+
+/**
+ * Flat document list for the minutes section (ACF order).
+ *
+ * @param int $page_id Page ID.
+ * @return array<int, array{label: string, file_url: string}>
+ */
+function psm_get_minutes_documents($page_id = 0) {
+    $items = psm_get_minutes_documents_from_acf($page_id);
+    if (!empty($items)) {
+        return $items;
+    }
+
+    $data = require get_template_directory() . '/inc/minutes-documents-data.php';
+    if (!is_array($data)) {
+        return array();
+    }
+
+    $items = array();
+    if (isset($data[0]) && is_string($data[0])) {
+        foreach ($data as $label) {
+            $items[] = array(
+                'label'    => (string) $label,
+                'file_url' => '',
+            );
+        }
+
+        return $items;
+    }
+
+    foreach ($data as $column) {
+        if (!is_array($column)) {
+            continue;
+        }
+
+        foreach ($column as $label) {
+            $items[] = array(
+                'label'    => (string) $label,
+                'file_url' => '',
+            );
+        }
     }
 
     return $items;
@@ -207,5 +269,142 @@ function psm_minutes_format_label($label) {
             );
         },
         $label
+    );
+}
+
+/**
+ * Sample PDF URL stored on seeded minutes document rows.
+ */
+function psm_minutes_sample_pdf_url() {
+    return 'http://creativeisaac.com/psm/wp-content/uploads/2026/06/sample.pdf';
+}
+
+/**
+ * Resolve the Minutes page post ID.
+ *
+ * @return int
+ */
+function psm_get_minutes_page_id() {
+    $pages = get_posts(
+        array(
+            'post_type'      => 'page',
+            'post_status'    => 'publish',
+            'posts_per_page' => 1,
+            'meta_key'       => '_wp_page_template',
+            'meta_value'     => 'page-minutes.php',
+            'fields'         => 'ids',
+        )
+    );
+
+    if (!empty($pages)) {
+        return (int) $pages[0];
+    }
+
+    $page = get_page_by_path('meeting-minutes');
+    if (!$page) {
+        $page = get_page_by_path('minutes');
+    }
+
+    return $page ? (int) $page->ID : 0;
+}
+
+/**
+ * Build ACF repeater rows for minutes documents (file line order).
+ *
+ * @return array<int, array{minutes_document_label: string, minutes_document_file: string}>
+ */
+function psm_minutes_documents_seed_rows() {
+    $data = require get_template_directory() . '/inc/minutes-documents-data.php';
+    if (!is_array($data)) {
+        return array();
+    }
+
+    $labels = array();
+    if (isset($data[0]) && is_string($data[0])) {
+        $labels = $data;
+    } else {
+        $columns = array_values($data);
+        foreach ($columns as $column) {
+            if (!is_array($column)) {
+                continue;
+            }
+            foreach ($column as $label) {
+                $labels[] = $label;
+            }
+        }
+    }
+
+    $pdf_url = psm_minutes_sample_pdf_url();
+    $rows    = array();
+
+    foreach ($labels as $label) {
+        $label = trim((string) $label);
+        if ('' === $label) {
+            continue;
+        }
+
+        $rows[] = array(
+            'minutes_document_label' => $label,
+            'minutes_document_file'  => $pdf_url,
+        );
+    }
+
+    return $rows;
+}
+
+/**
+ * Persist minutes document repeater rows on the Minutes page.
+ *
+ * @param int $page_id Optional page ID.
+ * @return array{success: bool, message: string, page_id: int, row_count: int}
+ */
+function psm_seed_minutes_documents($page_id = 0) {
+    if (!function_exists('update_field')) {
+        return array(
+            'success'   => false,
+            'message'   => 'ACF is not available.',
+            'page_id'   => 0,
+            'row_count' => 0,
+        );
+    }
+
+    if (!$page_id) {
+        $page_id = psm_get_minutes_page_id();
+    }
+
+    if (!$page_id || !psm_is_minutes_page($page_id)) {
+        return array(
+            'success'   => false,
+            'message'   => 'Minutes page not found.',
+            'page_id'   => (int) $page_id,
+            'row_count' => 0,
+        );
+    }
+
+    $rows = psm_minutes_documents_seed_rows();
+    if (empty($rows)) {
+        return array(
+            'success'   => false,
+            'message'   => 'No document rows to seed.',
+            'page_id'   => (int) $page_id,
+            'row_count' => 0,
+        );
+    }
+
+    $updated = update_field('minutes_documents', $rows, $page_id);
+    if (!$updated) {
+        return array(
+            'success'   => false,
+            'message'   => 'Failed to update minutes_documents field.',
+            'page_id'   => (int) $page_id,
+            'row_count' => 0,
+        );
+    }
+
+    return array(
+        'success'   => true,
+        'message'   => 'Minutes documents seeded successfully.',
+        'page_id'   => (int) $page_id,
+        'row_count' => count($rows),
     );
 }

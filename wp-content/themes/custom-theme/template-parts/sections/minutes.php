@@ -45,12 +45,8 @@ $has_title = '' !== $title;
 $has_intro = '' !== $intro;
 $has_note  = '' !== $viewer_url;
 
-$columns        = psm_get_minutes_document_columns($page_id);
-$document_count = 0;
-
-foreach ($columns as $column) {
-    $document_count += count($column);
-}
+$documents      = psm_get_minutes_documents($page_id);
+$document_count = count($documents);
 
 $has_documents = $document_count > 0;
 
@@ -103,10 +99,7 @@ $heading_id = $has_title ? 'psm-minutes-heading' : '';
 
         <?php if ($has_documents) : ?>
         <div class="psm-minutes__documents">
-            <?php foreach ($columns as $column) : ?>
-                <?php if (empty($column)) : ?>
-                    <?php continue; ?>
-                <?php endif; ?>
+            <?php foreach (array_chunk($documents, 71) as $column) : ?>
                 <ul class="psm-minutes__documents-col">
                     <?php foreach ($column as $document) : ?>
                         <?php

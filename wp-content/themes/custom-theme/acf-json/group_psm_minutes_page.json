@@ -268,18 +268,18 @@
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
-                    "placeholder": "Board Meeting Minutes 30 May 2024",
+                    "placeholder": "Signed Public Minutes 25th February 2026",
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_psm_minutes_documents"
                 },
                 {
                     "key": "field_psm_minutes_document_file",
-                    "label": "PDF File",
+                    "label": "PDF URL",
                     "name": "minutes_document_file",
                     "aria-label": "",
-                    "type": "file",
-                    "instructions": "Optional PDF download.",
+                    "type": "url",
+                    "instructions": "PDF download URL.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -287,12 +287,9 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
-                    "library": "all",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": "pdf",
+                    "default_value": "http://creativeisaac.com/psm/wp-content/uploads/2026/06/sample.pdf",
                     "allow_in_bindings": 0,
+                    "placeholder": "http://creativeisaac.com/psm/wp-content/uploads/2026/06/sample.pdf",
                     "parent_repeater": "field_psm_minutes_documents"
                 }
             ]
