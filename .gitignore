@@ -17,6 +17,7 @@
 /readme.html
 /wp-*.php
 /xmlrpc.php
+/ai1wm-backups
 
 # Configuration
 wp-config.php
