@@ -8,6 +8,30 @@
 defined('ABSPATH') || exit;
 
 /**
+ * Published time label for news cards and single posts.
+ *
+ * @param int    $post_id Post ID.
+ * @param string $context carousel|archive|single.
+ * @return string
+ */
+function psm_get_news_published_time_label($post_id, $context = 'carousel') {
+    $post_id = (int) $post_id;
+    if ($post_id <= 0) {
+        return '';
+    }
+
+    if ('single' === $context) {
+        return get_the_date('j F Y', $post_id);
+    }
+
+    return sprintf(
+        /* translators: %s: human-readable time difference */
+        __('%s ago', 'cmd-theme'),
+        human_time_diff(get_post_time('U', true, $post_id), current_time('timestamp'))
+    );
+}
+
+/**
  * Build news-card template args from a psm_news post.
  *
  * @param int   $post_id Post ID.
@@ -30,30 +54,16 @@ function psm_get_news_card_args($post_id, $args = array()) {
     $title = get_the_title($post_id);
 
     $category = '';
-    $time     = '';
     $excerpt  = '';
 
     if (function_exists('get_field')) {
         $category = get_field('news_category', $post_id);
-        $time     = get_field('news_time_label', $post_id);
         $excerpt  = get_field('news_excerpt', $post_id);
     }
 
     $category = trim((string) $category);
-    $time     = trim((string) $time);
     $excerpt  = trim((string) $excerpt);
-
-    if ('' === $time) {
-        if (in_array($args['context'], array('archive', 'single'), true)) {
-            $time = get_the_date('j F Y', $post_id);
-        } else {
-            $time = sprintf(
-                /* translators: %s: human-readable time difference */
-                __('%s ago', 'cmd-theme'),
-                human_time_diff(get_post_time('U', true, $post_id), current_time('timestamp'))
-            );
-        }
-    }
+    $time     = psm_get_news_published_time_label($post_id, $args['context']);
 
     $image = '';
     if (function_exists('get_field')) {
@@ -267,15 +277,10 @@ function psm_get_news_single_data($post_id) {
 
     $card = psm_get_news_card_args($post_id, array('context' => 'single'));
 
-    $time = $card['time'] ?? '';
-    if ('' === trim((string) $time)) {
-        $time = get_the_date('j F Y', $post_id);
-    }
-
     return array(
         'title'      => $card['title'] ?? '',
         'category'   => $card['category'] ?? '',
-        'time'       => $time,
+        'time'       => $card['time'] ?? '',
         'image'      => $card['image'] ?? '',
         'image_alt'  => $card['image_alt'] ?? '',
         'breadcrumb' => psm_get_news_single_breadcrumbs($post_id),

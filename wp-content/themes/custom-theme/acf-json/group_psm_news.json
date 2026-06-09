@@ -24,27 +24,6 @@
             "append": ""
         },
         {
-            "key": "field_psm_news_time_label",
-            "label": "Time Label",
-            "name": "news_time_label",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Optional. Leave empty to use time since published.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "12 hours ago",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_psm_news_excerpt",
             "label": "Short Description",
             "name": "news_excerpt",
