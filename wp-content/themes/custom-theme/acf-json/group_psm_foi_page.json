@@ -250,18 +250,18 @@
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
-                    "placeholder": "FOI IM16/483",
+                    "placeholder": "FOI IM4644181",
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_psm_foi_documents"
                 },
                 {
                     "key": "field_psm_foi_document_file",
-                    "label": "PDF File",
+                    "label": "PDF URL",
                     "name": "foi_document_file",
                     "aria-label": "",
-                    "type": "file",
-                    "instructions": "Optional PDF download.",
+                    "type": "url",
+                    "instructions": "PDF download URL.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -269,12 +269,9 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
-                    "library": "all",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": "pdf",
+                    "default_value": "http://creativeisaac.com/psm/wp-content/uploads/2026/06/sample.pdf",
                     "allow_in_bindings": 0,
+                    "placeholder": "http://creativeisaac.com/psm/wp-content/uploads/2026/06/sample.pdf",
                     "parent_repeater": "field_psm_foi_documents"
                 }
             ]

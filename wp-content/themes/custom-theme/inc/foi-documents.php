@@ -20,8 +20,26 @@ function psm_foi_page_url() {
     return home_url('/foi/');
 }
 
+/**
+ * Whether the post uses the FOI page template.
+ *
+ * @param int $post_id Post ID.
+ * @return bool
+ */
+function psm_is_foi_page($post_id = 0) {
+    if (!$post_id) {
+        $post_id = (int) get_queried_object_id();
+    }
+
+    if (!$post_id) {
+        return false;
+    }
+
+    return 'page-foi.php' === get_page_template_slug($post_id);
+}
+
 function psm_foi_sample_pdf_url() {
-    return psm_sample_pdf_url();
+    return 'http://creativeisaac.com/psm/wp-content/uploads/2026/06/sample.pdf';
 }
 
 /**
@@ -30,58 +48,24 @@ function psm_foi_sample_pdf_url() {
  * @return string[]
  */
 function psm_get_foi_document_labels_static() {
-    $columns = array(
-        array(
-            'FOI IM16/483',
-            'FOI IM16/485',
-            'FOI IM17/001',
-            'FOI IM17/326/1',
-            'FOI IM17/326/2',
-            'FOI IM18/042',
-            'FOI IM18/156',
-            'FOI IM19/201',
-            'FOI IM19/445',
-            'FOI IM20/112',
-            'FOI IM20/388',
-            'FOI IM21/059',
-            'FOI IM21/274',
-        ),
-        array(
-            'FOI IM733681 A',
-            'FOI IM733681 B',
-            'FOI IM22/103',
-            'FOI IM22/317',
-            'FOI IM23/088',
-            'FOI IM23/402',
-            'FOI IM24/015',
-            'FOI IM24/229',
-            'FOI IM24/501',
-            'FOI IM25/067',
-            'FOI IM25/198',
-            'FOI IM25/421',
-            'FOI IM26/034',
-        ),
-        array(
-            'FOI IM733681 Section 1',
-            'FOI IM733681 Section 2',
-            'FOI IM733681 Section 3',
-            'FOI IM26/178',
-            'FOI IM26/402',
-            'FOI IM27/056',
-            'FOI IM27/289',
-            'FOI IM27/511',
-            'FOI IM28/024',
-            'FOI IM28/198',
-            'FOI IM28/367',
-            'FOI IM29/041',
-            'FOI IM29/256',
-        ),
-    );
+    $data = require get_template_directory() . '/inc/foi-documents-data.php';
+
+    if (!is_array($data)) {
+        return array();
+    }
+
+    if (isset($data[0]) && is_string($data[0])) {
+        return $data;
+    }
 
     $labels = array();
-    foreach ($columns as $column) {
+    foreach ($data as $column) {
+        if (!is_array($column)) {
+            continue;
+        }
+
         foreach ($column as $label) {
-            $labels[] = $label;
+            $labels[] = (string) $label;
         }
     }
 
@@ -176,6 +160,114 @@ function psm_get_foi_document_columns($page_id = 0) {
     }
 
     return $columns;
+}
+
+/**
+ * Resolve the FOI page post ID.
+ *
+ * @return int
+ */
+function psm_get_foi_page_id() {
+    $pages = get_posts(
+        array(
+            'post_type'      => 'page',
+            'post_status'    => 'publish',
+            'posts_per_page' => 1,
+            'meta_key'       => '_wp_page_template',
+            'meta_value'     => 'page-foi.php',
+            'fields'         => 'ids',
+        )
+    );
+
+    if (!empty($pages)) {
+        return (int) $pages[0];
+    }
+
+    $page = get_page_by_path('foi');
+
+    return $page ? (int) $page->ID : 0;
+}
+
+/**
+ * Build ACF repeater rows for FOI documents (file line order).
+ *
+ * @return array<int, array{foi_document_label: string, foi_document_file: string}>
+ */
+function psm_foi_documents_seed_rows() {
+    $labels  = psm_get_foi_document_labels_static();
+    $pdf_url = psm_foi_sample_pdf_url();
+    $rows    = array();
+
+    foreach ($labels as $label) {
+        $label = trim((string) $label);
+        if ('' === $label) {
+            continue;
+        }
+
+        $rows[] = array(
+            'foi_document_label' => $label,
+            'foi_document_file'  => $pdf_url,
+        );
+    }
+
+    return $rows;
+}
+
+/**
+ * Persist FOI document repeater rows on the FOI page.
+ *
+ * @param int $page_id Optional page ID.
+ * @return array{success: bool, message: string, page_id: int, row_count: int}
+ */
+function psm_seed_foi_documents($page_id = 0) {
+    if (!function_exists('update_field')) {
+        return array(
+            'success'   => false,
+            'message'   => 'ACF is not available.',
+            'page_id'   => 0,
+            'row_count' => 0,
+        );
+    }
+
+    if (!$page_id) {
+        $page_id = psm_get_foi_page_id();
+    }
+
+    if (!$page_id || !psm_is_foi_page($page_id)) {
+        return array(
+            'success'   => false,
+            'message'   => 'FOI page not found.',
+            'page_id'   => (int) $page_id,
+            'row_count' => 0,
+        );
+    }
+
+    $rows = psm_foi_documents_seed_rows();
+    if (empty($rows)) {
+        return array(
+            'success'   => false,
+            'message'   => 'No document rows to seed.',
+            'page_id'   => (int) $page_id,
+            'row_count' => 0,
+        );
+    }
+
+    $updated = update_field('foi_documents', $rows, $page_id);
+    if (!$updated) {
+        return array(
+            'success'   => false,
+            'message'   => 'Failed to update foi_documents field.',
+            'page_id'   => (int) $page_id,
+            'row_count' => 0,
+        );
+    }
+
+    return array(
+        'success'   => true,
+        'message'   => 'FOI documents seeded successfully.',
+        'page_id'   => (int) $page_id,
+        'row_count' => count($rows),
+    );
 }
 
 function psm_foi_document_filename($label) {

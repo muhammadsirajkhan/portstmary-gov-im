@@ -1,0 +1,29 @@
+<?php
+/** FOI document labels. */
+defined('ABSPATH') || exit;
+
+return [
+    'FOI IM4644181',
+    'FoI IM1732681',
+    'FoI IM1732711',
+    'FoI IM4405201',
+    'FoI IM1732681 A FoI IM1732681 B',
+    'FoI 040818',
+    'FOI IM4014081',
+    'FoI IM1732681 C FoI IM1732681 D',
+    'FoI 050118',
+    'FOI IM388161I',
+    'FoI IM1732681 E FoI IM1732681 F',
+    'FoI 150218inc. Manxonia House Business Case',
+    'FoI IM2656581',
+    'FoI IM1732681 G FoI IM1732681 H',
+    'FoI 260218',
+    'FoI IM2077041',
+    'FoI IM1732681 Section 1  Section 2  Section 3  Section 4',
+    'FoI 150318',
+    'FoI 1908081',
+    'Section 5  Section 6 2 Section 7 1 Section 7 2 Section 7',
+    'FoI 200418',
+    '3 Section 7 4 Section 7 5 Section 7 6 Section 8',
+    'FoI 030518',
+];
